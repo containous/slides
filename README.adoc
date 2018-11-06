@@ -1,0 +1,95 @@
+= Traefik: Reverse Proxy Made Simple
+
+Have you ever felt that your IT super powers were blocked
+by repetitive configuration work?
+Do you love microservices but hate the sight
+of a never-ending routing table?
+Does your credo consist of scalability, stability,
+traceability, and performance?
+Do you believe in a world beyond complex layers of software?
+Then you might want to listen to our story
+because we are just like you,
+and we came up with a practical solution
+that might reunite ops and devs alike for a journey to manageable software.
+
+== How-to Work with this Presentation?
+
+=== Requirements
+
+* You need:
+** Docker CE 18.09+ (with local bind-mount capability -
+Docker4Mac, Docker4Windows or a local Linux Docker install)
+** docker-compose in your PATH
+(automatically installed with Docker4Mac and Docker4Windows)
+** GNU Make in your PATH
+
+== Generate the slides
+
+* If you want to generate the slide-deck in "one shot":
+** Clone the repository
+** Run the following `make` command:
++
+[source,bash]
+----
+make build
+----
+
+** Open the resulting file `./dist/index.html`
+
+=== Working on the slides with Live-reloading
+
+* If you want to build and serve the slides locally,
+with a live-reloading capability
+(e.g. change a `*.adoc`, regenerate the HTML and reload the web-browser)
+to get a WYSIWYG experience:
+
+** Clone the repository
+** Run the following `make` command:
++
+[source,bash]
+----
+make serve
+----
+
+** Open the URL link:http://localhost:8000
+** Edit one of the `*.adoc` file, save it, and see the page reload
+*** it is valid for images and styles also
+
+=== Run checks on the generated HTML
+
+You can validate the HTTP links and the HTML's w3c compliance
+of the generated slide deck.
+
+If you already generated the file `./dist/index.html`,
+then run the following `make` command:
++
+[source,bash]
+----
+make verify
+----
+
+Otherwise, you can run the `all` command ,as the CI process is doing:
++
+[source,bash]
+----
+make all
+----
+
+=== Maintenance tasks inside the container
+
+If you want to get a shell inside the "build and serve" container,
+run the following `make` command:
++
+[source,bash]
+----
+make shell
+----
+
+==== Example: updating the package.json (and lock) depencies
+
+[source,bash]
+----
+make shell
+/app # ncu -u
+...
+----

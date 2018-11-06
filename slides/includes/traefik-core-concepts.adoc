@@ -1,0 +1,48 @@
+
+= Træfik Core Concepts
+
+image::bored-minion.jpg[Bored Minion]
+
+[{invert}]
+== Remember the Diagram?
+
+image::traefik-architecture.svg["Træfik's Architecture",width=900]
+
+[{invert}]
+== Let's Simplify
+
+image::architecture-simplified.svg["Træfik's Simplified Architecture",width=900]
+
+[{invert}]
+== Providers
+
+image::architecture-at-a-glance-provider.svg["Træfik's Simplified Architecture",width=900]
+
+[{invert}]
+== Entrypoints
+
+image::architecture-at-a-glance-entrypoints.svg["Træfik's Entrypoints", width=900]
+
+[{invert}]
+== Backends
+
+image::architecture-at-a-glance-backends.svg["Træfik's Backends",width=900]
+
+[{invert}]
+== Frontends
+
+image::architecture-at-a-glance-frontends.svg["Træfik's Frontends",width=900]
+
+[{invert}]
+== At a Glance
+
+image::architecture-at-a-glance.svg["Træfik Architecture At A Glance",width=900]
+
+[{invert}]
+== In Practice
+
+image::architecture-at-a-glance-in-practice.svg[Træfik in Practise]
+
+== End of Core Concepts
+
+image::happy-minions.jpg["Happy Minions",width=900]

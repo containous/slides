@@ -1,0 +1,30 @@
+version: '2.4'
+
+# Reusable options
+x-slides-base: &slides-base
+  build: ./
+  image: slides-builder
+  environment:
+      - PRESENTATION_URL=${PRESENTATION_URL}
+  volumes:
+      - ./slides:/app/slides
+      - ./dist:/app/dist
+      - ./assets:/app/assets
+      - ./gulp/gulpfile.js:/app/gulpfile.js
+      - ./gulp/tasks:/app/tasks
+      - ./package.json:/app/package.json
+
+services:
+  serve:
+    <<: *slides-base
+    ports:
+        - "8000:8000"
+
+  build:
+    <<: *slides-base
+    command: "build"
+
+  qrcode:
+    <<: *slides-base
+    entrypoint: /app/node_modules/.bin/qrcode
+    command: -t svg -o /app/dist/images/qrcode.svg ${PRESENTATION_URL}

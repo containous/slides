@@ -1,0 +1,64 @@
+
+= Træfik: The Cloud Native Edge Router
+include::./includes/attributes.adoc[]
+
+image::traefik-logo-white-background.png["Træfik's Logo",height=150]
+
+image::qrcode.svg["QRCode to this presentation",height=150]
+[.small]
+Presentation available at link:{presentationUrl}[]
+
+// //// Speaker Slide and Company slide
+== Whoami
+
+* [Speaker Name]:
+** [Speaker Details]
+
+* icon:envelope[] mailto:Speaker@containo.us[Speaker@containo.us]
+* link:https://twitter.com/Speaker[icon:twitter[] @Speaker]
+* link:https://github.com/Speaker[icon:github[] Speaker]
+
+// Uncomment and add speaker photo here
+// image::Speaker.jpg[height=200]
+
+== How to use these slides?
+
+* Browse the slide: use the arros on the bottom-right (or keyboard's arrows)
+** Change chapter: Left/Right arrows
+** Next or previous slide: Top and bottom arrows
+
+* Open slide deck's overview: use the keyboard's shortcut "kbd:[o]"
+
+* Open speaker mode (and notes): use the keyboard's shortcut "kbd:[s]"
+
+=== Containous
+
+* link:https://containo.us[]
+* We Believe in Open Source
+* We Deliver Træfik
+* Commercial Support for Træfik
+* 12 people, 90% technical experts
+
+image::containous-logo.png["Containous Logo"]
+
+// //// end of Speaker Slide and Company slide
+
+
+// ///////////////////////
+// Include chapter here with a blank line between each
+// Notice the offset to have chapters as autonomous documents
+// ///////////////////////
+:leveloffset: +1
+
+include::./includes/traefik-project.adoc[]
+
+include::./includes/why-traefik.adoc[]
+
+include::./includes/traefik-core-concepts.adoc[]
+
+include::./includes/more-capabilities.adoc[]
+
+:leveloffset: -1
+
+// ///// Finale slide
+== Thank You!

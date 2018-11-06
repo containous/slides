@@ -1,0 +1,32 @@
+
+services:
+- docker
+
+script:
+- make all
+
+before_deploy:
+- make deploy
+
+# From https://github.com/travis-ci/travis-ci/issues/7780#issuecomment-302389370
+# we have to duplicate to meet tags and master
+deploy:
+  - provider: pages
+    local-dir: ./docs/
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    target-branch: gh-pages
+    verbose: true
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH != ^gh-pages$
+  - provider: pages
+    local-dir: ./docs/
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    target-branch: gh-pages
+    verbose: true
+    on:
+      tags: true

@@ -1,0 +1,57 @@
+
+= Why Træfik?
+
+image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
+
+Why, Mr Anderson?
+
+== Evolution of Software Design
+
+image::evolution-of-software-design.jpg[Evolution of Software Design]
+
+== The Premise of Microservices...
+
+image::asterix-premise.jpg[Asterix - Premise]
+
+== ...and what happens
+
+image::asterix-fight.jpg[Asterix - Fighting]
+
+== !
+
+image::yes-help-please.jpg[Asterix - Fighting]
+
+== Where is the service?
+
+image::where-is-charlie.jpg["Where os Charlie?",width=900]
+
+[{invert}]
+== Tools of the Trade
+
+image::docker.png[width=80,float=left]
+image::rancher-os.png[width=80,float=left]
+image::docker-swarm.png[width=80,float=left]
+image::kubernetes.png[width=80,float=left]
+image::marathon.png[width=80,float=left]
+image::ec2.png[width=80,float=left]
+image::mesos.png[width=80,float=left]
+
+image::dynamodb.png[width=80,float=right]
+image::ecs.png[width=80,float=right]
+image::service-fabric.png[width=80,float=right]
+image::consul.png[width=80,float=right]
+image::netflix_oss.png[width=80,float=right]
+image::etcd.png[width=80,float=right]
+image::zookeeper.png[width=80,float=right]
+
+
+== What If I Told You?
+
+image::what-if-I-told-you.jpg[What If I Told You]
+
+That You Don't Have to Write This Configuration File...?
+
+[{invert}]
+== Here Comes Træfik!
+
+image::traefik-architecture.svg["Træfik's Architecture",width=900]

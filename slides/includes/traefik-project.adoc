@@ -1,0 +1,25 @@
+
+[{invert}]
+= Træfik Project
+
+Træfik: The Cloud Native Edge Router
+
+image::traefik-logo.svg[Træfik's Logo]
+
+== The Project
+
+* link:https://github.com/containous/traefik[]
+* MIT License
+* 16,600+ ⭐
+* 100M+ ⬇️
+* 1400+ LGTM
+* 280+ 👷
+
+== I've Found A Bug!
+
+[source,bash]
+----
+./traefik bug
+----
+
+Autofills the issue template (environment, configuration files, ...)
