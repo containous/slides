@@ -1,8 +1,12 @@
 
+[%notitle]
 = Træfik: The Cloud Native Edge Router
 include::./includes/attributes.adoc[]
 
-image::traefik-logo-white-background.png["Træfik's Logo",height=150]
+[{invert}]
+== Træfik: The Cloud Native Edge Router
+
+image::traefik-logo.svg["Træfik's Logo",height=200]
 
 image::qrcode.svg["QRCode to this presentation",height=150]
 [.small]
