@@ -2,7 +2,11 @@
 ifdef TRAVIS_TAG
 PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_TAG)
 else
-PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_BRANCH)
+	ifneq ($(TRAVIS_BRANCH), master)
+	PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_BRANCH)
+	else
+	PRESENTATION_URL ?= https://containous.github.io/slides
+	endif
 endif
 export PRESENTATION_URL
 
