@@ -54,4 +54,4 @@ That You Don't Have to Write This Configuration File...?
 [{invert}]
 == Here Comes Traefik!
 
-image::traefik-architecture.svg["Traefik's Architecture",width=900]
+image::traefik-architecture.png["Traefik's Architecture",width=900]

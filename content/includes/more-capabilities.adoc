@@ -42,24 +42,6 @@ image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=90
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
 
-== Is Kubernetes Too Much YAML?
-
-We have Helm support - link:https://helm.sh/[]
-
-image:helm-logo.svg["Helm Logo",height=200]
-
-[source,bash]
-----
-# Kubernetes Ready
-kubectl get all
-...
-
-# Install Traefik into your Kubernetes cluster
-helm install stable/traefik
-
-# Start your service in Kubernetes
-kubectl apply -f ./myservice.yml
-----
 
 == We Missed Talking About ...
 
