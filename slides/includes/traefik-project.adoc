@@ -1,10 +1,10 @@
 
 [{invert}]
-= Træfik Project
+= Traefik Project
 
-Træfik: The Cloud Native Edge Router
+Traefik: The Cloud Native Edge Router
 
-image::traefik-logo.svg[Træfik's Logo]
+image::traefik-logo.svg[Traefik's Logo]
 
 == The Project
 

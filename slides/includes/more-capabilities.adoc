@@ -2,15 +2,15 @@
 = More Capabilities
 
 [{invert}]
-== Season 1 of Træfik
+== Season 1 of Traefik
 
-== Træfik's Web Dashboard: Frontends
+== Traefik's Web Dashboard: Frontends
 
-image::web.frontend.png["Træfik's Web Dashboard: Frontends",width=900]
+image::web.frontend.png["Traefik's Web Dashboard: Frontends",width=900]
 
-== Træfik's Web Dashboard: Health
+== Traefik's Web Dashboard: Health
 
-image::traefik-health.png["Træfik's Web Dashboard: Health",width=900]
+image::traefik-health.png["Traefik's Web Dashboard: Health",width=900]
 
 == The HTTP Challenge
 
@@ -27,17 +27,17 @@ image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge]
 
 image::kubernetes-logo.png[Kubernetes Logo]
 
-== Coming soon in Træfik
+== Coming soon in Traefik
 
 [.line-trough-title]
-== Coming soon in Træfik
+== Coming soon in Traefik
 
 Already available!
 
 [{invert}]
-== Træfik with Kubernetes
+== Traefik with Kubernetes
 
-image::traefik-kubernetes-diagram.png["Træfik with Kubernetes Diagram",width=900]
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
 
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]

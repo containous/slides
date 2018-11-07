@@ -1,5 +1,5 @@
 
-= Why Træfik?
+= Why Traefik?
 
 image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
 
@@ -52,6 +52,6 @@ image::what-if-I-told-you.jpg[What If I Told You]
 That You Don't Have to Write This Configuration File...?
 
 [{invert}]
-== Here Comes Træfik!
+== Here Comes Traefik!
 
-image::traefik-architecture.svg["Træfik's Architecture",width=900]
+image::traefik-architecture.svg["Traefik's Architecture",width=900]

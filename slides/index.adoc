@@ -1,12 +1,12 @@
 
 [%notitle]
-= Træfik: The Cloud Native Edge Router
+= Traefik: The Cloud Native Edge Router
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Træfik: The Cloud Native Edge Router
+== Traefik: The Cloud Native Edge Router
 
-image::traefik-logo.svg["Træfik's Logo",height=200]
+image::traefik-logo.svg["Traefik's Logo",height=200]
 
 image::qrcode.svg["QRCode to this presentation",height=150]
 [.small]
@@ -39,8 +39,8 @@ Presentation available at link:{presentationUrl}[]
 
 * link:https://containo.us[]
 * We Believe in Open Source
-* We Deliver Træfik
-* Commercial Support for Træfik
+* We Deliver Traefik
+* Commercial Support for Traefik
 * 12 people, 90% technical experts
 
 image::containous-logo.png["Containous Logo"]
