@@ -1,9 +1,6 @@
 
 = More Capabilities
 
-[{invert}]
-== Season 1 of Traefik
-
 == Traefik's Web Dashboard: Frontends
 
 image::web.frontend.png["Traefik's Web Dashboard: Frontends",width=900]
@@ -21,18 +18,9 @@ image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge]
 
 image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge]
 
-== Season 2: TRAILER
-
 == Kubernetes
 
 image::kubernetes-logo.png[Kubernetes Logo]
-
-== Coming soon in Traefik
-
-[.line-trough-title]
-== Coming soon in Traefik
-
-Already available!
 
 [{invert}]
 == Traefik with Kubernetes
@@ -41,7 +29,6 @@ image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=90
 
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
-
 
 == We Missed Talking About ...
 
