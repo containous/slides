@@ -1,8 +1,6 @@
 
 [{invert}]
-= Traefik Project
-
-Traefik: The Cloud Native Edge Router
+= The Project
 
 image::traefik.logo.png[Traefik's Logo,width=300]
 
