@@ -4,14 +4,14 @@
 
 image::traefik.logo.png[Traefik's Logo,width=300]
 
-== The Project
+== Traefik Project
 
-* link:https://github.com/containous/traefik[]
+* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* 16,600+ ⭐
+* 18,500+ ⭐
 * 100M+ ⬇️
 * 1400+ LGTM
-* 280+ 👷
+* 330+ 👷
 
 == I've Found A Bug!
 

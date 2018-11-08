@@ -23,7 +23,7 @@ Presentation available at link:{presentationUrl}[]
 
 * icon:envelope[] mailto:Speaker@containo.us[Speaker@containo.us]
 * link:https://twitter.com/Speaker[icon:twitter[] @Speaker]
-* link:https://github.com/Speaker[icon:github[] Speaker]
+* link:https://github.com/Speaker[]icon:github[ Speaker]
 
 // Uncomment and add speaker photo here
 // image::Speaker.jpg[height=200]

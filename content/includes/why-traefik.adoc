@@ -5,6 +5,7 @@ image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
 
 Why, Mr Anderson?
 
+[{invert}]
 == Evolution of Software Design
 
 image::evolution-of-software-design.jpg[Evolution of Software Design]
@@ -13,6 +14,7 @@ image::evolution-of-software-design.jpg[Evolution of Software Design]
 
 image::asterix-premise.jpg[Asterix - Premise]
 
+[{invert}]
 == ...and what happens
 
 image::asterix-fight.jpg[Asterix - Fighting]

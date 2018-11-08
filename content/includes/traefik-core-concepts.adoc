@@ -42,7 +42,3 @@ image::architecture-at-a-glance.png["Traefik Architecture At A Glance",width=120
 == In Practice
 
 image::architecture-at-a-glance-in-practice.png[Traefik in Practise,width=1200]
-
-== End of Core Concepts
-
-image::happy-minions.jpg["Happy Minions",width=900]
