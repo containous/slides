@@ -1,6 +1,6 @@
 
 [%notitle]
-= !
+= Traefik: The Cloud Native Edge Router
 include::./includes/attributes.adoc[]
 
 [{invert}]
