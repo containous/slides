@@ -44,7 +44,8 @@
     color: black; }
 
 .reveal section[data-state="invert"] h1,
-.reveal section[data-state="invert"] h2 {
+.reveal section[data-state="invert"] h2,
+.reveal section[data-state="invert"] div.title p {
     color: rgb(55, 171, 200); }
 
 .reveal section[data-state="invert"] a {
@@ -101,7 +102,8 @@ body {
 .reveal h3,
 .reveal h4,
 .reveal h5,
-.reveal h6 {
+.reveal h6,
+.reveal div.title p {
   margin: 0 0 20px 0;
   color: #e2e2e2;
   font-family: "Rancho", Impact, sans-serif;
@@ -115,7 +117,8 @@ body {
 .reveal h1 {
   font-size: 3.77em; }
 
-.reveal h2 {
+.reveal h2,
+.reveal div.title p {
   font-size: 2.11em; }
 
 .reveal h3 {

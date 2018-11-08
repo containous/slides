@@ -1,14 +1,17 @@
 
 [%notitle]
-= Traefik: The Cloud Native Edge Router
+= !
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Traefik: The Cloud Native Edge Router
+== Traefik
+[.title]
+The Cloud Native Edge Router
 
 image::traefik.logo.png["Traefik's Logo",height=200]
 
 image::qrcode.png["QRCode to this presentation",height=150]
+
 [.small]
 Presentation available at link:{presentationUrl}[]
 
