@@ -18,7 +18,7 @@
 :source-highlighter: highlightjs
 :highlightjs-main-theme: github
 :highlightjs-theme: {revealjsdir}/plugin/highlight/styles/{highlightjs-main-theme}.min.css
-:invert: state=invert,background-color="white"
+:invert: state=invert,background-color="rgb(249,248,248)"
 // Enable font awesome, and use it from local resources (instead of CDN)
 :icons: font
 :stylesdir: styles

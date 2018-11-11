@@ -15,15 +15,11 @@ image::evolution-of-software-design.jpg[Evolution of Software Design]
 image::asterix-premise.jpg[Asterix - Premise]
 
 [{invert}]
-== ...and what happens
+== ...and What Happens
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
-== !
-
-image::yes-help-please.jpg[Asterix - Fighting]
-
-== Where is the service?
+== Where is the Service?
 
 image::where-is-charlie.jpg["Where os Charlie?",width=900]
 
@@ -46,6 +42,12 @@ image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
 
+== !
+
+image::yaml.jpg[width=900]
+
+[.small][.small]
+Source: https://twitter.com/Caged/status/1039937162769096704[]
 
 == What If I Told You?
 

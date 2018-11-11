@@ -30,13 +30,13 @@ Presentation available at link:{presentationUrl}[]
 
 == How to use these slides?
 
-* Browse the slide: use the arros on the bottom-right (or keyboard's arrows)
+* *Browse the slides:* Use the arrows
 ** Change chapter: Left/Right arrows
 ** Next or previous slide: Top and bottom arrows
 
-* Open slide deck's overview: use the keyboard's shortcut "kbd:[o]"
+* Overview of the slides: keyboard's shortcut "kbd:[o]"
 
-* Open speaker mode (and notes): use the keyboard's shortcut "kbd:[s]"
+* Speaker mode (and notes): keyboard's shortcut "kbd:[s]"
 
 === Containous
 
@@ -57,13 +57,15 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/traefik-project.adoc[]
-
 include::./includes/why-traefik.adoc[]
+
+include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/more-capabilities.adoc[]
+
+include::./includes/verysecretproject.adoc[]
 
 :leveloffset: -1
 
