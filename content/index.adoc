@@ -71,9 +71,6 @@ include::./includes/verysecretproject.adoc[]
 
 :leveloffset: -1
 
-// ///// Final slide
-== Thank You!
-
 == !
 
 image::devoxx-PleaseRateMe.jpg[background, size=cover]
