@@ -6,7 +6,7 @@ include::./includes/attributes.adoc[]
 [{invert}]
 == Traefik
 [.title]
-The Cloud Native Edge Router
+A Scalable and Highly Available Edge Router
 
 image::traefik.logo.png["Traefik's Logo",height=200]
 
@@ -15,18 +15,19 @@ image::qrcode.png["QRCode to this presentation",height=150]
 [.small]
 Presentation available at link:{presentationUrl}[]
 
+image::devoxx-background.jpg[background, size=cover]
+
 // //// Speaker Slide and Company slide
 == Whoami
 
-* [Speaker Name]:
-** [Speaker Details]
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik]'s Developer Advocate @
+link:https://containo.us/[Containous] and Freelancer
+** Former Training Engineer @ CloudBees
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+* link:https://github.com/dduportal[icon:github[] dduportal]
 
-* icon:envelope[] mailto:Speaker@containo.us[Speaker@containo.us]
-* link:https://twitter.com/Speaker[icon:twitter[] @Speaker]
-* link:https://github.com/Speaker[]icon:github[ Speaker]
-
-// Uncomment and add speaker photo here
-// image::Speaker.jpg[height=200]
+image::damien.jpg[height=200]
 
 == How to use these slides?
 
@@ -69,5 +70,9 @@ include::./includes/verysecretproject.adoc[]
 
 :leveloffset: -1
 
-// ///// Finale slide
+// ///// Final slide
 == Thank You!
+
+== !
+
+image::devoxx-PleaseRateMe.jpg[background, size=cover]

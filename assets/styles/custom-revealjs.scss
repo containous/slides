@@ -37,6 +37,11 @@
     text-rendering: optimizeLegibility;
 }
 
+// Custom Style for the Devoxx Title Slide
+.reveal section#traefik {
+  margin-left: 2em;
+}
+
 .reveal section[data-state="invert"] p,
 .reveal section[data-state="invert"] ul,
 .reveal section[data-state="invert"] li,
