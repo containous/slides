@@ -29,17 +29,18 @@ link:https://containo.us/[Containous] and Freelancer
 
 image::damien.jpg[height=200]
 
+[{invert}]
 == How to use these slides?
 
 * *Browse the slides:* Use the arrows
 ** Change chapter: Left/Right arrows
 ** Next or previous slide: Top and bottom arrows
 
-* Overview of the slides: keyboard's shortcut "kbd:[o]"
+* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
 
-* Speaker mode (and notes): keyboard's shortcut "kbd:[s]"
+* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
-=== Containous
+== Containous
 
 * link:https://containo.us[]
 * We Believe in Open Source
