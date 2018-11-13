@@ -32,8 +32,7 @@ verify-links:
         	/dist/index.html
 
 verify-w3c:
-	@echo OK
-	# docker run --rm -v $(CURDIR)/dist:/app stratdat/html5validator
+	docker run --rm -v $(CURDIR)/dist:/app stratdat/html5validator
 
 serve: clean
 	@docker-compose up --build --force-recreate serve
