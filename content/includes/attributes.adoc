@@ -13,6 +13,7 @@
 :revealjs_maxscale: 1.5
 :revealjs_slideNumber: true
 :revealjs_controls: true
+:transition-speed: fast
 :notitle: true
 :experimental: true
 :source-highlighter: highlightjs

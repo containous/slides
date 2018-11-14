@@ -1,16 +1,16 @@
 
 [{invert}]
-= The Project
+= Overview
 
-image::traefik.logo.png[Traefik's Logo,width=300]
+image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 == Traefik Project
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
 * 18,500+ ⭐
-* 100M+ ⬇️
-* 1400+ LGTM
+* 300M+ ⬇️
+* 2000+ LGTM
 * 330+ 👷
 
 == I've Found A Bug!

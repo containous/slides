@@ -5,29 +5,10 @@ include::./includes/attributes.adoc[]
 
 [{invert}]
 == Traefik
-[.title]
+
 A Scalable and Highly Available Edge Router
 
-image::traefik.logo.png["Traefik's Logo",height=200]
-
-image::qrcode.png["QRCode to this presentation",height=150]
-
-[.small]
-Presentation available at link:{presentationUrl}[]
-
-image::devoxx-background.jpg[background, size=cover]
-
-// //// Speaker Slide and Company slide
-== Whoami
-
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik]'s Developer Advocate @
-link:https://containo.us/[Containous] and Freelancer
-** Former Training Engineer @ CloudBees
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
-* link:https://github.com/dduportal[icon:github[] dduportal]
-
-image::damien.jpg[height=200]
+image::traefik.logo.png["Traefik's Logo",height=400]
 
 [{invert}]
 == How to use these slides?
@@ -40,13 +21,27 @@ image::damien.jpg[height=200]
 
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
+// //// Speaker Slide and Company slide
+[{invert}]
+== Whoami
+Emile vauge
+
+* 🇫🇷 Developer
+* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
+* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
+* link:https://github.com/emilevauge[icon:github[] emilevauge]
+
+image::emile-bw.jpg[height=200]
+
+[{invert}]
 == Containous
 
-* link:https://containo.us[]
+link:https://containo.us[]
+
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 12 people, 90% technical experts
+* 17 people, 90% technical experts
 
 image::containous-logo.png["Containous Logo"]
 
@@ -69,8 +64,6 @@ include::./includes/more-capabilities.adoc[]
 
 include::./includes/verysecretproject.adoc[]
 
+include::./includes/the-end.adoc[]
+
 :leveloffset: -1
-
-== !
-
-image::devoxx-PleaseRateMe.jpg[background, size=cover]
