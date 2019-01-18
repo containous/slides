@@ -1,12 +1,12 @@
 
 [%notitle]
-= Traefik: The Cloud Native Edge Router
+= Traefik: Keep the Routing Simple
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Traefik
+== Traefik: 
 [.title]
-The Cloud Native Edge Router
+Keep the Routing Simple
 
 image::traefik.logo.png["Traefik's Logo",height=200]
 
@@ -65,8 +65,6 @@ include::./includes/traefik-project.adoc[]
 include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/more-capabilities.adoc[]
-
-include::./includes/verysecretproject.adoc[]
 
 :leveloffset: -1
 

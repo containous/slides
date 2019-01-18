@@ -8,16 +8,6 @@ image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge, width=900]
 
 [{invert}]
-== Traefik with Kubernetes
-
-// image::kubernetes-logo.png[Kubernetes Logo]
-
-image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
-
-[.small]
-Diagram from link:https://medium.com/@geraldcroes[]
-
-[{invert}]
 == Web Dashboard
 
 image::traefik-health.png["Traefik's Web Dashboard: Health",width=900]
