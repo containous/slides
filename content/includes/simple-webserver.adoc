@@ -66,3 +66,9 @@ link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/
 image::after-webserver-up.png[]
 
 It's good: we have a web page!
+
+== But, How?
+
+image::magic.gif[]
+
+Is it magic?
