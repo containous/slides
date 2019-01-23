@@ -1,12 +1,120 @@
+
 = HTTPS for Everyone
 
 with Let's Encrypt
 
-== Goal
+== Goals
 
 * Use HTTPS instead of HTTP
 * Redirect http://traefik-demo.containous.cloud/[] to https://traefik-demo.containous.cloud/[]
 
-== Traefik Configuration
+== Let's Encrypt
+
+[quote]
+____
+link:https://letsencrypt.org/["Let’s Encrypt",window=_blank] is a free, automated, and open Certificate Authority.
+____
+
+It uses the "ACME" protocol to verify that you control a given domain name and to issue you a certificate.
+
+== Entrypoints Configuration
+
+* We need to add an entrypoint for HTTPS with
++
+[source,bash]
+----
+"--entryPoints=Name:https Address::443 TLS"
+----
+
+* We need to specify the HTTP entrypoint to redirect to HTTPS with
++
+[source,bash]
+----
+"--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
+----
+
+* We define `https` as the default entrypoint:
++
+[source,bash]
+----
+"--defaultEntryPoints=https"
+----
+
+== ACME Configuration 1/2
+
+* We define the entrypoint HTTPS to use Let's Encrypt Certificates
++
+[source,bash]
+----
+"--acme.entryPoint=https"
+----
+
+* Let's Encrypt requires an email for certificates:
++
+[source,bash]
+----
+"--acme.email=damien@containo.us"
+----
+
+* Define the file `acme.json` to store certificates
++
+[source,bash]
+----
+"--acme.storage=acme.json"
+----
+
+== ACME Challenges
+
+image::lets-encrypt-dns-challenge.png[height=250]
+
+image::lets-encrypt-http-challenge.png[height=250]
+
+== ACME Configuration 2/2
+
+* Specify a challenge of type TLS
++
+[source,bash]
+----
+"--acme.tlsChallenge=true"
+----
+
+* Get the domain name from the frontend rules
++
+[source,bash]
+----
+"--acme.onHostRule=true"
+----
+** We need to exclude Traefik's container with the label `traefik.enable=false` (to NOT request a certificate for `edge.traefik-demo.containous.cloud`)
+
+== Traefik Setup
+
+* Step 1: Adapt Compose file:
+[source,yaml]
+----
+command:
+  - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
+  - "--entryPoints=Name:https Address::443 TLS"
+  - "--defaultEntryPoints=https"
+  - "--acme.entryPoint=https"
+  - "--acme.email=damien@containo.us"
+  - "--acme.storage=acme.json"
+  - "--acme.tlsChallenge=true"
+  - "--acme.onHostRule=true"
+labels:
+  - "traefik.enable=false"
+----
+
+* Step 2: Update the `edge` service
++
+[source,bash]
+----
+docker-compose up -d edge
+----
+
+== Reality Check
+
+Reload the index page and see the redirection to HTTPS, and the green lock
+
+link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
 
 TBD

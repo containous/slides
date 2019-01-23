@@ -3,9 +3,12 @@
 == Goal
 
 * We want to host our own Web Command Line
-** Let's use link:https://github.com/tsl0922/ttyd[TTYD, Share your terminal over the web.,window=_blank]
+** Let's use link:https://github.com/tsl0922/ttyd["TTYD, Share your terminal over the web.",window=_blank]
 ** It requires Websockets
-** It only serves requests under `/`
+
+== Preparing the Setup
+
+** TTYD only serves requests under `/`
 
 ```
 http://traefik-demo.containous.cloud/ttyd/ws

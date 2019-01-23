@@ -3,7 +3,7 @@
 == Goal
 
 * We want to host our own git server
-** Let's use link:https://gitea.io/en-us/[Gitea, A painless self-hosted Git service.,window=_blank]
+** Let's use link:https://gitea.io/en-us/["Gitea, A painless self-hosted Git service.",window=_blank]
 
 == Problem
 

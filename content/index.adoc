@@ -20,7 +20,7 @@ Presentation available at link:{presentationUrl}[{presentationUrl},window=_blank
 
 * Damien DUPORTAL:
 ** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
-link:https://containo.us/[Containous,window=_blank] and Freelancer
+link:https://containo.us/[Containous,window=_blank]
 ** Former Training Engineer @ CloudBees
 * link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]

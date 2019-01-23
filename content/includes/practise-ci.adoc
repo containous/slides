@@ -3,7 +3,7 @@
 == Goal
 
 * We want to host our own automation system for Continuous Integration
-** Let's use link:https://jenkins.io[Jenkins,window=_blank]
+** Let's use link:https://jenkins.io["Jenkins",window=_blank]
 
 == Reality Check
 

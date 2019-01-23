@@ -4,7 +4,8 @@ version: '2.4'
 services:
   edge:
     image: traefik:1.7.7
-    command: --docker # Tells Traefik to listen to docker
+    command: 
+      - "--docker" # Tells Traefik to listen to docker
     ports:
       - "80:80"     # The HTTP port
       - "443:443"   # The HTTPS port
