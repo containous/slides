@@ -18,15 +18,16 @@ Presentation available at link:{presentationUrl}[]
 // //// Speaker Slide and Company slide
 == Whoami
 
-* [Speaker Name]:
-** [Speaker Details]
+== Whoami
 
-* icon:envelope[] mailto:Speaker@containo.us[Speaker@containo.us]
-* link:https://twitter.com/Speaker[icon:twitter[] @Speaker]
-* link:https://github.com/Speaker[]icon:github[ Speaker]
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik]'s Developer Advocate @
+link:https://containo.us/[Containous] and Freelancer
+** Former Training Engineer @ CloudBees
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+* link:https://github.com/dduportal[icon:github[] dduportal]
 
-// Uncomment and add speaker photo here
-// image::Speaker.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == How to use these slides?
@@ -64,7 +65,7 @@ include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/more-capabilities.adoc[]
+include::./includes/practical-example.adoc[]
 
 :leveloffset: -1
 
