@@ -13,19 +13,17 @@ image::traefik.logo.png["Traefik's Logo",height=200]
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
-Presentation available at link:{presentationUrl}[]
+Presentation available at link:{presentationUrl}[{presentationUrl},window=_blank]
 
 // //// Speaker Slide and Company slide
 == Whoami
 
-== Whoami
-
 * Damien DUPORTAL:
-** link:https://traefik.io/[Træfik]'s Developer Advocate @
-link:https://containo.us/[Containous] and Freelancer
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
+link:https://containo.us/[Containous,window=_blank] and Freelancer
 ** Former Training Engineer @ CloudBees
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
-* link:https://github.com/dduportal[icon:github[] dduportal]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
 
 image::damien.jpg[height=200]
 
@@ -42,7 +40,7 @@ image::damien.jpg[height=200]
 
 == Containous
 
-* link:https://containo.us[]
+* link:https://containo.us[https://containo.us,window=_blank]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
@@ -61,11 +59,15 @@ image::containous-logo.png["Containous Logo"]
 
 include::./includes/why-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
+// include::./includes/traefik-project.adoc[]
+
+include::./includes/traefik-by-practise.adoc[]
+
+include::./includes/simple-webserver.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/practical-example.adoc[]
+
 
 :leveloffset: -1
 

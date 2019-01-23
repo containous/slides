@@ -1,0 +1,6 @@
+= Simple Web Server
+
+== Goal
+
+* Traefik is ready
+* We want to host a static webserver

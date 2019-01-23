@@ -1,9 +1,8 @@
 
+[{invert}]
 = Why Traefik?
 
-image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
-
-Why, Mr Anderson?
+image::traefik.logo.png["Traefik's Logo",height=200]
 
 [{invert}]
 == Evolution of Software Design

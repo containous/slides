@@ -1,0 +1,93 @@
+
+= Traefik by Practise
+
+// [%notitle]
+== The Shack
+
+image::shack.jpg[]
+
+== The Shack
+
+We want a server in Amazon EC2 cloud:
+
+* to host our own SCM Server,
+* and our own Continous Integration,
+* and a static web site,
+* and a "web" command line.
+
+== Infrastructure Setup
+
+* An AWS EC2 VM with a public IP `${VM_IP}`
+* A domain name pointing to this VM `${PUBLIC_DOMAIN}`
+* Docker and docker-compose for services
+
+== Infrastructure Setup Check 1/2
+
+[source,bash]
+----
+# VM up and running
+ssh -i "${SUPER_SECRET_KEY}" ubuntu@"${VM_IP}" echo "VM reachable"
+
+# Domain name ok
+ssh -i "${SUPER_SECRET_KEY}" ubuntu@"traefik-demo.containous.cloud" echo "DNS redirects to VM_IP"
+----
+
+== Infrastructure Setup Check 1/2
+
+[source,bash]
+----
+# Docker and docker-compose installed
+$ ssh -i "${SUPER_SECRET_KEY}" ubuntu@"${PUBLIC_DOMAIN}"
+ubuntu@${VM_IP}:~$ docker version
+Client:
+ Version:           18.09.1
+...
+ubuntu@${VM_IP}:~$ docker-compose version
+docker-compose version 1.23.2, build 1110ad01
+...
+----
+
+== Reality Check
+
+link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+
+image::before-traefik-up.png[]
+
+== Let's Start Traefik 1/2
+
+* Step 1: Compose file in `/home/ubuntu/meetup/docker-compose.yml`:
+
+[source,yaml]
+----
+version: '2.4'
+
+services:
+  edge:
+    image: traefik:1.7.7
+    command: --docker # Tells Traefik to listen to docker
+    ports:
+      - "80:80"     # The HTTP port
+      - "443:443"   # The HTTPS port
+    volumes:
+      # To communicate with the Docker Engine
+      - /var/run/docker.sock:/var/run/docker.sock
+----
+
+== Let's Start Traefik 2/2
+
+* Step 2: Start the stack
+
+[source,bash]
+----
+$ docker-compose up -d
+Creating network "meetup_default" with the default driver
+Creating meetup_edge_1 ... done
+----
+
+== Reality Check
+
+link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+
+image::after-traefik-up.png[]
+
+It's good: we have an HTTP answer!
