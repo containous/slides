@@ -1,0 +1,12 @@
+= HTTPS for Everyone
+
+with Let's Encrypt
+
+== Goal
+
+* Use HTTPS instead of HTTP
+* Redirect http://traefik-demo.containous.cloud/[] to https://traefik-demo.containous.cloud/[]
+
+== Traefik Configuration
+
+TBD

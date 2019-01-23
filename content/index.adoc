@@ -63,10 +63,19 @@ include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-by-practise.adoc[]
 
-include::./includes/simple-webserver.adoc[]
+include::./includes/practise-webserver.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
+include::./includes/practise-ci.adoc[]
+
+include::./includes/practise-scm.adoc[]
+
+include::./includes/practise-websockets.adoc[]
+
+include::./includes/practise-letsencrypt.adoc[]
+
+// include::./includes/traefik-dashboard.adoc[]
 
 
 :leveloffset: -1

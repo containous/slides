@@ -28,7 +28,7 @@ verify-links:
 		18fgsa/html-proofer \
 			--check-html \
 			--http-status-ignore "999" \
-			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/" \
+			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/traefik-demo.containous.cloud/" \
         	/dist/index.html
 
 verify-w3c:

@@ -2,16 +2,17 @@
 
 == Goal
 
-* Traefik is ready
 * We want to host a static webserver under
 
-== Reality Check
+== Problem
 
-link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+* How to tell Traefik to route requests to the web server?
 
-image::after-traefik-up.png[]
-
-It's bad: we have a 404 HTTP error!
+```
+http://traefik-demo.containous.cloud/
+  -> Traefik
+    -> http://<Webserver Private IP>:80/
+```
 
 == The Web Server 1/3
 

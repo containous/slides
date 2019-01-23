@@ -1,0 +1,92 @@
+= Adding a CI Server
+
+== Goal
+
+* We want to host our own automation system for Continuous Integration
+** Let's use link:https://jenkins.io[Jenkins,window=_blank]
+
+== Reality Check
+
+Click on the "Jenkins" link:
+
+link:http://traefik-demo.containous.cloud/jenkins[http://traefik-demo.containous.cloud/jenkins,window=_blank]
+
+image::before-jenkins-up.png[]
+
+* It's bad: we have a 404 HTTP error!
+
+== Adding Jenkins
+
+* Easy peasy?
+
+[source,yaml]
+----
+...
+services
+  ...
+  jenkins:
+    image: jenkins/jenkins:2.150.2-alpine
+    expose:
+      - 8080
+      - 50000
+    labels:
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
+----
+
+== Problems
+
+* How to tell Traefik to route requests to `/jenkins` to this backend?
++
+```
+http://traefik-demo.containous.cloud/jenkins/configuration
+  -> Traefik
+    -> http://<Jenkins Private IP>:8080/jenkins
+```
+
+* How to tell Traefik to use the port `8080` (HTTP) exposed by Jenkins, and NOT the `50000` (JNLP)?
+
+* How to tell Jenkins to accept requests under `/jenkins`?
+
+== Solutions
+
+* Use the Traefik's Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]
+* Use the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]
+* Add an environment variable for Jenkins: `JENKINS_OPTS="--prefix=/jenkins"`
+
+== Setup
+
+* Step 1: Edit Compose file:
+
+[source,yaml]
+----
+...
+services
+  ...
+  jenkins:
+    image: jenkins/jenkins:2.150.2-alpine
+    expose:
+      - 8080
+      - 50000
+    labels:
+      - "traefik.port=8080"
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefix=/jenkins"
+----
+
+* Step 2: update the service
+
+[source,bash]
+----
+docker-compose up -d jenkins
+----
+
+== Reality Check
+
+Click on the "Jenkins" link:
+
+link:http://traefik-demo.containous.cloud/jenkins[http://traefik-demo.containous.cloud/jenkins,window=_blank]
+
+TBD
+// TBD
+// image::before-jenkins-up.png[]
+
+// * It's good: we have a 404 HTTP error!

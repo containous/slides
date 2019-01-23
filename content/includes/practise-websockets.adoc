@@ -1,0 +1,44 @@
+= A Web CLI
+
+== Goal
+
+* We want to host our own Web Command Line
+** Let's use link:https://github.com/tsl0922/ttyd[TTYD, Share your terminal over the web.,window=_blank]
+** It requires Websockets
+** It only serves requests under `/`
+
+```
+http://traefik-demo.containous.cloud/ttyd/ws
+  -> Traefik
+    -> http://<TTYD private IP>:7681/ws
+```
+
+== Easy Peasy!
+
+* Step 1: Edit Compose file:
+
+[source,yaml]
+----
+...
+services
+  ...
+  ttyd:
+    image: dduportal/ttyd
+    labels:
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefixStrip:/devbox"
+----
+
+* Step 2: create the service
+
+[source,bash]
+----
+docker-compose up -d ttyd
+----
+
+== Reality Check
+
+Try the "Gitea git server" link:
+
+link:http://traefik-demo.containous.cloud/gitserver[http://traefik-demo.containous.cloud/gitserver,window=_blank]
+
+TBD

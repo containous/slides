@@ -1,0 +1,30 @@
+version: '2.4'
+
+services:
+  edge:
+    image: traefik:1.7.7
+    command: --docker # Tells Traefik to listen to docker
+    ports:
+      - "80:80"     # The HTTP port
+      - "443:443"   # The HTTPS port
+    volumes:
+      # To communicate with the Docker Engine
+      - /var/run/docker.sock:/var/run/docker.sock
+  web:
+    build: ./web/
+    labels:
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
+  jenkins:
+    image: jenkins/jenkins:2.150.2-alpine
+    labels:
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
+  gitserver:
+    image: gitea/gitea:latest
+    expose:
+      - "3000"
+      - "22"
+    environment:
+      - ROOT_URL=gitserver
+    labels:
+      - "traefik.port=3000"
+      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefixStrip:/gitserver"
