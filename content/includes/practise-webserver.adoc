@@ -14,46 +14,16 @@ http://traefik-demo.containous.cloud/
     -> http://<Webserver Private IP>:80/
 ```
 
-== The Web Server 1/3
+== The Web Server Setup
 
-* Step 1: webserver files:
+* Step 1: web server in Compose. Check the `labels`:
 
-[source,bash]
+[source,yaml,indent=0]
 ----
-$ tree ./web/
-./web/
-├── Dockerfile
-└── data
-    ├── index.html
-    ├── ...
+include::../../demo/docker-compose.yml[tag=web]
 ----
 
-== The Web Server 2/3
-
-* Step 2: web server in Compose. Check the `labels`:
-
-[source,yaml]
-----
-...
-services
-  ...
-  web:
-    build: ./web/
-    labels:
-      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
-----
-
-== The Web Server 3/3
-
-* Step 3: `Dockerfile` for the web server:
-
-[source,Dockerfile]
-----
-FROM nginx:stable-alpine AS webserver
-COPY ./data/public /usr/share/nginx/html
-----
-
-== Launch the Web Server
+* Step 2: Start the Web Server:
 
 [source,bash]
 ----

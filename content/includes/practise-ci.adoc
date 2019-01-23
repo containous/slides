@@ -27,15 +27,19 @@ services
   jenkins:
     image: jenkins/jenkins:2.150.2-alpine
     expose:
-      - 8080
-      - 50000
+      - "8080"
+      - "50000"
     labels:
       - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
 ----
 
 == Problems
 
-* How to tell Traefik to route requests to `/jenkins` to this backend?
+* Jenkins exposes 2 ports: 8080 for HTTP and 50000 for JNLP. How to tell Traefik?
+
+* How to tell Jenkins to accept requests under `/jenkins`?
+
+* How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
 +
 ```
 http://traefik-demo.containous.cloud/jenkins/configuration
@@ -43,33 +47,21 @@ http://traefik-demo.containous.cloud/jenkins/configuration
     -> http://<Jenkins Private IP>:8080/jenkins
 ```
 
-* How to tell Traefik to use the port `8080` (HTTP) exposed by Jenkins, and NOT the `50000` (JNLP)?
-
-* How to tell Jenkins to accept requests under `/jenkins`?
-
 == Solutions
 
-* Use the Traefik's Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]
-* Use the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]
+* Select the port with the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]
+
 * Add an environment variable for Jenkins: `JENKINS_OPTS="--prefix=/jenkins"`
 
-== Setup
+* Change the frontend rule to use link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]
+
+== Jenkins Setup
 
 * Step 1: Edit Compose file:
 
-[source,yaml]
+[source,yaml,indent=0]
 ----
-...
-services
-  ...
-  jenkins:
-    image: jenkins/jenkins:2.150.2-alpine
-    expose:
-      - 8080
-      - 50000
-    labels:
-      - "traefik.port=8080"
-      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefix=/jenkins"
+include::../../demo/docker-compose.yml[tag=jenkins]
 ----
 
 * Step 2: update the service

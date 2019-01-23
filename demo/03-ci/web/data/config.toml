@@ -1,4 +1,0 @@
-baseURL = "https://traefik-demo.containous.cloud/"
-languageCode = "en-us"
-title = "Traefik Demo"
-theme = "ananke"

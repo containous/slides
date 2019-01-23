@@ -19,13 +19,10 @@ http://traefik-demo.containous.cloud/ttyd/ws
 
 [source,yaml]
 ----
-...
-services
-  ...
-  ttyd:
-    image: dduportal/ttyd
-    labels:
-      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefixStrip:/devbox"
+[source,yaml,indent=0]
+----
+include::../../demo/docker-compose.yml[tag=ttyd]
+----
 ----
 
 * Step 2: create the service

@@ -5,7 +5,7 @@
 * We want to host our own git server
 ** Let's use link:https://gitea.io/en-us/[Gitea, A painless self-hosted Git service.,window=_blank]
 
-== Problems
+== Problem
 
 * Gitea only serves requests under `/`: How to remove the prefix `/gitserver`?
 
@@ -23,21 +23,9 @@ http://traefik-demo.containous.cloud/gitserver/index.html
 
 * Step 1: Edit Compose file:
 
-[source,yaml]
+[source,yaml,indent=0]
 ----
-...
-services
-  ...
-  gitserver:
-    image: gitea/gitea:latest
-    expose:
-      - "3000"
-      - "22"
-    environment:
-      - ROOT_URL=/gitserver # Required for Gitea images and CSS
-    labels:
-      - "traefik.port=3000"
-      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud;PathPrefixStrip:/gitserver"
+include::../../demo/docker-compose.yml[tag=gitserver,]
 ----
 
 * Step 2: create the service
