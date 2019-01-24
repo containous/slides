@@ -103,5 +103,5 @@ docker-compose up -d edge
 
 link:http://traefik-demo.containous.cloud[http://traefik-demo.containous.cloud,window=_blank]
 
-[.shadow]
-image::after-ssl-up.png[width=500]
+// [.shadow]
+// image::after-ssl-up.png[width=500]
