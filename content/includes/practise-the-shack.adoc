@@ -27,7 +27,6 @@ We want a server in Amazon EC2 cloud:
 ssh -i "${SUPER_SECRET_KEY}" ubuntu@"demo.containous.cloud"
 
 # Docker and docker-compose installed
-$ ssh -i "${SUPER_SECRET_KEY}" ubuntu@"${PUBLIC_DOMAIN}"
 ubuntu@${VM_IP}:~$ docker version
 Client:
  Version:           18.09.1
