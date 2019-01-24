@@ -37,6 +37,20 @@
     text-rendering: optimizeLegibility;
 }
 
+.reveal small,
+.reveal .small,
+.reveal .small ul
+.reveal .small ul li,
+.reveal .small ul li p, {
+display: inline-block;
+font-size: 0.6em;
+line-height: 1.2em;
+vertical-align: top; }
+
+.reveal .small ul {
+list-style-type: none;
+}
+
 .reveal .shadow img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }

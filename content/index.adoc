@@ -83,4 +83,13 @@ include::./includes/practise-letsencrypt.adoc[]
 // ///// Finale slide
 == Thank You!
 
-Questions?
+* Find more on Traefik
+** link:https://traefik.io/[]
+
+* Recording will be available on icon:youtube[]
+** link:http://bit.ly/Containous-YT[]
+
+* You can follow us on icon:twitter[]
+** link:https://twitter.com/traefik[]
+
+* Source available at link:https://github.com/containous/slides[https://github.com/containous/slides,window=_blank]
