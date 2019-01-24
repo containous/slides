@@ -4,7 +4,7 @@
 
 == Goal
 
-* We want to host a static webserver behing Traefik
+* We want to host a static webserver behind Traefik
 
 == Problem
 
