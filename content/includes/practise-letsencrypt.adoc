@@ -1,4 +1,4 @@
-
+[{invert}]
 = HTTPS for Everyone
 
 image::demo-not-secured.png[]
@@ -101,7 +101,7 @@ docker-compose up -d edge
 
 * Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
 
-link:http://demo.containous.cloud[http://demo.containous.cloud,window=_blank]
+link:https://demo.containous.cloud[https://demo.containous.cloud,window=_blank]
 
-// [.shadow]
-// image::after-ssl-up.png[width=500]
+[.shadow]
+image::after-ssl-up.png[width=400]

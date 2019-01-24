@@ -1,3 +1,5 @@
+
+[{invert}]
 = SCM: A Gitea Git Server
 
 == Goal

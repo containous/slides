@@ -1,4 +1,5 @@
 
+[{invert}]
 = Traefik Core Concepts
 
 image::bored-minion.jpg[Bored Minion]

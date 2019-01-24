@@ -1,4 +1,5 @@
 
+[{invert}]
 = The Shack
 
 image::shack.jpg[]

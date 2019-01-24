@@ -1,3 +1,0 @@
-= Traefik Dashboard
-
-Web UI for configuration and metrics
