@@ -37,6 +37,10 @@
     text-rendering: optimizeLegibility;
 }
 
+.reveal .shadow img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
 .reveal section[data-state="invert"] p,
 .reveal section[data-state="invert"] ul,
 .reveal section[data-state="invert"] li,
@@ -61,10 +65,6 @@
 .reveal .progress section[data-state="invert"]{
   background: rgba(0, 0, 0, 0.2);
   color: rgb(55, 171, 200); }
-
-html * {
-  color-profile: sRGB;
-  rendering-intent: auto; }
 
 /*********************************************
  * GLOBAL STYLES

@@ -2,16 +2,16 @@
 
 == Goal
 
-* We want to host a static webserver under
+* We want to host a static webserver behing Traefik
 
 == Problem
 
 * How to tell Traefik to route requests to the web server?
 
 ```
-http://traefik-demo.containous.cloud/
+http://traefik-demo.containous.cloud/index.html
   -> Traefik
-    -> http://<Webserver Private IP>:80/
+    -> http://<Webserver Private IP>/index.html
 ```
 
 == The Web Server Setup
@@ -30,16 +30,18 @@ include::../../demo/docker-compose.yml[tag=web]
 docker-compose up -d web
 ----
 
+[{invert}]
 == Reality Check
 
 link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
 
+[.shadow]
 image::after-webserver-up.png[]
 
 It's good: we have a web page!
 
-== But, How?
+// == But, How?
 
-image::magic.gif[]
+// image::magic.gif[]
 
-Is it magic?
+// Is it magic?

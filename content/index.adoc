@@ -15,18 +15,6 @@ image::qrcode.png["QRCode to this presentation",height=150]
 [.small]
 Presentation available at link:{presentationUrl}[{presentationUrl},window=_blank]
 
-// //// Speaker Slide and Company slide
-== Whoami
-
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
-link:https://containo.us/[Containous,window=_blank]
-** Former Training Engineer @ CloudBees
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
-
-image::damien.jpg[height=200]
-
 [{invert}]
 == How to use these slides?
 
@@ -37,6 +25,18 @@ image::damien.jpg[height=200]
 * *Overview of the slides:* keyboard's shortcut "kbd:[o]"
 
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
+
+
+// //// Speaker Slide and Company slide
+== Whoami
+
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+
+image::damien.jpg[height=200]
 
 == Containous
 
@@ -59,9 +59,9 @@ image::containous-logo.png["Containous Logo"]
 
 include::./includes/why-traefik.adoc[]
 
-// include::./includes/traefik-project.adoc[]
+include::./includes/practise-the-shack.adoc[]
 
-include::./includes/traefik-by-practise.adoc[]
+include::./includes/practise-traefik.adoc[]
 
 include::./includes/practise-webserver.adoc[]
 
