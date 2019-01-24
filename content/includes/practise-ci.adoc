@@ -5,55 +5,53 @@
 * We want to host our own automation system for Continuous Integration
 ** Let's use link:https://jenkins.io["Jenkins",window=_blank]
 
-== Reality Check
+== Challenge 1/3
 
-Click on the "Jenkins" link:
+* **Problem:** 
+** Jenkins exposes 2 ports: `8080` and `50000`. How to let Traefik know to only use `8080`?
 
-link:http://traefik-demo.containous.cloud/jenkins[http://traefik-demo.containous.cloud/jenkins,window=_blank]
 
-image::before-jenkins-up.png[]
-
-* It's bad: we have a 404 HTTP error!
-
-== Adding Jenkins
-
-* Easy peasy?
-
-[source,yaml]
+* **Solution:** 
+** Select the port with the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]:
++
+[source,yaml,indent=0]
 ----
-...
-services
-  ...
-  jenkins:
-    image: jenkins/jenkins:2.150.2-alpine
-    expose:
-      - "8080"
-      - "50000"
-    labels:
-      - "traefik.frontend.rule=Host:traefik-demo.containous.cloud"
+include::../../demo/docker-compose.yml[tag=jenkins-labels-port]
 ----
 
-== Problems
 
-* Jenkins exposes 2 ports: 8080 for HTTP and 50000 for JNLP. How to tell Traefik?
+== Challenge 2/3
 
-* How to tell Jenkins to accept requests under `/jenkins`?
-
-* How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
+* **Problem:**
+** How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
 +
 ```
 http://traefik-demo.containous.cloud/jenkins/configuration
   -> Traefik
-    -> http://<Jenkins Private IP>:8080/jenkins
+    -> http://<Jenkins Private IP>:8080/jenkins/configuration
 ```
 
-== Solutions
+* **Solution:**
+** Change the frontend rule to use link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]:
++
+[source,yaml,indent=0]
+----
+include::../../demo/docker-compose.yml[tag=jenkins-labels-rule]
+----
 
-* Select the port with the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]
+== Challenge 3/3
 
-* Add an environment variable for Jenkins: `JENKINS_OPTS="--prefix=/jenkins"`
+* **Problem:**
+** How to tell Jenkins to accept requests under `/jenkins`?
 
-* Change the frontend rule to use link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]
+** **Solution:**
+** Use the Jenkins flag `--prefix=/jenkins` with the variable `JENKINS_OPTS`:
++
+[source,yaml,indent=0]
+----
+include::../../demo/docker-compose.yml[tag=jenkins-env-opts]
+----
+
 
 == Jenkins Setup
 
@@ -71,14 +69,14 @@ include::../../demo/docker-compose.yml[tag=jenkins]
 docker-compose up -d jenkins
 ----
 
+[{invert}]
 == Reality Check
 
 Click on the "Jenkins" link:
 
 link:http://traefik-demo.containous.cloud/jenkins[http://traefik-demo.containous.cloud/jenkins,window=_blank]
 
-TBD
-// TBD
-// image::before-jenkins-up.png[]
+[.shadow]
+image::after-jenkins-up.png[width=500]
 
-// * It's good: we have a 404 HTTP error!
+It's good: we can setup Jenkins!

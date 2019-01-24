@@ -4,8 +4,25 @@ version: '2.4'
 services:
   edge:
     image: traefik:1.7.7
-    command: 
-      - "--docker" # Tells Traefik to listen to docker
+    # tag::traefik-ssl[]
+    command:
+      # tag::traefik-entrypoints-http[]
+      - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
+      # end::traefik-entrypoints-http[]
+      # tag::traefik-entrypoints-https[]
+      - "--entryPoints=Name:https Address::443 TLS"
+      - "--defaultEntryPoints=https,http"
+      # end::traefik-entrypoints-https[]
+      # tag::traefik-entrypoints-acme[]
+      - "--acme.entryPoint=https"         # Uses LE certificates on the entrypoint "https" .
+      - "--acme.email=damien@containo.us" # Specifies the contact email for the certificates.
+      - "--acme.storage=acme.json"        # Stores certificates in the file "acme.storage".
+      - "--acme.tlsChallenge=true"        # Uses TLS Challenge.
+      - "--acme.onHostRule=true"          # Get cert's domain names from frontend rules.
+      # end::traefik-entrypoints-acme[]
+    labels:
+      - "traefik.enable=false"
+    # end::traefik-ssl[]
     ports:
       - "80:80"     # The HTTP port
       - "443:443"   # The HTTPS port

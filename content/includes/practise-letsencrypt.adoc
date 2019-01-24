@@ -1,14 +1,23 @@
 
 = HTTPS for Everyone
 
-with Let's Encrypt
+image::demo-not-secured.png[]
 
 == Goals
 
 * Use HTTPS instead of HTTP
-* Redirect http://traefik-demo.containous.cloud/[] to https://traefik-demo.containous.cloud/[]
+* Do NOT care about certificates and renewal
+* Redirect any incoming HTTP request to HTTPS:
++
+```
+http://traefik-demo.containous.cloud/
+  -> https://traefik-demo.containous.cloud/
+```
 
+[%notitle]
 == Let's Encrypt
+
+image::letsencrypt-logo-horizontal.svg[height=100]
 
 [quote]
 ____
@@ -17,50 +26,44 @@ ____
 
 It uses the "ACME" protocol to verify that you control a given domain name and to issue you a certificate.
 
-== Entrypoints Configuration
+== Problem 1/4
 
-* We need to add an entrypoint for HTTPS with
+* **Problem:** 
+** How to tell Traefik to listen on port `443` for HTTPS requests?
+
+* **Solution:**
+** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`],
+** And the default entrypoint with `--defaultentrypoints`:
 +
-[source,bash]
+[source,yaml,indent=0]
 ----
-"--entryPoints=Name:https Address::443 TLS"
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 ----
 
-* We need to specify the HTTP entrypoint to redirect to HTTPS with
+== Problem 2/4
+
+* **Problem:** 
+** How to tell Traefik to redirect request from http to https?
+
+* **Solution:**
+** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http` with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`]:
 +
-[source,bash]
+[source,yaml,indent=0]
 ----
-"--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
-----
-
-* We define `https` as the default entrypoint:
-+
-[source,bash]
-----
-"--defaultEntryPoints=https"
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 ----
 
-== ACME Configuration 1/2
+== Problem 3/4
 
-* We define the entrypoint HTTPS to use Let's Encrypt Certificates
-+
-[source,bash]
-----
-"--acme.entryPoint=https"
-----
+* **Problem:** 
+** How to tell Traefik to use Let's Encrypt for HTTPS?
 
-* Let's Encrypt requires an email for certificates:
-+
-[source,bash]
-----
-"--acme.email=damien@containo.us"
-----
+* **Solution:**
+** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider] with the flags `--acme.*`:
 
-* Define the file `acme.json` to store certificates
-+
-[source,bash]
+[source,yaml,indent=0]
 ----
-"--acme.storage=acme.json"
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
 == ACME Challenges
@@ -69,39 +72,21 @@ image::lets-encrypt-dns-challenge.png[height=250]
 
 image::lets-encrypt-http-challenge.png[height=250]
 
-== ACME Configuration 2/2
+== Problem 4/4
 
-* Specify a challenge of type TLS
-+
-[source,bash]
-----
-"--acme.tlsChallenge=true"
-----
+* **Problem:** 
+** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.traefik-demo.containous.cloud`
 
-* Get the domain name from the frontend rules
-+
-[source,bash]
-----
-"--acme.onHostRule=true"
-----
-** We need to exclude Traefik's container with the label `traefik.enable=false` (to NOT request a certificate for `edge.traefik-demo.containous.cloud`)
+* **Solution:**
+** Exclude Traefik's container with the label `traefik.enable=false`
 
 == Traefik Setup
 
 * Step 1: Adapt Compose file:
++
 [source,yaml]
 ----
-command:
-  - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
-  - "--entryPoints=Name:https Address::443 TLS"
-  - "--defaultEntryPoints=https"
-  - "--acme.entryPoint=https"
-  - "--acme.email=damien@containo.us"
-  - "--acme.storage=acme.json"
-  - "--acme.tlsChallenge=true"
-  - "--acme.onHostRule=true"
-labels:
-  - "traefik.enable=false"
+include::../../demo/docker-compose-ssl.yml[tag=traefik-ssl]
 ----
 
 * Step 2: Update the `edge` service
@@ -111,10 +96,12 @@ labels:
 docker-compose up -d edge
 ----
 
+[{invert}]
 == Reality Check
 
-Reload the index page and see the redirection to HTTPS, and the green lock
+* Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
 
-link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+link:http://traefik-demo.containous.cloud[http://traefik-demo.containous.cloud,window=_blank]
 
-TBD
+[.shadow]
+image::after-ssl-up.png[width=500]
