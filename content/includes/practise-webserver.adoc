@@ -9,7 +9,7 @@
 * How to tell Traefik to route requests to the web server?
 
 ```
-http://traefik-demo.containous.cloud/index.html
+http://demo.containous.cloud/index.html
   -> Traefik
     -> http://<Webserver Private IP>/index.html
 ```
@@ -33,7 +33,7 @@ docker-compose up -d web
 [{invert}]
 == Reality Check
 
-link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
 
 [.shadow]
 image::after-webserver-up.png[]

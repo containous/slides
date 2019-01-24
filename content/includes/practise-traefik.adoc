@@ -20,7 +20,7 @@ $ docker-compose up -d
 [{invert}]
 == Reality Check
 
-link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
 
 [.shadow]
 image::after-traefik-up.png[]

@@ -33,7 +33,7 @@ docker-compose up -d ttyd
 
 Try the "TTYD Web Command Line" link:
 
-link:http://traefik-demo.containous.cloud/ttyd[http://traefik-demo.containous.cloud/ttyd,window=_blank]
+link:http://demo.containous.cloud/ttyd[http://demo.containous.cloud/ttyd,window=_blank]
 
 [.shadow]
 image::after-ttyd-up.png[width=500]

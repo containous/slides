@@ -23,7 +23,7 @@ We want a server in Amazon EC2 cloud:
 [source,bash]
 ----
 # SSH Access OK with the domain name
-ssh -i "${SUPER_SECRET_KEY}" ubuntu@"traefik-demo.containous.cloud"
+ssh -i "${SUPER_SECRET_KEY}" ubuntu@"demo.containous.cloud"
 
 # Docker and docker-compose installed
 $ ssh -i "${SUPER_SECRET_KEY}" ubuntu@"${PUBLIC_DOMAIN}"
@@ -39,7 +39,7 @@ docker-compose version 1.23.2, build 1110ad01
 [{invert}]
 == Reality Check
 
-link:http://traefik-demo.containous.cloud/[http://traefik-demo.containous.cloud/,window=_blank]
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
 
 [.shadow]
 image::before-traefik-up.png[]

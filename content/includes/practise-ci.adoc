@@ -26,7 +26,7 @@ include::../../demo/docker-compose.yml[tag=jenkins-labels-port]
 ** How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
 +
 ```
-http://traefik-demo.containous.cloud/jenkins/configuration
+http://demo.containous.cloud/jenkins/configuration
   -> Traefik
     -> http://<Jenkins Private IP>:8080/jenkins/configuration
 ```
@@ -74,7 +74,7 @@ docker-compose up -d jenkins
 
 Click on the "Jenkins" link:
 
-link:http://traefik-demo.containous.cloud/jenkins[http://traefik-demo.containous.cloud/jenkins,window=_blank]
+link:http://demo.containous.cloud/jenkins[http://demo.containous.cloud/jenkins,window=_blank]
 
 [.shadow]
 image::after-jenkins-up.png[width=500]
