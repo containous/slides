@@ -8,10 +8,17 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* 18,500+ ⭐
-* 300M+ ⬇️
+* 20,000+ ⭐
+* 500M+ ⬇️
 * 2000+ LGTM
-* 330+ 👷
+* 350+ 👷
+
+== Why Go?
+
+* Ecosystem (Docker, Kubernetes, Etcd, Consul...)
+* Fast & "low level"
+* Fat binary
+* OSS friendly (Easy to learn/read)
 
 == I've Found A Bug!
 
