@@ -2,11 +2,21 @@
 = Let's Talk About The Future
 image::the-future.png[background, size=cover]
 
+[{invert}]
+== !
+
+image::traefikee.logo.png["TraefikEE",width=500]
+
+[{invert}]
+== !
+
+image::traefikee-architecture-gray-bg.png[background, size=cover]
+
 
 == Did you Say "High Availability"?
 
 [state=invert,background-color="rgb(249,248,248)"]
-== An Highly-Available Traefik
+== A Highly-Available Traefik
 
 image::verysecretproject-high-availability.png[width=1100]
 
@@ -20,15 +30,20 @@ image::verysecretproject-safety.png[width=1100]
 
 image::verysecretproject-scalability.png[width=1100]
 
+== As Simple As Traefik
+
+```
+$ traefikeectl install \
+  --licensekey="j1fIw4wmYHsnuTM6VUmiHAKnVzLtaQHX" \
+  --dashboard \
+  --kubernetes
+```
+
+
 [{invert}]
-== Teaser
+== Early Access
 
-image::traefik-k8s-diagram-full.jpg["Traefik with Kubernetes Full Diagram",width=900]
-
-[{invert}]
-== Very Secret Project
-
-video::devoxx-verysecretproject.mp4[width=1280,height=640]
+https://containo.us/traefikee
 
 [{invert}]
 == !

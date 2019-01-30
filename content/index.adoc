@@ -41,7 +41,7 @@ link:https://containo.us[]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 17 people, 90% technical experts
+* 20 people, 90% tech
 
 image::containous-logo.png["Containous Logo"]
 
@@ -62,7 +62,7 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/more-capabilities.adoc[]
 
-include::./includes/verysecretproject.adoc[]
+include::./includes/traefikee.adoc[]
 
 include::./includes/the-end.adoc[]
 

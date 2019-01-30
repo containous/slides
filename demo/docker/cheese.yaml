@@ -1,0 +1,49 @@
+version: '3.4'
+networks:
+ traefik_net:
+   external: true
+
+services:
+ cheddar:
+   image: errm/cheese:cheddar
+   deploy:
+     labels:
+       - "traefik.enable=true"
+       - "traefik.frontend.rule=Host:cheddar.docker.localhost"
+       - "traefik.port=80"
+       - "traefik.backend=cheddar"
+   networks:
+     - traefik_net
+ stilton:
+   image: errm/cheese:stilton
+   deploy:
+     labels:
+       - "traefik.enable=true"
+       - "traefik.frontend.rule=Host:stilton.docker.localhost"
+       - "traefik.port=80"
+       - "traefik.backend=stilton"
+   networks:
+     - traefik_net
+ wensleydale:
+   image: errm/cheese:wensleydale
+   deploy:
+     labels:
+       - "traefik.enable=true"
+       - "traefik.frontend.rule=Host:wensleydale.docker.localhost"
+       - "traefik.port=80"
+       - "traefik.backend=wensleydale"
+   networks:
+     - traefik_net
+ whoami:
+   image: emilevauge/whoami
+   deploy:
+     mode: replicated
+     replicas: 2
+     labels:
+       - "traefik.enable=true"
+       - "traefik.logLevel=DEBUG"
+       - "traefik.frontend.rule=Host:whoami.docker.localhost"
+       - "traefik.port=80"
+       - "traefik.backend=whoami"
+   networks:
+     - traefik_net
