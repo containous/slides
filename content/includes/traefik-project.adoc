@@ -1,8 +1,8 @@
 
 [{invert}]
-= The Project
+= Overview
 
-image::traefik.logo.png[Traefik's Logo,width=300]
+image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 == Traefik Project
 
@@ -12,6 +12,13 @@ image::traefik.logo.png[Traefik's Logo,width=300]
 * 500M+ ⬇️
 * 2000+ LGTM
 * 350+ 👷
+
+== Why Go?
+
+* Ecosystem (Docker, Kubernetes, Etcd, Consul...)
+* Fast & "low level enough"
+* Fat binary
+* OSS friendly (Easy to learn/read)
 
 == I've Found A Bug!
 

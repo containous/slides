@@ -65,7 +65,8 @@ include::./includes/traefik-project.adoc[]
 // == Traefik Core Concepts
 include::./includes/traefik-core-concepts.adoc[]
 
-== Show Me the Configuration
+// == Show Me the Configuration
+include::./includes/show-me-the-conf.adoc[]
 
 == Demo
 
