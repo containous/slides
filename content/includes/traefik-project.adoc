@@ -8,10 +8,10 @@ image::traefik.logo.png[Traefik's Logo,width=300]
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* 18,500+ ⭐
-* 100M+ ⬇️
-* 1400+ LGTM
-* 330+ 👷
+* 20,000+ ⭐
+* 500M+ ⬇️
+* 2000+ LGTM
+* 350+ 👷
 
 == I've Found A Bug!
 

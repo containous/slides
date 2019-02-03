@@ -43,11 +43,17 @@ image::damien.jpg[height=200]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 18 people, 90% technical experts
+* 20 people, 90% technical experts
 
 image::containous-logo.png["Containous Logo"]
 
 // //// end of Speaker Slide and Company slide
+
+== modern edge router, reverse proxy and load-balancer are, from Traefik;s point of view.
+
+== concepts and advanced features which overcome the platform entry point challenges.
+
+== And finally, we’ll dig deeper and show how we can scale these solutions and make them fault tolerant.
 
 
 // ///////////////////////
@@ -56,17 +62,17 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+// include::./includes/why-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
+// include::./includes/traefik-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+// include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/more-capabilities.adoc[]
+// include::./includes/more-capabilities.adoc[]
 
-include::./includes/verysecretproject.adoc[]
+// include::./includes/verysecretproject.adoc[]
 
 :leveloffset: -1
 
-// ///// Finale slide
+// ///// Final slide
 == Thank You!
