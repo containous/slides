@@ -1,12 +1,12 @@
 
 [%notitle]
-= Traefik: The Cloud Native Edge Router
+= You Had One Job: Configuring the Edge Router
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Traefik
+== You Had One Job
 [.title]
-The Cloud Native Edge Router
+Configuring the Edge Router
 
 image::traefik.logo.png["Traefik's Logo",height=200]
 
@@ -18,15 +18,13 @@ Presentation available at link:{presentationUrl}[]
 // //// Speaker Slide and Company slide
 == Whoami
 
-* [Speaker Name]:
-** [Speaker Details]
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
 
-* icon:envelope[] mailto:Speaker@containo.us[Speaker@containo.us]
-* link:https://twitter.com/Speaker[icon:twitter[] @Speaker]
-* link:https://github.com/Speaker[]icon:github[ Speaker]
-
-// Uncomment and add speaker photo here
-// image::Speaker.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == How to use these slides?
@@ -45,7 +43,7 @@ Presentation available at link:{presentationUrl}[]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 12 people, 90% technical experts
+* 18 people, 90% technical experts
 
 image::containous-logo.png["Containous Logo"]
 
