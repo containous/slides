@@ -1,7 +1,7 @@
 
 [%notitle]
 = You Had One Job: Configuring the Edge Router
-include::./includes/attributes.adoc[]
+include::attributes.adoc[]
 
 [{invert}]
 == You Had One Job
@@ -9,11 +9,6 @@ include::./includes/attributes.adoc[]
 Configuring the Edge Router
 
 image::traefik.logo.png["Traefik's Logo",height=200]
-
-image::qrcode.png["QRCode to this presentation",height=150]
-
-[.small]
-Presentation available at link:{presentationUrl}[]
 
 // //// Speaker Slide and Company slide
 == Whoami
@@ -57,23 +52,18 @@ image::containous-logo.png["Containous Logo"]
 :leveloffset: +1
 
 // == Why Traefik?
-include::./includes/why-traefik.adoc[]
-
-// == Traefik Project
-include::./includes/traefik-project.adoc[]
+include::{include_dir}/why-traefik.adoc[]
 
 // == Traefik Core Concepts
-include::./includes/traefik-core-concepts.adoc[]
+include::{include_dir}/traefik-core-concepts.adoc[]
 
 // == Show Me the Configuration
-include::./includes/show-me-the-conf.adoc[]
-
-= Demo
+include::{include_dir}/show-me-the-conf.adoc[]
 
 // == The Herd
-include::./includes/the-herd.adoc[]
+include::{include_dir}/the-herd.adoc[]
+
+// Thanks
+include::{include_dir}/the-end.adoc[]
 
 :leveloffset: -1
-
-// ///// Final slide
-== Thank You!

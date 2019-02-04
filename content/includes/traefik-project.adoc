@@ -1,6 +1,6 @@
 
 [{invert}]
-= Overview
+= Here Comes Traefik!
 
 image::traefik-architecture.png["Traefik's Architecture",width=900]
 

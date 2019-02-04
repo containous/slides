@@ -1,6 +1,6 @@
 
 [{invert}]
-= Show Me the Configuration
+= Show Me the Configuration!
 
 [{invert}]
 == Keep it Simple
@@ -25,7 +25,9 @@ entrypoint:
 
 image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 
-image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge, width=900]
+* TLS, DNS and HTTP challenges supported
+
+// image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge, width=900]
 
 == With 🐳: Simple backend
 
@@ -77,6 +79,10 @@ webterminal:
       - "7681"
 ----
 
+== Traefik in Action (Video)
+
+link:https://www.youtube.com/watch?v=UEB0SFaCpUY[icon:youtube[] Traefik Online Meetup: Keep the Routing Simple]
+
 [{invert}]
 == Traefik with &#9096;
 
@@ -85,8 +91,7 @@ image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=90
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
 
-
-== Did We Mention YAML?
+== Did you say YAML?
 
 [source,yaml]
 ----
@@ -111,8 +116,3 @@ spec:
 == We Missed Talking About ...
 
 image::word-cloud.png[width=900]
-
-[{invert}]
-== Demo
-
-image::demo.jpg["Demo",width=600]

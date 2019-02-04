@@ -24,3 +24,4 @@
 :stylesdir: styles
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
+:include_dir: ./includes

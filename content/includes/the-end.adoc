@@ -1,0 +1,31 @@
+
+= We have Stickers
+
+[.title]
+and Demo with Lego & Pis
+
+// image::stickers.jpg[background, size=cover]
+
+image::demo-pis.jpg[background, size=cover]
+
+[{invert}]
+== We are hiring!
+
+image::containous-logo.png["Containous"]
+
+[source,bash]
+----
+docker run -it containous/jobs
+----
+
+[{invert}]
+== Thank you!
+
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+
+image::qrcode.png["QRCode to this presentation",height=150]
+
+[.small]
+Presentation available at link:{presentationUrl}[]
