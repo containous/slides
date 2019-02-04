@@ -1,0 +1,98 @@
+
+= The Herd
+
+[{invert}]
+== Be the Goat
+
+image::the-goat-and-the-silo-50-638.jpg[]
+
+[.small]
+(C) link:https://www.youtube.com/watch?v=9KdSFf2gEZk[The Goat and the Silo by Michael Ducy], with a link:https://goatcan.do/[podcast too]
+
+== The Herd
+
+image::herd-of-goats.jpg[width=800]
+
+[.small]
+You came to the wrong neighbour
+
+[{invert}]
+== Traefik comes in Herd
+
+image::cluster-traefikee.png[]
+
+[{invert}]
+== !
+
+image::traefikee-architecture-gray-bg.png[background, size=cover]
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== An Highly Available Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="images/traefik-ee-high-availability.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+High Availability
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== A Safe Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="images/traefik-ee-safety.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+Security
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== A Scalable Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="images/traefik-ee-scalability.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+Scalability
+
+== As Simple As Traefik
+
+[source,bash]
+----
+# Cluster Installation
+traefikeectl install \
+    --licensekey="j1fIw4wmYHsnuTM6VUmiHAKnVzLtaQHX" \
+    --dashboard \
+    --kubernetes
+----
+
+[source,bash]
+----
+# Configuration
+traefikeectl deploy \
+    --acme.email=ssl-admin@mycompany.org
+    --acme.tlsChallenge
+    ...
+----
+
+[{invert}]
+== Early Access
+
+link:https://containo.us/traefikee[]
+
+[{invert}]
+== !
+image::to-be-continued.jpg[background, size=cover]

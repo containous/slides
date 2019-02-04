@@ -68,12 +68,10 @@ include::./includes/traefik-core-concepts.adoc[]
 // == Show Me the Configuration
 include::./includes/show-me-the-conf.adoc[]
 
-== Demo
+= Demo
 
-== Herd of Traefiks
-
-// include::./includes/more-capabilities.adoc[]
-
+// == The Herd
+include::./includes/the-herd.adoc[]
 
 :leveloffset: -1
 

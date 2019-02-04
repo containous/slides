@@ -78,7 +78,7 @@ webterminal:
 ----
 
 [{invert}]
-== Traefik with Kubernetes
+== Traefik with &#9096;
 
 image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
 
@@ -86,7 +86,7 @@ image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=90
 Diagram from link:https://medium.com/@geraldcroes[]
 
 
-== With Kubernetes Too!
+== Did We Mention YAML?
 
 [source,yaml]
 ----
