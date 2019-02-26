@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://demo.containous.cloud/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Traefik Demo"
 theme = "ananke"
