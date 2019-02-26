@@ -66,12 +66,6 @@ include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
-== ACME Challenges
-
-image::lets-encrypt-dns-challenge.png[height=250]
-
-image::lets-encrypt-http-challenge.png[height=250]
-
 == Problem 4/4
 
 * **Problem:** 

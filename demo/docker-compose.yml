@@ -17,7 +17,7 @@ services:
   web:
     build: ./web/
     labels:
-      - "traefik.frontend.rule=Host:localhost"
+      - "traefik.frontend.rule=Host:demo.containous.cloud"
   # end::web[]
   # tag::jenkins[]
   jenkins:

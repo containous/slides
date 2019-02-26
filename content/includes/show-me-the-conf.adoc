@@ -27,8 +27,6 @@ image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 
 * TLS, DNS and HTTP challenges supported
 
-// image::lets-encrypt-dns-challenge.png[Lets Encrypt DNS Challenge, width=900]
-
 == With 🐳: Simple backend
 
 [source,yaml]
@@ -78,10 +76,6 @@ webterminal:
     expose:
       - "7681"
 ----
-
-== Traefik in Action (Video)
-
-link:https://www.youtube.com/watch?v=UEB0SFaCpUY[icon:youtube[] Traefik Online Meetup: Keep the Routing Simple]
 
 [{invert}]
 == Traefik with &#9096;
