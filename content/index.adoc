@@ -60,6 +60,27 @@ include::{include_dir}/traefik-core-concepts.adoc[]
 // == Show Me the Configuration
 include::{include_dir}/show-me-the-conf.adoc[]
 
+// == The Shack
+include::./includes/practise-the-shack.adoc[]
+
+// == Traefik
+include::./includes/practise-traefik.adoc[]
+
+// = Simple Web Server
+include::./includes/practise-webserver.adoc[]
+
+// == Adding a CI Server
+include::./includes/practise-ci.adoc[]
+
+// == SCM: A Gitea Git Server
+include::./includes/practise-scm.adoc[]
+
+// == = A Web CLI
+include::./includes/practise-web-cli.adoc[]
+
+// == HTTPS for Everyone
+include::./includes/practise-letsencrypt.adoc[]
+
 // == The Herd
 include::{include_dir}/the-herd.adoc[]
 

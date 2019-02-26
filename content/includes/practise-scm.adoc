@@ -1,0 +1,55 @@
+
+[{invert}]
+= SCM: A Gitea Git Server
+
+== Goal
+
+* We want to host our own git server
+** Let's use link:https://gitea.io/en-us/["Gitea, A painless self-hosted Git service.",window=_blank]
+
+== Challenge
+
+* **Problem:**
+** Gitea only serves requests under `/`: How to remove the prefix `/gitserver`?
+
+```
+http://demo.containous.cloud/gitserver/index.html
+  -> Traefik
+    -> http://<Gitea private IP>:3000/index.html
+```
+
+* **Solution:**
+** Use the Traefik's Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefixStrip`,window=_blank]
+
+[source,yaml,indent=0]
+----
+include::../../demo/docker-compose.yml[tag=gitserver-labels-rule]
+----
+
+== Gitea Setup
+
+* Step 1: Edit Compose file:
+
+[source,yaml,indent=0]
+----
+include::../../demo/docker-compose.yml[tag=gitserver]
+----
+
+* Step 2: create the service
+
+[source,bash]
+----
+docker-compose up -d gitserver
+----
+
+[{invert}]
+== Reality Check
+
+Try the "Gitea Git server" link:
+
+link:http://demo.containous.cloud/gitserver[http://demo.containous.cloud/gitserver,window=_blank]
+
+[.shadow]
+image::after-gitea-up.png[width=500]
+
+It's good: we can setup Gitea!
