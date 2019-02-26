@@ -1,16 +1,6 @@
 
 = The Herd
 
-[{invert}]
-== Be the Goat
-
-image::the-goat-and-the-silo-50-638.jpg[]
-
-[.small]
-(C) link:https://www.youtube.com/watch?v=9KdSFf2gEZk[The Goat and the Silo by Michael Ducy], with a link:https://goatcan.do/[podcast too]
-
-== The Herd
-
 image::herd-of-goats.jpg[width=800]
 
 [.small]
@@ -81,7 +71,7 @@ traefikeectl install \
 
 [source,bash]
 ----
-# Configuration
+# Routing Configuration, same as Traefik's
 traefikeectl deploy \
     --acme.email=ssl-admin@mycompany.org
     --acme.tlsChallenge
@@ -92,7 +82,3 @@ traefikeectl deploy \
 == Early Access
 
 link:https://containo.us/traefikee[]
-
-[{invert}]
-== !
-image::to-be-continued.jpg[background, size=cover]
