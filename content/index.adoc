@@ -1,12 +1,12 @@
 
 [%notitle]
-= You Had One Job: Configuring the Edge Router
+= Smart Routing & HTTPS pour tous : Traefik en action !
 include::attributes.adoc[]
 
 [{invert}]
-== You Had One Job
+== Smart Routing & HTTPS pour tous
 [.title]
-Configuring the Edge Router
+Traefik en action !
 
 image::traefik.logo.png["Traefik's Logo",height=200]
 
