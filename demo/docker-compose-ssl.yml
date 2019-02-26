@@ -39,7 +39,7 @@ services:
   # end::web[]
   # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.150.2-alpine
+    image: jenkins/jenkins:2.150.3-alpine
     expose:
       - 8080
       - 50000
