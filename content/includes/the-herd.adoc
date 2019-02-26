@@ -79,6 +79,9 @@ traefikeectl deploy \
 ----
 
 [{invert}]
+== Demo
+
+[{invert}]
 == Early Access
 
 link:https://containo.us/traefikee[]
