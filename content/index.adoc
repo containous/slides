@@ -1,20 +1,23 @@
 
 [%notitle]
-= Smart Routing & HTTPS pour tous : Traefik en action !
+= You Had One Job: Configuring the Edge Proxy!
 include::attributes.adoc[]
 
 [{invert}]
-== Smart Routing & HTTPS pour tous
+== You Had One Job:
 [.title]
-Traefik en action !
+Configuring the Edge Proxy!
 
 image::traefik.logo.png["Traefik's Logo",height=200]
+
+[.small]
+*Q & A:* Join at link:https://slido.com[Slido] with `#devops2019`
 
 // //// Speaker Slide and Company slide
 == Whoami
 
 * Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
