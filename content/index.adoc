@@ -14,7 +14,7 @@ image::traefik.logo.png["Traefik's Logo",height=200]
 == Whoami
 
 * Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer Advocate @
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
