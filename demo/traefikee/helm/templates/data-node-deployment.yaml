@@ -1,0 +1,104 @@
+{{- if .Values.replicas }}
+  {{- if .Values.replicas.dataNode }}
+{{- if semverCompare "^1.9-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: apps/v1
+{{- else }}
+apiVersion: apps/v1beta1
+{{- end }}
+kind: Deployment
+metadata:
+  name: {{ template "traefikee.fullname" . }}-data-node
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  replicas: {{ .Values.replicas.dataNode.total }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name | quote}}
+      component: data-nodes
+      release: {{ .Release.Name | quote }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name | quote}}
+        component: data-nodes
+        release: {{ .Release.Name | quote }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "4646"
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: component
+                      operator: In
+                      values:
+                        - data-nodes
+                topologyKey: "kubernetes.io/hostname"
+      {{- if .Values.commons }}
+        {{- if .Values.commons.terminationGracePeriodSeconds }}
+      terminationGracePeriodSeconds: {{ .Values.commons.terminationGracePeriodSeconds }}
+        {{- end }}
+      {{- end }}
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      containers:
+        - name: {{ template "traefikee.fullname" . }}-data-node
+          image: {{ include "traefikee.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent"}}
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: DATA_NODE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  {{- if .Values.commons }}
+                  name: {{ .Values.commons.joinTokenSecretName | default (printf "traefikee-tokens" ) }}
+                  {{- else }}
+                  name: traefikee-tokens
+                  {{- end }}
+                  key: data-node
+          args:
+            - "start-data-node"
+            - "--hostname=data-node-$(POD_NAME)"
+            - "--peeraddresses={{ template "traefikee.controlNodesServiceName" . }}.{{ .Release.Namespace }}:{{ .Values.ports.control }}"
+            {{- range $loggingModule, $loggingLevel := .Values.logging }}
+            - "--traefikeelog.{{ $loggingModule }}={{ $loggingLevel }}"
+            {{- end }}
+            - "--token=$(DATA_NODE_TOKEN)"
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          ports:
+            - containerPort: {{ .Values.ports.http }}
+              name: http
+            {{- if .Values.ports.https }}
+            - containerPort: {{ .Values.ports.https }}
+              name: https
+            {{- end }}
+          {{- if .Values.resources }}
+          resources:
+            requests:
+              memory: {{ .Values.resources.requests.memory | quote }}
+              cpu: {{ .Values.resources.requests.cpu | quote }}
+            limits:
+              memory: {{ .Values.resources.limits.memory | quote }}
+              cpu: {{ .Values.resources.limits.cpu | quote }}
+          {{- end }}
+  {{- end }}
+{{- end }}

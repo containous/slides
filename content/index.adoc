@@ -24,14 +24,12 @@ image::traefik.logo.png["Traefik's Logo",height=400]
 // //// Speaker Slide and Company slide
 [{invert}]
 == Whoami
-Emile vauge
+Nicolas Mengin
 
-* 🇫🇷 Developer
-* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
-* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
-* link:https://github.com/emilevauge[icon:github[] emilevauge]
-
-image::emile-bw.jpg[height=200]
+* Developer, Part Time DevOps @ link:https://containo.us/[Containous]
+* Maintainer of link:https://traefik.io/[Træfik]
+* link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
+* link:https://github.com/nmengin[icon:github[] nmengin]
 
 [{invert}]
 == Containous

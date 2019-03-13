@@ -1,0 +1,142 @@
+{{- if semverCompare "^1.9-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: apps/v1
+{{- else }}
+apiVersion: apps/v1beta1
+{{- end }}
+kind: StatefulSet
+metadata:
+  name: {{ template "traefikee.fullname" . }}-control-node
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote}}
+    heritage: {{ .Release.Service | quote}}
+spec:
+  serviceName: {{ template "traefikee.fullname" . }}-control-nodes
+  replicas: {{ .Values.replicas.controlNode.total }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name | quote}}
+      component: control-nodes
+      subcomponent: control-node
+      release: {{ .Release.Name | quote }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name | quote}}
+        component: control-nodes
+        subcomponent: control-node
+        release: {{ .Release.Name | quote }}
+    spec:
+      serviceAccountName: {{ template "traefikee.serviceAccountName" . }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: component
+                      operator: In
+                      values:
+                        - control-nodes
+                topologyKey: "kubernetes.io/hostname"
+      {{- if .Values.commons }}
+        {{- if .Values.commons.terminationGracePeriodSeconds }}
+      terminationGracePeriodSeconds: {{ .Values.commons.terminationGracePeriodSeconds }}
+        {{- end }}
+      {{- end }}
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      containers:
+        - name: {{ template "traefikee.fullname" . }}-control-node
+          image: {{ include "traefikee.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent"}}
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: CONTROL_NODE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  {{- if .Values.commons }}
+                  name: {{ .Values.commons.joinTokenSecretName | default (printf "traefikee-tokens" ) }}
+                  {{- else }}
+                  name: traefikee-tokens
+                  {{- end }}
+                  key: control-node
+          args:
+            - "start-control-node"
+            - "--hostname=$(POD_NAME)"
+            - "--peeraddresses={{ template "traefikee.controlNodesServiceName" . }}.{{ .Release.Namespace }}:{{ .Values.ports.control }}"
+            {{- range $loggingModule, $loggingLevel := .Values.logging }}
+            - "--traefikeelog.{{ $loggingModule }}={{ $loggingLevel }}"
+            {{- end }}
+            - "--advertise=$(POD_IP):{{ .Values.ports.control }}"
+            - "--listen=$(POD_IP):{{ .Values.ports.control }}"
+            - "--token=$(CONTROL_NODE_TOKEN)"
+          securityContext:
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          ports:
+            - containerPort: {{ .Values.ports.control }}
+              name: control-port
+            - containerPort: {{ .Values.ports.api }}
+              name: api
+          {{- if .Values.resources }}
+          resources:
+            requests:
+              memory: {{ .Values.resources.requests.memory | quote }}
+              cpu: {{ .Values.resources.requests.cpu | quote }}
+            limits:
+              memory: {{ .Values.resources.limits.memory | quote }}
+              cpu: {{ .Values.resources.limits.cpu  | quote }}
+          {{- end }}
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.ports.control }}
+            initialDelaySeconds: 10
+            periodSeconds: 5
+{{- if .Values.storage}}
+  {{- if .Values.storage.controlNode }}
+    {{- if eq .Values.storage.controlNode.type "defaultStorageClass" }}
+          volumeMounts:
+            - name: {{ template "traefikee.fullname" . }}-control-node-data
+              mountPath: /var/lib/traefikee_state
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ template "traefikee.fullname" . }}-control-node-data
+        namespace: {{ .Release.Namespace }}
+        labels:
+          app: {{ .Release.Name | quote}}
+          component: control-nodes
+          subcomponent: control-node-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: {{ .Values.storage.controlNode.volume }}
+    {{- end }}
+    {{- if eq .Values.storage.controlNode.type "emptyDir" }}
+          volumeMounts:
+            - name: {{ template "traefikee.fullname" . }}-control-node-data
+              mountPath: /var/lib/traefikee_state
+      volumes:
+        - name: {{ template "traefikee.fullname" . }}-control-node-data
+          emptyDir: {}
+    {{- end }}
+  {{- end }}
+{{- end }}

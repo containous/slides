@@ -8,10 +8,10 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* 20,000+ ⭐
+* 20,000+ &#9733;
 * 500M+ ⬇️
 * 2000+ LGTM
-* 350+ 👷
+* 350+ workers
 
 == Why Go?
 
@@ -20,11 +20,3 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * Fat binary
 * OSS friendly (Easy to learn/read)
 
-== I've Found A Bug!
-
-[source,bash]
-----
-./traefik bug
-----
-
-Autofills the issue template (environment, configuration files, ...)

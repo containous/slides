@@ -1,0 +1,71 @@
+## Default values for TraefikEE (Enterprise Edition)
+image:
+  name: containous/traefikee
+  pullPolicy: IfNotPresent
+  tag: latest
+commons:
+  terminationGracePeriodSeconds: 10
+logging:
+  traefik: INFO
+ports:
+  http: 80
+  https: 443
+  api: 8080
+  control: 4242
+  # If nodeports are defined, the external service type will be nodeport instead of loadbalancer.
+  nodeports:
+    http: 30080
+    https: 30443
+bootstrap:
+  timeout: 120
+replicas:
+  bootstrap:
+    total: 1
+  controlNode:
+    total: 3
+    # ControlNode allowedUnvailable should be ceil((n/2) -1) where n is the total nodecount configured above.
+    # If you have 3 nodes, allowedUnavailable should be at most 1.
+    # This allows the control nodes to maintain quorum, even if a pod gets evicted.
+    allowedUnavailable: 1
+  # If the dataNode key is set, and there are totals defined, the data nodes will be deployed as a deployment with node anti-affinity
+  # If left undefined, the dataNodes will be deployed as a daemonset.
+  dataNode:
+    total: 2
+    allowedUnavailable: 1
+licensekey: fakeLicense
+clustername: traefikee
+resources:
+  requests:
+    memory: 100Mi
+    cpu: 100m
+  limits:
+    memory: 100Mi
+    cpu: 100m
+# storage:
+#   controlNode:
+#     # type can be emptydir, defaultStorageClass (to use the DefaultStorageClass defined in your cluster)
+#     type: emptyDir
+#     # Different storage types can configure different options such as volume.
+#     #volume: 1Gi
+#
+#
+#
+# Set the period between two cleanup iterations.
+# Recommended for cluster with flaky network (default: 5s).
+# cleanupperiod: 5s
+#
+## Enables the Dashboard
+# dashboard:
+#  ## Value can be: ingress, service-loadbalancer, or service-nodeport
+#  type: ingress
+#   # (Optional) when type is "ingress"
+#   # host: private.example.com
+#   # (Optional) when type is "ingress"
+#   # path: /dashboard
+#   # (Optional)
+#  ## Explicitly disable auth on dashboard
+#   # insecure: true
+#   # (Optional)
+#   # secretName: mysecret
+#   # (Optional)
+#   # user: admin:{SHA}C5wmJdwh7wX2rU3fR8XyA4N6oyw=

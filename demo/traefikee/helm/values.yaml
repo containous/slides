@@ -1,0 +1,76 @@
+## Default values for TraefikEE (Enterprise Edition)
+image:
+  name: containous/traefikee
+  # (Optional)
+  # pullPolicy: IfNotPresent
+  # (Optional)
+  # tag: latest
+#
+# commons:
+#   terminationGracePeriodSeconds: 10
+#   # (Optional)
+#   # joinTokenSecretName: traefikee-tokens
+#
+logging:
+  traefik: INFO
+#
+ports:
+  http: 80
+  https: 443
+  api: 8080
+  control: 4242
+  # (Optional)
+  # nodeports:
+    # http: 30080
+    # (Optional)
+    # https: 30443
+#
+bootstrap:
+  timeout: 120
+#
+
+# (Optional)
+# cleanupperiod: 10s
+
+replicas:
+  bootstrap:
+    total: 1
+  controlNode:
+    total: 3
+    # (Optional)
+    # allowedUnavailable: 1
+  # dataNode:
+    # total: 2
+    # (Optional)
+    # allowedUnavailable: 1
+#
+licensekey: fakeLicense
+clustername: traefikee
+#
+#
+# resources:
+#   requests:
+#     memory: 100Mi
+#     cpu: 100m
+#   limits:
+#     memory: 100Mi
+#     cpu: 100m
+#
+# storage:
+#   controlNode:
+#     type: emptyDir
+#     # (Optional)
+#     # volume: 1Gi
+#
+# dashboard:
+#   # type: ingress
+#   # (Optional)
+#   # host: private.example.com
+#   # (Optional)
+#   # path: /dashboard
+#   # (Optional)
+#   # insecure: true
+#   # (Optional)
+#   # secretName: mysecret
+#   # (Optional)
+#   # user: admin:{SHA}C5wmJdwh7wX2rU3fR8XyA4N6oyw=

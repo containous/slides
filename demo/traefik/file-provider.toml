@@ -1,0 +1,23 @@
+[frontends]
+  [frontends.frontend1]
+  backend = "backend1"
+    [frontends.frontend1.routes.test]
+    rule = "Host:who01.localhost.com"
+
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers.server1]
+    url = "http://127.0.0.1:1080"
+#
+# # template-rules.toml
+# # [backends]
+# # {{ range $i, $e := until 100 }}
+# #   [backends.backend{{ $e }}]
+# #     #...
+# # {{ end }}
+# #
+# # [frontends]
+# # {{ range $i, $e := until 100 }}
+# #   [frontends.frontend{{ $e }}]
+# #     #...
+# # {{ end }}

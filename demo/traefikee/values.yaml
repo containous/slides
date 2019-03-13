@@ -1,0 +1,15 @@
+bootstrap:
+  timeout: 600
+
+image:
+  name: containous/traefikee
+  tag: demo
+  pullPolicy: IfNotPresent
+
+replicas:
+  dataNode:
+    total: 2
+
+dashboard:
+  type: ingress
+  host: dashboard.docker.localhost

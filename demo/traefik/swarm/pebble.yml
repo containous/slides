@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+
+  pebble:
+    image: letsencrypt/pebble:v2.0.1
+    command: pebble -config /test/my-pebble-config.json
+    ports:
+      - 14000:14000
+    deploy:
+      replicas: 1
+    networks:
+      - net
+    environment:
+      # https://github.com/letsencrypt/pebble#testing-at-full-speed
+      - PEBBLE_VA_NOSLEEP=1
+      # https://github.com/letsencrypt/pebble#invalid-anti-replay-nonce-errors
+      - PEBBLE_WFE_NONCEREJECT=0
+    volumes:
+      - ./pebble-config.json:/test/my-pebble-config.json
+
+networks:
+  net:
+    driver: overlay

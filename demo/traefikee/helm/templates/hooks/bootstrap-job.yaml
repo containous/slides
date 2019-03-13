@@ -1,0 +1,122 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "traefikee.fullname" . }}-bootstrap
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote}}
+    heritage: {{ .Release.Service | quote}}
+  annotations:
+    "helm.sh/hook": "post-install"
+    "helm.sh/hook-weight": "0"
+    "helm.sh/hook-delete-policy": "hook-succeeded,before-hook-creation"
+spec:
+  activeDeadlineSeconds: {{ .Values.bootstrap.timeout  | default 120 }}
+  backoffLimit: 1
+  manualSelector: true
+  selector:
+    matchLabels:
+      app: {{ .Release.Name | quote}}
+      component: control-nodes
+      subcomponent: bootstrap
+      release: {{ .Release.Name | quote}}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name | quote}}
+        component: control-nodes
+        subcomponent: bootstrap
+        release: {{ .Release.Name | quote}}
+    spec:
+      serviceAccountName: {{ template "traefikee.serviceAccountBootstrapName" . }}
+      restartPolicy: Never
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: component
+                      operator: In
+                      values:
+                        - control-nodes
+                topologyKey: "kubernetes.io/hostname"
+      {{- if .Values.commons }}
+        {{- if .Values.commons.terminationGracePeriodSeconds }}
+      terminationGracePeriodSeconds: {{ .Values.commons.terminationGracePeriodSeconds }}
+        {{- end }}
+      {{- end }}
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      containers:
+        - name: {{ template "traefikee.fullname" . }}-bootstrap
+          image: {{ include "traefikee.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent"}}
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          args:
+            - "bootstrap"
+            - "--hostname=bootstrap-$(POD_NAME)"
+            {{- range $loggingModule, $loggingLevel := .Values.logging }}
+            - "--traefikeelog.{{ $loggingModule }}={{ $loggingLevel }}"
+            {{- end }}
+            - "--advertise=$(POD_IP):{{ .Values.ports.control }}"
+            - "--listen=$(POD_IP):{{ .Values.ports.control }}"
+            - "--licensekey={{ .Values.licensekey }}"
+            - "--kubernetes.namespace=$(POD_NAMESPACE)"
+            - "--expectedNodes={{ .Values.replicas.controlNode.total }}"
+            {{- if .Values.cleanupperiod }}
+            - "--cleanupperiod={{ .Values.cleanupperiod }}"
+            {{- end}}
+            {{- if .Values.dashboard }}
+            - "--api"
+            {{- end}}
+            {{- if .Values.clustername }}
+            - "--clustername={{ .Values.clustername }}"
+            {{- end}}
+            {{- if .Values.bootstrap }}
+              {{- if .Values.bootstrap.timeout }}
+            - "--timeout={{ .Values.bootstrap.timeout }}"
+              {{- end }}
+            {{- end }}
+            {{- if .Values.commons }}
+              {{- if .Values.commons.joinTokenSecretName }}
+            - "--kubernetes.secretname={{ .Values.commons.joinTokenSecretName }}"
+              {{- end }}
+            {{- end }}
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          ports:
+            - containerPort: {{ .Values.ports.control }}
+              name: control-port
+            - containerPort: {{ .Values.ports.api }}
+              name: api
+          {{- if .Values.resources }}
+          resources:
+            requests:
+              memory: {{ .Values.resources.requests.memory | quote }}
+              cpu: {{ .Values.resources.requests.cpu | quote }}
+            limits:
+              memory: {{ .Values.resources.limits.memory | quote }}
+              cpu: {{ .Values.resources.limits.cpu | quote }}
+          {{- end }}

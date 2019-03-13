@@ -1,0 +1,7 @@
+debug=true
+
+[api]
+
+[file]
+filename="./file-provider.toml"
+watch=true

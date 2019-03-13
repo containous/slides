@@ -1,0 +1,18 @@
+{{- if .Values.replicas.controlNode.allowedUnavailable }}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ template "traefikee.fullname" . }}-control-nodes
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  maxUnavailable: {{ .Values.replicas.controlNode.allowedUnavailable }}
+  selector:
+    component: control-nodes
+    app: {{ .Release.Name | quote}}
+    release: {{ .Release.Name }}
+    subcomponent: control-node
+{{- end }}

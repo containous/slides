@@ -1,0 +1,28 @@
+{{- if .Values.dashboard -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "traefikee.dashboardServiceName" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote}}
+    heritage: {{ .Release.Service | quote}}
+spec:
+  type: {{ if eq .Values.dashboard.type "service-loadbalancer" -}}
+  LoadBalancer
+  {{- else if eq .Values.dashboard.type "service-nodeport" -}}
+  NodePort
+  {{- else -}}
+  ClusterIP
+  {{- end }}
+  ports:
+    - port: {{ .Values.ports.api }}
+      targetPort: {{ .Values.ports.api }}
+      name: dashboard
+  selector:
+    app: {{ .Release.Name | quote}}
+    component: control-nodes
+    subcomponent: control-node
+{{- end -}}

@@ -1,0 +1,42 @@
+{{- if .Values.dashboard -}}
+{{- if eq .Values.dashboard.type "ingress" -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "traefikee.fullname" . }}-dashboard
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    {{- if .Values.dashboard.path }}
+      {{- if ne .Values.dashboard.path "/"}}
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+      {{- end }}
+    {{- end }}
+    {{- if not .Values.dashboard.insecure }}
+    traefik.ingress.kubernetes.io/auth-type: "basic"
+      {{- if .Values.dashboard.secretName }}
+    traefik.ingress.kubernetes.io/auth-secret: {{ .Values.dashboard.secretName | quote }}
+      {{- else }}
+    traefik.ingress.kubernetes.io/auth-secret: {{ (printf "%s-dashboard-auth" (include "traefikee.fullname" .) ) | quote }}
+      {{- end }}
+    {{- end }}
+spec:
+  rules:
+  - {{ if .Values.dashboard.host -}}
+    host: {{ .Values.dashboard.host | quote }}
+    {{ end -}}
+    http:
+      paths:
+      - {{ if .Values.dashboard.path -}}
+        path: {{ .Values.dashboard.path | quote }}
+        {{ end -}}
+        backend:
+          serviceName: {{ template "traefikee.dashboardServiceName" . }}
+          servicePort: {{ .Values.ports.api }}
+{{- end -}}
+{{- end -}}

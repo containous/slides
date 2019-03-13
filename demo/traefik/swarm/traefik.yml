@@ -1,0 +1,48 @@
+version: '3.5'
+
+networks:
+  traefik_net:
+    external: true
+
+services:
+  traefik:
+    image: traefik:1.7-alpine
+    environment:
+      LEGO_CA_CERTIFICATES: /etc/traefik/pebble.minica.pem
+      LEGO_CA_SERVER_NAME: pebble
+    volumes:
+      - ./pebble.minica.pem:/etc/traefik/pebble.minica.pem
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./acme.json:/acme.json"
+    command:
+      - "--api"
+      - "--entrypoints=Name:http Address::80 Redirect.EntryPoint:https"
+      - "--entrypoints=Name:https Address::443 TLS"
+      - "--defaultentrypoints=http,https"
+      - "--acme"
+      - "--acme.storage=/acme.json"
+      - "--acme.entryPoint=https"
+      - "--acme.httpChallenge.entryPoint=http"
+      - "--acme.onHostRule=true"
+      - "--acme.caserver=https://pebble:14000/dir"
+      - "--acme.email=contact@mydomain.ca"
+      - "--docker"
+      - "--docker.swarmMode"
+      - "--docker.watch"
+      - "--debug"
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      traefik_net:
+        aliases:
+          - who.localhost.com
+          - traefik.localhost.com
+    deploy:
+      replicas: 1
+      labels:
+        traefik.enable: "true"
+        traefik.port: "8080"
+        traefik.backend: "traefikception"
+        traefik.docker.network: "traefik_net"
+        traefik.frontend.rule: "Host:traefik.localhost.com"

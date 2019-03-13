@@ -1,0 +1,21 @@
+{{- if .Values.ports -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "traefikee.clusterInternalAPIServiceName" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote}}
+    heritage: {{ .Release.Service | quote}}
+spec:
+  ports:
+    - port: {{ .Values.ports.api }}
+      name: api
+  selector:
+    app: {{ .Release.Name | quote}}
+    component: control-nodes
+    subcomponent: control-node
+    release: {{ .Release.Name }}
+{{- end -}}

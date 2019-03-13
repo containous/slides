@@ -1,0 +1,21 @@
+{{- if .Values.replicas }}
+  {{- if .Values.replicas.dataNode }}
+    {{- if .Values.replicas.dataNode.allowedUnavailable }}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ template "traefikee.fullname" . }}-data-nodes
+  labels:
+    app: {{ .Release.Name | quote}}
+    chart: {{ include "traefikee.chartLabel" . | quote }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  maxUnavailable: {{ .Values.replicas.dataNode.allowedUnavailable }}
+  selector:
+    component: data-nodes
+    app: {{ .Release.Name | quote}}
+    release: {{ .Release.Name | quote }}
+    {{- end }}
+  {{- end }}
+{{- end }}

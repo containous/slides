@@ -1,0 +1,19 @@
+version: '3.5'
+
+networks:
+  traefik_net:
+    external: true
+
+services:
+  who:
+    image: containous/whoami
+    networks:
+      - traefik_net
+    deploy:
+      replicas: 3
+      labels:
+        traefik.enable: "true"
+        traefik.port: "80"
+        traefik.backend: "whoami"
+        traefik.frontend.rule: "Host:who.localhost.com"
+        traefik.docker.network: "traefik_test"
