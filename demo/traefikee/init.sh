@@ -1,13 +1,14 @@
-# !/bin/sh
+#!/bin/bash
 
 # TraefikEE demo
 
 # Save docker images:
 
-mkdir -p /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images
-docker save containous/traefikee-private:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-private-latest.tar
-docker save containous/traefikee:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-latest.tar
-docker save rancher/local-path-provisioner:v0.0.4 -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/local-path-provisioner.tar
+#mkdir -p /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images
+#docker save containous/traefikee:demo -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-demo.tar
+#docker save containous/traefikee-private:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-private-latest.tar
+#docker save containous/traefikee:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-latest.tar
+#docker save rancher/local-path-provisioner:v0.0.4 -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/local-path-provisioner.tar
 
 # Start k3s cluster:
 docker-compose -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/docker-compose.yaml up -d server node
