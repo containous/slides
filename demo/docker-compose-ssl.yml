@@ -1,61 +1,32 @@
-# tag::edge[]
 version: '2.4'
 
 services:
   edge:
-    image: traefik:1.7.9
-    # tag::traefik-ssl[]
+    image: traefik:2.0.0-alpha1
     command:
-      # tag::traefik-entrypoints-http[]
-      - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
-      # end::traefik-entrypoints-http[]
-      # tag::traefik-entrypoints-https[]
-      - "--entryPoints=Name:https Address::443 TLS"
-      - "--defaultEntryPoints=https,http"
-      # end::traefik-entrypoints-https[]
-      # tag::traefik-entrypoints-acme[]
-      - "--acme.entryPoint=https"         # Uses LE certificates on the entrypoint "https" .
-      - "--acme.email=damien@containo.us" # Specifies the contact email for the certificates.
-      - "--acme.storage=acme.json"        # Stores certificates in the file "acme.storage".
-      - "--acme.tlsChallenge=true"        # Uses TLS Challenge.
-      - "--acme.onHostRule=true"          # Get cert's domain names from frontend rules.
-      # end::traefik-entrypoints-acme[]
-      - "--docker"
+      - "--configfile=/traefik.toml"
     labels:
       - "traefik.enable=false"
-    # end::traefik-ssl[]
     ports:
       - "80:80"     # The HTTP port
       - "443:443"   # The HTTPS port
     volumes:
-      # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
-  # end::edge[]
-  # tag::web[]
+      - ./traefik.toml:/traefik.toml
   web:
     build: ./web/
     labels:
       - "traefik.frontend.rule=Host:demo.containous.cloud"
-  # end::web[]
-  # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.150.3-alpine
+    image: jenkins/jenkins:2.164.1-alpine
     expose:
       - 8080
       - 50000
-    # tag::jenkins-env-opts[]
     environment:
       - JENKINS_OPTS=--prefix=/jenkins
-    # end::jenkins-env-opts[]
     labels:
-      # tag::jenkins-labels-port[]
       - "traefik.port=8080"
-      # end::jenkins-labels-port[]
-      # tag::jenkins-labels-rule[]
       - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefix:/jenkins"
-      # end::jenkins-labels-rule[]
-  # end::jenkins[]
-  # tag::gitserver[]
   gitserver:
     image: gitea/gitea:latest
     expose:
@@ -65,13 +36,8 @@ services:
       - ROOT_URL=/gitserver
     labels:
       - "traefik.port=3000"
-      # tag::gitserver-labels-rule[]
       - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
-      # end::gitserver-labels-rule[]
-  # end::gitserver[]
-  # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd
     labels:
       - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
-  # end::ttyd[]
