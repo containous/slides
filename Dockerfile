@@ -11,7 +11,6 @@ RUN apk add --no-cache \
 
 # Install App's dependencies (dev and runtime)
 COPY ./package.json /app/package.json
-COPY ./npm-shrinkwrap.json /app/npm-shrinkwrap.json
 WORKDIR /app
 RUN npm install
 

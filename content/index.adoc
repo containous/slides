@@ -8,10 +8,19 @@ include::attributes.adoc[]
 [.title]
 Configuring the Edge Proxy!
 
-image::traefik.logo.png["Traefik's Logo",height=200]
+image::traefik.logo.png["Traefik's Logo",height=300]
 
 [.small]
-*Q & A:* Join at link:https://slido.com[Slido] with `#devops2019`
+DevOps Pro Europe Vilnius 2019
+
+[{invert}]
+== About This Presentation
+
+image::qrcode.png["QRCode to this presentation",height=250]
+
+* Presentation available at link:{presentationUrl}[]
+
+* *Q & A:* Join at link:https://slido.com[https://slido.com] with code `#devops2019`
 
 // //// Speaker Slide and Company slide
 == Whoami
@@ -63,29 +72,14 @@ include::{include_dir}/traefik-core-concepts.adoc[]
 // == Show Me the Configuration
 include::{include_dir}/show-me-the-conf.adoc[]
 
-// == The Shack
-include::./includes/practise-the-shack.adoc[]
-
-// == Traefik
-include::./includes/practise-traefik.adoc[]
-
-// = Simple Web Server
-include::./includes/practise-webserver.adoc[]
-
-// == Adding a CI Server
-include::./includes/practise-ci.adoc[]
-
-// == SCM: A Gitea Git Server
-include::./includes/practise-scm.adoc[]
-
-// == = A Web CLI
-include::./includes/practise-web-cli.adoc[]
-
 // == HTTPS for Everyone
-include::./includes/practise-letsencrypt.adoc[]
+include::{include_dir}/demo-https-for-everyone.adoc[]
 
 // == The Herd
 include::{include_dir}/the-herd.adoc[]
+
+// == Back to 2.0
+include::{include_dir}/back-to-2.0.adoc[]
 
 // Thanks
 include::{include_dir}/the-end.adoc[]
