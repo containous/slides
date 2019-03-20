@@ -16,9 +16,9 @@ DevOps Pro Europe Vilnius 2019
 [{invert}]
 == About This Presentation
 
-image::qrcode.png["QRCode to this presentation",height=250]
-
 * Presentation available at link:{presentationUrl}[]
+
+image::qrcode.png["QRCode to this presentation",height=250]
 
 * *Q & A:* Join at link:https://slido.com[https://slido.com] with code `#devops2019`
 
@@ -73,7 +73,7 @@ include::{include_dir}/traefik-core-concepts.adoc[]
 include::{include_dir}/show-me-the-conf.adoc[]
 
 // == HTTPS for Everyone
-include::{include_dir}/demo-https-for-everyone.adoc[]
+// include::{include_dir}/demo-https-for-everyone.adoc[]
 
 // == The Herd
 include::{include_dir}/the-herd.adoc[]
