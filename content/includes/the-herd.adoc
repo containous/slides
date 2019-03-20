@@ -11,11 +11,6 @@ You came to the wrong neighbour
 
 image::cluster-traefikee.png[]
 
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[background, size=cover]
-
 [state=invert,background-color="rgb(249,248,248)"]
 [%notitle]
 == An Highly Available Traefik
@@ -58,8 +53,16 @@ Your browser does not support the video tag.
 [.small]
 Scalability
 
+
+[{invert}]
+== !
+
+image::traefikee-architecture-gray-bg.png[background, size=cover]
+
 == As Simple As Traefik
 
+1. Install it:
++
 [source,bash]
 ----
 # Cluster Installation
@@ -69,6 +72,7 @@ traefikeectl install \
     --kubernetes
 ----
 
+2. Configure it:
 [source,bash]
 ----
 # Routing Configuration, same as Traefik's
@@ -79,9 +83,11 @@ traefikeectl deploy \
 ----
 
 [{invert}]
-== Demo
-
-[{invert}]
-== Early Access
+== Early (Free) Access
 
 link:https://containo.us/traefikee[]
+
+== But
+
+[.title]
+What About Open Source?

@@ -1,0 +1,18 @@
+
+[%notitle]
+= Back To Traefik 2.0
+
+image::back-to-2.0.png[background, size=cover]
+
+= What's New?
+
+* Vocabulary Clarification
+* Configuration Structure
+* TCP Support!
+* Middleware to Update the Requests
+* Kubernetes & CRD
+* New Expressive Routing Rule Syntax
+* Cross-Provider Support
+* TLS Termination per Route
+* Labels, Key-Value Configuration, Tags, …
+* Revamped Documentation
