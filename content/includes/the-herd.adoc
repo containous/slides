@@ -61,18 +61,19 @@ image::traefikee-architecture-gray-bg.png[background, size=cover]
 
 == As Simple As Traefik
 
-1. Install it:
-+
+* Install it:
+
 [source,bash]
 ----
 # Cluster Installation
 traefikeectl install \
-    --licensekey="j1fIw4wmYHsnuTM6VUmiHAKnVzLtaQHX" \
+    --licensekey="SuperSecretLicence" \
     --dashboard \
-    --kubernetes
+    --kubernetes # Or --swarm
 ----
 
-2. Configure it:
+* Configure it:
+
 [source,bash]
 ----
 # Routing Configuration, same as Traefik's

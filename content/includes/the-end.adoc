@@ -1,6 +1,15 @@
 
 = The End
 
+== We have 
+
+[.title]
+stickers!
+
+image::stickers.jpg[background, size=cover]
+
+// https://raw.githubusercontent.com/containous/slides/docker-geneva-2019/content/images/stickers.jpg[]
+
 [{invert}]
 == We are hiring!
 

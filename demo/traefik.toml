@@ -1,0 +1,30 @@
+
+# TCP only works with file provider for today
+[providers.files]
+
+[entrypoints]
+    [entrypoints.web]
+      address = ":80"
+    [entrypoints.web-secure]
+      address = ":443"
+
+[http]
+   [http.routers.to-service-1]
+      rule = "Host(`demo.containous.cloud`)"
+      service = "service-1"
+      [http.routers.to-service-1.tls]
+    
+
+[tcp]
+   [tcp.routers.to-service-2]
+      rule = "HostSNI(`demo.containous.cloud`)"
+      service = "service-2"
+      [tcp.routers.to-service-2.tls]
+         # terminates the tls connection and sends clear data
+         # to service 2
+
+[tcp.routers.to-service-3]
+      rule = "HostSNI(`demo.containous.cloud`)"
+      service = "service-3"
+      [tcp.routers.to-service-3.tls]
+         passthrough = true # sends encrypted data "as is" to service-3
