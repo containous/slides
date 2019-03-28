@@ -8,7 +8,7 @@
 +
 [source,yaml]
 ----
-include::../../demo/docker-compose.yml[tag=edge]
+include::../../demo/v1/docker-compose.yml[tag=edge]
 ----
 
 * Step 2: Start the stack

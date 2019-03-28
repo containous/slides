@@ -23,7 +23,7 @@ http://demo.containous.cloud/gitserver/index.html
 
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose.yml[tag=gitserver-labels-rule]
+include::../../demo/v1/docker-compose.yml[tag=gitserver-labels-rule]
 ----
 
 == Gitea Setup
@@ -32,7 +32,7 @@ include::../../demo/docker-compose.yml[tag=gitserver-labels-rule]
 
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose.yml[tag=gitserver]
+include::../../demo/v1/docker-compose.yml[tag=gitserver]
 ----
 
 * Step 2: create the service

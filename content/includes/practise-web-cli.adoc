@@ -20,7 +20,7 @@
 
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose.yml[tag=ttyd]
+include::../../demo/v1/docker-compose.yml[tag=ttyd]
 ----
 
 * Step 2: create the service
