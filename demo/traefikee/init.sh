@@ -9,6 +9,7 @@
 #docker save containous/traefikee-private:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-private-latest.tar
 #docker save containous/traefikee:latest -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/traefikee-latest.tar
 #docker save rancher/local-path-provisioner:v0.0.4 -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/local-path-provisioner.tar
+#docker save gcr.io/kubernetes-helm/tiller:v2.11.0 -o /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/images/tiller.tar
 
 # Start k3s cluster:
 docker-compose -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/docker-compose.yaml up -d server node
@@ -28,3 +29,5 @@ kubectl apply -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-d
 kubectl apply -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/tracing/
 kubectl apply -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/whoami/
 kubectl apply -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/hotrod/
+
+docker-compose -f /home/nicolas/go/src/github.com/containous/advocacy/traefikee-demo/docker-compose.yaml up -d traefik
