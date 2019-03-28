@@ -6,9 +6,11 @@ include::attributes.adoc[]
 [{invert}]
 == Smart Routing & HTTPS pour tous
 [.title]
-Traefik en action !
+image:traefik.logo.png["Traefik's Logo",height=100] en action !
 
-image::traefik.logo.png["Traefik's Logo",height=200]
+image::docker-bday-6.png["Docker 6th Bday",width=300]
+
+
 
 // //// Speaker Slide and Company slide
 == Whoami
