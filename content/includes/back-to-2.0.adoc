@@ -39,41 +39,40 @@ image::traefik-v2-middlewares.png[width=1100]
 
 image::traefik-v2-tcp.png[]
 
-== Quick Glance
+[{invert}]
+== Demo 1 - Straightforward TCP Routing
 
-[source,toml]
-----
-[entrypoints]
-    [entrypoints.web-secure]
-      address = ":443"
-----
+image::demo1-v2-tcp.png[]
 
-[source,toml]
-----
-[http]
-   [http.routers.to-service-1]
-      rule = "Host(`demo.containous.cloud`)"
-      service = "service-1"
-      [http.routers.to-service-1.tls] # terminates the tls connection at HTTP
-----
+[{invert}]
+== Demo 1 - Configuration
 
-[source,toml]
-----
-[tcp]
-   [tcp.routers.to-service-2]
-      rule = "HostSNI(`demo.containous.cloud`)"
-      service = "service-2"
-      [tcp.routers.to-service-2.tls] # terminates the tls connection at TCP
-----
+image::demo1-v2-config.png[]
 
-[source,toml]
-----
-[tcp.routers.to-service-3]
-      rule = "HostSNI(`demo.containous.cloud`)"
-      service = "service-3"
-      [tcp.routers.to-service-3.tls]
-         passthrough = true # sends encrypted data "as is" to service-3
-----
+[{invert}]
+== Demo 2 - Let’s Add TLS to TCP with Traefik
+
+image::demo2-v2-tcp-tls.png[]
+
+[{invert}]
+== Demo 2 - Configuration
+
+image::demo2-v2-config.png[]
+
+[{invert}]
+== Demo 3 - SNI Routing + TLS Passthrough
+
+image::demo3-v2-tcp-sni.png[]
+
+[{invert}]
+== Demo 3 - Configuration
+
+image::demo3-v2-config.png[]
+
+[{invert}]
+== Demo 4 - Muxing HTTPS and TCP on the Same Port
+
+image::demo4-v2-tcp-http.png[]
 
 == And so Much More...
 

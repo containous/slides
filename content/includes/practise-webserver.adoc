@@ -22,7 +22,7 @@ http://demo.containous.cloud/index.html
 
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose.yml[tag=web]
+include::../../demo/v1/docker-compose.yml[tag=web]
 ----
 
 * Step 2: Start the Web Server:

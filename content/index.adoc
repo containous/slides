@@ -6,21 +6,11 @@ include::attributes.adoc[]
 [{invert}]
 == You Had One Job:
 [.title]
-Configuring the Edge Proxy!
+image:traefik.logo.png["Traefik's Logo",height=100] en action !
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::docker-bday-6.png["Docker 6th Bday",width=300]
 
-[.small]
-DevOps Pro Europe Vilnius 2019
 
-[{invert}]
-== About This Presentation
-
-* Presentation available at link:{presentationUrl}[]
-
-image::qrcode.png["QRCode to this presentation",height=250]
-
-* *Q & A:* Join at link:https://slido.com[https://slido.com] with code `#devops2019`
 
 // //// Speaker Slide and Company slide
 == Whoami

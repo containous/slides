@@ -37,7 +37,7 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
+include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 ----
 
 == Problem 2/4
@@ -50,7 +50,7 @@ include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
+include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 ----
 
 == Problem 3/4
@@ -63,7 +63,7 @@ include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 
 [source,yaml,indent=0]
 ----
-include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
+include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
 == Problem 4/4
@@ -80,7 +80,7 @@ include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 +
 [source,yaml]
 ----
-include::../../demo/docker-compose-ssl.yml[tag=traefik-ssl]
+include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-ssl]
 ----
 
 * Step 2: Update the `edge` service
