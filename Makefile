@@ -20,7 +20,7 @@ build: clean
 		--exit-code-from build \
 	build
 
-verify: verify-links verify-w3c
+verify: verify-links
 
 verify-links:
 	@docker run --rm \
@@ -28,11 +28,8 @@ verify-links:
 		18fgsa/html-proofer \
 			--check-html \
 			--http-status-ignore "999" \
-			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/" \
+			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/.containous.cloud/" \
         	/dist/index.html
-
-verify-w3c:
-	docker run --rm -v $(CURDIR)/dist:/app stratdat/html5validator
 
 serve: clean
 	@docker-compose up --build --force-recreate serve
@@ -55,4 +52,4 @@ chmod:
 	@docker run --rm -t -v $(CURDIR):/app \
 		alpine chown -R "$$(id -u):$$(id -g)" /app
 
-.PHONY: all build verify verify-links verify-w3c serve deploy qrcode chmod
+.PHONY: all build verify verify-links serve deploy qrcode chmod

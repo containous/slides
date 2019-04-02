@@ -8,6 +8,7 @@ x-slides-base: &slides-base
       - PRESENTATION_URL=${PRESENTATION_URL}
   volumes:
       - ./content:/app/content
+      - ./demo:/app/demo
       - ./dist:/app/dist
       - ./assets:/app/assets
       - ./gulp/gulpfile.js:/app/gulpfile.js

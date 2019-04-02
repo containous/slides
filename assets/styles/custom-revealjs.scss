@@ -106,11 +106,11 @@ body {
 .reveal div.title p {
   margin: 0 0 20px 0;
   color: #e2e2e2;
-  font-family: "Open Sans condensed", Impact, sans-serif;
-  font-weight: bold;
+  font-family: "Rancho", Impact, sans-serif;
+  font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-shadow: none;
   word-wrap: break-word; }
 
@@ -305,6 +305,10 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-color: #268bd2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+.reveal span img {
+  vertical-align: text-bottom;
+}
 
 /*********************************************
  * NAVIGATION CONTROLS
