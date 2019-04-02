@@ -8,8 +8,8 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* 20,000+ ⭐
-* 500M+ ⬇️
+* 21,000+ ⭐
+* 600M+ ⬇️
 * 2000+ LGTM
 * 350+ 👷
 

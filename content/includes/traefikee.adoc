@@ -1,10 +1,6 @@
 
-= Let's Talk About The Future
-image::the-future.png[background, size=cover]
-
 [{invert}]
-== !
-
+= !
 image::traefikee.logo.png["TraefikEE",width=500]
 
 [{invert}]
@@ -44,7 +40,3 @@ $ traefikeectl install \
 == Early Access
 
 https://containo.us/traefikee
-
-[{invert}]
-== !
-image::to-be-continued.jpg[background, size=cover]

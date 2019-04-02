@@ -31,7 +31,7 @@ Emile vauge
 * link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
 * link:https://github.com/emilevauge[icon:github[] emilevauge]
 
-image::emile-bw.jpg[height=200]
+image::emile-bw.png[height=200]
 
 [{invert}]
 == Containous
@@ -63,6 +63,8 @@ include::./includes/traefik-core-concepts.adoc[]
 include::./includes/more-capabilities.adoc[]
 
 include::./includes/traefikee.adoc[]
+
+include::./includes/v2.adoc[]
 
 include::./includes/the-end.adoc[]
 

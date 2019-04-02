@@ -8,6 +8,6 @@ docker run --name traefik \
     --docker.swarmMode \
     --api
     
- docker stack deploy -c demo/docker/cheese.yaml cheese
+ docker stack deploy -c demo/traefik-v1/docker/cheese.yaml cheese
 
  docker stack rm cheese
