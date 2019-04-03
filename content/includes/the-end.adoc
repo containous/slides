@@ -1,33 +1,30 @@
 
-= The End
-
-== We have 
+= We have 
 
 [.title]
 stickers!
 
 image::stickers.jpg[background, size=cover]
 
-// https://raw.githubusercontent.com/containous/slides/docker-geneva-2019/content/images/stickers.jpg[]
-
 [{invert}]
+
 == We are hiring!
 
 image::containous-logo.png["Containous"]
 
-[source,bash]
-----
+```
 docker run -it containous/jobs
-----
+```
+
 
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
 
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+link:https://github.com/emilevauge[icon:github[] emilevauge]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
-Presentation available at link:{presentationUrl}[]
+{presentationUrl}[{presentationUrl}]

@@ -1,27 +1,14 @@
 
 [%notitle]
-= You Had One Job: Configuring the Edge Proxy!
-include::attributes.adoc[]
+= Traefik: The Cloud Native Edge Router
+include::./includes/attributes.adoc[]
 
 [{invert}]
-== You Had One Job:
-[.title]
-image:traefik.logo.png["Traefik's Logo",height=100] en action !
+== Traefik
 
-image::docker-bday-6.png["Docker 6th Bday",width=300]
+A Scalable and Highly Available Edge Router
 
-
-
-// //// Speaker Slide and Company slide
-== Whoami
-
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
-
-image::damien.jpg[height=200]
+image::traefik.logo.png["Traefik's Logo",height=400]
 
 [{invert}]
 == How to use these slides?
@@ -34,13 +21,27 @@ image::damien.jpg[height=200]
 
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
+// //// Speaker Slide and Company slide
+[{invert}]
+== Whoami
+Emile vauge
+
+* 🇫🇷 Developer
+* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
+* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
+* link:https://github.com/emilevauge[icon:github[] emilevauge]
+
+image::emile-bw.png[height=200]
+
+[{invert}]
 == Containous
 
-* link:https://containo.us[]
+link:https://containo.us[]
+
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 20 people, 90% technical experts
+* 20 people, 90% tech
 
 image::containous-logo.png["Containous Logo"]
 
@@ -53,25 +54,18 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-// == Why Traefik?
-include::{include_dir}/why-traefik.adoc[]
+include::./includes/why-traefik.adoc[]
 
-// == Traefik Core Concepts
-include::{include_dir}/traefik-core-concepts.adoc[]
+include::./includes/traefik-project.adoc[]
 
-// == Show Me the Configuration
-include::{include_dir}/show-me-the-conf.adoc[]
+include::./includes/traefik-core-concepts.adoc[]
 
-// == HTTPS for Everyone
-// include::{include_dir}/demo-https-for-everyone.adoc[]
+include::./includes/more-capabilities.adoc[]
 
-// == The Herd
-include::{include_dir}/the-herd.adoc[]
+include::./includes/traefikee.adoc[]
 
-// == Back to 2.0
-include::{include_dir}/back-to-2.0.adoc[]
+include::./includes/v2.adoc[]
 
-// Thanks
-include::{include_dir}/the-end.adoc[]
+include::./includes/the-end.adoc[]
 
 :leveloffset: -1

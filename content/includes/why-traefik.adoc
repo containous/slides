@@ -19,10 +19,6 @@ image::asterix-premise.jpg[Asterix - Premise]
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
-== Where is the Service?
-
-image::where-is-charlie.jpg["Where os Charlie?",width=900]
-
 [{invert}]
 == Tools of the Trade
 
@@ -42,6 +38,10 @@ image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
 
+== Where's My Service?
+
+image::where-is-charlie.jpg["Where os Charlie?",width=900]
+
 == !
 
 image::yaml.jpg[width=900]
@@ -58,13 +58,4 @@ That You Don't Have to Write This Configuration File...?
 [{invert}]
 == Here Comes Traefik!
 
-image::traefik-architecture.png["Traefik's Architecture",width=900]
-
-== Traefik Project
-
-* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
-* MIT License
-* Written in Go, a popular language
-* 20,000+ ⭐
-* 500M+ ⬇️
-* 350+ 👷
+image::traefik.logo.png[Traefik's Logo,width=300]
