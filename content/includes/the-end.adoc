@@ -6,24 +6,12 @@ stickers!
 
 image::stickers.jpg[background, size=cover]
 
-// [{invert}]
-
-// == We are hiring!
-
-// image::containous-logo.png["Containous"]
-
-// ```
-// docker run -it containous/jobs
-// ```
-
 [{invert}]
-== Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+== We are hiring!
 
-link:https://github.com/dduportal[icon:github[] dduportal]
+image::containous-logo.png["Containous"]
 
-image::qrcode.png["QRCode to this presentation",height=150]
-
-[.small]
-{presentationUrl}[{presentationUrl}]
+```
+docker run -it containous/jobs
+```
