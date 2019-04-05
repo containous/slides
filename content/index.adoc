@@ -1,13 +1,12 @@
 
 [%notitle]
-= Smart Routing et HTTPS pour tous : Traefik en action !
+= Le seigneur des conteneurs : un atelier de migration vers Kubernetes et Traefik
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Smart Routing et HTTPS pour tous
+== Le seigneur des conteneurs
 
-[.title]
-Traefik en action !
+Un atelier de migration vers Kubernetes et Traefik
 
 image::traefik.logo.png["Traefik",height=300]
 
@@ -15,7 +14,6 @@ image:qrcode.png["QRCode to this presentation",height=100]
 
 [.small]
 {presentationUrl}[{presentationUrl}]
-
 
 [{invert}]
 == How to use these slides?
@@ -29,8 +27,18 @@ image:qrcode.png["QRCode to this presentation",height=100]
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
+[{invert}]
+== Whoami 1/2
+Nicolas Mengin
 
-== Whoami
+* Developer, Part Time DevOps @ link:https://containo.us/[Containous]
+* Maintainer of link:https://traefik.io/[Træfik]
+* link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
+* link:https://github.com/nmengin[icon:github[] nmengin]
+
+image::nicolas.jpg[height=200]
+
+== Whoami 2/2
 
 * Damien DUPORTAL:
 ** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
@@ -79,8 +87,10 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
+link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
 link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
-
+ 
+link:https://github.com/nmengin[icon:github[] nmengin]
 link:https://github.com/dduportal[icon:github[] dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
