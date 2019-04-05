@@ -69,15 +69,17 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
+include::./includes/practise-traefik.adoc[]
+
 include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/traefikee.adoc[]
+// include::./includes/traefikee.adoc[]
 
-include::./includes/v2.adoc[]
+// include::./includes/v2.adoc[]
 
 include::./includes/the-end.adoc[]
 
