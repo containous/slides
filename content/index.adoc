@@ -8,12 +8,12 @@ include::./includes/attributes.adoc[]
 
 Un atelier de migration vers Kubernetes et Traefik
 
-image::traefik.logo.png["Traefik",height=300]
-
-image:qrcode.png["QRCode to this presentation",height=100]
-
 [.small]
 {presentationUrl}[{presentationUrl}]
+
+image::gandalf-gopher.png["Gandalf Gopher",height=300]
+
+image::qrcode.png["QRCode to this presentation",height=100]
 
 [{invert}]
 == How to use these slides?
