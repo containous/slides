@@ -33,6 +33,7 @@ var tasks_dir_path = './tasks',
         listen_port: process.env.LISTEN_PORT || 8000,
         livereload_port: process.env.LIVERELOAD_PORT || 35729,
     };
+plugins.asciidoctorRevealjs.register();
 
 fs.readdirSync(tasks_dir_path).forEach(function (file) {
     'use strict';
