@@ -40,8 +40,8 @@ serve: clean
 	@docker-compose up --build --force-recreate serve
 
 shell:
-	@docker-compose up --build --force-recreate -d serve
-	@docker-compose exec serve sh
+	@docker-compose up --build --force-recreate -d wait
+	@docker-compose exec --user root wait sh
 
 $(DIST_DIR)/index.html: build
 
