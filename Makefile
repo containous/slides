@@ -1,5 +1,5 @@
-CURRENT_UID=$(shell id -u):$(shell id -g)
-
+CURRENT_UID = $(shell id -u):$(shell id -g)
+DIST_DIR ?= $(CURRENT_DIR)/dist
 ifdef TRAVIS_TAG
 PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_TAG)
 else
@@ -15,16 +15,18 @@ export PRESENTATION_URL CURRENT_UID
 all: clean build verify
 
 # Generate documents inside a container, all *.adoc in parallel
-build: clean
+build: clean $(DIST_DIR)
+	ls -la $(DIST_DIR)
 	@docker-compose up \
 		--build \
 		--force-recreate \
 		--exit-code-from build \
 	build
 
-verify: verify-links
+$(DIST_DIR):
+	mkdir -p $(DIST_DIR)
 
-verify-links:
+verify:
 	@docker run --rm \
 		-v $(CURDIR)/dist:/dist \
 		--user $(CURRENT_UID) \
@@ -44,7 +46,8 @@ shell:
 $(CURDIR)/dist/index.html: build
 
 pdf: $(CURDIR)/dist/index.html
-	docker run --rm -t -v $(CURDIR)/dist:/slides astefanutti/decktape:2.9 \
+	ls -la $(DIST_DIR)
+	@docker run --rm -t -v $(CURDIR)/dist:/slides astefanutti/decktape:2.9 \
 		--user $(CURRENT_UID) \
 		/slides/index.html \
 		/slides/slides.pdf \
@@ -64,4 +67,4 @@ chmod:
 	@docker run --rm -t -v $(CURDIR):/app \
 		alpine chown -R "$$(id -u):$$(id -g)" /app
 
-.PHONY: all build verify verify-links serve deploy qrcode chmod pdf
+.PHONY: all build verify serve deploy qrcode chmod pdf
