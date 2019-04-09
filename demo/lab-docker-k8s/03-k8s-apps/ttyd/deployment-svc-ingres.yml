@@ -1,0 +1,52 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: ttyddeployment
+  namespace: devoxx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        pod: ttydPOD
+    spec:
+      containers:
+        - name: ttydcontainer
+          image: tsl0922/ttyd:latest
+          imagePullPolicy: IfNotPresent
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ttydservice
+  namespace: devoxx
+spec:
+  type: ClusterIP
+  ports:
+    - port: 7681
+      targetPort: 7681
+      name: ttydsp
+  selector:
+    pod: ttydPOD
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ttydingress
+  namespace: devoxx
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.rule.type: PathPrefixStrip
+spec:
+  rules:
+  - host: lab.nicolas.containous.cloud
+    http:
+      paths:
+      - path: /ttyd
+        backend:
+          serviceName: ttydservice
+          servicePort: 7681

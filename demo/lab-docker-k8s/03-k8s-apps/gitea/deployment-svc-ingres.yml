@@ -1,0 +1,57 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: giteadeployment
+  namespace: devoxx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        pod: giteaPOD
+    spec:
+      containers:
+        - name: giteacontainer
+          image: gitea/gitea:latest
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: ROOT_URL
+            value: "/gitserver"
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: giteaservice
+  namespace: devoxx
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: 3000
+      name: giteasp
+    - port: 22
+      targetPort: 22
+      name: giteasshsp
+  selector:
+    pod: giteaPOD
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: giteaingress
+  namespace: devoxx
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.rule.type: PathPrefixStrip
+spec:
+  rules:
+  - host: lab.nicolas.containous.cloud
+    http:
+      paths:
+      - path: /gitserver
+        backend:
+          serviceName: giteaservice
+          servicePort: 3000

@@ -1,0 +1,36 @@
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkinsservice
+  namespace: devoxx
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: jenkinssp
+    - port: 50000
+      targetPort: 50000
+      name: jenkinsadminsp
+  selector:
+    pod: jenkinsPOD
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkinsingress
+  namespace: devoxx
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: lab.nicolas.containous.cloud
+    http:
+      paths:
+      - path: /jenkins
+        backend:
+          serviceName: jenkinsservice
+          servicePort: 8080
