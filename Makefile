@@ -16,7 +16,6 @@ all: clean build verify
 
 # Generate documents inside a container, all *.adoc in parallel
 build: clean $(DIST_DIR)
-	ls -la $(DIST_DIR)
 	@docker-compose up \
 		--build \
 		--force-recreate \
@@ -46,7 +45,6 @@ shell:
 $(DIST_DIR)/index.html: build
 
 pdf: $(DIST_DIR)/index.html
-	ls -la $(DIST_DIR)
 	@docker run --rm -t \
 		-v $(DIST_DIR):/slides \
 		--user $(CURRENT_UID) \
@@ -60,7 +58,7 @@ deploy: pdf
 
 clean:
 	@docker-compose down -v --remove-orphans
-	rm -rf $(DIST_DIR)
+	@rm -rf $(DIST_DIR)
 
 qrcode:
 	@docker-compose up --build --force-recreate qrcode
