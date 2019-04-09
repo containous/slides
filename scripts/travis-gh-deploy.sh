@@ -30,13 +30,11 @@ if [ -n "${TRAVIS_TAG}" ]; then
     echo "== Using tag ${TRAVIS_TAG}"
     DEPLOY_DIR="${DOCS_DIR}/${TRAVIS_TAG}"
     # Generate QRCode and overwrite the default one
-    make chmod
     make qrcode
 elif [ -n "${TRAVIS_BRANCH}" ] && [ "${TRAVIS_BRANCH}" != "master" ]; then
     echo "== Using branch ${TRAVIS_BRANCH}"
     DEPLOY_DIR="${DOCS_DIR}/${TRAVIS_BRANCH}"
     # Generate QRCode and overwrite the default one
-    make chmod
     make qrcode
 else
     DEPLOY_DIR="${DOCS_DIR}"
