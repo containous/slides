@@ -38,12 +38,18 @@ shell:
 	@docker-compose up --build --force-recreate -d serve
 	@docker-compose exec serve sh
 
-deploy:
+pdf: build
+	docker run --rm -t -v $(CURDIR)/dist:/slides astefanutti/decktape:2.9 \
+		/slides/index.html \
+		/slides/slides.pdf \
+		--size='2048x1536'
+
+deploy: pdf
 	@bash $(CURDIR)/scripts/travis-gh-deploy.sh
 
 clean: chmod
 	@docker-compose down -v --remove-orphans
-	rm -rf $(CURDIR)/dist $(CURDIR)/docs
+	rm -rf $(CURDIR)/dist
 
 qrcode:
 	@docker-compose up --build --force-recreate qrcode
@@ -52,4 +58,4 @@ chmod:
 	@docker run --rm -t -v $(CURDIR):/app \
 		alpine chown -R "$$(id -u):$$(id -g)" /app
 
-.PHONY: all build verify verify-links serve deploy qrcode chmod
+.PHONY: all build verify verify-links serve deploy qrcode chmod pdf
