@@ -1,25 +1,29 @@
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: webservice
+  name: web-service
   namespace: devoxx
+  labels:
+    guilde: web
 spec:
   type: ClusterIP
   ports:
     - port: 80
-      targetPort: 80
-      name: websp
+      name: web-http
   selector:
-    pod: webPOD
+    labels:
+      guilde: web
+      faction: server
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: webingress
+  name: web-ingress
   namespace: devoxx
+  labels:
+    guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
 spec:
@@ -29,5 +33,4 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: webservice
-          servicePort: 80
+          serviceName: web-service

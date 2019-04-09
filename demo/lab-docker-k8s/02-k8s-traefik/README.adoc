@@ -44,3 +44,9 @@ helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./helm/v
 helm ls
 helm delete --purge traefik-devoxx
 ---
+
+== Notes
+
+- `helm upgrade` does not work as expected (pod never stoppped)
+- ACME on dashboard: will not work because domain is not set on LoadBalancer, adding timeout works for tls? => enable ingress after manually
+- helm by default set `tls-sni-challenge` instead of ` tls-alpn-challenge`

@@ -1,28 +1,30 @@
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkinsservice
+  name: jenkins-service
   namespace: devoxx
+  labels:
+    guilde: ci
 spec:
   type: ClusterIP
   ports:
     - port: 8080
-      targetPort: 8080
-      name: jenkinssp
+      name: jenkins-http
     - port: 50000
-      targetPort: 50000
-      name: jenkinsadminsp
+      name: jenkins-admin
   selector:
-    pod: jenkinsPOD
+    guilde: ci
+    faction: jenkins
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkinsingress
+  name: jenkins-ingress
   namespace: devoxx
+  labels:
+    guilde: ci
   annotations:
     kubernetes.io/ingress.class: 'traefik'
 spec:
@@ -32,5 +34,5 @@ spec:
       paths:
       - path: /jenkins
         backend:
-          serviceName: jenkinsservice
+          serviceName: jenkins-service
           servicePort: 8080

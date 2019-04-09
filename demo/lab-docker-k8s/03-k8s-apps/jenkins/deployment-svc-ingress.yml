@@ -2,51 +2,59 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: ttyddeployment
+  name: jenkins-deployment
   namespace: devoxx
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        pod: ttydPOD
+        guilde: ci
+        faction: jenkins
     spec:
       containers:
-        - name: ttydcontainer
-          image: tsl0922/ttyd:latest
+        - name: jenkins-container
+          image: jenkins/jenkins:2.150.3-alpine
           imagePullPolicy: IfNotPresent
+          env:
+          - name: JENKINS_OPTS
+            value: "--prefix=/jenkins"
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: ttydservice
+  name: jenkins-service
   namespace: devoxx
+  labels:
+    guilde: ci
 spec:
   type: ClusterIP
   ports:
-    - port: 7681
-      targetPort: 7681
-      name: ttydsp
+    - port: 8080
+      name: jenkins-http
+    - port: 50000
+      name: jenkins-admin
   selector:
-    pod: ttydPOD
+    guilde: ci
+    faction: jenkins
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ttydingress
+  name: jenkins-ingress
   namespace: devoxx
+  labels:
+    guilde: ci
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
     http:
       paths:
-      - path: /ttyd
+      - path: /jenkins
         backend:
-          serviceName: ttydservice
-          servicePort: 7681
+          serviceName: jenkins-service
+          servicePort: 8080

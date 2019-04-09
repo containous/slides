@@ -1,28 +1,29 @@
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: ttydservice
+  name: ttyd-service
   namespace: devoxx
+  labels:
+    guilde: console
 spec:
   type: ClusterIP
   ports:
     - port: 7681
-      targetPort: 7681
-      name: ttydsp
+      name: ttyd-ws
   selector:
-    pod: ttydPOD
+    guilde: console
+    faction: tty
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ttydingress
+  name: ttyd-ingress
   namespace: devoxx
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    traefik.frontend.rule.type: PathPrefix
+    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
@@ -30,5 +31,4 @@ spec:
       paths:
       - path: /ttyd
         backend:
-          serviceName: ttydservice
-          servicePort: 7681
+          serviceName: ttyd-service

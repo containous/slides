@@ -2,29 +2,32 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: giteaservice
+  name: gitea-server
   namespace: devoxx
+  labels:
+    guilde: git
 spec:
   type: ClusterIP
   ports:
     - port: 3000
-      targetPort: 3000
-      name: giteasp
+      name: gitea-http
     - port: 22
-      targetPort: 22
-      name: giteasshsp
+      name: gitea-ssh
   selector:
-    pod: giteaPOD
+    guilde: git
+    faction: server
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: giteaingress
+  name: gitea-ingress
   namespace: devoxx
+  labels:
+    guilde: git
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    traefik.frontend.rule.type: PathPrefixS
+    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
@@ -32,5 +35,5 @@ spec:
       paths:
       - path: /gitserver
         backend:
-          serviceName: giteaservice
+          serviceName: gitea-server
           servicePort: 3000

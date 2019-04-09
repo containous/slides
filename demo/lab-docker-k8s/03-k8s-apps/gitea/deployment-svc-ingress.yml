@@ -2,56 +2,60 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: jenkinsdeployment
+  name: gitea-deployment
   namespace: devoxx
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        pod: jenkinsPOD
+        guilde: git
+        faction: server
     spec:
       containers:
-        - name: jenkinscontainer
-          image: jenkins/jenkins:2.150.3-alpine
+        - name: gitea-container
+          image: gitea/gitea:latest
           imagePullPolicy: IfNotPresent
           env:
-          - name: JENKINS_OPTS
-            value: "--prefix=/jenkins"
----
+          - name: ROOT_URL
+            value: "/gitserver"
 
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkinsservice
+  name: gitea-server
   namespace: devoxx
+  labels:
+    guilde: git
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
-      targetPort: 8080
-      name: jenkinssp
-    - port: 50000
-      targetPort: 50000
-      name: jenkinsadminsp
+    - port: 3000
+      name: gitea-http
+    - port: 22
+      name: gitea-ssh
   selector:
-    pod: jenkinsPOD
+    guilde: git
+    faction: server
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkinsingress
+  name: gitea-ingress
   namespace: devoxx
+  labels:
+    guilde: git
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    traefik.ingress.kubernetes.io/frontend-entry-points: https
+    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
     http:
       paths:
-      - path: /jenkins
+      - path: /gitserver
         backend:
-          serviceName: jenkinsservice
-          servicePort: 8080
+          serviceName: gitea-server
+          servicePort: 3000
