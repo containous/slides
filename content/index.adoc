@@ -1,14 +1,19 @@
 
 [%notitle]
-= Traefik: The Cloud Native Edge Router
+= Smart Routing et HTTPS pour tous : Traefik en action !
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Traefik
+== Smart Routing et HTTPS pour tous
 
-A Scalable and Highly Available Edge Router
+Traefik en action !
 
-image::traefik.logo.png["Traefik's Logo",height=400]
+[.small]
+{presentationUrl}[{presentationUrl}]
+
+image::traefik.png["Traefik",height=300]
+
+image::qrcode.png["QRCode to this presentation",height=100]
 
 [{invert}]
 == How to use these slides?
@@ -22,16 +27,16 @@ image::traefik.logo.png["Traefik's Logo",height=400]
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
-[{invert}]
+
 == Whoami
-Emile vauge
 
-* 🇫🇷 Developer
-* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
-* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
-* link:https://github.com/emilevauge[icon:github[] emilevauge]
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
 
-image::emile-bw.png[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == Containous

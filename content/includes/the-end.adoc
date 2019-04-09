@@ -1,5 +1,5 @@
 
-= We have 
+= We have
 
 [.title]
 stickers!
@@ -16,13 +16,12 @@ image::containous-logo.png["Containous"]
 docker run -it containous/jobs
 ```
 
-
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
+link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 
-link:https://github.com/emilevauge[icon:github[] emilevauge]
+link:https://github.com/dduportal[icon:github[] dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 

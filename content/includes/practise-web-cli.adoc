@@ -20,7 +20,7 @@
 
 [source,yaml,indent=0]
 ----
-include::../../demo/v1/docker-compose.yml[tag=ttyd]
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=ttyd]
 ----
 
 * Step 2: create the service

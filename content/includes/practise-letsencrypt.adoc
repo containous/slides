@@ -28,7 +28,7 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 
 == Problem 1/4
 
-* **Problem:** 
+* **Problem:**
 ** How to tell Traefik to listen on port `443` for HTTPS requests?
 
 * **Solution:**
@@ -37,12 +37,12 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
+include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 ----
 
 == Problem 2/4
 
-* **Problem:** 
+* **Problem:**
 ** How to tell Traefik to redirect request from http to https?
 
 * **Solution:**
@@ -50,12 +50,12 @@ include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
+include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 ----
 
 == Problem 3/4
 
-* **Problem:** 
+* **Problem:**
 ** How to tell Traefik to use Let's Encrypt for HTTPS?
 
 * **Solution:**
@@ -63,12 +63,12 @@ include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 
 [source,yaml,indent=0]
 ----
-include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
+include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
 == Problem 4/4
 
-* **Problem:** 
+* **Problem:**
 ** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.demo.containous.cloud`
 
 * **Solution:**
@@ -80,7 +80,7 @@ include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 +
 [source,yaml]
 ----
-include::../../demo/v1/docker-compose-ssl.yml[tag=traefik-ssl]
+include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-ssl]
 ----
 
 * Step 2: Update the `edge` service

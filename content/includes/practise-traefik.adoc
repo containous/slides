@@ -8,7 +8,7 @@
 +
 [source,yaml]
 ----
-include::../../demo/v1/docker-compose.yml[tag=edge]
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=edge]
 ----
 
 * Step 2: Start the stack
