@@ -11,7 +11,7 @@ Traefik en action !
 [.small]
 {presentationUrl}[{presentationUrl}]
 
-image::traefik.png["Traefik",height=300]
+image::traefik.logo.png["Traefik",height=300]
 
 image::qrcode.png["QRCode to this presentation",height=100]
 
