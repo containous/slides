@@ -1,3 +1,4 @@
+CURRENT_UID=$(shell id -u):$(shell id -g)
 
 ifdef TRAVIS_TAG
 PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_TAG)
@@ -8,7 +9,8 @@ else
 	PRESENTATION_URL ?= https://containous.github.io/slides
 	endif
 endif
-export PRESENTATION_URL
+export PRESENTATION_URL CURRENT_UID
+
 
 all: clean build verify
 
@@ -25,6 +27,7 @@ verify: verify-links
 verify-links:
 	@docker run --rm \
 		-v $(CURDIR)/dist:/dist \
+		--user $(CURRENT_UID) \
 		18fgsa/html-proofer \
 			--check-html \
 			--http-status-ignore "999" \
@@ -38,8 +41,11 @@ shell:
 	@docker-compose up --build --force-recreate -d serve
 	@docker-compose exec serve sh
 
-pdf: build
+$(CURDIR)/dist/index.html: build
+
+pdf: $(CURDIR)/dist/index.html
 	docker run --rm -t -v $(CURDIR)/dist:/slides astefanutti/decktape:2.9 \
+		--user $(CURRENT_UID) \
 		/slides/index.html \
 		/slides/slides.pdf \
 		--size='2048x1536'

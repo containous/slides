@@ -5,21 +5,22 @@ x-slides-base: &slides-base
   build: ./
   image: slides-builder
   environment:
-      - PRESENTATION_URL=${PRESENTATION_URL}
+    - PRESENTATION_URL=${PRESENTATION_URL}
+  user: ${CURRENT_UID}
   volumes:
-      - ./content:/app/content
-      - ./demo:/app/demo
-      - ./dist:/app/dist
-      - ./assets:/app/assets
-      - ./gulp/gulpfile.js:/app/gulpfile.js
-      - ./gulp/tasks:/app/tasks
-      - ./package.json:/app/package.json
+    - ./content:/app/content
+    - ./demo:/app/demo
+    - ./dist:/app/dist
+    - ./assets:/app/assets
+    - ./gulp/gulpfile.js:/app/gulpfile.js
+    - ./gulp/tasks:/app/tasks
+    - ./package.json:/app/package.json
 
 services:
   serve:
     <<: *slides-base
     ports:
-        - "8000:8000"
+      - "8000:8000"
 
   build:
     <<: *slides-base
