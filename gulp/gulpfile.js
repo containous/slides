@@ -54,6 +54,4 @@ gulp.task('build', gulp.series(
     'html'
 ));
 
-gulp.task('pdf', gulp.series('build', 'pdf-generate'));
-
 gulp.task('default', gulp.series('clean', 'build', 'serve', 'watch'));
