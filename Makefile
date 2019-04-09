@@ -47,8 +47,10 @@ $(DIST_DIR)/index.html: build
 
 pdf: $(DIST_DIR)/index.html
 	ls -la $(DIST_DIR)
-	@docker run --rm -t -v $(DIST_DIR):/slides astefanutti/decktape:2.9 \
+	@docker run --rm -t \
+		-v $(DIST_DIR):/slides \
 		--user $(CURRENT_UID) \
+		astefanutti/decktape:2.9 \
 		/slides/index.html \
 		/slides/slides.pdf \
 		--size='2048x1536'
