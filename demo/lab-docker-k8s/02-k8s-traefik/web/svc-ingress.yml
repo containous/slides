@@ -7,14 +7,11 @@ metadata:
   labels:
     guilde: web
 spec:
-  type: ClusterIP
   ports:
-    - port: 80
-      name: web-http
-  selector:
-    labels:
-      guilde: web
-      faction: server
+  - port: 80
+    name: fake-http
+  type: ExternalName
+  externalName: redirect.containous.cloud
 
 ---
 apiVersion: extensions/v1beta1
@@ -26,11 +23,14 @@ metadata:
     guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
     http:
       paths:
-      - path: /
+      - path: /foobar
         backend:
           serviceName: web-service
+          servicePort: fake-http

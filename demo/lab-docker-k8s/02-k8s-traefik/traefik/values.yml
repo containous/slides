@@ -300,24 +300,24 @@ acme:
     # existingClaim:
 dashboard:
   enabled: true
-  domain: dashboard.nicolas.containous.cloud
-  # serviceType: ClusterIP
+  #domain: dashboard.nicolas.containous.cloud
+  serviceType: ClusterIP
   service: {}
     # annotations:
     #   key: value
   ingress:
     annotations:
-      kubernetes.io/ingress.class: 'traefik'
+      kubernetes.io/ingress.class: 'nginx'
     # labels:
     #   key: value
     # tls:
       # - hosts:
       #   - traefik.example.com
       #   secretName: traefik-default-cert
-  auth: {}
+  # auth: {}
     # basic:
     #   username: password
-  statistics: {}
+  # statistics: {}
     ## Number of recent errors to show in the ‘Health’ tab
     # recentErrors:
 service:

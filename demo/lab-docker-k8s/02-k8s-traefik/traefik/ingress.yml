@@ -1,0 +1,19 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-ingress
+  namespace: devoxx
+  labels:
+    guilde: reverse-proxy
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: traefik.nicolas.containous.cloud
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: traefik-devoxx-dashboard
+          servicePort: 80

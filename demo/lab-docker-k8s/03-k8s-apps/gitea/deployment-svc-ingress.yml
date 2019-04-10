@@ -58,4 +58,4 @@ spec:
       - path: /gitserver
         backend:
           serviceName: gitea-server
-          servicePort: 3000
+          servicePort: gitea-http

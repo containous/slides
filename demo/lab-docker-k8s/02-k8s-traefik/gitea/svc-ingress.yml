@@ -7,15 +7,11 @@ metadata:
   labels:
     guilde: git
 spec:
-  type: ClusterIP
   ports:
-    - port: 3000
-      name: gitea-http
-    - port: 22
-      name: gitea-ssh
-  selector:
-    guilde: git
-    faction: server
+  - port: 80
+    name: fake-http
+  type: ExternalName
+  externalName: redirect.containous.cloud
 
 ---
 apiVersion: extensions/v1beta1
@@ -27,7 +23,8 @@ metadata:
     guilde: git
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
   - host: lab.nicolas.containous.cloud
@@ -36,4 +33,3 @@ spec:
       - path: /gitserver
         backend:
           serviceName: gitea-server
-          servicePort: 3000
