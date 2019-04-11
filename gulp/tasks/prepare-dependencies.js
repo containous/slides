@@ -1,7 +1,6 @@
-/*jslint node: true, stupid: true */
+/*jslint node: true */
 module.exports = function (gulp, plugins, current_config) {
     'use strict';
-    ////////////////////////// Managing Our ToC with custom tocify script and its deps
     gulp.task('prepare:revealjs', function () {
         var baseRevealJSPath = current_config.nodeModulesDir + '/reveal.js',
             revealJsDestDir = current_config.distDir + '/reveal.js',

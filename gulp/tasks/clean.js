@@ -1,4 +1,4 @@
-/*jslint node: true, stupid: true */
+/*jslint node: true */
 module.exports = function (gulp, plugins, current_config) {
     'use strict';
     gulp.task('clean', function (done) {
