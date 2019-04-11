@@ -6,14 +6,16 @@ include::./includes/attributes.adoc[]
 [{invert}]
 == Smart Routing et HTTPS pour tous
 
+[.title]
 Traefik en action !
+
+image::traefik.logo.png["Traefik",height=300]
+
+image:qrcode.png["QRCode to this presentation",height=100]
 
 [.small]
 {presentationUrl}[{presentationUrl}]
 
-image::traefik.logo.png["Traefik",height=300]
-
-image::qrcode.png["QRCode to this presentation",height=100]
 
 [{invert}]
 == How to use these slides?
