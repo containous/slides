@@ -1,0 +1,14 @@
+
+[{invert}]
+= Overview
+
+image::traefik-architecture.png["Traefik's Architecture",width=900]
+
+== Traefik Project
+
+* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+* MIT License
+* 21,000+ ⭐
+* 600M+ ⬇️
+* 2000+ LGTM
+* 350+ 👷

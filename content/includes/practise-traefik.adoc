@@ -21,9 +21,9 @@ $ docker-compose up -d
 [{invert}]
 == Reality Check
 
-link:http://lab00.ddu-workshops-1.com/[http://labXX.ddu-workshops-Y.com/,window=_blank]
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
 
 [.shadow]
-image::after-traefik-up-devoxx.png[]
+image::after-traefik-up.png[]
 
 It's good: we have an HTTP answer!
