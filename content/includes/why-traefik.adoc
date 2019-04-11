@@ -58,4 +58,13 @@ That You Don't Have to Write This Configuration File...?
 [{invert}]
 == Here Comes Traefik!
 
-image::traefik.logo.png[Traefik's Logo,width=300]
+image::traefik-architecture.png["Traefik's Architecture",width=900]
+
+== Traefik Project
+
+* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+* MIT License
+* Written in Go
+* 21,000+ ⭐
+* 600M+ ⬇️
+* 350+ 👷

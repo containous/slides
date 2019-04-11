@@ -1,42 +1,94 @@
 
+= The Herd
+
+image::herd-of-goats.jpg[width=800]
+
+[.small]
+You came to the wrong neighbour
+
 [{invert}]
-= !
-image::traefikee.logo.png["TraefikEE",width=500]
+== Traefik comes in Herd
+
+image::cluster-traefikee.png[]
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== An Highly Available Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="videos/traefik-ee-high-availability.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+High Availability
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== A Safe Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="videos/traefik-ee-safety.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+Security
+
+[state=invert,background-color="rgb(249,248,248)"]
+[%notitle]
+== A Scalable Traefik
+
+++++
+<video class="center" width="1024" height="768" autoplay muted controls loop>
+  <source src="videos/traefik-ee-scalability.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+++++
+
+[.small]
+Scalability
+
 
 [{invert}]
 == !
 
 image::traefikee-architecture-gray-bg.png[background, size=cover]
 
-
-== Did you Say "High Availability"?
-
-[state=invert,background-color="rgb(249,248,248)"]
-== A Highly-Available Traefik
-
-image::verysecretproject-high-availability.png[width=1100]
-
-[state=invert,background-color="rgb(249,248,248)"]
-== A Safe Traefik
-
-image::verysecretproject-safety.png[width=1100]
-
-[state=invert,background-color="rgb(249,248,248)"]
-== A Scalable Traefik
-
-image::verysecretproject-scalability.png[width=1100]
-
 == As Simple As Traefik
 
-```
-$ traefikeectl install \
-  --licensekey="j1fIw4wmYHsnuTM6VUmiHAKnVzLtaQHX" \
-  --dashboard \
-  --kubernetes
-```
+* Install it:
 
+[source,bash]
+----
+# Cluster Installation
+traefikeectl install \
+    --licensekey="SuperSecretLicence" \
+    --dashboard \
+    --kubernetes # Or --swarm
+----
+
+* Configure it:
+
+[source,bash]
+----
+# Routing Configuration, same as Traefik's
+traefikeectl deploy \
+    --acme.email=ssl-admin@mycompany.org
+    --acme.tlsChallenge
+    ...
+----
 
 [{invert}]
-== Early Access
+== Early (Free) Access
 
-https://containo.us/traefikee
+link:https://containo.us/traefikee[]
+
+== But
+
+[.title]
+What About Open Source?

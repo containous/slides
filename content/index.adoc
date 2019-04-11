@@ -61,11 +61,9 @@ image::containous-logo.png["Containous Logo"]
 
 include::./includes/why-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
-
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/more-capabilities.adoc[]
+include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/traefikee.adoc[]
 
