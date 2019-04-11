@@ -8,6 +8,10 @@ include::./includes/attributes.adoc[]
 
 Un atelier de migration vers Kubernetes et Traefik
 
+image::traefik.logo.png["Traefik",height=300]
+
+image:qrcode.png["QRCode to this presentation",height=100]
+
 [.small]
 {presentationUrl}[{presentationUrl}]
 

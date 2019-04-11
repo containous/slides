@@ -6,15 +6,15 @@ stickers!
 
 image::stickers.jpg[background, size=cover]
 
-[{invert}]
+// [{invert}]
 
-== We are hiring!
+// == We are hiring!
 
-image::containous-logo.png["Containous"]
+// image::containous-logo.png["Containous"]
 
-```
-docker run -it containous/jobs
-```
+// ```
+// docker run -it containous/jobs
+// ```
 
 [{invert}]
 == Thank you!
