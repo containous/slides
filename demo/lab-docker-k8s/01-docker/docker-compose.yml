@@ -34,7 +34,7 @@ services:
       - "traefik.port=8080"
       # end::jenkins-labels-port[]
       # tag::jenkins-labels-rule[]
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefix:/jenkins"
+      - "traefik.frontend.rule=PathPrefix:/jenkins"
       # end::jenkins-labels-rule[]
   # end::jenkins[]
   # tag::gitserver[]
@@ -48,12 +48,12 @@ services:
     labels:
       - "traefik.port=3000"
       # tag::gitserver-labels-rule[]
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
+      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
       # end::gitserver-labels-rule[]
   # end::gitserver[]
   # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd
     labels:
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
+      - "traefik.frontend.rule=PathPrefixStrip:/ttyd"
   # end::ttyd[]
