@@ -24,6 +24,6 @@ $ docker-compose up -d
 link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
 [.shadow]
-image::after-traefik-up.png[]
+image::after-traefik-up-devoxx.png[]
 
 It's good: we have an HTTP answer!

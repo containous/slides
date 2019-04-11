@@ -71,6 +71,16 @@ image::containous-logo.png["Containous Logo"]
 
 // Presentation
 
+include::./includes/practise-letsencrypt.adoc[]
+
+include::./includes/practise-webserver.adoc[]
+
+include::./includes/practise-ci.adoc[]
+
+include::./includes/practise-scm.adoc[]
+
+include::./includes/practise-web-cli.adoc[]
+
 include::./includes/why-traefik.adoc[]
 
 // Lab 1
