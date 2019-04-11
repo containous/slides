@@ -73,8 +73,6 @@ image::containous-logo.png["Containous Logo"]
 
 include::./includes/why-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
-
 // Lab 1
 
 include::./includes/practise-lab1.adoc[]
