@@ -1,0 +1,17 @@
+
+= Lab 2 Traefik & Kubernetes
+
+[{invert}]
+== Remember the Diagram?
+
+image::traefik-architecture.png["Traefik's Architecture",width=1000]
+
+[{invert}]
+== In Kubernetes
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+== Let's Go

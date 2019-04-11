@@ -1,0 +1,34 @@
+
+[{invert}]
+= The House
+
+image::shack.jpg[]
+
+== The House
+
+We want to begin the migration of our services from the Google Cloud VM to a Kubernetes cluster in Google Cloud:
+
+* keep the Docker services
+* migrate Traefik to Kubernetes
+* access to the Docker services through Traefik in Kubernetes
+
+== Infrastructure Setup
+
+* A Google Cloud GKE server with a public IP `35.178.178.237` and SSH access
+* A domain name `demo.containous.cloud` pointing to `35.178.178.237`
++
+[source,bash]
+----
+$ dig +short demo.containous.cloud
+35.178.178.237
+----
+
+* Kubernetes and Helm to deploy the infrastructure
+
+[{invert}]
+== Reality Check
+
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+
+[.shadow]
+image::before-traefik-up.png[]

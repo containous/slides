@@ -69,11 +69,19 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
+// Presentation
+
+include::./includes/why-traefik.adoc[]
+
+include::./includes/traefik-project.adoc[]
+
+// Lab 1
+
+include::./includes/practise-lab1.adoc[]
+
 include::./includes/practise-the-shack.adoc[]
 
 include::./includes/practise-traefik.adoc[]
-
-include::./includes/practise-letsencrypt.adoc[]
 
 include::./includes/practise-webserver.adoc[]
 
@@ -83,11 +91,17 @@ include::./includes/practise-scm.adoc[]
 
 include::./includes/practise-web-cli.adoc[]
 
-include::./includes/why-traefik.adoc[]
+include::./includes/practise-letsencrypt.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+// Lab 2
 
-include::./includes/show-me-the-conf.adoc[]
+include::./includes/practise-lab2.adoc[]
+
+include::./includes/practise-the-house.adoc[]
+
+include::./includes/practise-traefik-lab2.adoc[]
+
+include::./includes/practise-webserver-lab2.adoc[]
 
 // include::./includes/traefikee.adoc[]
 

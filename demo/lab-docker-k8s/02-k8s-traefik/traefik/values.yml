@@ -1,26 +1,34 @@
 ## Default values for Traefik
+# tag::version[]
 image: traefik
 imageTag: 1.7.10
+# end::version[]
 
-debug:
+# tag::rbac[]
+# Allow creating the needed Role and Service Account
+rbac:
   enabled: true
+# end::rbac[]
 
+# tag::ssl[]
 ssl:
-  enabled: true
-  enforced: true
+enabled: true
+enforced: true
+# end::ssl[]
 
+# tag::acme[]
 acme:
   enabled: true
   email: devoxxlab@containo.us
   onHostRule: true
   staging: true
   challengeType: tls-alpn-01
+# end::acme[]
 
+# tag::api[]
 dashboard:
   enabled: true
   ingress:
     annotations:
       kubernetes.io/ingress.class: 'nginx'
-
-rbac:
-  enabled: true
+# end::api[]

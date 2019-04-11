@@ -1,0 +1,70 @@
+
+[{invert}]
+= Simple Web Server
+
+== Goal
+
+* We want to host a static webserver behind Traefik
+
+== Problem
+
+* How to tell Traefik to route requests to the web server?
+
+```
+http://demo.containous.cloud/index.html
+  -> Traefik
+    -> http://<Webserver Private IP>/index.html
+```
+
+== Traefik configured to listen to Kubernetes API
+
+* Step 1: Configure the Helm Chart values.yml file
+
+[source,yaml,indent=0]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
+----
+
+* Step 2: (Re) Install Traefik
+
+[source,bash]
+----
+helm delete --purge traefik-devoxx
+helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values.yml
+helm ls
+----
+
+== The Web Server Setup
+
+* Step 1: Declare the Ingress Rule
+
+[source,yaml,indent=0]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
+----
+
+== !
+
+* Step 2: Declare a Headless Service
+
+[source,yaml,indent=0]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
+----
+
+* Step 3: Apply the configuration
+
+[source,bash]
+----
+kubectl apply -f ./web/svc-ingress.yml
+----
+
+[{invert}]
+== Reality Check
+
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+
+[.shadow]
+image::after-webserver-up.png[]
+
+It's good: we have a web page!

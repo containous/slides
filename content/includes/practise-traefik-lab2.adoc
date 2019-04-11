@@ -1,0 +1,41 @@
+[{invert}]
+= Traefik
+
+== Traefik Setup
+
+* Step 1: Install Helm
++
+[source,bash]
+----
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+# add a service account within a namespace to segregate tiller
+kubectl --namespace kube-system create sa tiller
+# create a cluster role binding for tiller
+kubectl create clusterrolebinding tiller \
+    --clusterrole cluster-admin \
+    --serviceaccount=kube-system:tiller
+# initialized helm within the tiller service account
+helm init --service-account tiller
+# updates the repos for Helm repo integration
+helm repo update
+----
+
+* Step 2: Deploy Traefik
++
+[source,bash]
+----
+helm install stable/traefik \
+ --name traefik-devoxx \
+ --namespace kube-system
+helm ls
+----
+
+[{invert}]
+== Reality Check
+
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+
+[.shadow]
+image::after-traefik-up.png[]
+
+It's good: we have an HTTP answer!

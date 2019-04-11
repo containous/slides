@@ -1,3 +1,4 @@
+# tag::svc[]
 ---
 apiVersion: v1
 kind: Service
@@ -12,7 +13,9 @@ spec:
     name: fake-http
   type: ExternalName
   externalName: redirect.containous.cloud
+# end::svc[]
 
+# tag::ingress[]
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -34,3 +37,4 @@ spec:
         backend:
           serviceName: web-service
           servicePort: fake-http
+# end::ingress[]
