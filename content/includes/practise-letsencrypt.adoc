@@ -33,11 +33,11 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 
 * **Solution:**
 ** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`],
-** And the default entrypoint with `--defaultentrypoints`:
+** Set it as a default entrypoint with `--defaultentrypoints`:
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 ----
 
 == Problem 2/4
@@ -50,7 +50,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 ----
 
 == Problem 3/4
@@ -63,7 +63,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
 == Problem 4/4
@@ -80,7 +80,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 +
 [source,yaml]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-ssl]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-ssl]
 ----
 
 * Step 2: Update the `edge` service

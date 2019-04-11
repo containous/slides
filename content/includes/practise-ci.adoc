@@ -18,7 +18,7 @@
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-labels-port]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins-labels-port]
 ----
 
 
@@ -38,7 +38,7 @@ http://demo.containous.cloud/jenkins/configuration
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-labels-rule]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins-labels-rule]
 ----
 
 == Challenge 3/3
@@ -51,7 +51,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-lab
 +
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-env-opts]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins-env-opts]
 ----
 
 
@@ -61,7 +61,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-env
 
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins]
 ----
 
 * Step 2: update the service

@@ -5,7 +5,7 @@ services:
   edge:
     image: traefik:1.7.10
     command:
-      - "--docker.domain=demo.containous.cloud"
+      - "--docker"
     ports:
       - "80:80"
       - "443:443"

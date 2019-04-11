@@ -23,7 +23,7 @@ http://demo.containous.cloud/gitserver/index.html
 
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=gitserver-labels-rule]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver-labels-rule]
 ----
 
 == Gitea Setup
@@ -32,7 +32,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=gitserver-l
 
 [source,yaml,indent=0]
 ----
-include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=gitserver]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver]
 ----
 
 * Step 2: create the service
