@@ -33,7 +33,7 @@ build: clean $(DIST_DIR)
 $(DIST_DIR):
 	mkdir -p $(DIST_DIR)
 
-verify:
+verify: $(DIST_DIR)/index.html
 	@docker run --rm \
 		-v $(DIST_DIR):/dist \
 		--user $(CURRENT_UID) \
@@ -43,10 +43,10 @@ verify:
 			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/demo.containous.cloud/" \
         	/dist/index.html
 
-serve: clean
+serve: clean $(DIST_DIR)
 	@docker-compose up --build --force-recreate serve
 
-shell:
+shell: $(DIST_DIR)
 	@docker-compose up --build --force-recreate -d wait
 	@docker-compose exec --user root wait sh
 
@@ -68,7 +68,7 @@ clean:
 	@docker-compose down -v --remove-orphans
 	@rm -rf $(DIST_DIR)
 
-qrcode:
+qrcode: $(DIST_DIR)
 	@docker-compose up --build --force-recreate qrcode
 
 .PHONY: all build verify serve deploy qrcode pdf
