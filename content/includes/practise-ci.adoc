@@ -27,11 +27,12 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins-labe
 * **Problem:**
 ** How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
 +
-```
-http://demo.containous.cloud/jenkins/configuration
+[source,bash,subs="attributes+"]
+----
+http://{lab-domain}/jenkins/configuration
   -> Traefik
     -> http://<Jenkins Private IP>:8080/jenkins/configuration
-```
+----
 
 * **Solution:**
 ** Change the frontend rule to use link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]:
