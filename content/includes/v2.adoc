@@ -19,7 +19,7 @@ image::traefik-v2-concepts.png[]
 
 image:traefik-v2-rules.png[width=800]
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 
 # Send both requests to backend service: 

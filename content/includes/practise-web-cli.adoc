@@ -25,7 +25,7 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=ttyd]
 
 * Step 2: create the service
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 docker-compose up -d ttyd
 ----

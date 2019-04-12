@@ -7,7 +7,7 @@
 
 * With 🐳:
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 entrypoint:
     image: traefik:v1.7
@@ -29,7 +29,7 @@ image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 
 == With 🐳: Simple backend
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 # https://www.mycompany.org -> http://webserver:80/
 webserver:
@@ -40,7 +40,7 @@ webserver:
 
 == With 🐳: Context
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 # https://mycompany.org/jenkins -> http://jenkins:8080/jenkins
 jenkins:
@@ -54,7 +54,7 @@ jenkins:
 
 == With 🐳: Rewrites
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 # https://mycompany.org/gitserver -> http://gitserver:3000/
 gitserver:
@@ -66,7 +66,7 @@ gitserver:
 
 == With 🐳: Websockets
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 # https://mycompany.org/webterminal -> http://webterminal:7681/
 webterminal:
@@ -87,7 +87,7 @@ Diagram from link:https://medium.com/@geraldcroes[]
 
 == Did you say YAML?
 
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 apiVersion: extensions/v1beta1
 kind: Ingress

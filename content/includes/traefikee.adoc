@@ -63,7 +63,7 @@ image::traefikee-architecture-gray-bg.png[background, size=cover]
 
 * Install it:
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 # Cluster Installation
 traefikeectl install \
@@ -74,7 +74,7 @@ traefikeectl install \
 
 * Configure it:
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 # Routing Configuration, same as Traefik's
 traefikeectl deploy \

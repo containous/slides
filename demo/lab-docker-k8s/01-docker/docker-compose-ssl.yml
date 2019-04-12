@@ -20,7 +20,7 @@ services:
       - "--acme.tlsChallenge=true"        # Uses TLS Challenge.
       - "--acme.onHostRule=true"          # Get cert's domain names from frontend rules.
       # end::traefik-entrypoints-acme[]
-      - "--docker.domain=demo.containous.cloud"
+      - "--docker.domain={lab-domain}"
     labels:
       - "traefik.enable=false"
     # end::traefik-ssl[]

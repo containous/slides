@@ -28,7 +28,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
 
 * Step 2: Install Traefik in a specific namespace
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 helm delete --purge traefik-devoxx
 helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values.yml
@@ -54,7 +54,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingres
 
 * Step 3: Apply the configuration
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 kubectl apply -f ./web/svc-ingress.yml
 ----

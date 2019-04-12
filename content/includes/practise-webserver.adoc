@@ -28,7 +28,7 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=web]
 
 * Step 2: Start the Web Server:
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 docker-compose up -d web
 ----

@@ -79,14 +79,14 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 
 * Step 1: Adapt Compose file:
 +
-[source,yaml]
+[source,yaml,subs="attributes"]
 ----
 include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik-ssl]
 ----
 
 * Step 2: Update the `edge` service
 +
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 docker-compose up -d edge
 ----

@@ -66,7 +66,7 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins]
 
 * Step 2: update the service
 
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 docker-compose up -d jenkins
 ----
