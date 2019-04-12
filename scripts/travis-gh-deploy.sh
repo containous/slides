@@ -3,19 +3,17 @@
 set -eux
 
 ZIP_FILE=gh-pages.zip
-REPOSITORY_NAME=slides
-REPOSITORY_OWNER=containous
-REPOSITORY_URL="https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/archive/${ZIP_FILE}"
+ARCHIVE_URL="${REPOSITORY_BASE_URL}/archive/${ZIP_FILE}"
 CURRENT_DIR="$(cd "$(dirname "${0}")" && pwd -P)"
 DOCS_DIR="${CURRENT_DIR}/../docs"
 
 # Rebuild the docs directory which will be uploaded to gh-pages
 rm -rf "${DOCS_DIR}"
-if curl -sSLI --fail "${REPOSITORY_URL}"
+if curl -sSLI --fail "${ARCHIVE_URL}"
 then
-    curl -sSLO "${REPOSITORY_URL}"
+    curl -sSLO "${ARCHIVE_URL}"
     unzip -o "./${ZIP_FILE}"
-    mv ./${REPOSITORY_NAME}-${ZIP_FILE%%.*} "${DOCS_DIR}" # No ".zip" at the end
+    mv ./"$(basename "${REPOSITORY_BASE_URL}")"-${ZIP_FILE%%.*} "${DOCS_DIR}" # No ".zip" at the end
     rm -f "./${ZIP_FILE}"
 else
     echo "== No gh-pages found, I assume this is the first time."

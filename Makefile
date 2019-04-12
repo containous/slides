@@ -1,16 +1,24 @@
 CURRENT_UID = $(shell id -u):$(shell id -g)
 DIST_DIR ?= $(CURDIR)/dist
-ifdef TRAVIS_TAG
-PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_TAG)
-else
-	ifneq ($(TRAVIS_BRANCH), master)
-	PRESENTATION_URL ?= https://containous.github.io/slides/$(TRAVIS_BRANCH)
-	else
-	PRESENTATION_URL ?= https://containous.github.io/slides
-	endif
-endif
-export PRESENTATION_URL CURRENT_UID
+REPOSITORY_NAME ?= slides
+REPOSITORY_OWNER ?= containous
+REPOSITORY_BASE_URL ?= https://github.com/$(REPOSITORY_OWNER)/$(REPOSITORY_NAME)
 
+REPOSITORY_URL = $(REPOSITORY_BASE_URL)
+PRESENTATION_URL = https://$(REPOSITORY_OWNER).github.io/$(REPOSITORY_NAME)
+
+ifdef TRAVIS_TAG
+REPOSITORY_URL = $(REPOSITORY_BASE_URL)/tree/$(TRAVIS_TAG)
+PRESENTATION_URL = https://$(REPOSITORY_OWNER).github.io/$(REPOSITORY_NAME)/$(TRAVIS_TAG)
+else
+ifdef TRAVIS_BRANCH
+ifneq ($(TRAVIS_BRANCH), master)
+REPOSITORY_URL = $(REPOSITORY_BASE_URL)/tree/$(TRAVIS_BRANCH)
+PRESENTATION_URL = https://$(REPOSITORY_OWNER).github.io/$(REPOSITORY_NAME)/$(TRAVIS_BRANCH)
+endif
+endif
+endif
+export PRESENTATION_URL CURRENT_UID REPOSITORY_URL REPOSITORY_BASE_URL
 
 all: clean build verify
 
@@ -32,7 +40,7 @@ verify:
 		18fgsa/html-proofer \
 			--check-html \
 			--http-status-ignore "999" \
-			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/.containous.cloud/" \
+			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/" \
         	/dist/index.html
 
 serve: clean
