@@ -15,11 +15,11 @@ We want to begin the migration of our services from the Google Cloud VM to a Kub
 == Infrastructure Setup
 
 * A Google Cloud GKE server with a public IP `35.178.178.237` and SSH access
-* A domain name `demo.containous.cloud` pointing to `35.178.178.237`
+* A domain name `{lab-domain}` pointing to `35.178.178.237`
 +
-[source,bash]
+[source,bash,subs="attributes+"]
 ----
-$ dig +short demo.containous.cloud
+$ dig +short {lab-domain}
 35.178.178.237
 ----
 
@@ -28,7 +28,7 @@ $ dig +short demo.containous.cloud
 [{invert}]
 == Reality Check
 
-link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
 [.shadow]
 image::before-traefik-up.png[]

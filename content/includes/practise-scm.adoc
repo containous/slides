@@ -13,7 +13,7 @@
 ** Gitea only serves requests under `/`: How to remove the prefix `/gitserver`?
 
 ```
-http://demo.containous.cloud/gitserver/index.html
+http://{lab-domain}/gitserver/index.html
   -> Traefik
     -> http://<Gitea private IP>:3000/index.html
 ```
@@ -47,7 +47,7 @@ docker-compose up -d gitserver
 
 Try the "Gitea Git server" link:
 
-link:http://demo.containous.cloud/gitserver[http://demo.containous.cloud/gitserver,window=_blank]
+link:http://{lab-domain}/gitserver[http://{lab-domain}/gitserver,window=_blank]
 
 [.shadow]
 image::after-gitea-up.png[width=500]

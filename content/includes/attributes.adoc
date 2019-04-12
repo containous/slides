@@ -25,3 +25,4 @@
 :stylesdir: styles
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
+:lab-domain: lab01.demo.containous.cloud

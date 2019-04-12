@@ -9,10 +9,11 @@ image::demo-not-secured.png[]
 * Do NOT care about certificates and renewal
 * Redirect any incoming HTTP request to HTTPS:
 +
-```
-http://demo.containous.cloud/
-  -> https://demo.containous.cloud/
-```
+[source,bash,subs="attributes+"]
+----
+http://{lab-domain}/
+  -> https://{lab-domain}/
+----
 
 [%notitle]
 == Let's Encrypt
@@ -69,7 +70,7 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 == Problem 4/4
 
 * **Problem:**
-** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.demo.containous.cloud`
+** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.{lab-domain}`
 
 * **Solution:**
 ** Exclude Traefik's container with the label `traefik.enable=false`
@@ -95,7 +96,7 @@ docker-compose up -d edge
 
 * Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
 
-link:https://demo.containous.cloud[https://demo.containous.cloud,window=_blank]
+link:https://{lab-domain}[https://{lab-domain},window=_blank]
 
 [.shadow]
 image::after-ssl-up.png[width=400]

@@ -33,7 +33,7 @@ helm ls
 [{invert}]
 == Reality Check
 
-link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
 [.shadow]
 image::after-traefik-up.png[]
