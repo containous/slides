@@ -74,3 +74,18 @@ include::./includes/v2.adoc[]
 include::./includes/the-end.adoc[]
 
 :leveloffset: -1
+
+
+[{invert}]
+== Thank you!
+
+link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+
+link:https://github.com/dduportal[icon:github[] dduportal]
+
+image::qrcode.png["QRCode to this presentation",height=150]
+
+[.small]
+- link:{presentationUrl}[Slides (HTML): {presentationUrl}]
+- link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]

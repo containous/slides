@@ -40,7 +40,8 @@
 .reveal section[data-state="invert"] p,
 .reveal section[data-state="invert"] ul,
 .reveal section[data-state="invert"] li,
-.reveal section[data-state="invert"] small {
+.reveal section[data-state="invert"] small,
+.reveal section[data-state="invert"] .small {
     color: black; }
 
 .reveal section[data-state="invert"] h1,
@@ -251,13 +252,15 @@ body {
 .reveal sub {
   vertical-align: sub; }
 
-.reveal small {
+.reveal small,
+.reveal .small {
   display: inline-block;
   font-size: 0.6em;
   line-height: 1.2em;
   vertical-align: top; }
 
-.reveal small * {
+.reveal small *,
+.reveal .small * {
   vertical-align: top; }
 
 /*********************************************
