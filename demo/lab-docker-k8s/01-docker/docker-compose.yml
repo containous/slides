@@ -3,21 +3,12 @@ version: '2.4'
 
 services:
   edge:
-<<<<<<< HEAD
     image: traefik:1.7.10
     command:
       - "--docker"
     ports:
       - "80:80"
       - "443:443"
-=======
-    image: traefik:1.7.9
-    command:
-      - "--docker" # Tells Traefik to listen to docker
-    ports:
-      - "80:80"     # The HTTP port
-      - "443:443"   # The HTTPS port
->>>>>>> Init BBL Decathlon
     volumes:
       # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
@@ -26,11 +17,7 @@ services:
   web:
     build: ./web/
     labels:
-<<<<<<< HEAD
       - "traefik.frontend.rule=Path:/"
-=======
-      - "traefik.frontend.rule=Host:demo.containous.cloud"
->>>>>>> Init BBL Decathlon
   # end::web[]
   # tag::jenkins[]
   jenkins:
@@ -47,11 +34,7 @@ services:
       - "traefik.port=8080"
       # end::jenkins-labels-port[]
       # tag::jenkins-labels-rule[]
-<<<<<<< HEAD
       - "traefik.frontend.rule=PathPrefix:/jenkins"
-=======
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefix:/jenkins"
->>>>>>> Init BBL Decathlon
       # end::jenkins-labels-rule[]
   # end::jenkins[]
   # tag::gitserver[]
@@ -65,20 +48,12 @@ services:
     labels:
       - "traefik.port=3000"
       # tag::gitserver-labels-rule[]
-<<<<<<< HEAD
       - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
-=======
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
->>>>>>> Init BBL Decathlon
       # end::gitserver-labels-rule[]
   # end::gitserver[]
   # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd
     labels:
-<<<<<<< HEAD
       - "traefik.frontend.rule=PathPrefixStrip:/ttyd"
-=======
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
->>>>>>> Init BBL Decathlon
   # end::ttyd[]

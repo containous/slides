@@ -1,7 +1,7 @@
 
 [%notitle]
 = Le seigneur des conteneurs : un atelier de migration vers Kubernetes et Traefik
-include::./includes/attributes.adoc[]
+include::./attributes.adoc[]
 
 [{invert}]
 == Le seigneur des conteneurs
@@ -10,7 +10,7 @@ Un atelier de migration vers Kubernetes et Traefik
 
 image::gandalf-gopher.png["Gandalf Gopher",height=300]
 
-image::qrcode.png["QRCode to this presentation",height=100]
+image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 {presentationUrl}[{presentationUrl}]

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 = Lab 3
-=======
-# Lab 3
->>>>>>> Init BBL Decathlon

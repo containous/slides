@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 = Lab 2
 
 == Install Helm
@@ -56,6 +55,3 @@ helm delete --purge traefik-devoxx
 - `helm upgrade` does not work as expected (pod never stoppped)
 - ACME on dashboard: will not work because domain is not set on LoadBalancer, adding timeout works for tls? => enable ingress after manually
 - helm by default set `tls-sni-challenge` instead of ` tls-alpn-challenge`
-=======
-# Lab 2
->>>>>>> Init BBL Decathlon
