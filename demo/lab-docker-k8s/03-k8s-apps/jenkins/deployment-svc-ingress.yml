@@ -1,3 +1,4 @@
+# tag::deployment[]
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -19,7 +20,9 @@ spec:
           env:
           - name: JENKINS_OPTS
             value: "--prefix=/jenkins"
+# end::deployment[]
 
+# tag::svc[]
 ---
 apiVersion: v1
 kind: Service
@@ -38,7 +41,9 @@ spec:
   selector:
     guilde: ci
     faction: jenkins
+# end::svc[]
 
+# tag::ingress[]
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -58,3 +63,4 @@ spec:
         backend:
           serviceName: jenkins-service
           servicePort: jenkins-http
+# end::ingress[]

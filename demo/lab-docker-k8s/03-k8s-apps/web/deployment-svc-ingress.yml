@@ -1,3 +1,4 @@
+# tag::deployment[]
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -16,7 +17,9 @@ spec:
         - name: web-container
           image: nmengin/web:devoxx
           imagePullPolicy: IfNotPresent
+# end::deployment[]
 
+# tag::svc[]
 ---
 apiVersion: v1
 kind: Service
@@ -34,7 +37,9 @@ spec:
     labels:
       guilde: web
       faction: server
+# end::svc[]
 
+# tag::ingress[]
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -53,3 +58,4 @@ spec:
       - path: /
         backend:
           serviceName: web-service
+# end::ingress[]

@@ -30,25 +30,25 @@ echo "verify helm"
 
 # verify that helm is installed in the cluster
 kubectl get deploy,svc tiller-deploy -n kube-system
----
+----
 
 == Install Traefik with default configuration
 +
 [source,bash]
----
+----
 helm install stable/traefik --name traefik-devoxx --namespace kube-system
 helm ls
 helm delete --purge traefik-devoxx
----
+----
 
 == Install Traefik with custom configuration
 +
 [source,bash]
----
+----
 helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values.yml
 helm ls
 helm delete --purge traefik-devoxx
----
+----
 
 == Notes
 +
