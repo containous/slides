@@ -23,7 +23,10 @@ link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 
 link:https://github.com/dduportal[icon:github[] dduportal]
 
+[.small]
+link:{presentationUrl}[Slides: {presentationUrl}]
+
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
-{presentationUrl}[{presentationUrl}]
+link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]

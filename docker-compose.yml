@@ -6,6 +6,7 @@ x-slides-base: &slides-base
   image: slides-builder
   environment:
     - PRESENTATION_URL=${PRESENTATION_URL}
+    - REPOSITORY_URL=${REPOSITORY_URL}
   user: ${CURRENT_UID}
   volumes:
     - ./content:/app/content
