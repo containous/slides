@@ -25,31 +25,30 @@ http://demo.containous.cloud/index.html
 include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
 ----
 
-* Step 2: (Re) Install Traefik
+* Step 2: Install Traefik in a specific namespace
 
 [source,bash]
 ----
 helm delete --purge traefik-devoxx
 helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values.yml
-helm ls
 ----
 
 == The Web Server Setup
 
-* Step 1: Declare the Ingress Rule
-
-[source,yaml,indent=0]
-----
-include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
-----
-
-== !
-
-* Step 2: Declare a Headless Service
+* Step 1: Declare a Headless Service
 
 [source,yaml,indent=0]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
+----
+
+== !
+
+* Step 2: Declare the Ingress Rule
+
+[source,yaml,indent=0]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
 ----
 
 * Step 3: Apply the configuration
