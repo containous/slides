@@ -12,8 +12,8 @@ rbac:
 
 # tag::ssl[]
 ssl:
-enabled: true
-enforced: true
+  enabled: true
+  enforced: true
 # end::ssl[]
 
 # tag::acme[]

@@ -10,9 +10,9 @@ metadata:
 spec:
   ports:
   - port: 80
-    name: fake-http
+    name: traefik-http
   type: ExternalName
-  externalName: redirect.containous.cloud
+  externalName: 18.196.121.238
 # end::svc[]
 
 # tag::ingress[]
@@ -34,4 +34,5 @@ spec:
       - path: /ttyd
         backend:
           serviceName: ttyd-service
+          servicePort: traefik-http
 # end::ingress[]

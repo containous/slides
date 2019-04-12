@@ -10,9 +10,9 @@ metadata:
 spec:
   ports:
   - port: 80
-    name: fake-http
+    name: traefik-http
   type: ExternalName
-  externalName: redirect.containous.cloud
+  externalName: 18.196.121.238
 # end::svc[]
 
 # tag::ingress[]
@@ -30,11 +30,11 @@ metadata:
     traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host:
     http:
       paths:
       - path: /jenkins
         backend:
           serviceName: jenkins-service
-          servicePort: 8080
+          servicePort: traefik-http
 # end::ingress[]

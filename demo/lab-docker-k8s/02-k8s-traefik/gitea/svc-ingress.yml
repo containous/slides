@@ -10,9 +10,9 @@ metadata:
 spec:
   ports:
   - port: 80
-    name: fake-http
+    name: traefik-http
   type: ExternalName
-  externalName: redirect.containous.cloud
+  externalName: 18.196.121.238
 # end::svc[]
 
 # tag::ingress[]
@@ -27,6 +27,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: 'traefik'
     traefik.frontend.passHostHeader: "false"
+    # Only Path Prefix to let the other Traefik Strip it
     traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
@@ -36,4 +37,5 @@ spec:
       - path: /gitserver
         backend:
           serviceName: gitea-server
+          servicePort: traefik-http
 # end::ingress[]

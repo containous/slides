@@ -9,10 +9,15 @@ metadata:
     guilde: web
 spec:
   ports:
+  # Define the port to contact on the external Host
+  # Here contact Traefik defined in lab1
   - port: 80
-    name: fake-http
+    name: traefik-http
+  # Indicate to Kubernetes that the service will redirect
+  # to a backend which is not managed in the Kubernets network
   type: ExternalName
-  externalName: redirect.containous.cloud
+  # IP of the VM in the lab1
+  externalName: 18.196.121.238
 # end::svc[]
 
 # tag::ingress[]
@@ -26,15 +31,17 @@ metadata:
     guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    # Indicate to Traefik to not set the original Host
+    # as a Host Header to allow the redirection
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host:
     http:
       paths:
-      - path: /foobar
+      - path: /
         backend:
           serviceName: web-service
-          servicePort: fake-http
+          servicePort: traefik-http
 # end::ingress[]

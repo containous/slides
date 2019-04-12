@@ -38,7 +38,7 @@ helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values
 
 * Step 1: Declare a Headless Service
 
-[source,yaml,indent=0]
+[source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 ----
@@ -47,7 +47,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 
 * Step 2: Declare the Ingress Rule
 
-[source,yaml,indent=0]
+[source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
 ----
