@@ -8,12 +8,12 @@ include::./includes/attributes.adoc[]
 
 Un atelier de migration vers Kubernetes et Traefik
 
-[.small]
-{presentationUrl}[{presentationUrl}]
-
 image::gandalf-gopher.png["Gandalf Gopher",height=300]
 
 image::qrcode.png["QRCode to this presentation",height=100]
+
+[.small]
+{presentationUrl}[{presentationUrl}]
 
 [{invert}]
 == How to use these slides?
@@ -71,21 +71,7 @@ image::containous-logo.png["Containous Logo"]
 
 // Presentation
 
-include::./includes/practise-webserver.adoc[]
-
-include::./includes/practise-ci.adoc[]
-
-include::./includes/practise-scm.adoc[]
-
-include::./includes/practise-web-cli.adoc[]
-
-include::./includes/practise-letsencrypt.adoc[]
-
-// Lab 2
-
-include::./includes/practise-lab2.adoc[]
-
-include::./includes/practise-the-house.adoc[]
+include::./includes/why-traefik.adoc[]
 
 // Lab 1
 
@@ -127,10 +113,10 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
- 
+link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin] 
 link:https://github.com/nmengin[icon:github[] nmengin]
+
+link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 link:https://github.com/dduportal[icon:github[] dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
