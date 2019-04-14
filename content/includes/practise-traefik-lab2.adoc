@@ -26,7 +26,10 @@ helm repo update
 ----
 helm install stable/traefik \
  --name traefik-devoxx \
- --namespace kube-system
+ --namespace devoxx \
+ --set rbac.enabled=true \
+ --set service.annotations."cloud\.google\.com/load-balancer-type"=Internal \
+ --set imageTag=1.7.10
 helm ls
 ----
 

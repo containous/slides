@@ -17,23 +17,6 @@ http://{lab-domain}/index.html
     -> http://<Webserver Private IP>/index.html
 ----
 
-== Traefik configured to listen to Kubernetes API
-
-* Step 1: Configure the Helm Chart values.yml file
-
-[source,yaml,indent=0]
-----
-include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
-----
-
-* Step 2: Install Traefik in a specific namespace
-
-[source,bash,subs="attributes"]
-----
-helm delete --purge traefik-devoxx
-helm install stable/traefik --name traefik-devoxx --namespace devoxx -f ./values.yml
-----
-
 == The Web Server Setup
 
 * Step 1: Declare a Headless Service
