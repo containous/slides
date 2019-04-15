@@ -52,7 +52,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=svc]
 
 Try the "Gitea Git server" link:
 
-link:http://{lab-domain}/gitserver[http://{lab-domain}/gitserver,window=_blank]
+link:https://{lab-domain}/gitserver[https://{lab-domain}/gitserver,window=_blank]
 
 [.shadow]
 image::after-gitea-up.png[width=500]

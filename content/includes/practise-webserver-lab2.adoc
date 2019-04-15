@@ -63,7 +63,7 @@ kubectl apply -f ./web/svc-ingress.yml
 [{invert}]
 == Reality Check
 
-link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
+link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 
 [.shadow]
 image::after-webserver-up.png[]

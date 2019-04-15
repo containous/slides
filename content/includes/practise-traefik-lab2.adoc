@@ -95,7 +95,7 @@ traefik-devoxx   LoadBalancer   100.71.101.224   $EXTERNAL_IP   80:32256/TCP,443
 
 * Step 3: Blue-Green on Traefik instances:
 
-*TODO: dduportal*
+ *TODO: dduportal*
 
 [{invert}]
 == Reality Check

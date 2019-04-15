@@ -1,0 +1,57 @@
+[{invert}]
+= Agenda
+
+* {agenda-acme}
+* {agenda-rp}
+* {agenda-web}
+* {agenda-ci}
+* {agenda-scm}
+* **{agenda-ws}**
+
+== Goal
+
+* We want to access to link:https://github.com/tsl0922/ttyd[TTYD,window=_blank] deployed in Docker through Traefik in Kubernetes
+
+== Challenges
+
+* **Problem 1:** How to tell to Traefik to route requests to TTYD which is not deloyed in Kubernetes?
++
+[source,bash,subs="attributes+"]
+----
+https://{lab-domain}/ttyd
+  -> Traefik Kubernetes
+    -> Traefik Docker
+      -> https://<WebCLI Private IP>/
+----
+
+* **Problem 2:** How to detect the HTTPS requests to catch ?
+
+== Solution 1
+
+* Use a Headless Service:
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/ttyd/svc-ingress.yml[tag=svc]
+----
+
+== Solution 2
+
+* Ingress Rule with `PathPrefix:/ttyd`:
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/ttyd/svc-ingress.yml[tag=ingress]
+----
+
+[{invert}]
+== Reality Check
+
+Try the "TTYD Web Command Line" link:
+
+link:https://{lab-domain}/ttyd[https://{lab-domain}/ttyd,window=_blank]
+
+[.shadow]
+image::after-ttyd-up.png[width=500]
+
+It's good: we can continue to develop in a web browser!

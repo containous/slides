@@ -14,14 +14,14 @@
 
 == Challenge 1/2
 
-* **Problem:** How to tell to Traefik to route requests to the CI?
+* **Problem:** How to tell to Traefik to route requests to the CI which is not deloyed in Kubernetes?
 
 [source,bash,subs="attributes+"]
 ----
 https://{lab-domain}/jenkins
   -> Traefik Kubernetes
     -> Traefik Docker
-      -> https://<Webserver Private IP>/jenkins
+      -> https://<Jenkins Private IP>/jenkins
 ----
 
 == Headless Service
@@ -59,7 +59,7 @@ kubectl apply -f ./jenkins/svc-ingress.yml
 
 Click on the "Jenkins" link:
 
-link:http://{lab-domain}/jenkins[http://{lab-domain}/jenkins,window=_blank]
+link:https://{lab-domain}/jenkins[https://{lab-domain}/jenkins,window=_blank]
 
 [.shadow]
 image::after-jenkins-up.png[width=500]
