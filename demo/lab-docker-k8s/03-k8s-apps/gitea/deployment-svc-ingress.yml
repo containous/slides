@@ -3,7 +3,7 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: gitea-deployment
+  name: gitea-full-deployment
   namespace: devoxx
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
         faction: server
     spec:
       containers:
-        - name: gitea-container
+        - name: gitea-full-container
           image: gitea/gitea:latest
           imagePullPolicy: IfNotPresent
           env:
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gitea-server
+  name: gitea-full-server
   namespace: devoxx
   labels:
     guilde: git
@@ -48,7 +48,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: gitea-ingress
+  name: gitea-full-ingress
   namespace: devoxx
   labels:
     guilde: git
@@ -57,11 +57,11 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host:
     http:
       paths:
       - path: /gitserver
         backend:
-          serviceName: gitea-server
+          serviceName: gitea-full-server
           servicePort: gitea-http
 # end::ingress[]

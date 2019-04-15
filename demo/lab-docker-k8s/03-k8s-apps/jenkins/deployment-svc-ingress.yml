@@ -3,7 +3,7 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: jenkins-deployment
+  name: jenkins-full-deployment
   namespace: devoxx
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
         faction: jenkins
     spec:
       containers:
-        - name: jenkins-container
+        - name: jenkins-full-container
           image: jenkins/jenkins:2.150.3-alpine
           imagePullPolicy: IfNotPresent
           env:
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkins-service
+  name: jenkins-full-service
   namespace: devoxx
   labels:
     guilde: ci
@@ -48,19 +48,20 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-ingress
+  name: jenkins-full-ingress
   namespace: devoxx
   labels:
     guilde: ci
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host:
     http:
       paths:
       - path: /jenkins
         backend:
-          serviceName: jenkins-service
+          serviceName: jenkins-full-service
           servicePort: jenkins-http
 # end::ingress[]

@@ -3,7 +3,7 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: web-deployment
+  name: web-full-deployment
   namespace: devoxx
 spec:
   replicas: 1
@@ -14,7 +14,7 @@ spec:
         faction: server
     spec:
       containers:
-        - name: web-container
+        - name: web-full-container
           image: nmengin/web:devoxx
           imagePullPolicy: IfNotPresent
 # end::deployment[]
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-service
+  name: web-full-service
   namespace: devoxx
   labels:
     guilde: web
@@ -50,11 +50,21 @@ metadata:
     guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.rule.type: PathPrefix
+    # tag::canary[]
+    traefik.ingress.kubernetes.io/service-weights: |
+      web-service: 75%
+      web-full-service: 25%
+    # end::canary[]
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host: {lab.domain}
     http:
       paths:
+      - path: /
+        backend:
+          serviceName: web-full-service
       - path: /
         backend:
           serviceName: web-service

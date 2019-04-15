@@ -1,0 +1,17 @@
+
+[{invert}]
+= The Castle
+
+image::carcassonne.jpg[]
+
+== The Castle
+
+We want to terminate the migration of our services from the AWS VM to a Kubernetes cluster in AWS:
+
+* migrate Stateful applications in Blue Green mode
+* migrate Stateless application
+
+== Infrastructure Setup
+
+* An AWS EKS server with a public IP `35.178.178.237` and SSH access
+* Kubernetes to deploy the infrastructure
