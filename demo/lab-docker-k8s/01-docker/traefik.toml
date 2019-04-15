@@ -1,0 +1,30 @@
+# tag::toml[]
+# tag::entrypoints[]
+# tag::entrypoint-tls[]
+defaultEntryPoints = ["http", "https"]
+
+[entryPoints]
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+# end::entrypoint-tls[]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+# end::entrypoints[]
+
+# tag::acme[]
+[acme]
+email = "lab01@devoxx.lab"
+storage = "/acme.json"
+entryPoint = "https"
+onHostRule = true
+# end::acme[]
+
+# tag::docker[]
+[docker]
+domain={lab-domain}
+watch = true
+# end::docker[]
+# end::toml[]

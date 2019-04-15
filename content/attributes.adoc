@@ -32,3 +32,5 @@
 :agenda-web: Web Server
 :agenda-ws: Web CLI
 :agenda-ssl: SSL for everyone
+:agenda-acme: Let's Encrypt Certificates
+:lab-path: /home/ubuntu/lab-docker-k8s

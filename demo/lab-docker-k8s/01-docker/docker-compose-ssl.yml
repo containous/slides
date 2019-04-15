@@ -4,32 +4,20 @@ version: '2.4'
 services:
   edge:
     image: traefik:1.7.10
-    # tag::traefik-ssl[]
-    command:
-      # tag::traefik-entrypoints-http[]
-      - "--entryPoints=Name:http Address::80" # Redirect.EntryPoint:https"
-      # end::traefik-entrypoints-http[]
-      # tag::traefik-entrypoints-https[]
-      - "--entryPoints=Name:https Address::443 TLS"
-      - "--defaultEntryPoints=https,http"
-      # end::traefik-entrypoints-https[]
-      # tag::traefik-entrypoints-acme[]
-      - "--acme.entryPoint=https"         # Uses LE certificates on the entrypoint "https" .
-      - "--acme.email=damien@containo.us" # Specifies the contact email for the certificates.
-      - "--acme.storage=acme.json"        # Stores certificates in the file "acme.storage".
-      - "--acme.tlsChallenge=true"        # Uses TLS Challenge.
-      - "--acme.onHostRule=true"          # Get cert's domain names from frontend rules.
-      # end::traefik-entrypoints-acme[]
-      - "--docker.domain={lab-domain}"
     labels:
       - "traefik.enable=false"
-    # end::traefik-ssl[]
     ports:
       - "80:80"     # The HTTP port
       - "443:443"   # The HTTPS port
+    # tag::volumes[]
     volumes:
       # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
+      # Add the TOML configuration file in the root directory
+      - ./traefik.toml:/traefik.toml
+      # ACME file (mod: 600)
+      - ./acme.json:/acme.json
+    # end::volumes[]
   # end::edge[]
   # tag::web[]
   web:

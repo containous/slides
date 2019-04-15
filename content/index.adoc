@@ -31,8 +31,8 @@ image::qrcode.png["QRCode to this presentation",height=150]
 == Whoami 1/2
 Nicolas Mengin
 
-* Code Craftsman, Part Time DevOps @ link:https://containo.us/[Containous]
-* link:https://traefik.io/[Traefik] E lf Blacksmith
+* Part Time DevOps & Code Craftsman @ link:https://containo.us/[Containous]
+* Blacksmith on link:https://traefik.io/[Traefik]
 * link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
 * link:https://github.com/nmengin[icon:github[] nmengin]
 
@@ -84,8 +84,6 @@ include::./includes/agenda.adoc[]
 
 include::./includes/practise-the-hobbit-house.adoc[]
 
-// Presentation
-
 include::./includes/why-traefik.adoc[]  
 
 include::./includes/practise-traefik.adoc[]
@@ -102,9 +100,9 @@ include::./includes/practise-letsencrypt.adoc[]
 
 // Lab 2
 
-include::./includes/practise-lab2.adoc[]
+include::./includes/practise-the-tower.adoc[]
 
-include::./includes/practise-the-house.adoc[]
+include::./includes/practise-migrate-acme-certs.adoc[]
 
 include::./includes/practise-traefik-lab2.adoc[]
 

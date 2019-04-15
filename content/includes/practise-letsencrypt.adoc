@@ -12,6 +12,7 @@
 
 * Use HTTPS instead of HTTP
 * Do NOT care about certificates and renewal
+* Use a TOML configuration file
 * Redirect any incoming HTTP request to HTTPS:
 +
 [source,bash,subs="attributes+"]
@@ -19,6 +20,11 @@
 http://{lab-domain}/
   -> https://{lab-domain}/
 ----
+
+[.notes]
+--
+* explain TOML allow serialize complexconfiguration
+--
 
 [%notitle]
 == Let's Encrypt
@@ -38,12 +44,12 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 ** How to tell Traefik to listen on port `443` for HTTPS requests?
 
 * **Solution:**
-** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`],
-** Set it as a default entrypoint with `--defaultentrypoints`:
+** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint],
+** Set it as a default entrypoint:
 +
-[source,yaml,indent=0]
+[source,toml,indent=0]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
+include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoint-tls]
 ----
 
 == Problem 2/4
@@ -52,11 +58,11 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-
 ** How to tell Traefik to redirect request from http to https?
 
 * **Solution:**
-** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http` with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`]:
+** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http`:
 +
-[source,yaml,indent=0]
+[source,toml,indent=0]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
+include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoints]
 ----
 
 == Problem 3/4
@@ -65,12 +71,14 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-
 ** How to tell Traefik to use Let's Encrypt for HTTPS?
 
 * **Solution:**
-** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider] with the flags `--acme.*`:
+** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider]:
 
-[source,yaml,indent=0]
+[source,tml,indent=0]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
+include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=acme]
 ----
+
+** Give the needed rights to the `/ acme.json` file (600)
 
 == Problem 4/4
 
@@ -80,16 +88,25 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-
 * **Solution:**
 ** Exclude Traefik's container with the label `traefik.enable=false`
 
-== Traefik Setup
+== Traefik Setup 1/2
 
-* Step 1: Adapt Compose file:
+* Step 1: Create the configuration file `traefik.toml`:
++
+[source,toml,subs="attributes"]
+----
+include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=toml]
+----
+
+== Traefik Setup 2/2
+
+* Step 2: Adapt the Compose file:
 +
 [source,yaml,subs="attributes"]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=traefik-ssl]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=edge]
 ----
 
-* Step 2: Update the `edge` service
+* Step 3: Update the `edge` service
 +
 [source,bash,subs="attributes"]
 ----
