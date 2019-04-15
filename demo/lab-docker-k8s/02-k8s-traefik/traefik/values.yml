@@ -21,14 +21,14 @@ acme:
   enabled: true
   email: devoxxlab@containo.us
   onHostRule: true
-  staging: true
+  #staging: true
   challengeType: tls-alpn-01
 # end::acme[]
 
 # tag::api[]
-dashboard:
-  enabled: true
-  ingress:
-    annotations:
-      kubernetes.io/ingress.class: 'nginx'
+# dashboard:
+#   enabled: true
+#   ingress:
+#     annotations:
+#       kubernetes.io/ingress.class: 'nginx'
 # end::api[]

@@ -1,0 +1,19 @@
+
+[{invert}]
+= Saruman Tower: Migrate Traefik To Kubernetes
+
+image::tower.jpg[height=600px, width=400px]
+
+== Saruman Tower 
+
+We want to begin the migration of our services from the AWS VM to a Kubernetes cluster in AWS:
+
+* keep the Docker services
+* migrate Traefik to Kubernetes
+* migrate the Let's Encrypt certificates
+* access to the Docker services through Traefik in Kubernetes
+
+== Infrastructure Setup
+
+* An AWS EKS server with a public IP `35.178.178.237` and SSH access
+* Kubernetes and Helm to deploy the infrastructure

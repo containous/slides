@@ -1,17 +1,30 @@
 [{invert}]
 = Agenda
 
+* {agenda-acme}
 * **{agenda-rp}**
 * {agenda-web}
 * {agenda-ci}
 * {agenda-scm}
 * {agenda-ws}
-* {agenda-ssl}
 
-== Traefik Setup
+[{invert}]
+== Remember the Diagram?
 
-* Step 1: Install Helm
-+
+image::traefik-architecture.png["Traefik's Architecture",width=1000]
+
+[{invert}]
+== In Kubernetes
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+== Let's Go
+
+== Initialize Helm
+
 [source,bash,subs="attributes"]
 ----
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
@@ -27,18 +40,62 @@ helm init --service-account tiller
 helm repo update
 ----
 
-* Step 2: Deploy Traefik
+== values.yaml file
+
+* Step 1: Add rights on namespace
 +
+[source,yaml,subs="attributes"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
+----
+
+* Step 2: Set SSL EntryPoint with redirection
++
+[source,yaml,subs="attributes"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=ssl]
+----
+
+* Step 3: Add Let's Encrypt
++
+[source,yaml,subs="attributes"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=acme]
+----
+
+== Deploy Traefik
+
 [source,bash,subs="attributes"]
 ----
 helm install stable/traefik \
  --name traefik-devoxx \
  --namespace devoxx \
- --set rbac.enabled=true \
- --set service.annotations."cloud\.google\.com/load-balancer-type"=Internal \
- --set imageTag=1.7.10
+ --set imageTag=1.7.10 \
+ --values values.yml
 helm ls
 ----
+
+
+== Access to Traefik
+
+* Step 1: Run the command:
++
+[source,bash,subs="attributes"]
+----
+kubectl --namespace=devoxx get services
+----
+
+* Step 2: Get the Load Balancer `EXTERNAL-IP`:
++
+[source,bash,subs="attributes"]
+----
+NAME             TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)                      AGE
+traefik-devoxx   LoadBalancer   100.71.101.224   $EXTERNAL_IP   80:32256/TCP,443:31489/TCP   12s
+----
+
+* Step 3: Blue-Green on Traefik instances:
+
+*TODO: dduportal*
 
 [{invert}]
 == Reality Check
