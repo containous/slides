@@ -1,0 +1,14 @@
+= Once Upon a Time...
+
+== An Infrastruture War 
+
+* Docker as a standard
+* Orchestrators: Docker Swarm, Rancher Caddle, Mesos, Kubernetes...
+* The war lasted couple of years...
+
+== One orchestrator to rule them all
+
+* **Kubernetes**
+* Used by the concurrents
+* Standard in industry
+* Powerful but not easy to master

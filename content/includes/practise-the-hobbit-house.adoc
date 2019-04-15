@@ -1,12 +1,12 @@
 
 [{invert}]
-= The Shack
+= The Hobbit House
 
-image::shack.jpg[]
+image::hobbit-house.jpg[]
 
-== The Shack
+== The Hobbit House
 
-We want a server in Google Cloud:
+We want a server in AWS:
 
 * to host our own SCM Server,
 * and our own Continous Integration,
@@ -15,7 +15,7 @@ We want a server in Google Cloud:
 
 == Infrastructure Setup
 
-* A Google Cloud VM with a public IP `35.178.178.237` and SSH access
+* An AWS VM with a public IP `35.178.178.237` and SSH access
 * A domain name `{lab-domain}` pointing to `35.178.178.237`
 +
 [source,bash,subs="attributes+"]

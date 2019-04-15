@@ -1,5 +1,12 @@
 [{invert}]
-= Traefik
+= Agenda
+
+* **{agenda-rp}**
+* {agenda-web}
+* {agenda-ci}
+* {agenda-scm}
+* {agenda-ws}
+* {agenda-ssl}
 
 == Traefik Setup
 

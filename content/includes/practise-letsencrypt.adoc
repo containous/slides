@@ -1,7 +1,12 @@
 [{invert}]
-= HTTPS for Everyone
+= Agenda
 
-image::demo-not-secured.png[]
+* {agenda-rp}
+* {agenda-web}
+* {agenda-ci}
+* {agenda-scm}
+* {agenda-ws}
+* **{agenda-ssl}**
 
 == Goals
 

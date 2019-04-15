@@ -1,6 +1,12 @@
-
 [{invert}]
-= Simple Web Server
+= Agenda
+
+* {agenda-rp}
+* **{agenda-web}**
+* {agenda-ci}
+* {agenda-scm}
+* {agenda-ws}
+* {agenda-ssl}
 
 == Goal
 

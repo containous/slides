@@ -31,8 +31,8 @@ image::qrcode.png["QRCode to this presentation",height=150]
 == Whoami 1/2
 Nicolas Mengin
 
-* Developer, Part Time DevOps @ link:https://containo.us/[Containous]
-* Maintainer of link:https://traefik.io/[Træfik]
+* Code Craftsman, Part Time DevOps @ link:https://containo.us/[Containous]
+* link:https://traefik.io/[Traefik] E lf Blacksmith
 * link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
 * link:https://github.com/nmengin[icon:github[] nmengin]
 
@@ -40,8 +40,9 @@ image::nicolas.jpg[height=200]
 
 == Whoami 2/2
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+Damien DUPORTAL
+
+* link:https://traefik.io/[Traefik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
@@ -69,15 +70,23 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-// Presentation
+// Environment check list
 
-include::./includes/why-traefik.adoc[]
+include::./includes/forge.adoc[]
+
+// Introduction
+
+include::./includes/intro.adoc[]
+
+include::./includes/agenda.adoc[]
 
 // Lab 1
 
-include::./includes/practise-lab1.adoc[]
+include::./includes/practise-the-hobbit-house.adoc[]
 
-include::./includes/practise-the-shack.adoc[]
+// Presentation
+
+include::./includes/why-traefik.adoc[]  
 
 include::./includes/practise-traefik.adoc[]
 

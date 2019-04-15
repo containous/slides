@@ -26,3 +26,9 @@
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
 :lab-domain: lab01.demo.containous.cloud
+:agenda-rp: Traefik
+:agenda-ci: CI Server
+:agenda-scm: SCM: A Gitea Git Server
+:agenda-web: Web Server
+:agenda-ws: Web CLI
+:agenda-ssl: SSL for everyone

@@ -1,7 +1,3 @@
-
-[{invert}]
-= Traefik
-
 == Traefik Setup
 
 * Step 1: Compose file in `/home/ubuntu/lab-docker-k8s/01-docker/docker-compose.yml`:

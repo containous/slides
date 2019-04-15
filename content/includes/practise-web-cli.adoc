@@ -1,6 +1,12 @@
-
 [{invert}]
-= A Web CLI
+= Agenda
+
+* {agenda-rp}
+* {agenda-web}
+* {agenda-ci}
+* {agenda-scm}
+* **{agenda-ws}**
+* {agenda-ssl}
 
 == Goal
 
