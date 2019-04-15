@@ -23,6 +23,8 @@ acme:
   onHostRule: true
   #staging: true
   challengeType: tls-alpn-01
+#  persistence:
+#    existingClaim:
 # end::acme[]
 
 # tag::api[]

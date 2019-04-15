@@ -29,12 +29,12 @@ metadata:
   namespace: devoxx
   labels:
     guilde: web
+    # tag::annotations[]
   annotations:
     kubernetes.io/ingress.class: 'traefik'
-    # Indicate to Traefik to not set the original Host
-    # as a Host Header to allow the redirection
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.rule.type: PathPrefix
+    # end::annotations[]
 spec:
   rules:
   - host:

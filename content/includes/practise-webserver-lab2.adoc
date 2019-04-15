@@ -1,47 +1,59 @@
 [{invert}]
 = Agenda
 
+* {agenda-acme}
 * {agenda-rp}
 * **{agenda-web}**
 * {agenda-ci}
 * {agenda-scm}
 * {agenda-ws}
-* {agenda-ssl}
 
 == Goal
 
-* We want to host a static webserver behind Traefik
+* We want access to the webserver hosted in Docker through Traefik in Kubernetes
 
-== Problem
+== Challenge 1/2
 
-* How to tell Traefik to route requests to the web server?
+* **Problem:** How to tell to Traefik to route requests to the web server?
 
 [source,bash,subs="attributes+"]
 ----
-http://{lab-domain}/index.html
-  -> Traefik
-    -> http://<Webserver Private IP>/index.html
+https://{lab-domain}/index.html
+  -> Traefik Kubernetes
+    -> Traefik Docker
+      -> https://<Webserver Private IP>/index.html
 ----
 
-== The Web Server Setup
+== Headless Service
 
-* Step 1: Declare a Headless Service
+* **Solution:** Use a service linked to an external address
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 ----
 
-== !
+[.notes]
+--
+* explain headless server and the different kind
+** External Name
+** External IPs
+--
 
-* Step 2: Declare the Ingress Rule
+== Challenge 2/2
+
+* **Problem:** How to detect the HTTPS requests to catch ?
+
+== Ingress Rule
+
+* **Solution:** Catch all the incoming resquests for the `Path: /`:
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
 ----
 
-* Step 3: Apply the configuration
+== Apply the configuration
 
 [source,bash,subs="attributes"]
 ----
