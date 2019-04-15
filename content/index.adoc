@@ -110,6 +110,8 @@ include::./includes/practise-webserver-lab2.adoc[]
 
 include::./includes/practise-ci-lab2.adoc[]
 
+include::./includes/practise-scm-lab2.adoc[]
+
 // include::./includes/traefikee.adoc[]
 
 // include::./includes/v2.adoc[]

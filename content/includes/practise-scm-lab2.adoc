@@ -1,0 +1,60 @@
+[{invert}]
+= Agenda
+
+* {agenda-acme}
+* {agenda-rp}
+* {agenda-web}
+* {agenda-ci}
+* **{agenda-scm}**
+* {agenda-ws}
+
+== Goal
+
+* We want access to the Git server hosted in Docker through Traefik in Kubernetes
+
+== Challenge 1/2
+
+* **Problem:**
+** Gitea only serves requests under `/`
+** Traefik in Docker already removes the prefix `/gitserver`
+
+```
+http://{lab-domain}/gitserver/index.html
+  -> Traefik Kubernetes
+    -> Traefik Docker
+      -> http://<Gitea private IP>:3000/index.html
+```
+
+== Use a PathPrefix rule
+
+* **Solution:** Do not remove the prefix (Thank Captain Obvious)
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=ingress]
+----
+
+== Challenge 2/2
+
+* **Problem:** How to tell to Traefik to route requests to the SCM which is not deloyed in Kubernetes?
+
+== Headless Service
+
+* **Solution:** Use (once again again) a service linked to an external address
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=svc]
+----
+
+[{invert}]
+== Reality Check
+
+Try the "Gitea Git server" link:
+
+link:http://{lab-domain}/gitserver[http://{lab-domain}/gitserver,window=_blank]
+
+[.shadow]
+image::after-gitea-up.png[width=500]
+
+It's good: Gitea is still available!

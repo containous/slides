@@ -14,7 +14,7 @@
 
 == Challenge 1/2
 
-* **Problem:** How to tell to Traefik to route requests to the web server?
+* **Problem:** How to tell to Traefik to route requests to the web server which is not deloyed in Kubernetes?
 
 [source,bash,subs="attributes+"]
 ----
@@ -46,7 +46,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 
 == Ingress Rule
 
-* **Solution:** Catch all the incoming resquests for the `Path: /`:
+* **Solution:**  Catch all the incoming resquests for the `Path: /`:
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
