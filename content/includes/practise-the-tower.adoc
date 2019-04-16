@@ -6,7 +6,7 @@ image::tower.jpg[height=600px, width=400px]
 
 == Saruman Tower 
 
-We want to begin the migration of our services from the AWS VM to a Kubernetes cluster in AWS:
+We want to begin the migration of our services from the our VM to a Kubernetes cluster:
 
 * keep the Docker services
 * migrate Traefik to Kubernetes
@@ -15,5 +15,11 @@ We want to begin the migration of our services from the AWS VM to a Kubernetes c
 
 == Infrastructure Setup
 
-* An AWS EKS server with a public IP `35.178.178.237` and SSH access
-* Kubernetes and Helm to deploy the infrastructure
+* A K3S cluster on a VM reachable from a public IP `{public-ip}`
+* `kubectl` and `helm` installed on the client machines
+
+[.notes]
+--
+* Explain what is K3S and why we are using it
+* Explain Helm behavior (tiller server side), interest (do not manipulate amount of YAML files)
+--
