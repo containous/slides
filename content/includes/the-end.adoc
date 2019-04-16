@@ -1,3 +1,24 @@
+= We did not talk about...
+
+== Traefik V2
+
+* Used during all the workshop
+* Alpha version for a month
+* Main features:
+** TCP
+** CDR
+** ...
+* link:https://docs.traefik.io/v2.0/[Documentation]
+
+== High Availability
+
+* TraefikEE
+* HA
+* Split responsabilities
+** Control Plane
+** Data Plane
+* 1.0.0 GA since... Today!
+* link:https://docs.containo.us/[Documentation]
 
 = We have
 
