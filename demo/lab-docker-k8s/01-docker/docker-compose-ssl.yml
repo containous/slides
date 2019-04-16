@@ -21,7 +21,7 @@ services:
   # end::edge[]
   # tag::web[]
   web:
-    image: nmengin/web:devoxx
+    image: nmengin/web:devoxx-v1
     labels:
       - "traefik.frontend.rule=Path:/"
   # end::web[]

@@ -1,0 +1,5 @@
+# Dockerfile v1
+
+FROM nginx:alpine
+COPY ./html /usr/share/nginx/html
+RUN mv /usr/share/nginx/html/index-docker.html /usr/share/nginx/html/index.html

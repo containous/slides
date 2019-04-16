@@ -3,7 +3,7 @@ version: '2.4'
 
 services:
   edge:
-    image: traefik:1.7.9
+    image: traefik:1.7.10
     command:
       - "--docker" # Tells Traefik to listen to docker
     ports:
@@ -15,9 +15,11 @@ services:
   # end::edge[]
   # tag::web[]
   web:
-    build: ./web/
+    build:
+      context: ./web/
+      dockerfile: Dockerfile-v1
     labels:
-      - "traefik.frontend.rule=Host:demo.containous.cloud"
+      - "traefik.frontend.rule=Host:localhost"
   # end::web[]
   # tag::jenkins[]
   jenkins:

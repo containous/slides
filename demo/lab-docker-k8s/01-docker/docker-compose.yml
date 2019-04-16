@@ -15,7 +15,9 @@ services:
   # end::edge[]
   # tag::web[]
   web:
-    build: ./web/
+    build:
+      context: ./web/
+      dockerfile: Dockerfile-v1
     labels:
       - "traefik.frontend.rule=Path:/"
   # end::web[]
