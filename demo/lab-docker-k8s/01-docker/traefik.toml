@@ -10,8 +10,6 @@ defaultEntryPoints = ["http", "https"]
 # end::entrypoint-tls[]
   [entryPoints.http]
   address = ":80"
-    [entryPoints.http.redirect]
-    entryPoint = "https"
 # end::entrypoints[]
 
 # tag::acme[]

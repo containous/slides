@@ -39,7 +39,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/jenkins/svc-ingress.yml[tag=sv
 
 == Ingress Rule
 
-**Solution:**  Catch the resquests for the `Path: /jenkins`.
+**Solution:**  Catch the requests for the `PathPrefix:/jenkins`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----

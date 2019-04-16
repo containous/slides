@@ -17,7 +17,7 @@ spec:
   # to a backend which is not managed in the Kubernets network
   type: ExternalName
   # IP of the VM in the lab1
-  externalName: 18.196.121.238
+  externalName: {docker_vm_ip}
 # end::svc[]
 
 # tag::ingress[]

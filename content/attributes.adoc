@@ -35,3 +35,5 @@
 :agenda-acme: Let's Encrypt Certificates
 :lab-path: /home/devoxx/lab-docker-k8s
 :public-ip: 35.178.178.237
+:docker_vm_ip: 10.0.x.y
+:kube_ip: 10.0.n.p

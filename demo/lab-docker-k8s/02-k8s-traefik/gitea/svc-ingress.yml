@@ -12,7 +12,7 @@ spec:
   - port: 80
     name: traefik-http
   type: ExternalName
-  externalName: 18.196.121.238
+  externalName: {docker_vm_ip}
 # end::svc[]
 
 # tag::ingress[]

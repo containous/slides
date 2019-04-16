@@ -40,7 +40,7 @@ Diagram from link:https://medium.com/@geraldcroes[]
 
 == Let's Go
 
-== values.yaml file
+== `values.yml` file
 
 * Step 1: Add rights on namespace:
 +
@@ -72,7 +72,6 @@ helm install stable/traefik \
  --namespace devoxx \
  --set imageTag=1.7.10 \
  --values values.yml
-helm ls
 ----
 
 == Access to Traefik
@@ -84,13 +83,18 @@ helm ls
 kubectl --namespace=devoxx get services
 ----
 
-* Step 2: Get the Load Balancer IP:
+* Step 2: Once the column `EXTERNAL-IP` show an IP in `172...`,
+then the LoadBalancer can be reached at your VM's IP address:
 +
-*TODO: dduportal*
+[source,bash,subs="attributes"]
+----
+VM_IP="$(/sbin/ifconfig eth0 | grep 'inet ' | awk '{print $2}')"
+echo "${VM_IP}" # the Kube VM IP {kube_ip}
+----
 
-* Step 3: Blue-Green on Traefik instances:
-+
-*TODO: dduportal*
+* Step 3: Use the link:https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity["Blue-Green Jenkins job",window=_blank] to switch:
+** Your domain name (`labXX.ddu-workshops-Y.com`)
+** To this `VM_IP` (`{kube_ip}`)
 
 [{invert}]
 == Reality Check
