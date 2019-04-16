@@ -1,0 +1,69 @@
+[{invert}]
+= Agenda
+
+* {agenda-ci}
+* {agenda-scm}
+* {agenda-ws}
+* **{agenda-web}**
+
+== Goal
+
+* We want access to the webserver hosted in Docker through Traefik in Kubernetes
+
+== Challenge 1/2
+
+* **Problem:** How to tell to Traefik to route requests to the web server which is not deloyed in Kubernetes?
+
+[source,bash,subs="attributes+"]
+----
+https://{lab-domain}/index.html
+  -> Traefik Kubernetes
+    -> Traefik Docker
+      -> https://<Webserver Private IP>/index.html
+----
+
+== Headless Service
+
+* **Solution:** Use a service linked to an external address
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
+----
+
+[.notes]
+--
+* explain headless server and the different kind
+** External Name
+** External IPs
+--
+
+== Challenge 2/2
+
+* **Problem:** How to detect the HTTPS requests to catch ?
+
+== Ingress Rule
+
+* **Solution:**  Catch all the incoming resquests for the `Path: /`:
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingress]
+----
+
+== Apply the configuration
+
+[source,bash,subs="attributes"]
+----
+kubectl apply -f ./web/svc-ingress.yml
+----
+
+[{invert}]
+== Reality Check
+
+link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
+
+[.shadow]
+image::after-webserver-up.png[]
+
+It's good: we have a web page!

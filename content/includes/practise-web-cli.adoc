@@ -39,8 +39,6 @@ docker-compose up -d ttyd
 [{invert}]
 == Reality Check
 
-Try the "TTYD Web Command Line" link:
-
 link:http://{lab-domain}/ttyd[http://{lab-domain}/ttyd,window=_blank]
 
 [.shadow]

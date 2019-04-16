@@ -18,12 +18,13 @@
 ** Gitea only serves requests under `/`
 ** Traefik in Docker already removes the prefix `/gitserver`
 
-```
+[source,bash,subs="attributes+"]
+----
 http://{lab-domain}/gitserver/index.html
   -> Traefik Kubernetes
     -> Traefik Docker
       -> http://<Gitea private IP>:3000/index.html
-```
+----
 
 == Use a PathPrefix rule
 
@@ -49,8 +50,6 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=svc]
 
 [{invert}]
 == Reality Check
-
-Try the "Gitea Git server" link:
 
 link:https://{lab-domain}/gitserver[https://{lab-domain}/gitserver,window=_blank]
 

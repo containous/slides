@@ -18,11 +18,12 @@
 * **Problem:**
 ** Gitea only serves requests under `/`: How to remove the prefix `/gitserver`?
 
-```
+[source,bash,subs="attributes+"]
+----
 http://{lab-domain}/gitserver/index.html
   -> Traefik
     -> http://<Gitea private IP>:3000/index.html
-```
+----
 
 * **Solution:**
 ** Use the Traefik's Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefixStrip`,window=_blank]
@@ -50,8 +51,6 @@ docker-compose up -d gitserver
 
 [{invert}]
 == Reality Check
-
-Try the "Gitea Git server" link:
 
 link:http://{lab-domain}/gitserver[http://{lab-domain}/gitserver,window=_blank]
 

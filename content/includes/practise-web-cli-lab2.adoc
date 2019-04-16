@@ -47,8 +47,6 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/ttyd/svc-ingress.yml[tag=ingre
 [{invert}]
 == Reality Check
 
-Try the "TTYD Web Command Line" link:
-
 link:https://{lab-domain}/ttyd[https://{lab-domain}/ttyd,window=_blank]
 
 [.shadow]
