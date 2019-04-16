@@ -40,7 +40,7 @@ verify: $(DIST_DIR)/index.html
 		18fgsa/html-proofer \
 			--check-html \
 			--http-status-ignore "999" \
-			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/demo.containous.cloud/" \
+			--url-ignore "/localhost:/,/127.0.0.1:/,/$(PRESENTATION_URL)/,/demo.containous.cloud/,/ddu-workshops-1.com/" \
         	/dist/index.html
 
 serve: clean $(DIST_DIR)
