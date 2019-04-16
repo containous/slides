@@ -50,6 +50,7 @@ metadata:
     guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    # tag::deleteannot[]
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.rule.type: PathPrefix
     # tag::canary[]
@@ -57,6 +58,7 @@ metadata:
       web-service: 80%
       web-full-service: 20%
     # end::canary[]
+    # end::deleteannot[]
 spec:
   rules:
   - host:
@@ -65,7 +67,9 @@ spec:
       - path: /
         backend:
           serviceName: web-full-service
+      # tag::deletepath[]
       - path: /
         backend:
           serviceName: web-service
+      # end::deletepath[]
 # end::ingress[]

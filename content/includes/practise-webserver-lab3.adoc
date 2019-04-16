@@ -70,10 +70,25 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[ta
 
 [source,bash,subs="attributes"]
 ----
-# Add the new objetcs
+# Add the new objects
 kubectl apply -f ./03-k8s-apps/jenkins/deployment-svc-ingress.yml
 # Delete only the old ingress rule: the service will be reachable from the new one
 kubectl --namespace delete ingress web-ingress
+----
+
+== Switch all traffic to the new version
+
+[source,bash,subs="attributes"]
+----
+# Edit the ingress
+kubectl --namespace devoxx edit ingress web-full-ingress
+####
+# Delete the following lines
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deleteannot]
+...
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deletepath]
+# Exit and save
+###
 ----
 
 [{invert}]
