@@ -37,7 +37,7 @@ spec:
     - port: 8080
       name: jenkins-http
     - port: 50000
-      name: jenkins-admin
+      name: jenkins-agent
   selector:
     guilde: ci
     faction: jenkins

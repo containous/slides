@@ -118,6 +118,8 @@ include::./includes/practise-web-cli-lab2.adoc[]
 
 include::./includes/practise-the-castle.adoc[]
 
+include::./includes/practise-ci-lab3.adoc[]
+
 // include::./includes/traefikee.adoc[]
 
 // include::./includes/v2.adoc[]

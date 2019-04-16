@@ -57,8 +57,6 @@ kubectl apply -f ./jenkins/svc-ingress.yml
 [{invert}]
 == Reality Check
 
-Click on the "Jenkins" link:
-
 link:https://{lab-domain}/jenkins[https://{lab-domain}/jenkins,window=_blank]
 
 [.shadow]
