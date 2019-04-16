@@ -44,7 +44,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: web-ingress
+  name: web-full-ingress
   namespace: devoxx
   labels:
     guilde: web
@@ -54,12 +54,12 @@ metadata:
     traefik.frontend.rule.type: PathPrefix
     # tag::canary[]
     traefik.ingress.kubernetes.io/service-weights: |
-      web-service: 75%
-      web-full-service: 25%
+      web-service: 80%
+      web-full-service: 20%
     # end::canary[]
 spec:
   rules:
-  - host: {lab.domain}
+  - host:
     http:
       paths:
       - path: /
