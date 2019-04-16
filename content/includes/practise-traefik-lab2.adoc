@@ -9,6 +9,23 @@
 * {agenda-ws}
 
 [{invert}]
+== North-South connection in Kubernetes
+
+internet
+
+|
+
+[ Ingress ]
+
+--|-----|--
+
+[ Services ]
+
+--|-----|--
+
+[ Pods ]
+
+[{invert}]
 == Remember the Diagram?
 
 image::traefik-architecture.png["Traefik's Architecture",width=1000]
