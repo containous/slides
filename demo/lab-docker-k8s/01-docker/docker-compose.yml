@@ -15,15 +15,13 @@ services:
   # end::edge[]
   # tag::web[]
   web:
-    build:
-      context: ./web/
-      dockerfile: Dockerfile-v1
+    image: nmengin/web:devoxx-v1
     labels:
-      - "traefik.frontend.rule=Path:/"
+      - "traefik.frontend.rule=PathPrefix:/"
   # end::web[]
   # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.150.3-alpine
+    image: jenkins/jenkins:2.164.2-alpine
     expose:
       - 8080
       - 50000

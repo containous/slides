@@ -26,10 +26,24 @@ $ dig +short {lab-domain}
 
 * Docker and docker-compose installed on both the server and the client machines
 
+== DNS Setup
+
+* Connect to the "Blue-Green Jenkins":
+** Link: link:https://bg.bastion.ddu-workshops-1.com/blue["Blue-Green Jenkins",window=_blank]
+** Login with username `devoxx` and password `gandalf`
+
+* Run the Job "change-dns"
+** Link: https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity[Job "change-dns",window=_blank]
+** Specify the `EXTERNAL_HOSTNAME` of your lab (`labXX.ddu-workshops-Y.com`)
+** Specify the `BACKEND_IP` of your Docker VM (`10.0.x.y`)
+
+
 [{invert}]
 == Reality Check
 
 link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
 [.shadow]
-image::before-traefik-up.png[]
+image::lab1-before-traefik-up.png[]
+
+The external loadbalancer cannot reach our VM.

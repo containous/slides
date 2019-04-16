@@ -2,32 +2,33 @@
 version: '2.4'
 
 services:
+  # tag::edge-ssl[]
   edge:
     image: traefik:1.7.10
-    labels:
+    labels: # Replace "command" by labels
       - "traefik.enable=false"
     ports:
-      - "80:80"     # The HTTP port
-      - "443:443"   # The HTTPS port
+      - "80:80"
+      - "443:443"
     # tag::volumes[]
     volumes:
-      # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
       # Add the TOML configuration file in the root directory
       - ./traefik.toml:/traefik.toml
-      # ACME file (mod: 600)
-      - ./acme.json:/acme.json
+      # We declare the folder "/acme" as a data volume
+      - /acme
     # end::volumes[]
+  # end::edge-ssl[]
   # end::edge[]
   # tag::web[]
   web:
     image: nmengin/web:devoxx-v1
     labels:
-      - "traefik.frontend.rule=Path:/"
+      - "traefik.frontend.rule=PathPrefix:/"
   # end::web[]
   # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.150.3-alpine
+    image: jenkins/jenkins:2.164.2-alpine
     expose:
       - 8080
       - 50000

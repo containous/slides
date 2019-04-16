@@ -63,7 +63,7 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins-env-
 include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=jenkins]
 ----
 
-* Step 2: Update the service:
+* Step 2: start the service:
 
 [source,bash,subs="attributes"]
 ----

@@ -36,14 +36,14 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver-la
 == Gitea Setup
 
 * Step 1: Edit Compose file:
-+
+
 [source,yaml,indent=0]
 ----
 include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver]
 ----
 
 * Step 2: Create the service:
-+
+
 [source,bash,subs="attributes"]
 ----
 docker-compose up -d gitserver

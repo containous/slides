@@ -14,7 +14,7 @@
 * Do NOT care about certificates and renewal
 * Use a TOML configuration file
 * Redirect any incoming HTTP request to HTTPS
-+
+
 [source,bash,subs="attributes+"]
 ----
 http://{lab-domain}/
@@ -41,47 +41,39 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 == Problem 1/4
 
 * **Problem:** How to tell Traefik to listen on port `443` for HTTPS requests?
-+
+
 * **Solution:**
 ** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint]
-** Set it as a default entrypoint
-+
+** Add it to the default entrypoints list
+
 [source,toml,indent=0]
 ----
+# TOML sample
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoint-tls]
 ----
 
 == Problem 2/4
 
 * **Problem:** How to tell Traefik to redirect request from `http` to `https`?
-+
+
 * **Solution:** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http`.
-+
+
 [source,toml,indent=0]
 ----
+# TOML sample
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoints]
 ----
 
 == Problem 3/4
 
 * **Problem:** How to tell Traefik to use Let's Encrypt for HTTPS?
-+
-* **Solution:** 
-+
-** Step 1: Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider]:
+* **Solution:**
+** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider]:
 
 [source,toml,indent=0]
 ----
+# TOML sample
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=acme]
-----
-
-** Step 2: Give the needed rights to the `acme.json` file:
-
-[source,bash,indent=0]
-----
-touch acme.json
-chmod 600 acme.json
-ls -al
 ----
 
 == Problem 4/4
@@ -89,13 +81,13 @@ ls -al
 * **Problem:**
 ** Traefik detects itself as a docker container with a port
 ** It tries to request a 2nd certificate for `edge.{lab-domain}`.
-+
+
 * **Solution:** Exclude Traefik's container with the label `traefik.enable=false`.
 
 == Traefik Setup 1/2
 
 * Step 1: Create the configuration file `traefik.toml`:
-+
+
 [source,toml,subs="attributes"]
 ----
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=toml]
@@ -104,14 +96,14 @@ include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=toml]
 == Traefik Setup 2/2
 
 * Step 2: Adapt the Compose file:
-+
+
 [source,yaml,subs="attributes"]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=edge]
+include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=edge-ssl]
 ----
 
 * Step 3: Update the `edge` service:
-+
+
 [source,bash,subs="attributes"]
 ----
 docker-compose up -d edge

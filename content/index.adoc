@@ -84,8 +84,6 @@ include::./includes/agenda.adoc[]
 
 include::./includes/practise-the-hobbit-house.adoc[]
 
-include::./includes/why-traefik.adoc[]  
-
 include::./includes/practise-traefik.adoc[]
 
 include::./includes/practise-webserver.adoc[]
@@ -138,7 +136,7 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin] 
+link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
 link:https://github.com/nmengin[icon:github[] nmengin]
 
 link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]

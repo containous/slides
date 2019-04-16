@@ -25,7 +25,7 @@
 :stylesdir: styles
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
-:lab-domain: lab01.demo.containous.cloud
+:lab-domain: lab01.ddu-workshops-1.com
 :agenda-rp: Traefik
 :agenda-ci: CI Server
 :agenda-scm: SCM: A Gitea Git Server
@@ -33,5 +33,5 @@
 :agenda-ws: Web CLI
 :agenda-ssl: SSL for everyone
 :agenda-acme: Let's Encrypt Certificates
-:lab-path: /home/ubuntu/lab-docker-k8s
+:lab-path: /home/devoxx/lab-docker-k8s
 :public-ip: 35.178.178.237

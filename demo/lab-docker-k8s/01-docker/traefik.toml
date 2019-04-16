@@ -16,15 +16,18 @@ defaultEntryPoints = ["http", "https"]
 
 # tag::acme[]
 [acme]
-email = "lab01@devoxx.lab"
-storage = "/acme.json"
+email = "noreply@lab.org"
+storage = "/acme/acme.json"
 entryPoint = "https"
-onHostRule = true
+[acme.tlsChallenge]
+# caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+[[acme.domains]]
+main = "{lab-domain}"
 # end::acme[]
 
 # tag::docker[]
 [docker]
-domain={lab-domain}
+domain = "{lab-domain}"
 watch = true
 # end::docker[]
 # end::toml[]
