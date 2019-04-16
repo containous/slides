@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web-full-container
-          image: nmengin/web:devoxx
+          image: nmengin/web:devoxx-v2
           imagePullPolicy: IfNotPresent
 # end::deployment[]
 
