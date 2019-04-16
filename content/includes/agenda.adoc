@@ -1,11 +1,11 @@
-= Agenda
+= Menu
 
-=== The Hobbit House: Introduction to Traefik with Docker
-
-_Break_
-
-=== Saruman Tower: Migrate Traefik to Kubernetes
+*The Hobbit House: Introduction to Traefik with Docker*
 
 _Break_
 
-=== The Castle: Migrate the infrastructure to Kubernetes
+*Saruman Tower: Migrate Traefik to Kubernetes*
+
+_Break_
+
+*The Castle: Migrate the infrastructure to Kubernetes*

@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * {agenda-acme}
 * {agenda-rp}
@@ -10,11 +10,11 @@
 
 == Goal
 
-* We want access to the CI hosted in Docker through Traefik in Kubernetes
+We want access to the CI hosted in Docker through Traefik in Kubernetes
 
 == Challenge 1/2
 
-* **Problem:** How to tell to Traefik to route requests to the CI which is not deloyed in Kubernetes?
+**Problem:** How to tell to Traefik to route requests to the CI which is not deployed in Kubernetes?
 
 [source,bash,subs="attributes+"]
 ----
@@ -26,7 +26,7 @@ https://{lab-domain}/jenkins
 
 == Headless Service
 
-* **Solution:** Use (once again) a service linked to an external address
+**Solution:** Use (once again) a service linked to an external address.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -35,11 +35,11 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/jenkins/svc-ingress.yml[tag=sv
 
 == Challenge 2/2
 
-* **Problem:** How to detect the HTTPS requests to catch ?
+**Problem:** How to detect the HTTPS requests to catch?
 
 == Ingress Rule
 
-* **Solution:**  Catch the resquests for the `Path: /jenkins`:
+**Solution:**  Catch the resquests for the `Path: /jenkins`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -52,7 +52,6 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/jenkins/svc-ingress.yml[tag=in
 ----
 kubectl apply -f ./jenkins/svc-ingress.yml
 ----
-
 
 [{invert}]
 == Reality Check

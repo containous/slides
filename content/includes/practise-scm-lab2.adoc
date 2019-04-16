@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * {agenda-acme}
 * {agenda-rp}
@@ -10,7 +10,7 @@
 
 == Goal
 
-* We want access to the Git server hosted in Docker through Traefik in Kubernetes
+We want access to the Git server hosted in Docker through Traefik in Kubernetes.
 
 == Challenge 1/2
 
@@ -28,7 +28,7 @@ http://{lab-domain}/gitserver/index.html
 
 == Use a PathPrefix rule
 
-* **Solution:** Do not remove the prefix (Thank Captain Obvious)
+**Solution:** Do not remove the prefix (Thanks Captain Obvious!).
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -37,11 +37,11 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=ingr
 
 == Challenge 2/2
 
-* **Problem:** How to tell to Traefik to route requests to the SCM which is not deloyed in Kubernetes?
+**Problem:** How to tell to Traefik to route requests to the SCM which is not deployed in Kubernetes?
 
 == Headless Service
 
-* **Solution:** Use (once again again) a service linked to an external address
+**Solution:** Use (once again again) a service linked to an external address.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----

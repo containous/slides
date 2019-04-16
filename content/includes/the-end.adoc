@@ -6,17 +6,17 @@
 * Alpha version for a month
 * Main features:
 ** TCP
-** CDR
+** CRD
 ** ...
 * link:https://docs.traefik.io/v2.0/[Documentation]
 
 == High Availability
 
 * TraefikEE
-* HA
 * Split responsabilities
 ** Control Plane
 ** Data Plane
+* Let's Encrypt Distributed Support
 * 1.0.0 GA since... Today!
 * link:https://docs.containo.us/[Documentation]
 

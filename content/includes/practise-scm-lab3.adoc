@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 3
 
 * {agenda-ci}
 * **{agenda-scm}**
@@ -8,11 +8,13 @@
 
 == Goal
 
-* We want to host the Git server in Kubernetes and access it through Traefik
+We want to host the Git server in Kubernetes and access it through Traefik.
 
 == Challenges
 
-* **Problem 1:** How to host the Git server in Kubernetes?
+* **Problem 1:**
+** How to host the Git server in Kubernetes?
++
 * **Problem 2:**
 ** Gitea only serves requests under `/`
 ** Traefik in Docker already removes the prefix `/gitserver`

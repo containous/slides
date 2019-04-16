@@ -11,7 +11,7 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   rules:
-  - host: traefik.nicolas.containous.cloud
+  - host:
     http:
       paths:
       - path:

@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * {agenda-acme}
 * {agenda-rp}
@@ -10,11 +10,11 @@
 
 == Goal
 
-* We want to access to link:https://github.com/tsl0922/ttyd[TTYD,window=_blank] deployed in Docker through Traefik in Kubernetes
+We want to access to link:https://github.com/tsl0922/ttyd[TTYD,window=_blank] deployed in Docker through Traefik in Kubernetes.
 
 == Challenges
 
-* **Problem 1:** How to tell to Traefik to route requests to TTYD which is not deloyed in Kubernetes?
+* **Problem 1:** How to tell to Traefik to route requests to TTYD which is not deployed in Kubernetes?
 +
 [source,bash,subs="attributes+"]
 ----

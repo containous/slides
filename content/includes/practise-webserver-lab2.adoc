@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * {agenda-acme}
 * {agenda-rp}
@@ -10,11 +10,11 @@
 
 == Goal
 
-* We want access to the webserver hosted in Docker through Traefik in Kubernetes
+We want access to the webserver hosted in Docker through Traefik in Kubernetes.
 
 == Challenge 1/2
 
-* **Problem:** How to tell to Traefik to route requests to the web server which is not deloyed in Kubernetes?
+**Problem:** How to tell to Traefik to route requests to the web server which is not deployed in Kubernetes?
 
 [source,bash,subs="attributes+"]
 ----
@@ -26,7 +26,7 @@ https://{lab-domain}/index.html
 
 == Headless Service
 
-* **Solution:** Use a service linked to an external address
+**Solution:** Use a service linked to an external address.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -42,11 +42,11 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 
 == Challenge 2/2
 
-* **Problem:** How to detect the HTTPS requests to catch ?
+**Problem:** How to detect the HTTPS requests to catch?
 
 == Ingress Rule
 
-* **Solution:**  Catch all the incoming resquests for the `Path: /`:
+**Solution:**  Catch all the incoming resquests for the `Path: /`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----

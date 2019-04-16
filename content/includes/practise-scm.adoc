@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 1
 
 * {agenda-rp}
 * {agenda-web}
@@ -11,13 +11,14 @@
 == Goal
 
 * We want to host our own git server
-** Let's use link:https://gitea.io/en-us/["Gitea, A painless self-hosted Git service.",window=_blank]
+** Let's use link:https://gitea.io/en-us/["Gitea, a painless self-hosted Git service.",window=_blank]
 
 == Challenge
 
 * **Problem:**
-** Gitea only serves requests under `/`: How to remove the prefix `/gitserver`?
-
+** Gitea only serves requests under `/`:
+** How to remove the prefix `/gitserver`?
++
 [source,bash,subs="attributes+"]
 ----
 http://{lab-domain}/gitserver/index.html
@@ -25,9 +26,8 @@ http://{lab-domain}/gitserver/index.html
     -> http://<Gitea private IP>:3000/index.html
 ----
 
-* **Solution:**
-** Use the Traefik's Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefixStrip`,window=_blank]
-
+* **Solution:** Use the Traefik Frontend Rule link:https://docs.traefik.io/basics/#matchers[`PathPrefixStrip`,window=_blank].
++
 [source,yaml,indent=0]
 ----
 include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver-labels-rule]
@@ -36,14 +36,14 @@ include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver-la
 == Gitea Setup
 
 * Step 1: Edit Compose file:
-
++
 [source,yaml,indent=0]
 ----
 include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=gitserver]
 ----
 
-* Step 2: create the service
-
+* Step 2: Create the service:
++
 [source,bash,subs="attributes"]
 ----
 docker-compose up -d gitserver

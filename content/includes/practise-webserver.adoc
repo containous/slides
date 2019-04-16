@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 1
 
 * {agenda-rp}
 * **{agenda-web}**
@@ -10,11 +10,11 @@
 
 == Goal
 
-* We want to host a static webserver behind Traefik
+We want to host a static webserver behind Traefik.
 
 == Problem
 
-* How to tell Traefik to route requests to the web server?
+How to tell Traefik to route requests to the web server?
 
 [source,bash,subs="attributes+"]
 ----

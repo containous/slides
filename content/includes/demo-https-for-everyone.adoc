@@ -29,8 +29,7 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 
 == Problem 1/4
 
-* **Problem:**
-** How to tell Traefik to listen on port `443` for HTTPS requests?
+* **Problem:**  How to tell Traefik to listen on port `443` for HTTPS requests?
 
 * **Solution:**
 ** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`],
@@ -43,11 +42,9 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 
 == Problem 2/4
 
-* **Problem:**
-** How to tell Traefik to redirect request from http to https?
+* **Problem**: How to tell Traefik to redirect request from http to https?
 
-* **Solution:**
-** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http` with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`]:
+* **Solution:** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http` with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`]:
 +
 [source,yaml,indent=0]
 ----
@@ -56,11 +53,9 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 
 == Problem 3/4
 
-* **Problem:**
-** How to tell Traefik to use Let's Encrypt for HTTPS?
-
-* **Solution:**
-** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider] with the flags `--acme.*`:
+* **Problem**: How to tell Traefik to use Let's Encrypt for HTTPS?
++
+* **Solution:** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider] with the flags `--acme.*`:
 
 [source,yaml,indent=0]
 ----
@@ -69,11 +64,9 @@ include::../../demo/traefik-v1/software-forge/docker-compose-ssl.yml[tag=traefik
 
 == Problem 4/4
 
-* **Problem:**
-** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.{lab-domain}`
-
-* **Solution:**
-** Exclude Traefik's container with the label `traefik.enable=false`
+* **Problem**: Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.{lab-domain}`
++
+* **Solution:** Exclude Traefik's container with the label `traefik.enable=false`
 
 == Traefik Setup
 
@@ -94,7 +87,7 @@ docker-compose up -d edge
 [{invert}]
 == Reality Check
 
-* Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
+Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
 
 link:https://{lab-domain}[https://{lab-domain},window=_blank]
 

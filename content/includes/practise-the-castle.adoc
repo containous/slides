@@ -6,7 +6,7 @@ image::carcassonne.jpg[]
 
 == The Castle
 
-* We want to terminate the migration of our services from the K3S cluster.
+We want to terminate the migration of our services to the Kubernetes cluster.
 
 == Infrastructure Setup
 

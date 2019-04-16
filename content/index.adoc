@@ -31,7 +31,7 @@ image::qrcode.png["QRCode to this presentation",height=150]
 == Whoami 1/2
 Nicolas Mengin
 
-* Part Time DevOps & Code Craftsman @ link:https://containo.us/[Containous]
+* DevOps & Code Craftsman @ link:https://containo.us/[Containous]
 * Blacksmith on link:https://traefik.io/[Traefik]
 * link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
 * link:https://github.com/nmengin[icon:github[] nmengin]

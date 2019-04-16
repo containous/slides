@@ -7,7 +7,7 @@
 include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=edge]
 ----
 
-* Step 2: Start the stack
+* Step 2: Start the stack:
 +
 [source,bash,subs="attributes"]
 ----

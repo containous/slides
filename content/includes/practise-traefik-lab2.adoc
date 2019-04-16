@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * {agenda-acme}
 * **{agenda-rp}**
@@ -11,7 +11,7 @@
 [{invert}]
 == North-South connection in Kubernetes
 
-internet
+Internet
 
 |
 
@@ -40,40 +40,23 @@ Diagram from link:https://medium.com/@geraldcroes[]
 
 == Let's Go
 
-== Initialize Helm
-
-[source,bash,subs="attributes"]
-----
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-# add a service account within a namespace to segregate tiller
-kubectl --namespace kube-system create sa tiller
-# create a cluster role binding for tiller
-kubectl create clusterrolebinding tiller \
-    --clusterrole cluster-admin \
-    --serviceaccount=kube-system:tiller
-# initialized helm within the tiller service account
-helm init --service-account tiller
-# updates the repos for Helm repo integration
-helm repo update
-----
-
 == values.yaml file
 
-* Step 1: Add rights on namespace
+* Step 1: Add rights on namespace:
 +
 [source,yaml,subs="attributes"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=rbac]
 ----
 
-* Step 2: Set SSL EntryPoint with redirection
+* Step 2: Set SSL EntryPoint with redirection:
 +
 [source,yaml,subs="attributes"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/traefik/values.yml[tag=ssl]
 ----
 
-* Step 3: Add Let's Encrypt
+* Step 3: Add Let's Encrypt:
 +
 [source,yaml,subs="attributes"]
 ----
@@ -92,7 +75,6 @@ helm install stable/traefik \
 helm ls
 ----
 
-
 == Access to Traefik
 
 * Step 1: Run the command:
@@ -102,17 +84,13 @@ helm ls
 kubectl --namespace=devoxx get services
 ----
 
-* Step 2: Get the Load Balancer `EXTERNAL-IP`:
+* Step 2: Get the Load Balancer IP:
 +
-[source,bash,subs="attributes"]
-----
-NAME             TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)                      AGE
-traefik-devoxx   LoadBalancer   100.71.101.224   $EXTERNAL_IP   80:32256/TCP,443:31489/TCP   12s
-----
+*TODO: dduportal*
 
 * Step 3: Blue-Green on Traefik instances:
-
- *TODO: dduportal*
++
+*TODO: dduportal*
 
 [{invert}]
 == Reality Check

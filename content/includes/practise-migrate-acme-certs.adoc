@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 2
 
 * **{agenda-acme}**
 * {agenda-rp}
@@ -10,8 +10,8 @@
 
 == Goal
 
-* We want to use our generated Let's Encrypt certificates
-** We do not want to exceed link:https://letsencrypt.org/docs/rate-limits/["the ACME Rate Limits.",window=_blank]
+* We want to use our generated Let's Encrypt certificates.
+** We do not want to exceed link:https://letsencrypt.org/docs/rate-limits/["the ACME Rate Limits.",window=_blank].
 
 == Lab to define
 

@@ -3,12 +3,12 @@
 == An Infrastruture War 
 
 * Docker as a standard
-* Orchestrators: Docker Swarm, Rancher Caddle, Mesos, Kubernetes...
-* The war lasted couple of years...
+* Orchestrators: Docker Swarm, Rancher Caddle, Mesos Marathon, Kubernetes...
+* The war lasted a couple of years...
 
 == One orchestrator to rule them all
 
 * **Kubernetes**
-* Used by the concurrents
-* Standard in industry
+* Used by the competition
+* Standard in the industry
 * Powerful but not easy to master

@@ -6,7 +6,7 @@ image::hobbit-house.jpg[]
 
 == The Hobbit House
 
-We want a server in Gougle Cloud:
+We want a server in Google Cloud:
 
 * to host our own SCM Server,
 * and our own Continous Integration,
@@ -15,7 +15,7 @@ We want a server in Gougle Cloud:
 
 == Infrastructure Setup
 
-* An Gougle Cloud VM reaschable from a public IP `{public-ip}` and SSH access
+* A Google Cloud VM reachable from a public IP `{public-ip}` and SSH access
 * A domain name `{lab-domain}` pointing to `{public-ip}`
 +
 [source,bash,subs="attributes+"]

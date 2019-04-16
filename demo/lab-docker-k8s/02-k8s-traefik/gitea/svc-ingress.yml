@@ -31,7 +31,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
-  - host: lab.nicolas.containous.cloud
+  - host:
     http:
       paths:
       - path: /gitserver

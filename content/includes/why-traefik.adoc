@@ -1,5 +1,5 @@
 [{invert}]
-= Agenda
+= Lab 1
 
 * **{agenda-rp}**
 * {agenda-web}
