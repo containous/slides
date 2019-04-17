@@ -89,12 +89,12 @@ then the LoadBalancer can be reached at your VM's IP address:
 [source,bash,subs="attributes"]
 ----
 VM_IP="$(/sbin/ifconfig eth0 | grep 'inet ' | awk '{print $2}')"
-echo "${VM_IP}" # the Kube VM IP {kube_ip}
+echo "${VM_IP}" # the Kube VM IP {kube_vm_ip}
 ----
 
 * Step 3: Use the link:https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity["Blue-Green Jenkins job",window=_blank] to switch:
 ** Your domain name (`labXX.ddu-workshops-Y.com`)
-** To this `VM_IP` (`{kube_ip}`)
+** To this `VM_IP` (`{kube_vm_ip}`)
 
 [{invert}]
 == Reality Check

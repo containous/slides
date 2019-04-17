@@ -1,0 +1,35 @@
+#tag::pvc[]
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: acme-data-pvc
+  namespace: devoxx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 200Mi
+#end::pvc[]
+#tag::pod[]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: acme-loader
+  namespace: devoxx
+spec:
+  containers:
+  - name: acme-loader
+    image: traefik:alpine
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: acme
+      mountPath: /acme
+  volumes:
+  - name: acme
+    persistentVolumeClaim:
+      claimName: acme-data-pvc
+#end::pod[]

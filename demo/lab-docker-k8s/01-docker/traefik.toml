@@ -14,7 +14,7 @@ defaultEntryPoints = ["http", "https"]
 
 # tag::acme[]
 [acme]
-email = "noreply@lab.org"
+email = "{acme_email}"
 storage = "/acme/acme.json"
 entryPoint = "https"
 [acme.tlsChallenge]

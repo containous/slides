@@ -19,12 +19,13 @@ ssl:
 # tag::acme[]
 acme:
   enabled: true
-  email: devoxxlab@containo.us
+  email: {acme_email}
   onHostRule: true
   #staging: true
   challengeType: tls-alpn-01
-#  persistence:
-#    existingClaim:
+  persistence:
+    enabled: true
+    existingClaim: acme-data-pvc
 # end::acme[]
 
 # tag::api[]

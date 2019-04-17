@@ -13,6 +13,75 @@
 * We want to use our generated Let's Encrypt certificates.
 ** We do not want to exceed link:https://letsencrypt.org/docs/rate-limits/["the ACME Rate Limits.",window=_blank].
 
-== Lab to define
+== Retrieve Certificates from Docker
 
-TODO: dduportal
+* From the "Legacy" (Docker) VM:
+
+[source,bash,subs="attributes"]
+----
+# Get Traefik Container ID
+TRAEFIK_CONTAINER_ID="$(docker ps | grep traefik | grep edge | awk '{print $1}')"
+
+# Generate a file "certs.b64" in the user home
+docker run --rm --volumes-from="${TRAEFIK_CONTAINER_ID}" -t \
+    alpine cat /acme/acme.json | base64 > ~/certs.b64
+----
+
+* From the "bastion", copy the certificates to the new VM
+
+[source,bash,subs="attributes"]
+----
+ssh {docker_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
+----
+
+== Load Certificates in Kubernetes 1
+
+On the "Kube" VM, we create a Persistent Volume and populate it
+with the ACME data:
+
+* Step 1: Prepare a namespace for the lab:
++
+[source,bash,subs="attributes"]
+----
+kubectl create namespace devoxx
+----
+
+* Step 1: file `acme-pvc.yml`:
++
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=pvc]
+----
+
+* Step 2: create it:
++
+[source,bash,subs="attributes"]
+----
+kubectl apply -f acme-pvc.yml
+----
+
+== Load Certificates in Kubernetes 2
+
+* Step 1: file `acme-pod.yml`:
++
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=pod]
+----
+
+* Step 2: create it:
++
+[source,bash,subs="attributes"]
+----
+kubectl apply -f acme-pod.yml
+----
+
+
+watch kubectl get pod,pv,pvc --namespace=devoxx
+
+
+base64 --decode certs.b64 > ~/acme.json
+chmod 0600 ~/acme.json
+kubectl --namespace=devoxx cp ~/acme.json acme-loader:/acme/
+kubectl exec --namespace=devoxx acme-loader -- ls -l /acme
+kubectl delete -f acme-pod.yml

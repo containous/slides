@@ -37,7 +37,7 @@ metadata:
     # end::annotations[]
 spec:
   rules:
-  - host:
+  - host: {lab-domain}
     http:
       paths:
       - path: /
