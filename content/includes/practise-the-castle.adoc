@@ -10,5 +10,6 @@ We want to terminate the migration of our services to the Kubernetes cluster.
 
 == Infrastructure Setup
 
-* A K3S cluster on a VM reachable from a public IP `{public-ip}`
+* Same VM as the Lab 2 (`ssh {kube_vm_ip}` from the webshell)
+
 * `kubectl` and `helm` installed on the client machines

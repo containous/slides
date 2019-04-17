@@ -15,7 +15,10 @@ We want to begin the migration of our services from the our VM to a Kubernetes c
 
 == Infrastructure Setup
 
-* A K3S cluster on a VM reachable from a public IP `{public-ip}`
+* A Kubernetes cluster (k3s) on a 2nd VM
+** Get the IP on the spreadsheet (column "Kube IP (10.0.n.p)")
+** Connect to the VM with the webshell: `ssh {kube_vm_ip}`
+
 * `kubectl` and `helm` installed on the client machines
 
 [.notes]
