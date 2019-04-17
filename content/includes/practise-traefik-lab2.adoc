@@ -67,12 +67,10 @@ docker run --rm --volumes-from="${TRAEFIK_CONTAINER_ID}" -t \
 
 [source,bash,subs="attributes"]
 ----
-ssh {docker_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
+ssh {docker_vm_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
 ----
 
 == Import Certificates into Kubernetes
-
-**Idea:**
 
 * On the "Kube" VM, we'll create a pod with a PVC ("Persistent Volume Claim").
 * Then, using this pod, we'll populate the persistent volume with the `acme.json` data.
@@ -190,8 +188,8 @@ then the LoadBalancer can be reached at your VM's IP address:
 +
 [source,bash,subs="attributes"]
 ----
-VM_IP="$(/sbin/ifconfig eth0 | grep 'inet ' | awk '{print $2}')"
-echo "${VM_IP}" # the Kube VM IP {kube_vm_ip}
+curl {kube_vm_ip}
+# 404 Not Found
 ----
 
 * Step 3: Use the link:https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity["Blue-Green Jenkins job",window=_blank] to switch:

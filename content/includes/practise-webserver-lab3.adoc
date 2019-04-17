@@ -87,7 +87,7 @@ link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 image::lab1-after-webserver-up.png[width=525, float=left , margin-left=100]
 image::lab3-after-webserver-up.png[width=500, float=center]
 
-It's good: we have a web page in the 2 versions!
+It's good: when reloading, the 2 versions of the web page are shown!
 
 
 == Switch all traffic to the new version

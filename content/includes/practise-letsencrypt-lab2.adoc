@@ -31,7 +31,7 @@ docker run --rm --volumes-from="${TRAEFIK_CONTAINER_ID}" -t \
 
 [source,bash,subs="attributes"]
 ----
-ssh {docker_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
+ssh {docker_vm_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
 ----
 
 == Import Certificates into Kubernetes
