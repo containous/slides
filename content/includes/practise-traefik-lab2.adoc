@@ -200,7 +200,7 @@ curl {kube_vm_ip}
 [{invert}]
 == Reality Check
 
-link:https://{lab-domain}/[http://{lab-domain}/,window=_blank]
+link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 
 image::after-traefik-up.png[]
 

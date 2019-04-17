@@ -27,7 +27,7 @@ https://{lab-domain}/jenkins
 
 == Headless Service
 
-**Solution:** Use (once again) a service linked to an external address.
+**Solution:** Use (once again) a service linked to an external address in `lab2-ci.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -40,7 +40,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/jenkins/svc-ingress.yml[tag=sv
 
 == Ingress Rule
 
-**Solution:**  Catch the requests for the `PathPrefix:/jenkins`.
+**Solution:** Define a rule to catch all the incoming resquests for the `Path:/jenkins` in `lab2-ci.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -51,7 +51,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/jenkins/svc-ingress.yml[tag=in
 
 [source,bash,subs="attributes"]
 ----
-kubectl apply -f ./jenkins/svc-ingress.yml
+kubectl apply -f ./lab2-ci.yml
 ----
 
 [{invert}]

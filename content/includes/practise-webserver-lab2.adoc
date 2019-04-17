@@ -27,7 +27,7 @@ https://{lab-domain}/index.html
 
 == Headless Service
 
-**Solution:** Use a service linked to an external address.
+**Solution:** Define a service linked to an external address in `lab2-web.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -47,7 +47,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 
 == Ingress Rule
 
-**Solution:**  Catch all the incoming resquests for the `Path: /`.
+**Solution:** Define a rule to catch all the incoming resquests for the `Path: /` in `lab2-web.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -58,7 +58,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingres
 
 [source,bash,subs="attributes"]
 ----
-kubectl apply -f ./web/svc-ingress.yml
+kubectl apply -f ./lab2-web.yml
 ----
 
 [{invert}]
