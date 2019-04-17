@@ -20,6 +20,8 @@ image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
 
 == Deployment Object
 
+**Solution:** Declare it as a `Deployment` object in `~/03-k8s-apps/web.yml`.
+
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deployment]
@@ -56,12 +58,16 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[ta
 
 == Service
 
+**Solution:** Adding a service in `~/03-k8s-apps/web.yml`.
+
 [source,yaml,indent=0,subs="attributes"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=svc]
 ----
 
 == Ingress Rule
+
+**Solution:** Adding an Ingress Rule in `~/03-k8s-apps/web.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -73,9 +79,9 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[ta
 [source,bash,subs="attributes"]
 ----
 # Add the new objects
-kubectl apply -f ./03-k8s-apps/jenkins/deployment-svc-ingress.yml
+kubectl apply -f ~/03-k8s-apps/web.yml
 # Delete only the old ingress rule: the service will be reachable from the new one
-kubectl --namespace delete ingress web-ingress
+kubectl --namespace devoxx delete ingress web-ingress
 ----
 
 [{invert}]

@@ -47,7 +47,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=svc]
 
 == Ingress Rule
 
-**Solution:** Define a rule to catch all the incoming resquests for the `Path: /` in `lab2-web.yml`.
+**Solution:** Define a rule to catch all the incoming resquests for the `PathPrefix:/` in `lab2-web.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----

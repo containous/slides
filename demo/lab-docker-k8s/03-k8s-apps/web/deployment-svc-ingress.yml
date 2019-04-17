@@ -34,9 +34,8 @@ spec:
     - port: 80
       name: web-http
   selector:
-    labels:
-      guilde: web
-      faction: server
+    guilde: web
+    faction: server
 # end::svc[]
 
 # tag::ingress[]
@@ -67,9 +66,11 @@ spec:
       - path: /
         backend:
           serviceName: web-full-service
+          servicePort: web-http
       # tag::deletepath[]
       - path: /
         backend:
           serviceName: web-service
+          servicePort: web-http
       # end::deletepath[]
 # end::ingress[]

@@ -26,6 +26,8 @@ http://{lab-domain}/ttyd/
 
 == Deployment Object
 
+**Solution:** Declare it as a `Deployment` object in `~/03-k8s-apps/ttyd.yml`.
+
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/ttyd/deployment-svc-ingress.yml[tag=deployment]
@@ -33,12 +35,16 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/ttyd/deployment-svc-ingress.yml[t
 
 == Service
 
+**Solution:** Adding a service in `~/03-k8s-apps/ttyd.yml`.
+
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/ttyd/deployment-svc-ingress.yml[tag=svc]
 ----
 
 == Ingress Rule
+
+**Solution:** Adding an Ingress Rule in `~/03-k8s-apps/ttyd.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -50,9 +56,9 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/ttyd/deployment-svc-ingress.yml[t
 [source,bash,subs="attributes"]
 ----
 # Add the new objects
-kubectl apply -f ./03-k8s-apps/ttyd/deployment-svc-ingress.yml
+kubectl apply -f ~/03-k8s-apps/ttyd.yml
 # Delete the headless service and its ingress rule (blue-green)
-kubectl delete -f ./02-k8s-traefik/ttyd/svc-ingress.yml
+kubectl delete -f ~/02-k8s-traefik/ttyd.yml
 ----
 
 [{invert}]
