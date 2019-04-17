@@ -76,6 +76,18 @@ kubectl apply -f ./03-k8s-apps/jenkins/deployment-svc-ingress.yml
 kubectl --namespace delete ingress web-ingress
 ----
 
+[{invert}]
+== Reality Check
+
+link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
+
+[.shadow]
+image::lab1-after-webserver-up.png[width=525, float=left , margin-left=100]
+image::lab3-after-webserver-up.png[width=500, float=center]
+
+It's good: we have a web page in the 2 versions!
+
+
 == Switch all traffic to the new version
 
 [source,bash,subs="attributes"]
@@ -96,6 +108,7 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[ta
 
 link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 
-image::after-webserver-up.png[]
+[.shadow]
+image::lab3-after-webserver-up.png[width=500]
 
-It's good: we have a web page in the 2 versions!
+It's good: we only have the new version of the web page!

@@ -17,6 +17,7 @@
 ** Control Plane
 ** Data Plane
 * Let's Encrypt Distributed Support
+* CLI
 * 1.0.0 GA since... Today!
 * link:https://docs.containo.us/[Documentation]
 
