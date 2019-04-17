@@ -72,7 +72,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=deploy]
 +
 [source,bash,subs="attributes"]
 ----
-kubectl apply -f acme-pod.yml
+kubectl apply -f acme-deploy.yml
 ----
 
 == Load ACME data in Kubernetes
@@ -101,7 +101,7 @@ kubectl exec --namespace=devoxx acme-loader -- ls -l /acme
 +
 [source,bash,subs="attributes"]
 ----
-kubectl delete -f acme-pod.yml
+kubectl delete -f acme-deploy.yml
 ----
 
 == That's all

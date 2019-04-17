@@ -21,6 +21,8 @@ We want to begin the migration of our services from the our VM to a Kubernetes c
 
 * `kubectl` and `helm` installed on the client machines
 
+* Create a directory named `~/02-k8s-traefik` as working directory
+
 [.notes]
 --
 * Explain what is K3S and why we are using it

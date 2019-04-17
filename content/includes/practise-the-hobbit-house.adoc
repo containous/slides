@@ -33,6 +33,8 @@ We want to host:
 
 * Docker and docker-compose installed on the "Docker" VM
 
+* Create a directory named `~/01-docker` as working directory
+
 == DNS Setup
 
 * Connect to the "Blue-Green Jenkins":
