@@ -29,7 +29,7 @@ https://{lab-domain}/ttyd
 
 == Solution 1
 
-* Use a Headless Service in `lab2-ttyd.yml`:
+* Use a Headless Service in `~/02-k8s-traefik/ttyd.yml`:
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -38,7 +38,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/ttyd/svc-ingress.yml[tag=svc]
 
 == Solution 2
 
-* Ingress Rule with `PathPrefix:/ttyd` in `lab2-ttyd.yml`:
+* Ingress Rule with `PathPrefix:/ttyd` in `~/02-k8s-traefik/ttyd.yml`:
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -49,7 +49,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/ttyd/svc-ingress.yml[tag=ingre
 
 [source,bash,subs="attributes"]
 ----
-kubectl apply -f ./lab2-ttyd.yml
+kubectl apply -f ~/02-k8s-traefik/ttyd.yml
 ----
 
 [{invert}]

@@ -29,7 +29,7 @@ http://{lab-domain}/gitserver/index.html
 
 == Use a PathPrefix rule
 
-**Solution:** Do not remove the prefix (Thanks Captain Obvious!) in the ingress rule in `lab2-gitea.yml`.
+**Solution:** Do not remove the prefix (Thanks Captain Obvious!) in the ingress rule in `~/02-k8s-traefik/gitea.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -42,7 +42,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=ingr
 
 == Headless Service
 
-**Solution:** Use (once again again) a service linked to an external address in `lab2-gitea.yml`.
+**Solution:** Use (once again again) a service linked to an external address in `~/02-k8s-traefik/gitea.yml`.
 
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -53,7 +53,7 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/gitea/svc-ingress.yml[tag=svc]
 
 [source,bash,subs="attributes"]
 ----
-kubectl apply -f ./lab2-gitea.yml
+kubectl apply -f ~/02-k8s-traefik/gitea.yml
 ----
 
 [{invert}]
