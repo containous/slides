@@ -1,7 +1,6 @@
 [{invert}]
 = Lab 2
 
-* {agenda-acme}
 * {agenda-rp}
 * {agenda-web}
 * {agenda-ci}

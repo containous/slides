@@ -100,7 +100,7 @@ include::./includes/practise-letsencrypt.adoc[]
 
 include::./includes/practise-the-tower.adoc[]
 
-include::./includes/practise-letsencrypt-lab2.adoc[]
+// include::./includes/practise-letsencrypt-lab2.adoc[]
 
 include::./includes/practise-traefik-lab2.adoc[]
 
