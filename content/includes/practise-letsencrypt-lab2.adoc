@@ -15,7 +15,7 @@
 
 == Retrieve Certificates from Docker
 
-* From the "Legacy" (Docker) VM:
+* Step 1: From the "Legacy" (Docker) VM:
 
 [source,bash,subs="attributes"]
 ----
@@ -27,61 +27,83 @@ docker run --rm --volumes-from="${TRAEFIK_CONTAINER_ID}" -t \
     alpine cat /acme/acme.json | base64 > ~/certs.b64
 ----
 
-* From the "bastion", copy the certificates to the new VM
+* Step 2: From the "bastion", copy the certificates to the new VM
 
 [source,bash,subs="attributes"]
 ----
 ssh {docker_ip} cat certs.b64 | ssh {kube_vm_ip} "cat > certs.b64"
 ----
 
-== Load Certificates in Kubernetes 1
+== Import Certificates into Kubernetes
 
-On the "Kube" VM, we create a Persistent Volume and populate it
-with the ACME data:
+**Idea:**
 
-* Step 1: Prepare a namespace for the lab:
-+
-[source,bash,subs="attributes"]
-----
-kubectl create namespace devoxx
-----
+* On the "Kube" VM, we'll create a pod with a PVC ("Persistent Volume Claim").
+* Then, using this pod, we'll populate the persistent volume with the `acme.json` data.
+* After that, we'll be able to install the Traefik Ingress configured to use this PVC.
 
-* Step 1: file `acme-pvc.yml`:
+== Prepare PVC in Kubernetes
+
+* Step 1: Create the PVC ("Persistent Volume Claim") manifest file `acme-pvc.yml`:
 +
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=pvc]
 ----
 
-* Step 2: create it:
+* Step 2: create namespace and PVC:
 +
 [source,bash,subs="attributes"]
 ----
+kubectl create namespace devoxx
 kubectl apply -f acme-pvc.yml
 ----
 
-== Load Certificates in Kubernetes 2
+== Prepare the "acme-loader" Deployment
 
-* Step 1: file `acme-pod.yml`:
+* Step 1: Create the manifest file `acme-deploy.yml`:
 +
 [source,yaml,indent=0,subs="attributes+"]
 ----
-include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=pod]
+include::../../demo/lab-docker-k8s/02-k8s-traefik/acme/pvc.yml[tag=deploy]
 ----
 
-* Step 2: create it:
+* Step 2: create the deployment:
 +
 [source,bash,subs="attributes"]
 ----
 kubectl apply -f acme-pod.yml
 ----
 
+== Load ACME data in Kubernetes
 
+* Step 1: Wait for the pod and pvc to be created:
++
+[source,bash,subs="attributes"]
+----
+# Expecting the pod "acme-loader" to be in state "Running"
 watch kubectl get pod,pv,pvc --namespace=devoxx
+# Then hit CTRL-C
+----
 
-
+* Step 2: Decode ACME data and copy it:
++
+[source,bash,subs="attributes"]
+----
 base64 --decode certs.b64 > ~/acme.json
 chmod 0600 ~/acme.json
 kubectl --namespace=devoxx cp ~/acme.json acme-loader:/acme/
 kubectl exec --namespace=devoxx acme-loader -- ls -l /acme
+# the file "acme.json" MUST be in 600 (-rw-------)
+----
+
+* Step 3: Remove the "acme-loader" deployment:
++
+[source,bash,subs="attributes"]
+----
 kubectl delete -f acme-pod.yml
+----
+
+== That's all
+
+Ready to go to the next step!
