@@ -14,8 +14,8 @@ We want to host the CI in Kubernetes and access it through Traefik
 
 **Problem:** How to host the CI in Kubernetes?
 
-== Deployment Object 
- 
+== Deployment Object
+
 **Solution:** Deploy it as a `Deployment` object.
 [source,yaml,indent=0,subs="attributes+"]
 ----
@@ -74,7 +74,6 @@ kubectl delete -f ./02-k8s-traefik/jenkins/svc-ingress.yml
 
 link:https://{lab-domain}/jenkins[https://{lab-domain}/jenkins,window=_blank]
 
-[.shadow]
 image::after-jenkins-up.png[width=500]
 
 It's good: we can setup Jenkins in Kubernetes!

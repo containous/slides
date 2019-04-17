@@ -43,7 +43,6 @@ $ dig +short {lab-domain}
 
 link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
-[.shadow]
 image::lab1-before-traefik-up.png[]
 
 The external loadbalancer cannot reach our VM.

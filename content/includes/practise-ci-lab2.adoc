@@ -57,7 +57,6 @@ kubectl apply -f ./jenkins/svc-ingress.yml
 
 link:https://{lab-domain}/jenkins[https://{lab-domain}/jenkins,window=_blank]
 
-[.shadow]
 image::after-jenkins-up.png[width=500]
 
 It's good: we still can setup Jenkins!

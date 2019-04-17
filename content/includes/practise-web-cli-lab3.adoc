@@ -22,8 +22,8 @@ http://{lab-domain}/ttyd/
       -> http://<WebCLI private IP>/
 ----
 
-== Deployment Object 
- 
+== Deployment Object
+
 [source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/ttyd/deployment-svc-ingress.yml[tag=deployment]
@@ -58,7 +58,6 @@ kubectl delete -f ./02-k8s-traefik/ttyd/svc-ingress.yml
 
 link:https://{lab-domain}/ttyd[https://{lab-domain}/ttyd,window=_blank]
 
-[.shadow]
 image::after-ttyd-up.png[width=500]
 
 It's good: we have our own "Dev Box" in a web browser hosted in Kubernetes!

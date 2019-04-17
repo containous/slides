@@ -1,4 +1,4 @@
-# tag::ingress[] 
+# tag::ingress[]
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -14,7 +14,8 @@ spec:
   - host:
     http:
       paths:
-      - path:
+      - host: {lab-domain}
+        path:
         backend:
           serviceName: traefik-devoxx-dashboard
           servicePort: 80

@@ -30,7 +30,7 @@ metadata:
     traefik.frontend.rule.type: PathPrefix
 spec:
   rules:
-  - host:
+  - host: {lab-domain}
     http:
       paths:
       - path: /jenkins

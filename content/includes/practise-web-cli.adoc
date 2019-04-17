@@ -40,7 +40,6 @@ docker-compose up -d ttyd
 
 link:http://{lab-domain}/ttyd[http://{lab-domain}/ttyd,window=_blank]
 
-[.shadow]
 image::after-ttyd-up.png[width=500]
 
 It's good: we have our own "web CLI" in a web browser!

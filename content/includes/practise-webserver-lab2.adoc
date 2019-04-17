@@ -64,7 +64,6 @@ kubectl apply -f ./web/svc-ingress.yml
 
 link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 
-[.shadow]
-image::after-webserver-up.png[]
+image::lab1-after-webserver-up.png[width=500]
 
 It's good: we have a web page!

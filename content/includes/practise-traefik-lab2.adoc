@@ -201,7 +201,6 @@ echo "${VM_IP}" # the Kube VM IP {kube_vm_ip}
 
 link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
-[.shadow]
 image::after-traefik-up.png[]
 
 It's good: we have an HTTP answer!

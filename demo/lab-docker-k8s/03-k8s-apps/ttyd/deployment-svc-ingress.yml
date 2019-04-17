@@ -50,10 +50,11 @@ metadata:
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - host:
+  - host: {lab-domain}
     http:
       paths:
       - path: /ttyd
         backend:
           serviceName: ttyd-full-service
+          servicePort: ttyd-ws
 # end::ingress[]

@@ -54,7 +54,6 @@ docker-compose up -d gitserver
 
 link:http://{lab-domain}/gitserver[http://{lab-domain}/gitserver,window=_blank]
 
-[.shadow]
 image::after-gitea-up.png[width=500]
 
 It's good: we can setup Gitea!
