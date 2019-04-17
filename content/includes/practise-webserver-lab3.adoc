@@ -89,7 +89,6 @@ image::lab3-after-webserver-up.png[width=500, float=center]
 
 It's good: when reloading, the 2 versions of the web page are shown!
 
-
 == Switch all traffic to the new version
 
 [source,bash,subs="attributes"]

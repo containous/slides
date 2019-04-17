@@ -4,27 +4,34 @@
 
 image::hobbit-house.jpg[]
 
-== The Hobbit House
+[{invert}]
+== The Blacksmith
 
-We want a server in Google Cloud:
+image::blacksmith.jpg[background, size=cover]
 
-* to host our own SCM Server,
-* and our own Continous Integration,
-* and a static web site,
+We want to host:
+
+* Our web site
+* Our own SCM Server,
+* Our own Continous Integration,
 * and a "web" command line.
+
+== Preparation
+
+* Step 1: Access the spreadsheet at https://bit.ly/2Pdfe41[]
+* Step 2: Select a line and put your name to allocate the VM
+* Step 3: no Step 3!
 
 == Infrastructure Setup
 
-* A Google Cloud VM reachable from a public IP `{public-ip}` and SSH access
-* A domain name `{lab-domain}` pointing to `{public-ip}`
-+
-[source,bash,subs="attributes+"]
-----
-$ dig +short {lab-domain}
-{public-ip}
-----
+* An online shell to reach the lab infrastructure via SSH
 
-* Docker and docker-compose installed on both the server and the client machines
+* A public domain name `{lab-domain}` for your stack
+
+* A VM in the cloud, to run your "legacy" Dockerized applications
+** Connect to it from the WebCLI with `ssh {docker_vm_ip}`
+
+* Docker and docker-compose installed on the "Docker" VM
 
 == DNS Setup
 
@@ -36,7 +43,6 @@ $ dig +short {lab-domain}
 ** Link: https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity[Job "change-dns",window=_blank]
 ** Specify the `EXTERNAL_HOSTNAME` of your lab (`labXX.ddu-workshops-Y.com`)
 ** Specify the `BACKEND_IP` of your Docker VM (`10.0.x.y`)
-
 
 [{invert}]
 == Reality Check

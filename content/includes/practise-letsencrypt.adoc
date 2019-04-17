@@ -41,7 +41,7 @@ It uses the "ACME" protocol to verify that you control a given domain name and t
 ** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint]
 ** Add it to the default entrypoints list
 
-[source,toml,indent=0]
+[source,toml,indent=0,subs="attributes"]
 ----
 # TOML sample
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoint-tls]
@@ -53,7 +53,7 @@ include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoint-tls]
 * **Solution:**
 ** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider]:
 
-[source,toml,indent=0]
+[source,toml,indent=0,subs="attributes"]
 ----
 # TOML sample
 include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=acme]

@@ -70,10 +70,6 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-// Environment check list
-
-include::./includes/forge.adoc[]
-
 // Introduction
 
 include::./includes/intro.adoc[]

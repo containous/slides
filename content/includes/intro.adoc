@@ -1,6 +1,6 @@
 = Once Upon a Time...
 
-== An Infrastruture War 
+== An Infrastructure War 
 
 * Docker as a standard
 * Orchestrators: Docker Swarm, Rancher Caddle, Mesos Marathon, Kubernetes...
