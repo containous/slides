@@ -1,0 +1,20 @@
+[{invert}]
+= Lab 2
+
+image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
+
+* **{agenda-acme}**
+* {agenda-rp}
+* {agenda-web}
+* {agenda-ci}
+* {agenda-scm}
+* {agenda-ws}
+
+== Goal
+
+* We want to use our generated Let's Encrypt certificates.
+** We do not want to exceed link:https://letsencrypt.org/docs/rate-limits/["the ACME Rate Limits.",window=_blank].
+
+== Lab to define
+
+TODO: dduportal

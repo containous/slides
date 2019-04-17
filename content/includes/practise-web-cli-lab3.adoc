@@ -1,6 +1,8 @@
 [{invert}]
 = Lab 3
 
+image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
+
 * {agenda-ci}
 * {agenda-scm}
 * **{agenda-ws}**
