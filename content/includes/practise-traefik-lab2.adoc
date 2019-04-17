@@ -188,6 +188,7 @@ then the LoadBalancer can be reached at your VM's IP address:
 +
 [source,bash,subs="attributes"]
 ----
+# Launch a curl command from the Kube VM
 curl {kube_vm_ip}
 # 404 Not Found
 ----
@@ -199,7 +200,7 @@ curl {kube_vm_ip}
 [{invert}]
 == Reality Check
 
-link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
+link:https://{lab-domain}/[http://{lab-domain}/,window=_blank]
 
 image::after-traefik-up.png[]
 
