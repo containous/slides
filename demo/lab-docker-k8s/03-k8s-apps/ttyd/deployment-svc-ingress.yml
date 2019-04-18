@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ttyd-full-container
-          image: tsl0922/ttyd:latest
+          image: tsl0922/ttyd:1.4.2-alpine
           imagePullPolicy: IfNotPresent
 # end::deployment[]
 

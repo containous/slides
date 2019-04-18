@@ -38,6 +38,6 @@ services:
       - "traefik.port=3000"
       - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
   ttyd:
-    image: tsl0922/ttyd
+    image: tsl0922/ttyd:1.4.2-alpine
     labels:
       - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
