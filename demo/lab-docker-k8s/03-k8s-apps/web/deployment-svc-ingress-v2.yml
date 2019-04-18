@@ -1,9 +1,9 @@
-# tag::deployment[]
 ---
+# tag::deployment[]
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: web-full-deployment
+  name: web-full-v2-deployment
   namespace: devoxx
 spec:
   replicas: 1
@@ -11,11 +11,11 @@ spec:
     metadata:
       labels:
         guilde: web
-        faction: server
+        faction: server-v2
     spec:
       containers:
-        - name: web-full-container
-          image: nmengin/web:devoxx-v1
+        - name: web-full-v2-container
+          image: nmengin/web:devoxx-v2
           imagePullPolicy: IfNotPresent
 # end::deployment[]
 
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-full-service
+  name: web-full-v2-service
   namespace: devoxx
   labels:
     guilde: web
@@ -35,7 +35,7 @@ spec:
       name: web-http
   selector:
     guilde: web
-    faction: server
+    faction: server-v2
 # end::svc[]
 
 # tag::ingress[]
@@ -43,12 +43,21 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: web-full-ingress
+  name: web-full-v2-ingress
   namespace: devoxx
   labels:
     guilde: web
   annotations:
     kubernetes.io/ingress.class: 'traefik'
+    # tag::deleteannot[]
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.rule.type: PathPrefix
+    # tag::canary[]
+    traefik.ingress.kubernetes.io/service-weights: |
+      web-full-service: 80%
+      web-full-v2-service: 20%
+    # end::canary[]
+    # end::deleteannot[]
 spec:
   rules:
   - host: {lab-domain}
@@ -56,6 +65,12 @@ spec:
       paths:
       - path: /
         backend:
+          serviceName: web-full-v2-service
+          servicePort: web-http
+      # tag::deletepath[]
+      - path: /
+        backend:
           serviceName: web-full-service
           servicePort: web-http
+      # end::deletepath[]
 # end::ingress[]

@@ -10,13 +10,20 @@ image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
 
 == Goal
 
-* We want to deploy a new version of the webserver:
-** hosted in Kubernetes and accessed through Traefik
-** continue to access to the old version for the main part of the traffic
+We want to host the webserver in Kubernetes and access it through Traefik.
 
-== Challenge 1/3
+== Challenges
 
-**Problem:** How to host the new version of the webserver in Kubernetes?
+* **Problem 1:** How to host the web server in Kubernetes?
+
+* **Problem 2:** How to access to the web server?
+
+[source,bash,subs="attributes+"]
+----
+http://{lab-domain}/index.html
+  -> Traefik
+    -> http://<Webserver Private IP>/index.html
+----
 
 == Deployment Object
 
@@ -27,40 +34,11 @@ image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
 include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deployment]
 ----
 
-== Challenge 2/2
-
-**Problem:** How to access to both the old and new version at the same time with a traffic repartition?
-
-[source,bash,subs="attributes+"]
-----
-https://{lab-domain}/
-  -> Traefik Kubernetes
-    -> 80% of traffic:
-      -> Traefik Docker
-      -> https://<Webserver Docker Private IP>/
-    -> 20% of traffic:
-      -> https://<Webserver kubernetes Private IP>/
-----
-
-== Follow the yellow bird!
-
-**Solution:** Use the link:https://docs.traefik.io/user-guide/kubernetes/#traffic-splitting[Traffic splitting feature in Traefik,window=_blank].
-
-[source,yaml,indent=0,subs="attributes+"]
-----
-include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=canary]
-----
-
-[.notes]
---
-* explain the principle of canary release
---
-
 == Service
 
 **Solution:** Adding a service in `~/03-k8s-apps/web.yml`.
 
-[source,yaml,indent=0,subs="attributes"]
+[source,yaml,indent=0,subs="attributes+"]
 ----
 include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=svc]
 ----
@@ -80,8 +58,98 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[ta
 ----
 # Add the new objects
 kubectl apply -f ~/03-k8s-apps/web.yml
+# Delete the headless service and its ingress rule (blue-green)
+kubectl delete -f ~/02-k8s-traefik/web.yml
+----
+
+[{invert}]
+== Reality Check
+
+[{invert}]
+== Reality Check
+
+link:http://{lab-domain}/[http://{lab-domain}/,window=_blank]
+
+image::lab1-after-webserver-up.png[width=500]
+
+It's good: we have a web page in Kubernetes!
+
+= Extra ball
+
+== Goal
+
+* We want to deploy a new version of the webserver:
+** hosted in Kubernetes and accessed through Traefik
+** continue to access to the old version for the main part of the traffic
+
+== Challenge 1/3
+
+**Problem:** How to host the new version of the webserver in Kubernetes?
+
+== Deployment Object
+
+**Solution:** Declare it as a `Deployment` object in `~/03-k8s-apps/web-v2.yml`.
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=deployment]
+----
+
+== Challenge 2/2
+
+**Problem:** How to access to both the old and new version at the same time with a traffic repartition?
+
+[source,bash,subs="attributes+"]
+----
+https://{lab-domain}/
+  -> Traefik Kubernetes
+    -> 80% of traffic V1:
+      -> https://<Webserver Docker Private IP>/
+    -> 20% of traffic V2:
+      -> https://<Webserver kubernetes Private IP>/
+----
+
+== Follow the yellow bird!
+
+**Solution:** Use the link:https://docs.traefik.io/user-guide/kubernetes/#traffic-splitting[Traffic splitting feature in Traefik,window=_blank].
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=canary]
+----
+
+[.notes]
+--
+* explain the principle of canary release
+--
+
+== Ingress Rule
+
+**Solution:** In `~/03-k8s-apps/web-v2.yml`.
+
+[source,yaml,indent=0,subs="attributes+"]
+----
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=ingress]
+----
+
+== Service
+
+**Solution:** In `~/03-k8s-apps/web-v2.yml`.
+
+[source,yaml,indent=0,subs="attributes"]
+----
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=svc]
+----
+
+
+== Apply the configuration
+
+[source,bash,subs="attributes"]
+----
+# Add the new objects
+kubectl apply -f ~/03-k8s-apps/web.yml
 # Delete only the old ingress rule: the service will be reachable from the new one
-kubectl --namespace devoxx delete ingress web-ingress
+kubectl --namespace devoxx delete ingress web-full-ingress
 ----
 
 [{invert}]
@@ -100,12 +168,12 @@ It's good: when reloading, the 2 versions of the web page are shown!
 [source,bash,subs="attributes"]
 ----
 # Edit the ingress
-kubectl --namespace devoxx edit ingress web-full-ingress
+kubectl --namespace devoxx edit ingress web-full-ingress-v2
 ####
 # Delete the following lines
-include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deleteannot]
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=deleteannot]
 ...
-include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress.yml[tag=deletepath]
+include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=deletepath]
 # Exit and save
 ###
 ----
