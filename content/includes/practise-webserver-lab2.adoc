@@ -56,10 +56,26 @@ include::../../demo/lab-docker-k8s/02-k8s-traefik/web/svc-ingress.yml[tag=ingres
 
 == Apply the configuration
 
+* Step 1: Apply the Kubernetes manifest:
++
 [source,bash,subs="attributes"]
 ----
 kubectl apply -f ~/02-k8s-traefik/web.yml
 ----
+
+* Step 2: Verify locally:
++
+[source,bash,subs="attributes"]
+----
+curl -v -sSL {kube_vm_ip} -H "Host: {lab-domain}" > /dev/null
+# ...
+# < HTTP/2 200
+# ...
+----
+
+* Step 3: Use the link:https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity["Blue-Green Jenkins job",window=_blank] to switch:
+** Your domain name (`labXX.ddu-workshops-Y.com`)
+** To this `VM_IP` (`{kube_vm_ip}`)
 
 [{invert}]
 == Reality Check

@@ -189,19 +189,15 @@ then the LoadBalancer can be reached at your VM's IP address:
 [source,bash,subs="attributes"]
 ----
 # Launch a curl command from the Kube VM
-curl {kube_vm_ip}
-# 404 Not Found
+curl -v {kube_vm_ip}
+# 302 Found -> https://{kube_vm_ip}
 ----
-
-* Step 3: Use the link:https://bg.bastion.ddu-workshops-1.com/blue/organizations/jenkins/change-dns/activity["Blue-Green Jenkins job",window=_blank] to switch:
-** Your domain name (`labXX.ddu-workshops-Y.com`)
-** To this `VM_IP` (`{kube_vm_ip}`)
 
 [{invert}]
 == Reality Check
 
-link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
+// link:https://{lab-domain}/[https://{lab-domain}/,window=_blank]
 
-image::after-traefik-up.png[]
+// image::after-traefik-up.png[]
 
-It's good: we have an HTTP answer!
+It's good: we have an anwser: HTTP/302 redirect to https!

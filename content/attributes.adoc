@@ -25,7 +25,7 @@
 :stylesdir: styles
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
-:lab-domain: labXX.ddu-workshops-Y.com
+:lab-domain: lab-XX.ddu-workshops-Y.com
 :agenda-rp: Traefik
 :agenda-ci: CI Server
 :agenda-scm: SCM: A Gitea Git Server

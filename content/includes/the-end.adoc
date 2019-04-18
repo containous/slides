@@ -10,9 +10,9 @@
 ** ...
 * link:https://docs.traefik.io/v2.0/[Documentation]
 
-== High Availability
+== Traefik Enterprise Edition
 
-* TraefikEE
+* Highly Available Traefik
 * Split responsabilities
 ** Control Plane
 ** Data Plane
