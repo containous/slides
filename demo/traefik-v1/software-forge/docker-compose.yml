@@ -7,8 +7,8 @@ services:
     command:
       - "--docker" # Tells Traefik to listen to docker
     ports:
-      - "80:80"     # The HTTP port
-      - "443:443"   # The HTTPS port
+      - "80:80"
+      - "443:443"
     volumes:
       # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
@@ -23,7 +23,7 @@ services:
   # end::web[]
   # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.150.3-alpine
+    image: jenkins/jenkins:2.164.2-alpine
     expose:
       - 8080
       - 50000
@@ -36,7 +36,7 @@ services:
       - "traefik.port=8080"
       # end::jenkins-labels-port[]
       # tag::jenkins-labels-rule[]
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefix:/jenkins"
+      - "traefik.frontend.rule=PathPrefix:/jenkins"
       # end::jenkins-labels-rule[]
   # end::jenkins[]
   # tag::gitserver[]
@@ -50,12 +50,12 @@ services:
     labels:
       - "traefik.port=3000"
       # tag::gitserver-labels-rule[]
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
+      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
       # end::gitserver-labels-rule[]
   # end::gitserver[]
   # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd:1.4.2-alpine
     labels:
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
+      - "traefik.frontend.rule=PathPrefixStrip:/ttyd"
   # end::ttyd[]

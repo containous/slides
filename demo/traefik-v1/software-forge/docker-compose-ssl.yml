@@ -1,32 +1,51 @@
+# tag::edge[]
 version: '2.4'
 
 services:
+   # tag::edge-ssl[]
   edge:
-    image: traefik:2.0.0-alpha1
-    command:
-      - "--configfile=/traefik.toml"
-    labels:
+    image: traefik:1.7.10
+    labels: # Replace "command" by labels
       - "traefik.enable=false"
     ports:
-      - "80:80"     # The HTTP port
-      - "443:443"   # The HTTPS port
+      - "80:80"
+      - "443:443"
+    # tag::volumes[]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      # Add the TOML configuration file in the root directory
       - ./traefik.toml:/traefik.toml
+      # We declare the folder "/acme" as a data volume
+      - /acme
+    # end::volumes[]
+  # end::edge-ssl[]
+  # tag::web[]
   web:
-    build: ./web/
+    build:
+      context: ./web/
+      dockerfile: Dockerfile-v1
     labels:
-      - "traefik.frontend.rule=Host:demo.containous.cloud"
+      - "traefik.frontend.rule=Host:localhost"
+  # end::web[]
+  # tag::jenkins[]
   jenkins:
-    image: jenkins/jenkins:2.164.1-alpine
+    image: jenkins/jenkins:2.164.2-alpine
     expose:
       - 8080
       - 50000
+    # tag::jenkins-env-opts[]
     environment:
       - JENKINS_OPTS=--prefix=/jenkins
+    # end::jenkins-env-opts[]
     labels:
+      # tag::jenkins-labels-port[]
       - "traefik.port=8080"
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefix:/jenkins"
+      # end::jenkins-labels-port[]
+      # tag::jenkins-labels-rule[]
+      - "traefik.frontend.rule=PathPrefix:/jenkins"
+      # end::jenkins-labels-rule[]
+  # end::jenkins[]
+  # tag::gitserver[]
   gitserver:
     image: gitea/gitea:latest
     expose:
@@ -36,8 +55,13 @@ services:
       - ROOT_URL=/gitserver
     labels:
       - "traefik.port=3000"
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/gitserver"
+      # tag::gitserver-labels-rule[]
+      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
+      # end::gitserver-labels-rule[]
+  # end::gitserver[]
+  # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd:1.4.2-alpine
     labels:
-      - "traefik.frontend.rule=Host:demo.containous.cloud;PathPrefixStrip:/ttyd"
+      - "traefik.frontend.rule=PathPrefixStrip:/ttyd"
+  # end::ttyd[]
