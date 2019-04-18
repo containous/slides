@@ -18,7 +18,9 @@ email = "{acme_email}"
 storage = "/acme/acme.json"
 entryPoint = "https"
 # caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+
 [acme.tlsChallenge]
+
 [[acme.domains]]
 main = "{lab-domain}"
 # end::acme[]
