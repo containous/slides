@@ -147,7 +147,7 @@ include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml
 [source,bash,subs="attributes"]
 ----
 # Add the new objects
-kubectl apply -f ~/03-k8s-apps/web.yml
+kubectl apply -f ~/03-k8s-apps/web-v2.yml
 # Delete only the old ingress rule: the service will be reachable from the new one
 kubectl --namespace devoxx delete ingress web-full-ingress
 ----
@@ -168,7 +168,7 @@ It's good: when reloading, the 2 versions of the web page are shown!
 [source,bash,subs="attributes"]
 ----
 # Edit the ingress
-kubectl --namespace devoxx edit ingress web-full-ingress-v2
+kubectl --namespace devoxx edit ingress web-full-v2-ingress
 ####
 # Delete the following lines
 include::../../demo/lab-docker-k8s/03-k8s-apps/web/deployment-svc-ingress-v2.yml[tag=deleteannot]
