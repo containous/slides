@@ -69,7 +69,7 @@ kubectl apply -f ~/02-k8s-traefik/web.yml
 ----
 curl -v -sSL {kube_vm_ip} -H "Host: {lab-domain}" > /dev/null
 # ...
-# < HTTP/2 200
+# HTTP/2 200
 # ...
 ----
 
