@@ -1,0 +1,28 @@
+
+[http.routers]
+  [http.routers.LAB_NAME]
+    entrypoints = ["web"]
+    service = "web-LAB_NAME"
+    rule = "Host(`PUBLIC_HOSTNAME`)"
+[http.services]
+  [http.services.web-LAB_NAME]
+    [http.services.web-LAB_NAME.LoadBalancer]
+      PassHostHeader = true
+      [[http.services.web-LAB_NAME.LoadBalancer.Servers]]
+        url = "http://PRIVATE_HOSTNAME:80/"
+        weight = 1
+
+
+[tcp.routers]
+  [tcp.routers.LAB_NAME]
+    entrypoints = ["web-secure"]
+    service = "web-secure-LAB_NAME"
+    rule = "HostSNI(`PUBLIC_HOSTNAME`)"
+    [tcp.routers.LAB_NAME.tls]
+        passthrough=true
+[tcp.services]
+  [tcp.services.web-secure-LAB_NAME]
+    [tcp.services.web-secure-LAB_NAME.LoadBalancer]
+      [[tcp.services.web-secure-LAB_NAME.LoadBalancer.Servers]]
+        address = "PRIVATE_HOSTNAME:443"
+        weight = 1

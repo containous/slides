@@ -1,0 +1,69 @@
+jenkins:
+  numExecutors: 4
+  labelString: "master"
+  mode: "NORMAL"
+  agentProtocols:
+    - "JNLP4-connect"
+    - "Ping"
+  remotingSecurity:
+    enabled: true
+  quietPeriod: 0
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "devoxx-admin"
+        password: "bilbon"
+      - id: "devoxx"
+        password: "gandalf"
+  slaveAgentPort: 50000
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - Overall/Read:anonymous
+        - Job/Read:devoxx
+        - Job/Build:devoxx
+        - View/Read:devoxx
+        - Overall/Administer:devoxx-admin
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+
+security:
+  remotingCLI:
+    enabled: false
+
+unclassified:
+  location:
+    adminAddress: ${JENKINS_ADMIN_EMAIL}
+    url: ${JENKINS_URL}
+
+jobs:
+  - script: >
+       pipelineJob('change-dns') {
+         definition {
+           cps {
+             sandbox()
+             script('''\
+               pipeline {
+                 agent any
+                 options {
+                  durabilityHint 'PERFORMANCE_OPTIMIZED'
+                  }
+                 parameters {
+                   string(name: 'EXTERNAL_HOSTNAME', defaultValue: 'lab01.ddu-workshops-1.com', description: 'EXTERNAL_HOSTNAME: External hostname of your lab.')
+                   string(name: 'BACKEND_IP', defaultValue: '10.0.0.1', description: 'BACKEND_IP: New destination IP for EXTERNAL_HOSTNAME.')
+                 }
+                 stages {
+                   stage ('test') {
+                     steps {
+                       sh "bash /backend-services/update-config.sh ^${params.EXTERNAL_HOSTNAME} ^${params.BACKEND_IP}"
+                     }
+                   }
+                 }
+               }'''.stripIndent())
+           }
+         }
+       }

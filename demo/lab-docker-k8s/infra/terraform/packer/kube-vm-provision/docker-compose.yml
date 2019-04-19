@@ -1,0 +1,49 @@
+version: '3'
+services:
+  server:
+    image: rancher/k3s:v0.3.0
+    command: server --disable-agent --no-deploy traefik
+    environment:
+      - K3S_CLUSTER_SECRET=devoXXFR2019Rocks
+      - K3S_KUBECONFIG_OUTPUT=/output/kubeconfig.yaml
+      - K3S_KUBECONFIG_MODE=666
+    volumes:
+      - k3s-server:/var/lib/rancher/k3s
+      # This is just so that we get the kubeconfig file out
+      - .:/output
+    ports:
+      - 6443:6443
+
+  node-ext:
+    image: rancher/k3s:v0.3.0
+    tmpfs:
+      - /run
+      - /var/run
+    privileged: true
+    depends_on:
+      - server
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./images:/var/lib/rancher/k3s/agent/images/
+    environment:
+      - K3S_URL=https://server:6443
+      - K3S_CLUSTER_SECRET=devoXXFR2019Rocks
+
+  node:
+    image: rancher/k3s:v0.3.0
+    tmpfs:
+      - /run
+      - /var/run
+    privileged: true
+    depends_on:
+      - server
+    volumes:
+      - ./images:/var/lib/rancher/k3s/agent/images/
+    environment:
+      - K3S_URL=https://server:6443
+      - K3S_CLUSTER_SECRET=devoXXFR2019Rocks
+
+volumes:
+  k3s-server: {}
