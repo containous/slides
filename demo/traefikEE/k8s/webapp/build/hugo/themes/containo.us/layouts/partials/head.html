@@ -1,0 +1,31 @@
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:site" content="@containous">
+    <meta name="twitter:creator" content="@containous">
+    <meta name="twitter:title" content="{{ .Site.Title }}" /> 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/containous.logo.png" />
+    {{ if .IsPage }}
+    <meta name="twitter:description" content="{{ .Title }}" />
+    {{ else }}
+    {{ end }}
+
+    <!-- Bootstrap Containous Theme CSS -->
+    {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_module/")) }}
+    {{ $containousStyle := resources.Get "sass/containous.scss" | toCSS $options | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $containousStyle.RelPermalink }}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:light&v1' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:light&v1' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#210f4e">
+    <meta name="theme-color" content="#210f4e">
+
+    <title>Containous - The Traefik Company</title>

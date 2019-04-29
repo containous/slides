@@ -1,0 +1,95 @@
+version: '3.7'
+
+volumes:
+    prometheus_data: {}
+    grafana_data: {}
+
+networks:
+  traefikee_net:
+    external: true
+
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - /shared-data/prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+    depends_on:
+      - cadvisor
+    networks:
+      - traefikee_net
+    deploy:
+      placement:
+        constraints:
+          - node.role==manager
+      labels:
+        - "traefik.enable=true"
+        - "traefik.frontend.rule=Host:prometheus.docker.localhost"
+        - "traefik.port=9090"
+        - "traefik.docker.network=traefikee_net"
+        - "traefik.backend=prometheus"
+        - "traefik.passHostHeader=true"
+        - "traefik.frontend.entryPoints=http,https"
+
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    networks:
+      - traefikee_net
+    deploy:
+      mode: global
+
+  cadvisor:
+    image: google/cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8282:8080
+    networks:
+      - traefikee_net
+    deploy:
+      mode: global
+
+  grafana:
+    image: grafana/grafana:6.0.2
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - /shared-data/grafana/provisioning/:/etc/grafana/provisioning
+      - /shared-data/grafana/provisioning/dashboards:/var/lib/grafana/dashboards
+    env_file:
+      - ./grafana/config.monitoring
+    networks:
+      - traefikee_net
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.frontend.rule=Host:grafana.docker.localhost"
+        - "traefik.port=3000"
+        - "traefik.backend=grafana"
+        - "traefik.docker.network=traefikee_net"
+        - "traefik.passHostHeader=true"
+        - "traefik.frontend.entryPoints=http,https"

@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="traefikee-header container-fluid bg-dark_section_enterprise">
+    <div class="row">
+        <div class="col-12 col-md-5 text-md-left text-center">
+            <h1>{{ .Site.Data.texts.traefikee.header.title }}</h1>
+            <p>{{ .Site.Data.texts.traefikee.header.description }}</p>
+        </div>
+        <div class="col-7 d-none d-md-block">
+            <img src="{{ .Site.Data.texts.traefikee.header.illustration }}" alt="" />
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid header-curve bg-light p-0">
+</section>
+
+<section id="whoami-container" class="traefikee-features container-fluid bg-light">
+    <div class="row pb-5">
+        <div class="col-12 text-center">
+            <h1 class="align-content-center">Demo Application Calling APIs through Traefik EE</h1>
+        </div>
+    </div>
+</section>
+
+{{ end }}

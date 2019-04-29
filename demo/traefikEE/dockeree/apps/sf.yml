@@ -1,0 +1,18 @@
+version: '3.7'
+networks:
+  traefikee_net:
+    external: true
+
+services:  
+  sanfransisco:
+    image: containous/whoami
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - "traefik.frontend.rule=Host:localhost;PathPrefixStrip:/sf"
+        - "traefik.port=80"
+        - "traefik.passHostHeader=true"
+        - "traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:http://localhost:1313||Access-Control-Allow-Headers:Content-Type||Access-Control-Allow-Methods:GET"
+    networks:
+      - traefikee_net

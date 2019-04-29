@@ -1,0 +1,4 @@
+images/
+webapp/build/hugo/public/
+webapp/build/hugo/node_modules/
+webapp/build/hugo/resources/

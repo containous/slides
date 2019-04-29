@@ -1,0 +1,19 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotrod
+  namespace: hotrod
+  labels:
+    app: hotrod
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.frontend.passHostHeader: 'true'
+spec:
+  rules:
+  - host: hotrod.docker.localhost
+    http:
+      paths:
+      - backend:
+          serviceName: hotrod
+          servicePort: 8080

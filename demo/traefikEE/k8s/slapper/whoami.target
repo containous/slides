@@ -1,0 +1,7 @@
+GET http://whoami.docker.localhost
+POST http://whoami.docker.localhost
+PUT http://whoami.docker.localhost
+DELETE http://whoami.docker.localhost
+# GET http://dashboard.docker.localhost
+GET http://grafana.docker.localhost
+HEAD http://hotrod.docker.localhost

@@ -3,12 +3,14 @@ version: '2.4'
 
 services:
   edge:
-    image: traefik:1.7.10
+    image: traefik:1.7.11
     command:
       - "--docker" # Tells Traefik to listen to docker
+      - "--api"
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080"
     volumes:
       # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
@@ -16,10 +18,12 @@ services:
   # tag::web[]
   web:
     build:
-      context: ./web/
-      dockerfile: Dockerfile-v1
+      context: ./hugo/
+      dockerfile: Dockerfile
+    environment:
+      - HUGO_ENV=docker
     labels:
-      - "traefik.frontend.rule=Host:localhost"
+      - "traefik.frontend.rule=Host:${EXTERNAL_HOST}"
   # end::web[]
   # tag::jenkins[]
   jenkins:
@@ -50,12 +54,12 @@ services:
     labels:
       - "traefik.port=3000"
       # tag::gitserver-labels-rule[]
-      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
+      - "traefik.frontend.rule=Host:${EXTERNAL_HOST};PathPrefixStrip:/gitserver"
       # end::gitserver-labels-rule[]
   # end::gitserver[]
   # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd:1.4.2-alpine
     labels:
-      - "traefik.frontend.rule=PathPrefixStrip:/ttyd"
+      - "traefik.frontend.rule=Host:${EXTERNAL_HOST};PathPrefixStrip:/ttyd"
   # end::ttyd[]

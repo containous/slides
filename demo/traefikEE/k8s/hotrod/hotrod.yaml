@@ -1,0 +1,38 @@
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hotrod
+  namespace: hotrod
+spec:
+  template:
+    metadata:
+      labels:
+        app: hotrod
+    spec:
+      containers:
+      - image: jaegertracing/example-hotrod:1.10
+        name: hotrod
+        env:
+          - name: JAEGER_AGENT_HOST
+            value: "jaeger-agent.jaeger.svc.cluster.local"
+          - name: JAEGER_AGENT_PORT
+            value: "6831"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotrod
+  namespace: hotrod
+  labels:
+    app: hotrod
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    name: hotrod
+  selector:
+    app: hotrod

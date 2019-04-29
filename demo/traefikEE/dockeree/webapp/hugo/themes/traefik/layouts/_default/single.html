@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+    <body>
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <a href="{{ .Site.BaseURL }}">↶</a>
+                    <h1>{{ .Title }}</h1>
+                    {{ .Content }}
+                    <a href="{{ .Site.BaseURL }}">↶</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    {{ partial "script.html" .}}
+</html>

@@ -1,16 +1,16 @@
 
 [%notitle]
-= Le seigneur des conteneurs : un atelier de migration vers Kubernetes et Traefik
-include::./attributes.adoc[]
+= Edge Routing and HTTPS for Everyone: Traefik in Action!
+include::attributes.adoc[]
 
 [{invert}]
-== Le seigneur des conteneurs
+== Edge Routing and HTTPS for Everyone
+[.title]
+Traefik in Action!
 
-Un atelier de migration vers Kubernetes et Traefik
+image::traefik.logo.png["Traefik's Logo",height=300]
 
-image::gandalf-gopher.png["Gandalf Gopher",height=300]
-
-image::qrcode.png["QRCode to this presentation",height=150]
+image:qrcode.png["QRCode to this presentation",height=100]
 
 [.small]
 {presentationUrl}[{presentationUrl}]
@@ -29,25 +29,26 @@ image::qrcode.png["QRCode to this presentation",height=150]
 // //// Speaker Slide and Company slide
 [{invert}]
 == Whoami 1/2
-Nicolas Mengin
 
-* DevOps & Code Craftsman @ link:https://containo.us/[Containous]
+Michael Matur
+
+* Devops & Developer @ link:https://containo.us/[Containous,window=_blank]
 * Blacksmith on link:https://traefik.io/[Traefik]
-* link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
-* link:https://github.com/nmengin[icon:github[] nmengin]
+* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur,window=_blank]
+* link:https://github.com/mmatur[icon:github[] mmatur,window=_blank]
 
-image::nicolas.jpg[height=200]
+image::michael.jpg[height=200]
 
+[{invert}]
 == Whoami 2/2
 
-Damien DUPORTAL
+Adrien Martinet
 
-* link:https://traefik.io/[Traefik,window=_blank]'s Developer 🥑 Advocate @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* Sales @ link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
+* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
 
-image::damien.jpg[height=200]
+image::adrien.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -57,7 +58,7 @@ link:https://containo.us[]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 20 people, 90% tech
+* 20 people, 90% technical experts
 
 image::containous-logo.png["Containous Logo"]
 
@@ -70,73 +71,35 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-// Introduction
+// == Why Traefik?
+include::{include_dir}/why-traefik.adoc[]
 
-include::./includes/intro.adoc[]
+// == Traefik Core Concepts
+include::{include_dir}/traefik-core-concepts.adoc[]
 
-include::./includes/agenda.adoc[]
+// == Show Me the Configuration
+include::{include_dir}/show-me-the-conf.adoc[]
 
-// Lab 1
+// == HTTPS for Everyone
+// include::{include_dir}/demo-https-for-everyone.adoc[]
 
-include::./includes/practise-the-hobbit-house.adoc[]
+// == The Herd
+include::{include_dir}/the-herd.adoc[]
 
-include::./includes/practise-traefik.adoc[]
+// == Back to 2.0
+include::{include_dir}/back-to-2.0.adoc[]
 
-include::./includes/practise-webserver.adoc[]
-
-include::./includes/practise-ci.adoc[]
-
-include::./includes/practise-scm.adoc[]
-
-include::./includes/practise-web-cli.adoc[]
-
-include::./includes/practise-letsencrypt.adoc[]
-
-// Lab 2
-
-include::./includes/practise-the-tower.adoc[]
-
-// include::./includes/practise-letsencrypt-lab2.adoc[]
-
-include::./includes/practise-traefik-lab2.adoc[]
-
-include::./includes/practise-webserver-lab2.adoc[]
-
-include::./includes/practise-ci-lab2.adoc[]
-
-include::./includes/practise-scm-lab2.adoc[]
-
-include::./includes/practise-web-cli-lab2.adoc[]
-
-// Lab 3
-
-include::./includes/practise-the-castle.adoc[]
-
-include::./includes/practise-ci-lab3.adoc[]
-
-include::./includes/practise-scm-lab3.adoc[]
-
-include::./includes/practise-web-cli-lab3.adoc[]
-
-include::./includes/practise-webserver-lab3.adoc[]
-
-// include::./includes/traefikee.adoc[]
-
-// include::./includes/v2.adoc[]
-
-include::./includes/the-end.adoc[]
+// Thanks
+include::{include_dir}/the-end.adoc[]
 
 :leveloffset: -1
-
 
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/nicomengin[icon:twitter[] @nicomengin]
-link:https://github.com/nmengin[icon:github[] nmengin]
+link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
-link:https://github.com/dduportal[icon:github[] dduportal]
+link:https://github.com/mmatur[icon:github[] mmatur]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 

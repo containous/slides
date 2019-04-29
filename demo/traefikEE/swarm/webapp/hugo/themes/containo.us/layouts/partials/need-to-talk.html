@@ -1,0 +1,35 @@
+{{ $bg_class := "" }}
+{{ $text_class := "" }}
+
+{{ if (eq .style "dark" )}}
+    {{ $bg_class = "bg-dark_section" }}
+    {{ $text_class = "text-light" }}
+{{ else if (eq .style "light")}}
+    {{ $bg_class = "bg-light_2_section" }}
+    {{ $text_class = "text-dark" }}
+{{ else if (eq .style "enterprise")}}
+    {{ $bg_class = "bg-dark_section_enterprise" }}
+    {{ $text_class = "text-light" }}
+{{ end }}
+
+<section class="containous-need-to-talk {{ $bg_class }} container-fluid">
+    <div class="row text-center pt-7">
+        <div class="col text-light ">
+            <h1 class="{{ $text_class }}">Need To Talk?</h1>
+        </div>
+    </div>
+
+    <div class="row text-center">
+    {{ range .contacts }}
+        <div class="col-12 col-sm-4">
+            <div>
+                <img src="{{ .img }}" alt="{{ .img_alt }}"/>
+            </div>
+            <div>
+                <a class="btn btn-outline-primary contactForm"
+                   data-toggle="modal" href="#contactUsModal" data-form-source="service-footer-support">{{ .button_text }}</a>
+            </div>
+        </div>
+    {{ end }}
+    </div>
+</section>

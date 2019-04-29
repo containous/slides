@@ -1,0 +1,84 @@
+{{ $standard_form := .Site.Data.texts.services.commercial_support.standard.form }}
+<div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form name="standard-support" data-netlify="true" netlify-recaptcha="true" method="POST" action="/thank-you">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="supportModalLabel">Thank You for Your Interest in the Standard Support Plan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-row">
+                        <p>
+                            Please provide your contact information. We will message you back as soon as possible.
+                        </p>
+                    </div>
+                    <div class="form-row">
+                        <h2>Contact Information</h2>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First Name</label>
+                            <input required="required" name="first_name" type="text" class="form-control"
+                                   id="inputFirstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last Name</label>
+                            <input required="required" name="last_name" type="text" class="form-control"
+                                   id="inputLastName"
+                                   placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputCompanyName">Company Name</label>
+                            <input required="required" name="company_name" type="text" class="form-control"
+                                   id="inputCompanyName" placeholder="Company Inc">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEMail">E-mail</label>
+                            <input required="required" name="e_mail" type="email" class="form-control"
+                                   id="inputEMail"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputPlan">Plan</label>
+                            <select name="instances" class="form-control" id="inputPlan">
+                            {{ range $i, $p :=  .Site.Data.plans.standard}}
+                                {{ $word := "instances" }}
+                                {{ if eq $p.instances 1 }}
+                                    {{ $word = "instance" }}
+                                {{ end }}
+                                <option value="{{ $i }}">
+                                {{ $p.instance }} {{ $word }} (€{{ $p.price }} / year)
+                                </option>
+                            {{ end }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputMore">More ...</label>
+                            <textarea name="more" class="form-control" id="inputMore"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="g-recaptcha" data-sitekey="6LdFEWYUAAAAAFeAGBs9q9qRuH110dXTwZoNoxwG"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

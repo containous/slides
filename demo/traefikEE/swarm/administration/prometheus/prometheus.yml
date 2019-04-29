@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 10s
+  scrape_timeout: 10s
+  evaluation_interval: 10s
+rule_files:
+  - "/prometheus/rules/*.yaml"
+
+scrape_configs:
+- job_name: cadvisor
+  scrape_interval: 5s
+  dns_sd_configs:
+    - names:
+      - 'tasks.cadvisor'
+      type: 'A'
+      port: 8080
+- job_name: traefikee
+  scrape_interval: 5s
+  dns_sd_configs:
+    - names:
+      - 'tasks.data-node'
+      type: 'A'
+      port: 4646

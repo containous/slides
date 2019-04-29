@@ -1,0 +1,69 @@
+
+= Why Traefik?
+
+image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
+
+Why, Mr Anderson?
+
+[{invert}]
+== Evolution of Software Design
+
+image::evolution-of-software-design.jpg[Evolution of Software Design]
+
+== The Premise of Microservices...
+
+image::asterix-premise.jpg[Asterix - Premise]
+
+[{invert}]
+== ...and What Happens
+
+image::asterix-fight.jpg[Asterix - Fighting]
+
+[{invert}]
+== Tools of the Trade
+
+image::docker.png[width=80,float=left]
+image::rancher-os.png[width=80,float=left]
+image::docker-swarm.png[width=80,float=left]
+image::kubernetes.png[width=80,float=left]
+image::marathon.png[width=80,float=left]
+image::ec2.png[width=80,float=left]
+image::mesos.png[width=80,float=left]
+
+image::dynamodb.png[width=80,float=right]
+image::ecs.png[width=80,float=right]
+image::service-fabric.png[width=80,float=right]
+image::consul.png[width=80,float=right]
+image::netflix_oss.png[width=80,float=right]
+image::etcd.png[width=80,float=right]
+image::zookeeper.png[width=80,float=right]
+
+== Where is the Service?
+
+image::where-is-charlie.jpg["Where os Charlie?",width=900]
+== !
+
+image::yaml.jpg[width=900]
+
+[.small][.small]
+Source: https://twitter.com/Caged/status/1039937162769096704[]
+
+== What If I Told You?
+
+image::what-if-I-told-you.jpg[What If I Told You]
+
+That You Don't Have to Write This Configuration File...?
+
+[{invert}]
+== Here Comes Traefik!
+
+image::traefik-architecture.png["Traefik's Architecture",width=900]
+
+== Traefik Project
+
+* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+* MIT License
+* Written in Go, a popular language
+* 22,000+ ⭐
+* 700M+ ⬇️
+* 350+ 👷

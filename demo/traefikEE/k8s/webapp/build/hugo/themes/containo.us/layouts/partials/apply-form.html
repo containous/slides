@@ -1,0 +1,68 @@
+<div class="modal fade" id="applyFormModal" tabindex="-1" role="dialog"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form name="apply-form" data-netlify="true" netlify-recaptcha="true" method="POST"
+                  action="/thank-you">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyFormModalLabel">Apply for the job!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <p>Please provide your contact information. We will message you back as soon as
+                            possible.</p>
+                    </div>
+                    <div class="form-row">
+                        <h2>Contact Information</h2>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputAFFirstName">First Name</label>
+                            <input required="required" name="first_name" type="text" class="form-control"
+                                   id="inputAFFirstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAFLastName">Last Name</label>
+                            <input required="required" name="last_name" type="text" class="form-control"
+                                   id="inputAFLastName"
+                                   placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputAFEMail">E-mail</label>
+                            <input required="required" name="e_mail" type="email" class="form-control"
+                                   id="inputAFEMail"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputAFMessage">Why are you the best candidate for the position?</label>
+                            <textarea required="required" name="more" class="form-control"
+                                      id="inputAFMessage"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputAFLinks">Links to your website/Twitter/LinkedIn/Medium/...</label>
+                            <textarea required="required" name="more" class="form-control"
+                                      id="inputAFLinks"></textarea>
+                        </div>
+                    </div>
+                    <input id="apply_form_source" type="hidden" name="source" value="Default"/>
+                    <div class="form-row justify-content-center">
+                        <div class="g-recaptcha" data-sitekey="6LdFEWYUAAAAAFeAGBs9q9qRuH110dXTwZoNoxwG"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

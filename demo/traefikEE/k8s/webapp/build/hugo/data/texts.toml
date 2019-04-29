@@ -1,0 +1,7 @@
+[traefikee.header]
+   title = "Discover Traefik Enterprise Edition"
+   description = "Built for the Enterprise and designed for business-critical deployments, TraefikEE is highly available, scalable, and secure."
+   button_text = "Early Access"
+   button_link = "#traefikeeTryItModal"
+   button_doc_text = "Documentation"
+   illustration = "/img/cluster-traefikee.png"

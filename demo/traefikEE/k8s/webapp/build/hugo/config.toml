@@ -1,0 +1,6 @@
+baseURL = "http://localhost"
+languageCode = "en-us"
+title = "Containous, the Traefik Company"
+googleAnalytics = "UA-51880359-4"
+
+theme = ["containo.us"]

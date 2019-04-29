@@ -1,25 +1,18 @@
 [{invert}]
-= Lab 1
+= HTTPS for Everyone
 
-image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
-
-* {agenda-rp}
-* {agenda-web}
-* {agenda-ci}
-* {agenda-scm}
-* {agenda-ws}
-* **{agenda-ssl}**
+image::demo-not-secured.png[]
 
 == Goals
 
 * Use HTTPS instead of HTTP
 * Do NOT care about certificates and renewal
-* Use a TOML configuration file
-
-[.notes]
---
-* explain TOML allow serialize complex configuration
---
+* Redirect any incoming HTTP request to HTTPS:
++
+```
+http://demo.containous.cloud/
+  -> https://demo.containous.cloud/
+```
 
 [%notitle]
 == Let's Encrypt
@@ -31,63 +24,68 @@ ____
 link:https://letsencrypt.org/["Let’s Encrypt",window=_blank] is a free, automated, and open Certificate Authority.
 ____
 
-It uses the "ACME" protocol to verify that you control a given domain name and to issue a certificate.
+It uses the "ACME" protocol to verify that you control a given domain name and to issue you a certificate.
 
-== Problem 1/3
+== Problem 1/4
 
-* **Problem:** How to tell Traefik to listen on port `443` for HTTPS requests?
+* **Problem:** 
+** How to tell Traefik to listen on port `443` for HTTPS requests?
 
 * **Solution:**
-** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint]
-** Add it to the default entrypoints list
-
-[source,toml,indent=0,subs="attributes"]
+** Create a new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`],
+** And the default entrypoint with `--defaultentrypoints`:
++
+[source,yaml,indent=0]
 ----
-# TOML sample
-include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=entrypoint-tls]
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-https]
 ----
 
-== Problem 2/3
+== Problem 2/4
 
-* **Problem:** How to tell Traefik to use Let's Encrypt for HTTPS?
+* **Problem:** 
+** How to tell Traefik to redirect request from http to https?
+
 * **Solution:**
-** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider]:
-
-[source,toml,indent=0,subs="attributes"]
+** Configure the new link:https://docs.traefik.io/basics/#entrypoints[entrypoint] `http` with the flag link:https://docs.traefik.io/configuration/entrypoints/#cli[`--entrypoints`]:
++
+[source,yaml,indent=0]
 ----
-# TOML sample
-include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=acme]
-----
-
-== Problem 3/3
-
-* **Problem:**
-** Traefik detects itself as a docker container with a port
-** It tries to request a 2nd certificate for `edge.{lab-domain}`.
-
-* **Solution:** Exclude Traefik's container with the label `traefik.enable=false`.
-
-== Traefik Setup 1/2
-
-* Step 1: Create the configuration file `traefik.toml`:
-
-[source,toml,subs="attributes"]
-----
-include::../../demo/lab-docker-k8s/01-docker/traefik.toml[tag=toml]
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-http]
 ----
 
-== Traefik Setup 2/2
+== Problem 3/4
 
-* Step 2: Adapt the Compose file:
+* **Problem:** 
+** How to tell Traefik to use Let's Encrypt for HTTPS?
 
-[source,yaml,subs="attributes"]
+* **Solution:**
+** Configure the link:https://docs.traefik.io/configuration/acme/[ACME/Let's Encrypt provider] with the flags `--acme.*`:
+
+[source,yaml,indent=0]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose-ssl.yml[tag=edge-ssl]
+include::../../demo/docker-compose-ssl.yml[tag=traefik-entrypoints-acme]
 ----
 
-* Step 3: Update the `edge` service:
+== Problem 4/4
 
-[source,bash,subs="attributes"]
+* **Problem:** 
+** Traefik detects itself as a docker container with a port, and tries to request a 2nd certificate for `edge.demo.containous.cloud`
+
+* **Solution:**
+** Exclude Traefik's container with the label `traefik.enable=false`
+
+== Traefik Setup
+
+* Step 1: Adapt Compose file:
++
+[source,yaml]
+----
+include::../../demo/docker-compose-ssl.yml[tag=traefik-ssl]
+----
+
+* Step 2: Update the `edge` service
++
+[source,bash]
 ----
 docker-compose up -d edge
 ----
@@ -95,8 +93,9 @@ docker-compose up -d edge
 [{invert}]
 == Reality Check
 
-Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
+* Wait a few seconds (time to get the certificate from Let's Encrypt) and reload the main page:
 
-link:https://{lab-domain}[https://{lab-domain},window=_blank]
+link:https://demo.containous.cloud[https://demo.containous.cloud,window=_blank]
 
+[.shadow]
 image::after-ssl-up.png[width=400]

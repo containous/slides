@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {{- partial "head.html" . -}}
+    {{- block "preload" . }}{{- end }}
+    {{- partial "google_analytics.html" . -}}
+    </head>
+    <body>
+        {{- partial "top-menu.html" . -}}
+        <div id="containous-content">
+        {{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "contact-us.html" . -}}
+        {{- partial "traefikee-tryit.html" . -}}
+        {{- partial "bottom-menu.html" . -}}
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

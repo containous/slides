@@ -1,0 +1,111 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pebble
+
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: pebble-certs
+  namespace: pebble
+data:
+  cert.pem: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURYekNDQWtlZ0F3SUJBZ0lJT1VjazJLM1RUYUV3RFFZSktvWklodmNOQVFFTEJRQXdJREVlTUJ3R0ExVUUKQXhNVmJXbHVhV05oSUhKdmIzUWdZMkVnTldZd1pEQTJNQ0FYRFRFNU1EUXhPREUyTlRRd00xb1lEekl4TURrdwpOREU0TVRjMU5EQXpXakFVTVJJd0VBWURWUVFERXdsc2IyTmhiR2h2YzNRd2dnRWlNQTBHQ1NxR1NJYjNEUUVCCkFRVUFBNElCRHdBd2dnRUtBb0lCQVFEQm9iVlVnMzk4Skc2aWZvVFNtbzh4OCs5ay9LQ0xDUnd6MnVVa1kwMnQKUU5qalFTWlVWak9kYkhqdW5sMXVEWkpVellXZ0I1T3lRSVJFZGV1TFFGZHBnc1VSK2N5U29wdHV4N3Y4QzdWZApad2t5QW43aTBjOUpKTXAyS2xSL2g3V09mWXpaS2pUbDZQWExXZUdxREUrRm0zbzRDdDJHS3gyc3pzY053eXpnClhVV1JJRFpqTlZnd2trcG90T3RQNm80cmVBaFJYV1Buc1lrTEpSalgzUlNEekZTNHJMTW04K0xCSzJhamRwNUMKZjIrV3I0dFViLzlJaVNmSGhsVC8yTkpJR0ZaWEw4S0Zlbjg1QmxucHlGYkRwa1c5VnQ2VnMrVlFsNlpnNVVnVwovVVd3VlU2MHpPemlRVkVRUGgxYnFRVkpNUDZiUXNkRlV4WXlsU2dhdmVkSEFnTUJBQUdqZ2FZd2dhTXdEZ1lEClZSMFBBUUgvQkFRREFnV2dNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWNEQWpBTUJnTlYKSFJNQkFmOEVBakFBTUI4R0ExVWRJd1FZTUJhQUZJU0NPaElhd2xGbUFDL1NjdGt6b1d0THlqTXZNRU1HQTFVZApFUVE4TURxQ0NXeHZZMkZzYUc5emRJSUdjR1ZpWW14bGdoOXdaV0ppYkdVdWNHVmlZbXhsTG5OMll5NWpiSFZ6CmRHVnlMbXh2WTJGc2h3Ui9BQUFCTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFDaVRDbWc4VXM5WXB0c2R3MFQKaXZ3WVlzRGpZT20rRXJmTDVCd0hCQlR0aFdSZUZ2T3lRNmREKy9PQzNxYTZ0aFU3RDlla1RVK0JlUDlod2RCYgpieHoya29YSlZhY1FKM3FraUptOE5XQVp3cWprUHFDeWxETGV5MWJobGxmZUdua3haTEVqYnhDRDB4TWVhVGo5ClZFTi8rYXB2V2s0SjFYUzVpZnpoSmJGRW0rYXRRREdVeU1BcVFkMTdVRWZhSmFTUFFhSEJKQXljVjM5bm14VDMKaGhJVzNMRkZTNVYxcWR0VXJJcCsyRGl1cHBFTXFvWWpnemoyK1pmT1FwMTFHWVlzZEN0UTkxNXFFOURwU3NwdAp6RDFJS3lRY2p0NnplTkFWalhDWVhrMjV5QjZRMklzTlJoOXlzM1ZWV1pRVFQreVZYNk5EdTlaMld6TldvaXR5ClR0dGQKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  key.pem: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBd2FHMVZJTi9mQ1J1b242RTBwcVBNZlB2WlB5Z2l3a2NNOXJsSkdOTnJVRFk0MEVtClZGWXpuV3g0N3A1ZGJnMlNWTTJGb0FlVHNrQ0VSSFhyaTBCWGFZTEZFZm5Na3FLYmJzZTcvQXUxWFdjSk1nSisKNHRIUFNTVEtkaXBVZjRlMWpuMk0yU28wNWVqMXkxbmhxZ3hQaFp0Nk9BcmRoaXNkck03SERjTXM0RjFGa1NBMgpZelZZTUpKS2FMVHJUK3FPSzNnSVVWMWo1N0dKQ3lVWTE5MFVnOHhVdUt5ekp2UGl3U3RtbzNhZVFuOXZscStMClZHLy9TSWtueDRaVS85alNTQmhXVnkvQ2hYcC9PUVpaNmNoV3c2WkZ2VmJlbGJQbFVKZW1ZT1ZJRnYxRnNGVk8KdE16czRrRlJFRDRkVzZrRlNURCttMExIUlZNV01wVW9HcjNuUndJREFRQUJBb0lCQUZFc1Myb2Nua3Nhc3M2bwpIMkp5ck9rU0RCL1gwQzI1S2Z1TEhsaDgwTWw2ei9HbEZENXl6THlJQnNKeDNWVVBsM0s1bmZVU2VCWlgrWnNCCm5EY0tTQnJSV1hCSnVqc1dzL1pqQVNtT2R2K3EvQzNjNGZpUVlFZVhodEMydWlta2FMWk5aOGg2YXlhZTNMdmMKK0Q5alhjcnkvTytWam54NmdydzVDelYzeHM1ZlQ1QzVZMHZaYUlKMTdVbHF1MmlOS20yTHJQemlpRXY1NVVRMgp4SENzS2pNOURxVG8rVzRKNDk0UWRzV1BCZTBaUGQrZmtiRjl0UVRET1cxVVpLbytjemEweE1TRnRiK2VPalkvClVPbytTMVBhdUpKdXRobmk2ckJpeUlXQk9qbXFZNG1QdWM3TlBaOHc0U0ZpUDVGSlUydWJmMGluTS8zU0QrVlgKU0taTmY1RUNnWUVBeFgydTlDbTBrSTdyTDlva1pReHdRc3pFenZFajlDdlA2d0c4RHdKUUJvZEM1MkNJV05JYwpJUmp0SkVsQWZCRE5CQXlUbnkrVzc3SVBGejg3WktISXhnT0pFTEViRTZ4djJSN2dmUXJaTk5OM212dDZhWmJCCmVaRjZ4bnZaWTdpME9oVS9SaFpKWWVkMno5ZXYrckpPb01GV2c2QzhNMTJxSGhEd25vNlJ4TXNDZ1lFQSt2OVQKVkZPOFZpUUJrSFA5WGxWdjhVSmFwS2d1Z1Q4ditDUE1YSE93VXZhUHlIUjltTGJ5cjZNRnA0dHBjVmJZaWpTNQptemVvTVcwUTJGY2RVWXdWTFlXZURoN2thZXVWbmhwYmQ1YmdlRjZpNERzMG5qWjBHaURUUVRWTFo4ZVhMSTNxCjNFTFZwZlhVU1JzbldaOXkvRUV5VWoxR1MvK2JSa3VuekhRMGsvVUNnWUVBakFzQTZrRTh1cG11S3dPc2RUOXAKeCtTKzF1Um1rM29SK1ZzRWlUd2hsVStMWU5teU5oSGdRcFFUYlh6SVRuSDNmNXlQZmYxWU1lYjVEb29YU3RmeQpzSC9IVFYvWmpJemx6M2cyeGxUUUM4YTg5TmpKU0dEUUY2M1MremJOeEFveE8xTGZ5SXA3UlFMRzNNSGRGNUFqCmM1bEdDUmNNL2Z1NGE1T2xuVG9LSWhzQ2dZQVlOR2NreXE1dTRDb0dkQ2tLMzlKYndicGNCcHYxZXRKMWEzNVoKckE1azhjSUw0cS81K2lxTkpYdDJITXVlVW5HdllrWkQ0YW9tbWczMXp2RFUzRjF1ZG1RM21HTU9rOWxwMWNEYwpWNEJ1R3pJNXpYdlZoZ3JNT2o0bEc2Nlo0M1dBcG03dnJzSkxydGs1ODVSbjRDaUdpd0wvUzBsc0tzb2VqVTB4Ck9rT1h3UUtCZ0Q5WkVWRGJKeWJEbnVFVWpKV1pvSlhhTFdEa3Fvb3VaTUZaVW5MVDF2VTJlUyt0d3BRajMvYUQKY1lVcER4eitBbDlpSTQvVURYRDBlUGtsY3RkM3dNL25nUmhrZkpQZ1BuSCsrbmQyWUJPU292V1RsOFdsdnRFbgpBRGVLZHFwSUNnME44NjI5MEcrN0ZUd3ZWbUlKY1BON3pUQ1QxL21SUmZndzl5UG9UelQvCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: pebble-config
+  namespace: pebble
+data:
+  pebble-config.json: |
+    {
+      "pebble": {
+        "listenAddress": "0.0.0.0:443",
+        "certificate": "/powpow/certs/cert.pem",
+        "privateKey": "/powpow/certs/key.pem",
+        "httpPort": 80,
+        "tlsPort": 443
+      }
+    }
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: pebble
+  name: pebble
+  labels:
+    app: pebble
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pebble
+  template:
+    metadata:
+      labels:
+        name: pebble
+        app: pebble
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+      - image: letsencrypt/pebble:v2.0.0
+        name: pebble
+        imagePullPolicy: Always
+        ports:
+        - name: pebble-https
+          containerPort: 443
+        args:
+          - pebble
+          - -config
+          - /powpow/config/pebble-config.json
+        env:
+          - name: PEBBLE_VA_NOSLEEP
+            value: "1"
+          - name: PEBBLE_WFE_NONCEREJECT
+            value: "0"
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+            add:
+            - NET_BIND_SERVICE
+        volumeMounts:
+        - name: pebble-config
+          mountPath: /powpow/config
+        - name: pebble-certs
+          mountPath: /powpow/certs
+      volumes:
+      - name: pebble-config
+        configMap:
+          name: pebble-config
+      - name: pebble-certs
+        secret:
+          secretName: pebble-certs
+          items:
+            - key: key.pem
+              path: key.pem
+            - key: cert.pem
+              path: cert.pem
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pebble
+  namespace: pebble
+  labels:
+    app: pebble
+spec:
+  ports:
+  - name: traefik-http
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  clusterIP: None
+  selector:
+    app: pebble

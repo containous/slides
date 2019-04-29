@@ -1,0 +1,74 @@
+<div class="modal fade" id="traefikeeTryItModal" tabindex="-1" role="dialog" aria-labelledby="traefikeeTryItLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form name="traefikee-tryit" data-netlify="true" netlify-recaptcha="true" method="POST" action="/thank-you-ee">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="traefikeeTryItModalLabel">Join the TraefikEE Early Access Program Today!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <p><em>Automatically</em> receive your license key after filling in the form.</p>
+                    </div>
+                    <div class="form-row">
+                        <h3>Get My Key</h3>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputTryItFirstName">First Name</label>
+                            <input required="required" name="first_name" type="text" class="form-control" id="inputTryItFirstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputTryItLastName">Last Name</label>
+                            <input required="required" name="last_name" type="text" class="form-control" id="inputTryItLastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputTryItCompanyName">Company Name</label>
+                            <input required="required" name="company_name" type="text" class="form-control" id="inputTryItCompanyName" placeholder="Company Inc">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputTryItEmail">E-mail</label>
+                            <input required="required" name="e_mail" type="email" class="form-control" id="inputTryItEmail" placeholder="">
+                        </div>
+                    </div>
+                    {{/*<div class="form-row">*/}}
+                        {{/*<div class="form-group col-md-12">*/}}
+                            {{/*<label for="inputTryItTraefikInstances">How many traefik instances are you running in production?</label>*/}}
+                            {{/*<input name="traefk_instance" type="number" class="form-control" id="inputTryItTraefikInstances">*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                    {{/*<div class="form-row">*/}}
+                        {{/*<div class="form-group col-md-12">*/}}
+                            {{/*<label for="inputTryItOrchestrator">On which orchestrator?</label>*/}}
+                        {{/*</div>*/}}
+                        {{/*<div class="form-group col-md-12">*/}}
+                            {{/*<input type="radio" id="inputTryItOrchestratorK8s" name="inputTryItOrchestrator" value="kubernetes"> <label for="inputTryItOrchestratorK8s">kubernetes</label><br>*/}}
+                            {{/*<input type="radio" id="inputTryItOrchestratorSwarm" name="inputTryItOrchestrator" value="swarm"> <label for="inputTryItOrchestratorSwarm">swarm</label><br>*/}}
+                            {{/*<input type="radio" id="inputTryItOrchestratorOther" name="inputTryItOrchestrator" value="other"> <label for="inputTryItOrchestratorOther">other <input type="text" name="inputTryItOrchestratorOther" /></label>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                                <input type="checkbox" id="inputUserAgreements" name="inputUserAgreements" required> <label for="inputUserAgreements">By checking this box you accept our
+                                    <a href="/legal/traefik-ee-beta-user-agreements" target="_blank">user agreements</a></label>
+                        </div>
+                    </div>
+                    <input id="traefikee_tryit_source" type="hidden" name="source" value="Default" />
+                    <div class="form-row justify-content-center">
+                        <div class="g-recaptcha" data-sitekey="6LdFEWYUAAAAAFeAGBs9q9qRuH110dXTwZoNoxwG"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

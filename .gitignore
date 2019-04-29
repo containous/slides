@@ -3,3 +3,7 @@ dist
 docs
 *.zip
 demo/lab-docker-k8s/02-k8s-traefik/traefik/ingress-kops.yml
+
+**/*/hugo/resources/
+**/*/hugo/public/
+**/*/hugo/node_modules/

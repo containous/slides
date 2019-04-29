@@ -1,25 +1,18 @@
+
 [{invert}]
-= Lab 1
-
-image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
-
-* {agenda-rp}
-* {agenda-web}
-* {agenda-ci}
-* {agenda-scm}
-* **{agenda-ws}**
-* {agenda-ssl}
+= A Web CLI
 
 == Goal
 
-* We want to host our own Web Command Line.
+* We want to host our own Web Command Line
 ** Let's use link:https://github.com/tsl0922/ttyd["TTYD, Share your terminal over the web.",window=_blank]
 
 == Challenge
 
-* **Problem:** TTYD requires Websockets.
-+
-* **Solution:** It's not even a problem with Traefik!
+* **Problem:** TTYD requires Websockets
+
+* **Solution:**
+** It's not even a problem with Traefik!
 
 == Easy Peasy!
 
@@ -27,12 +20,12 @@ image::gandalf-gopher.png["Gandalf Gopher",height=400, float=left]
 
 [source,yaml,indent=0]
 ----
-include::../../demo/lab-docker-k8s/01-docker/docker-compose.yml[tag=ttyd]
+include::../../demo/docker-compose.yml[tag=ttyd]
 ----
 
-* Step 2: Create the service:
+* Step 2: create the service
 
-[source,bash,subs="attributes"]
+[source,bash]
 ----
 docker-compose up -d ttyd
 ----
@@ -40,8 +33,11 @@ docker-compose up -d ttyd
 [{invert}]
 == Reality Check
 
-link:http://{lab-domain}/ttyd[http://{lab-domain}/ttyd,window=_blank]
+Try the "TTYD Web Command Line" link:
 
+link:http://demo.containous.cloud/ttyd[http://demo.containous.cloud/ttyd,window=_blank]
+
+[.shadow]
 image::after-ttyd-up.png[width=500]
 
-It's good: we have our own "web CLI" in a web browser!
+It's good: we have our own "Dev Box" in a web browser!

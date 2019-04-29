@@ -1,50 +1,6 @@
-= We did not talk about...
 
-== !
-
-image::backToTraefik2.0.png[background, size=cover]
-
-== Traefik V2
-
-* Used during all the workshop 🧐
-* Alpha version since March
-* Main features:
-** link:https://docs.traefik.io/v2.0/[Revamped Documentation] && Clarified Concepts
-** Expressive Routing Rule Syntax
-** Middlewares
-** TCP Support! 😍
-** Kubernetes "CRD"
-* link:https://blog.containo.us/back-to-traefik-2-0-2f9aa17be305[Learn More]
-
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[background, size=cover]
-
-== Traefik Enterprise Edition
-
-* Highly Available Traefik 💪
-* Split responsabilities 👌
-** Control Plane
-** Data Plane
-* Let's Encrypt Distributed Support 🔐
-* Smooth Operations with the `traefikeectl` CLI
-* 1.0.0 GA since... Today! 🥳
-* link:https://docs.containo.us/[Documentation]
-
-= We have
-
+= We have 
 [.title]
 stickers!
 
 image::stickers.jpg[background, size=cover]
-
-[{invert}]
-
-== We are hiring!
-
-image::containous-logo.png["Containous"]
-
-```
-docker run -it containous/jobs
-```

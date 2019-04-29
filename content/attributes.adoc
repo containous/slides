@@ -25,16 +25,4 @@
 :stylesdir: styles
 :iconfont-remote!:
 :iconfont-name: font-awesome.min
-:lab-domain: lab-XX.ddu-workshops-Y.com
-:agenda-rp: Traefik
-:agenda-ci: CI Server
-:agenda-scm: SCM: A Gitea Git Server
-:agenda-web: Web Server
-:agenda-ws: Web CLI
-:agenda-ssl: SSL for everyone
-:agenda-acme: Let's Encrypt Certificates
-:lab-path: /home/devoxx
-:public-ip: 35.178.178.237
-:docker_vm_ip: 10.0.x.y
-:kube_vm_ip: 10.0.n.p
-:acme_email: noreply@lab.org
+:include_dir: ./includes
