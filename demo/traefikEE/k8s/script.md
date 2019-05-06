@@ -49,7 +49,14 @@ traefikeectl deploy --clustername=k8s \
     --kubernetes \
     --tracing.backend="jaeger" \
     --tracing.jaeger.LocalAgentHostPort="jaeger-agent.jaeger.svc.cluster.local:6831" \
-    --tracing.jaeger.SamplingServerURL="http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling"
+    --tracing.jaeger.SamplingServerURL="http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling" \
+    --acme.email="michael@containo.us" \
+    --acme.keyType="EC384" \
+    --acme.OverrideCertificates=true \
+    --acme.entryPoint="https" --acme.httpChallenge.entrypoint=http \
+    --acme.onHostRule=true \
+    --acme.ACMELogging=true \
+    --acme.caServer='https://pebble.pebble.svc.cluster.local/dir'
 ```
 
 - Open the "Hotrod" application (<http://hotrod.docker.localhost>) and click buttons to generate requests to the micro services

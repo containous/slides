@@ -17,6 +17,7 @@ docker pull containous/whoami
 
 mkdir -p ${IMAGE_DIR}
 docker save containous/webapp -o ${IMAGE_DIR}/webapp.tar
+docker save store/containous/traefikee:v1.0.0 -o ${IMAGE_DIR}/traefikee.tar
 
 # Create k3s cluster
 docker-compose --file ${DEMO_DIR}/docker-compose.yaml up -d --scale node=2

@@ -4,7 +4,7 @@ bootstrap:
 image:
   name: store/containous/traefikee
   tag: v1.0.0
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 # replicas:
 #   dataNode:
