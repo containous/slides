@@ -1,10 +1,10 @@
 
 [entrypoints]
-    [entrypoints.http]
-      address = ":80"
-    [entrypoints.https]
-      address = ":443"
-    [entrypoints.https.tls]
+  [entrypoints.http]
+    address = ":80"
+  [entrypoints.https]
+    address = ":443"
+  [entrypoints.https.tls]
 
 [api]
 

@@ -1,21 +1,20 @@
-# tag::edge[]
 version: '2.4'
 
 services:
   edge:
-    image: traefik:1.7.11
+    image: traefik:v1.7.11
     command:
       - "--docker" # Tells Traefik to listen to docker
       - "--api"
     ports:
       - "80:80"
-      - "443:443"
-      - "8080:8080"
     volumes:
       # To communicate with the Docker Engine
       - /var/run/docker.sock:/var/run/docker.sock
-  # end::edge[]
-  # tag::web[]
+      # - ./traefik.toml:/traefik.toml
+    labels:
+      - "traefik.port=8080"
+      - "traefik.frontend.rule=Host:dashboard.docker.localhost"
   web:
     build:
       context: ./hugo/
@@ -24,26 +23,16 @@ services:
       - HUGO_ENV=docker
     labels:
       - "traefik.frontend.rule=Host:${EXTERNAL_HOST}"
-  # end::web[]
-  # tag::jenkins[]
   jenkins:
     image: jenkins/jenkins:2.164.2-alpine
     expose:
       - 8080
       - 50000
-    # tag::jenkins-env-opts[]
     environment:
       - JENKINS_OPTS=--prefix=/jenkins
-    # end::jenkins-env-opts[]
     labels:
-      # tag::jenkins-labels-port[]
       - "traefik.port=8080"
-      # end::jenkins-labels-port[]
-      # tag::jenkins-labels-rule[]
-      - "traefik.frontend.rule=PathPrefix:/jenkins"
-      # end::jenkins-labels-rule[]
-  # end::jenkins[]
-  # tag::gitserver[]
+      - "traefik.frontend.rule=Host:${EXTERNAL_HOST};PathPrefix:/jenkins"
   gitserver:
     image: gitea/gitea:latest
     expose:
@@ -53,13 +42,13 @@ services:
       - ROOT_URL=/gitserver
     labels:
       - "traefik.port=3000"
-      # tag::gitserver-labels-rule[]
       - "traefik.frontend.rule=Host:${EXTERNAL_HOST};PathPrefixStrip:/gitserver"
-      # end::gitserver-labels-rule[]
-  # end::gitserver[]
-  # tag::ttyd[]
   ttyd:
     image: tsl0922/ttyd:1.4.2-alpine
     labels:
       - "traefik.frontend.rule=Host:${EXTERNAL_HOST};PathPrefixStrip:/ttyd"
-  # end::ttyd[]
+  whoami:
+    image: containous/whoami
+    labels:
+      - "traefik.frontend.rule=Host:${WHOAMI_EXTERNAL_HOST}"
+      - "traefik.frontend.headers.customRequestHeaders=X-Traefik-Header:Powpow"

@@ -23,7 +23,7 @@ docker-compose up -d
 
 ```shell
 # Mongo 1
-mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
+mongo --host mongo1.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica.pem --sslPEMKeyFile=/demo/certs/mongo.pem
 > show dbs
 > use meetup
 > db.movie.insert({"name":"Traefik-Awesome"})
@@ -33,7 +33,7 @@ mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pe
 
 ```shell
 # Mongo2
-mongo --host mongo2.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
+mongo --host mongo2.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica.pem --sslPEMKeyFile=/demo/certs/mongo.pem
 > show dbs
 > exit
 ```

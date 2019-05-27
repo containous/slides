@@ -12,6 +12,13 @@ image::traefik.logo.png["Traefik's Logo",height=300]
 
 image:qrcode.png["QRCode to this presentation",height=100]
 
+[.notes]
+--
+Hello everyone. Happy to be there.
+It almost the end of the day be strong.
+Fist of all if you want to follow the presentation at your own pace you use the QRcode or access the URL
+--
+
 [.small]
 {presentationUrl}[{presentationUrl}]
 
@@ -28,7 +35,7 @@ image:qrcode.png["QRCode to this presentation",height=100]
 
 // //// Speaker Slide and Company slide
 [{invert}]
-== Whoami 1/2
+== Whoami
 
 Michael Matur
 
@@ -39,16 +46,11 @@ Michael Matur
 
 image::michael.jpg[height=200]
 
-[{invert}]
-== Whoami 2/2
-
-Adrien Martinet
-
-* Sales @ link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
-* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
-
-image::adrien.jpg[height=200]
+[.notes]
+--
+I'm Michael Matur, you can find me here on the internet. Don't hesitate to reach me if you have any question, misunderstanding or anything else.
+I'm working for Containous.
+--
 
 [{invert}]
 == Containous
@@ -58,10 +60,15 @@ link:https://containo.us[]
 * We Believe in Open Source
 * We Deliver Traefik
 * Commercial Support for Traefik
-* 20 people, 90% technical experts
+* 22 people, 80% technical experts
 
 image::containous-logo.png["Containous Logo"]
 
+[.notes]
+--
+A small company mainly based in france but distributed, that build an open source product and it's entreprise counter part name traefik.
+We are majority of technical expert and we are growing
+--
 // //// end of Speaker Slide and Company slide
 
 
@@ -91,6 +98,9 @@ include::{include_dir}/back-to-2.0.adoc[]
 
 // Thanks
 include::{include_dir}/the-end.adoc[]
+
+// Hiring
+include::{include_dir}/hiring.adoc[]
 
 :leveloffset: -1
 
