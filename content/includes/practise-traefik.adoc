@@ -1,0 +1,29 @@
+
+[{invert}]
+= Traefik
+
+== Traefik Setup
+
+* Step 1: Compose file in `/home/ubuntu/meetup/docker-compose.yml`:
++
+[source,yaml]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=edge]
+----
+
+* Step 2: Start the stack
++
+[source,bash]
+----
+$ docker-compose up -d
+----
+
+[{invert}]
+== Reality Check
+
+link:http://demo.containous.cloud/[http://demo.containous.cloud/,window=_blank]
+
+[.shadow]
+image::after-traefik-up.png[]
+
+It's good: we have an HTTP answer!

@@ -1,0 +1,84 @@
+
+[{invert}]
+= Adding a CI Server
+
+== Goal
+
+* We want to host our own automation system for Continuous Integration
+** Let's use link:https://jenkins.io["Jenkins",window=_blank]
+
+== Challenge 1/3
+
+* **Problem:**
+** Jenkins exposes 2 ports: `8080` and `50000`. How to let Traefik know to only use `8080`?
+
+
+* **Solution:**
+** Select the port with the label link:https://docs.traefik.io/configuration/backends/docker/#on-containers[`traefik.port`,window=_blank]:
++
+[source,yaml,indent=0]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-labels-port]
+----
+
+
+== Challenge 2/3
+
+* **Problem:**
+** How to let Traefik know when to send requests to the Jenkins backend instead of the webserver?
++
+```
+http://demo.containous.cloud/jenkins/configuration
+  -> Traefik
+    -> http://<Jenkins Private IP>:8080/jenkins/configuration
+```
+
+* **Solution:**
+** Change the frontend rule to use link:https://docs.traefik.io/basics/#matchers[`PathPrefix`,window=_blank]:
++
+[source,yaml,indent=0]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-labels-rule]
+----
+
+== Challenge 3/3
+
+* **Problem:**
+** How to tell Jenkins to accept requests under `/jenkins`?
+
+** **Solution:**
+** Use the Jenkins flag `--prefix=/jenkins` with the variable `JENKINS_OPTS`:
++
+[source,yaml,indent=0]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins-env-opts]
+----
+
+
+== Jenkins Setup
+
+* Step 1: Edit Compose file:
+
+[source,yaml,indent=0]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=jenkins]
+----
+
+* Step 2: update the service
+
+[source,bash]
+----
+docker-compose up -d jenkins
+----
+
+[{invert}]
+== Reality Check
+
+Click on the "Jenkins" link:
+
+link:http://demo.containous.cloud/jenkins[http://demo.containous.cloud/jenkins,window=_blank]
+
+[.shadow]
+image::after-jenkins-up.png[width=500]
+
+It's good: we can setup Jenkins!

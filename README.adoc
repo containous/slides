@@ -1,16 +1,7 @@
-= Traefik: Reverse Proxy Made Simple
+= Smart Routing et HTTPS pour tous : Traefik en action (🇫🇷)
 
-Have you ever felt that your IT super powers were blocked
-by repetitive configuration work?
-Do you love microservices but hate the sight
-of a never-ending routing table?
-Does your credo consist of scalability, stability,
-traceability, and performance?
-Do you believe in a world beyond complex layers of software?
-Then you might want to listen to our story
-because we are just like you,
-and we came up with a practical solution
-that might reunite ops and devs alike for a journey to manageable software.
+Traefik est le très populaire edge router open source qui permet de faire du reverse-proxy dynamique.
+Les concepts clés de cet outil sont la simplicité et l'automatisation permettant un gain de temps considérable lors du développement, déploiement et la gestion de vos applications. Traefik supprime le besoin de mise à jour de configuration de routage de votre environnement containerisé, et s'intégre dans un très large écosystème de backends modernes (Docker, Mesos, Marathon, Kubernetes, Etcd, Consul, Zookeeper, ect.)
 
 == How-to Work with this Presentation?
 

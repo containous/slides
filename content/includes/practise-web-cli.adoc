@@ -1,0 +1,43 @@
+
+[{invert}]
+= A Web CLI
+
+== Goal
+
+* We want to host our own Web Command Line
+** Let's use link:https://github.com/tsl0922/ttyd["TTYD, Share your terminal over the web.",window=_blank]
+
+== Challenge
+
+* **Problem:** TTYD requires Websockets
+
+* **Solution:**
+** It's not even a problem with Traefik!
+
+== Easy Peasy!
+
+* Step 1: Edit Compose file:
+
+[source,yaml,indent=0]
+----
+include::../../demo/traefik-v1/software-forge/docker-compose.yml[tag=ttyd]
+----
+
+* Step 2: create the service
+
+[source,bash]
+----
+docker-compose up -d ttyd
+----
+
+[{invert}]
+== Reality Check
+
+Try the "TTYD Web Command Line" link:
+
+link:http://demo.containous.cloud/ttyd[http://demo.containous.cloud/ttyd,window=_blank]
+
+[.shadow]
+image::after-ttyd-up.png[width=500]
+
+It's good: we have our own "Dev Box" in a web browser!

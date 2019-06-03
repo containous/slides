@@ -27,59 +27,55 @@ image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 
 * TLS, DNS and HTTP challenges supported
 
-// == With 🐳: Simple backend
+== With 🐳: Simple backend
 
-// [source,yaml]
-// ----
-// # https://www.mycompany.org -> http://webserver:80/
-// webserver:
-//     image: nginx:alpine
-//     labels:
-//       - "traefik.frontend.rule=Host:www.mycompany.org"
-// ----
+[source,yaml]
+----
+# https://www.mycompany.org -> http://webserver:80/
+webserver:
+    image: nginx:alpine
+    labels:
+      - "traefik.frontend.rule=Host:www.mycompany.org"
+----
 
-// == With 🐳: Context
+== With 🐳: Context
 
-// [source,yaml]
-// ----
-// # https://mycompany.org/jenkins -> http://jenkins:8080/jenkins
-// jenkins:
-//     image: jenkins/jenkins:lts
-//     labels:
-//       - "traefik.frontend.rule=PathPrefix:/jenkins"
-//       - "traefik.port=8080" # Because 50000 is also exposed
-//     environment:
-//       - JENKINS_OPTS=--prefix=/jenkins
-// ----
+[source,yaml]
+----
+# https://mycompany.org/jenkins -> http://jenkins:8080/jenkins
+jenkins:
+    image: jenkins/jenkins:lts
+    labels:
+      - "traefik.frontend.rule=PathPrefix:/jenkins"
+      - "traefik.port=8080" # Because 50000 is also exposed
+    environment:
+      - JENKINS_OPTS=--prefix=/jenkins
+----
 
-// == With 🐳: Rewrites
+== With 🐳: Rewrites
 
-// [source,yaml]
-// ----
-// # https://mycompany.org/gitserver -> http://gitserver:3000/
-// gitserver:
-//     image: gitea/gitea:1.5
-//     labels:
-//       - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
-//       - "traefik.port=3000" # Because 22 is also exposed
-// ----
+[source,yaml]
+----
+# https://mycompany.org/gitserver -> http://gitserver:3000/
+gitserver:
+    image: gitea/gitea:1.5
+    labels:
+      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
+      - "traefik.port=3000" # Because 22 is also exposed
+----
 
-// == With 🐳: Websockets
+== With 🐳: Websockets
 
-// [source,yaml]
-// ----
-// # https://mycompany.org/webterminal -> http://webterminal:7681/
-// webterminal:
-//     image: tsl0922/ttyd
-//     labels:
-//       - "traefik.frontend.rule=PathPrefixStrip:/webterminal"
-//     expose:
-//       - "7681"
-// ----
-
-== Demo
-
-image::demo.jpg[]
+[source,yaml]
+----
+# https://mycompany.org/webterminal -> http://webterminal:7681/
+webterminal:
+    image: tsl0922/ttyd
+    labels:
+      - "traefik.frontend.rule=PathPrefixStrip:/webterminal"
+    expose:
+      - "7681"
+----
 
 [{invert}]
 == Traefik with &#9096;

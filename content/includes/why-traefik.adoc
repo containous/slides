@@ -19,10 +19,6 @@ image::asterix-premise.jpg[Asterix - Premise]
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
-== Where is the Service?
-
-image::where-is-charlie.jpg["Where os Charlie?",width=900]
-
 [{invert}]
 == Tools of the Trade
 
@@ -41,6 +37,10 @@ image::consul.png[width=80,float=right]
 image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
+
+== Where's My Service?
+
+image::where-is-charlie.jpg["Where os Charlie?",width=900]
 
 == !
 
@@ -64,7 +64,7 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
-* Written in Go, a popular language
-* 22,000+ ⭐
-* 700M+ ⬇️
+* Written in Go
+* 21,000+ ⭐
+* 600M+ ⬇️
 * 350+ 👷
