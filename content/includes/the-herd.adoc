@@ -11,6 +11,11 @@ You came to the wrong neighbour
 
 image::cluster-traefikee.png[]
 
+[{invert}]
+== !
+
+image::traefikee-architecture-gray-bg.png[background, size=cover]
+
 [state=invert,background-color="rgb(249,248,248)"]
 [%notitle]
 == An Highly Available Traefik
@@ -21,9 +26,6 @@ image::cluster-traefikee.png[]
 Your browser does not support the video tag.
 </video>
 ++++
-
-[.small]
-High Availability
 
 [state=invert,background-color="rgb(249,248,248)"]
 [%notitle]
@@ -36,9 +38,6 @@ Your browser does not support the video tag.
 </video>
 ++++
 
-[.small]
-Security
-
 [state=invert,background-color="rgb(249,248,248)"]
 [%notitle]
 == A Scalable Traefik
@@ -49,15 +48,6 @@ Security
 Your browser does not support the video tag.
 </video>
 ++++
-
-[.small]
-Scalability
-
-
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[background, size=cover]
 
 == As Simple As Traefik
 
@@ -87,8 +77,3 @@ traefikeectl deploy \
 == Free Trial
 
 link:https://containo.us/traefikee[]
-
-
-== Demo
-
-image::demo.jpg[]

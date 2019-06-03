@@ -28,7 +28,6 @@ image:traefik-v2-rules.png[width=800]
 rule=(Host('api.mycompany.com') && PathPrefix('/v2')) || Host('api-v2.mycompany.com')
 ----
 
-
 [{invert}]
 == Middlewares
 

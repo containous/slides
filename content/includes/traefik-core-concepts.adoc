@@ -34,11 +34,6 @@ image::architecture-at-a-glance-backends.png["Traefik's Backends",width=1200]
 image::architecture-at-a-glance-frontends.png["Traefik's Frontends",width=1200]
 
 [{invert}]
-== At a Glance
-
-image::architecture-at-a-glance.png["Traefik Architecture At A Glance",width=1200]
-
-[{invert}]
 == In Practice
 
 image::architecture-at-a-glance-in-practice.png[Traefik in Practise,width=1000]
