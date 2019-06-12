@@ -4,19 +4,19 @@
 image::bored-minion.jpg[Bored Minion]
 
 [{invert}]
-== Remember the Diagram?
+== Traefik is an Edge Router
 
-image::traefik-architecture.png["Traefik's Architecture",width=1000]
-
-[{invert}]
-== Let's Simplify
-
-image::architecture-simplified.png["Traefik's Simplified Architecture",width=1000]
+image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
 [{invert}]
-== Providers
+== Traefik Dynamically Discovers Services
 
-image::architecture-at-a-glance-provider.png["Traefik's Simplified Architecture",width=1000]
+image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
+
+[{invert}]
+== Architecture (v2.0) at a Glance
+
+image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
 
 [{invert}]
 == Entrypoints
@@ -24,21 +24,16 @@ image::architecture-at-a-glance-provider.png["Traefik's Simplified Architecture"
 image::architecture-at-a-glance-entrypoints.png["Traefik's Entrypoints", width=1000]
 
 [{invert}]
-== Backends
+== Routers
 
-image::architecture-at-a-glance-backends.png["Traefik's Backends",width=1000]
-
-[{invert}]
-== Frontends
-
-image::architecture-at-a-glance-frontends.png["Traefik's Frontends",width=1000]
+image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 
 [{invert}]
-== At a Glance
+== Services
 
-image::architecture-at-a-glance.png["Traefik Architecture At A Glance",width=1000]
+image::architecture-at-a-glance-services.png["Traefik's Services",width=1000]
 
 [{invert}]
-== In Practice
+== Static & Dynamic Configuration
 
-image::architecture-at-a-glance-in-practice.png[Traefik in Practise,width=1000]
+image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=1000]

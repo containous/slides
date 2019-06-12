@@ -54,17 +54,3 @@ Source: https://twitter.com/Caged/status/1039937162769096704[]
 image::what-if-I-told-you.jpg[What If I Told You]
 
 That You Don't Have to Write This Configuration File...?
-
-[{invert}]
-== Here Comes Traefik!
-
-image::traefik-architecture.png["Traefik's Architecture",width=900]
-
-== Traefik Project
-
-* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
-* MIT License
-* Written in Go
-* 21,000+ ⭐
-* 600M+ ⬇️
-* 350+ 👷

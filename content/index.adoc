@@ -1,21 +1,22 @@
 
 [%notitle]
-= Smart Routing et HTTPS pour tous : Traefik en action (🇫🇷)
+= A la découverte de Traefik 2.0 (🇫🇷)
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== Smart Routing et HTTPS pour tous
+== A la découverte de Traefik 2.0 (🇫🇷)
 
-[.title]
-Traefik en action (🇫🇷)
+image::traefik.logo.png["Traefik",height=150]
 
-image::traefik.logo.png["Traefik",height=300]
+image::sfeir-logo.png["SFEIR Logo",height=100]
 
-image:qrcode.png["QRCode to this presentation",height=100]
+[.small]
+Lille - 2019/06/13
+
+image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 {presentationUrl}[{presentationUrl}]
-
 
 [{invert}]
 == How to use these slides?
@@ -46,8 +47,8 @@ image::damien.jpg[height=200]
 link:https://containo.us[]
 
 * We Believe in Open Source
-* We Deliver Traefik
-* Commercial Support for Traefik
+* We Deliver Traefik and Traefik Enterprise Edition
+* Commercial Support
 * 20 people, 90% tech
 
 image::containous-logo.png["Containous Logo"]
@@ -63,13 +64,13 @@ image::containous-logo.png["Containous Logo"]
 
 include::./includes/why-traefik.adoc[]
 
+include::./includes/traefik-project.adoc[]
+
 include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/traefikee.adoc[]
-
-include::./includes/v2.adoc[]
 
 include::./includes/the-end.adoc[]
 
