@@ -30,29 +30,46 @@ spec:
 [{invert}]
 == &#9096; CRD - Custom Resources Definition
 
-// image::kubernetes.png[width=100]
-
-```
+[source,yaml]
+----
+# File "webapp.yaml"
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
+metadata:
+  name: simpleingressroute
 spec:
-  entrypoints:
+  entryPoints:
     - web
-    - web-secure
   routes:
-    - match: Host(`traefik.io`) && PathPrefix(`/foo`)
-      kind: Rule
-      services:
-        - name: whoami1
-          port: 80
-          strategy: RoundRobin
-      middlewares:
-        - name: stripprefix
-    - match: Host(`containo.us`) && Method(`POST`)
-      kind: Rule
-      services:
-        - name: whoami2
-          port: 80
-  tls:
-    secretName: supersecret
-```
+  - match: Host(`localhost`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: webapp
+      port: 80
+----
+
+[source,bash]
+----
+$ kubectl apply -f webapp.yaml
+$ kubectl get ingressroute
+----
+
+== &#9096; & TCP (with CRD)
+
+🔥 (Merged this week)
+
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: ingressroutetcpmongo.crd
+spec:
+  entryPoints:
+    - mongotcp
+  routes:
+  - match: HostSNI(`mongo-prod`)
+    services:
+    - name: mongo-prod
+      port: 27017
+----
