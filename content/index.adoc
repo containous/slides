@@ -70,6 +70,8 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
+include::./includes/v2-tcp.adoc[]
+
 include::./includes/traefikee.adoc[]
 
 include::./includes/the-end.adoc[]

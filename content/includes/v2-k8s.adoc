@@ -1,0 +1,28 @@
+
+[{invert}]
+= Traefik with &#9096;
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+== Example Code with &#9096;
+
+[source,yaml]
+----
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: "/whoami"
+        backend:
+          serviceName: webapp
+          servicePort: 80
+----
