@@ -10,7 +10,7 @@ image::traefik-v2-tcp.png[]
 image::demo1-v2-tcp.png[width=500]
 
 [.small]
-link:https://github.com/containous/slides/tree/bbl-decathlon-2019/demo/traefik-v2/01-mongo[Demo Code on icon:github[]]
+link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/01-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 1 - Configuration
@@ -23,7 +23,7 @@ image::demo1-v2-config.png[]
 image::demo2-v2-tcp-tls.png[width=500]
 
 [.small]
-link:https://github.com/containous/slides/tree/bbl-decathlon-2019/demo/traefik-v2/02-tls-mongo[Demo Code on icon:github[]]
+link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/02-tls-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 2 - Configuration
@@ -36,7 +36,7 @@ image::demo2-v2-config.png[]
 image::demo3-v2-tcp-sni.png[width=500]
 
 [.small]
-link:https://github.com/containous/slides/tree/bbl-decathlon-2019/demo/traefik-v2/03-sni-routing-mongo[Demo Code on icon:github[]]
+link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/03-sni-routing-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 3 - Configuration
@@ -49,4 +49,4 @@ image::demo3-v2-config.png[]
 image::demo4-v2-tcp-http.png[width=500]
 
 [.small]
-link:https://github.com/containous/slides/tree/bbl-decathlon-2019/demo/traefik-v2/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
+link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
