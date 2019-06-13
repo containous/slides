@@ -1,5 +1,5 @@
 
-= Traefik Core Concepts
+= Traefik (v2.0) Core Concepts
 
 image::bored-minion.jpg[Bored Minion]
 
@@ -29,9 +29,19 @@ image::architecture-at-a-glance-entrypoints.png["Traefik's Entrypoints", width=1
 image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 
 [{invert}]
+== Middlewares
+
+image::traefik-v2-middlewares.png["Traefik Middlewares",width=1000]
+
+[{invert}]
 == Services
 
 image::architecture-at-a-glance-services.png["Traefik's Services",width=1000]
+
+[{invert}]
+== Architecture (again) at a Glance
+
+image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
 
 [{invert}]
 == Static & Dynamic Configuration
