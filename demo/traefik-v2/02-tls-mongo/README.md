@@ -25,7 +25,7 @@ docker-compose up -d
 # Should Error because no TLS
 mongo --host mongo1.local --port 27017
 # Should work
-mongo --host mongo1.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica.pem --sslPEMKeyFile=/demo/certs/mongo.pem
+mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
 > show dbs
 > exit
 ```

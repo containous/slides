@@ -1,0 +1,24 @@
+
+[{invert}]
+= More to come for v2.0
+
+* New WebUI
+* Newmetrics
+* UDP
+* YAML
+* TLS stores & options
+* Canary
+
+[{invert}]
+== More info
+
+link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
+
+[{invert}]
+== We Also Missed Talking About ...
+
+image::word-cloud.png[width=900]
+
+[{invert}]
+== !
+image::to-be-continued.jpg[background, size=cover]

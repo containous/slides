@@ -72,6 +72,10 @@ include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/v2-tcp.adoc[]
 
+include::./includes/v2-k8s.adoc[]
+
+include::./includes/more-to-come.adoc[]
+
 include::./includes/traefikee.adoc[]
 
 include::./includes/the-end.adoc[]

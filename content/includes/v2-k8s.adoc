@@ -26,3 +26,33 @@ spec:
           serviceName: webapp
           servicePort: 80
 ----
+
+[{invert}]
+== &#9096; CRD - Custom Resources Definition
+
+// image::kubernetes.png[width=100]
+
+```
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+spec:
+  entrypoints:
+    - web
+    - web-secure
+  routes:
+    - match: Host(`traefik.io`) && PathPrefix(`/foo`)
+      kind: Rule
+      services:
+        - name: whoami1
+          port: 80
+          strategy: RoundRobin
+      middlewares:
+        - name: stripprefix
+    - match: Host(`containo.us`) && Method(`POST`)
+      kind: Rule
+      services:
+        - name: whoami2
+          port: 80
+  tls:
+    secretName: supersecret
+```

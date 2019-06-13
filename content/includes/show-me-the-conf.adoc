@@ -85,8 +85,3 @@ webterminal:
     labels:
       - "traefik.http.routers.devbox.rule=Host(`mycompany.org`) && PathPrefix(`/webterminal`)"
 ----
-
-// [{invert}]
-// == We Missed Talking About ...
-
-// image::word-cloud.png[width=900]

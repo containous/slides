@@ -23,7 +23,7 @@ docker-compose up -d
 
 ```shell
 # Mongo 1
-mongo --host mongo1.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica.pem --sslPEMKeyFile=/demo/certs/mongo.pem
+mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
 > show dbs
 > use another-db-in-the-wall
 > db.movie.insert({"name":"Traefik-Awesome"})
@@ -33,12 +33,12 @@ mongo --host mongo1.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica
 
 ```shell
 # Mongo2
-mongo --host mongo2.local --port 27017 --ssl --sslCAFile=/demo/root-certs/minica.pem --sslPEMKeyFile=/demo/certs/mongo.pem
+mongo --host mongo2.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
 > show dbs
 > exit
 ```
 
-* Open the Mongo Client WebUI at the URL https://dashboard-mongo1.local:27017/ (requires insecure OR adding the minica.pem CA root in your webbrowser): <https://dashboard-mongo1.local:27017/>
+* Open the Mongo Client WebUI at the URL <https://dashboard-mongo1.local:27017/> (requires insecure OR adding the minica.pem CA root in your webbrowser): <https://dashboard-mongo1.local:27017/>
   * Check the db "another-db-in-the-wall" exists.
 
 * Cleanup:

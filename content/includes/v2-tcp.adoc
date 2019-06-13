@@ -50,22 +50,3 @@ image::demo4-v2-tcp-http.png[width=500]
 
 [.small]
 link:https://github.com/containous/slides/tree/bbl-decathlon-2019/demo/traefik-v2/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
-
-[{invert}]
-== More to come
-
-* New WebUI
-* Newmetrics
-* UDP
-* YAML
-* TLS stores & options
-* Canary
-
-[{invert}]
-== More info
-
-link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
-
-[{invert}]
-== !
-image::to-be-continued.jpg[background, size=cover]
