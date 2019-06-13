@@ -87,8 +87,3 @@ traefikeectl deploy \
 == Early (Free) Access
 
 link:https://containo.us/traefikee[]
-
-== But
-
-[.title]
-What About Open Source?

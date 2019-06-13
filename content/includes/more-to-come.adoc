@@ -3,10 +3,9 @@
 = More to come for v2.0
 
 * New WebUI
-* Newmetrics
+* New metrics
 * UDP
 * YAML
-* TLS stores & options
 * Canary
 
 [{invert}]
