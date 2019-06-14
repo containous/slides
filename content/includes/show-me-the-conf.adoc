@@ -30,23 +30,6 @@ services:
       - "traefik.http.routers.webapp.rule=Host(`localhost`)"
 ----
 
-// == HTTPS for Everyone with Let's Encrypt
-
-// image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
-
-// * TLS, DNS and HTTP challenges supported
-
-// == With 🐳: Simple backend
-
-// [source,yaml]
-// ----
-// # https://www.mycompany.org -> http://webserver:80/
-// webserver:
-//     image: nginx:alpine
-//     labels:
-//       - "traefik.frontend.rule=Host:www.mycompany.org"
-// ----
-
 == With 🐳: Context
 
 [source,yaml]

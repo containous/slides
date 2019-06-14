@@ -1,22 +1,16 @@
 
 [%notitle]
-= A la découverte de Traefik 2.0 (🇫🇷)
+= Edge Routing et HTTPS pour tous: Traefik en pratique (🇫🇷)
 include::./includes/attributes.adoc[]
 
-[{invert}]
-== A la découverte de Traefik 2.0 (🇫🇷)
+== !
 
-image::traefik.logo.png["Traefik",height=150]
+[.title.low]
+Edge Routing et HTTPS pour tous: Traefik en pratique (🇫🇷)
 
-image::sfeir-logo.png["SFEIR Logo",height=100]
+image::voxxed-lux-background.jpg[background, size=cover]
 
-[.small]
-Lille - 2019/06/13
-
-image::qrcode.png["QRCode to this presentation",height=150]
-
-[.small]
-{presentationUrl}[{presentationUrl}]
+image:traefik.logo.bright.png["Traefik",height=150]
 
 [{invert}]
 == How to use these slides?
