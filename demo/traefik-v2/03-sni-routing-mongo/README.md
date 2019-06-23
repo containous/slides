@@ -25,7 +25,7 @@ docker-compose up -d
 # Mongo 1
 mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../root-certs/minica.pem --sslPEMKeyFile=./certs/mongo.pem
 > show dbs
-> use meetup
+> use another-DB-in-the-wall
 > db.movie.insert({"name":"Traefik-Awesome"})
 > show dbs
 > exit
