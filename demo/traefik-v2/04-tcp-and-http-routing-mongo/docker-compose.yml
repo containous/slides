@@ -2,7 +2,7 @@ version: '3'
 
 services:
   reverse-proxy:
-    image: traefik:v2.0
+    image: traefik:v2.0.0-alpha4
     restart: unless-stopped
     command:
       - "--api"
@@ -18,7 +18,7 @@ services:
       - ./tls-certs.toml:/tls-certs.toml
 
   mongo1:
-    image: mongo
+    image: mongo:4.0.10
     hostname: mongo1.local
     restart: unless-stopped
     labels:
@@ -27,7 +27,7 @@ services:
       - "traefik.tcp.routers.mongo1.entrypoints=mongo"
 
   mongo2:
-    image: mongo
+    image: mongo:4.0.10
     hostname: mongo2.local
     restart: unless-stopped
     labels:
@@ -42,7 +42,7 @@ services:
       - ./certs:/certs
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:0.49.0
     restart: unless-stopped
     labels:
       - "traefik.http.routers.mongo-express.rule=Host(`dashboard-mongo1.local`)"
