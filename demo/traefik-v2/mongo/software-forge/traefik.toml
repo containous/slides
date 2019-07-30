@@ -1,0 +1,25 @@
+[global]
+    sendAnonymousUsage = false
+
+[log]
+  level = "DEBUG"
+
+[entrypoints]
+    [entrypoints.http]
+      address = ":80"
+    [entrypoints.https]
+      address = ":443"
+    [entrypoints.https.tls]
+
+[api]
+
+[providers]
+
+[providers.docker]
+endpoint = "unix:///var/run/docker.sock"
+
+[providers.file]
+# Strip prefix /gitserver and /ttyd
+[http.middlewares]
+  [http.middlewares.stripprefix.StripPrefix]
+     prefixes = ["/gitserver", "/ttyd"]
