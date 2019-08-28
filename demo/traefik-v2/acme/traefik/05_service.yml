@@ -13,13 +13,11 @@ spec:
   selector:
     app: traefik-ingress-controller
   type: LoadBalancer
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: whoami
-
 spec:
   ports:
     - protocol: TCP
