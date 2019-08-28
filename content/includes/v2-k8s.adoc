@@ -56,8 +56,6 @@ $ kubectl get ingressroute
 
 == &#9096; & TCP (with CRD)
 
-🔥 (Merged this week)
-
 [source,yaml]
 ----
 apiVersion: traefik.containo.us/v1alpha1
