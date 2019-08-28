@@ -31,7 +31,7 @@ link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
 * link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
 
-image::damien.jpg[height=200]
+image::manuel.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -41,7 +41,7 @@ link:https://containo.us[]
 * We Believe in Open Source
 * We Deliver Traefik and Traefik Enterprise Edition
 * Commercial Support
-* 20 people, 90% tech
+* 30 people, 90% tech
 
 image::containous-logo.png["Containous Logo"]
 
@@ -62,9 +62,9 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/v2-tcp.adoc[]
-
 include::./includes/v2-k8s.adoc[]
+
+include::./includes/v2-tcp.adoc[]
 
 include::./includes/more-to-come.adoc[]
 
@@ -78,13 +78,10 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
 
-link:https://github.com/dduportal[icon:github[] dduportal]
-
-image::qrcode.png["QRCode to this presentation",height=150]
+link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]

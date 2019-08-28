@@ -84,6 +84,6 @@ traefikeectl deploy \
 ----
 
 [{invert}]
-== Early (Free) Access
+== Free Trial
 
 link:https://containo.us/traefikee[]

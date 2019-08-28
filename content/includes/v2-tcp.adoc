@@ -1,52 +1,14 @@
 
 [%notitle,{invert}]
 = TCP Support
-
 image::traefik-v2-tcp.png[]
 
-[{invert}]
-== Demo 1 - Straightforward TCP Routing
+== HTTPS for Everyone with Let's Encrypt
 
-image::demo1-v2-tcp.png[width=500]
+image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
 
-[.small]
-link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/01-mongo[Demo Code on icon:github[]]
+* TLS, DNS and HTTP challenges supported
 
-[{invert}]
-== Demo 1 - Configuration
+== Demo
 
-image::demo1-v2-config.png[]
-
-[{invert}]
-== Demo 2 - Let’s Add TLS to TCP with Traefik
-
-image::demo2-v2-tcp-tls.png[width=500]
-
-[.small]
-link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/02-tls-mongo[Demo Code on icon:github[]]
-
-[{invert}]
-== Demo 2 - Configuration
-
-image::demo2-v2-config.png[]
-
-[{invert}]
-== Demo 3 - SNI Routing + TLS Passthrough
-
-image::demo3-v2-tcp-sni.png[width=500]
-
-[.small]
-link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/03-sni-routing-mongo[Demo Code on icon:github[]]
-
-[{invert}]
-== Demo 3 - Configuration
-
-image::demo3-v2-config.png[]
-
-[{invert}]
-== Demo 4 - Muxing HTTPS and TCP on the Same Port
-
-image::demo4-v2-tcp-http.png[width=500]
-
-[.small]
-link:https://github.com/containous/slides/tree/meetup-sfeir-lille-2019/demo/traefik-v2/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
+image::demo.jpg[]
