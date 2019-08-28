@@ -41,11 +41,12 @@ image::demo3-v2-tcp-sni.png[width=500]
 [{invert}]
 == Demo 3 - Configuration
 
-image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
+image::demo3-v2-config.png[]
 
-* TLS, DNS and HTTP challenges supported
+[{invert}]
+== Demo 4 - Muxing HTTPS and TCP on the Same Port
 
-== Demo
+image::demo4-v2-tcp-http.png[width=500]
 
 [{invert}]
 == Demo 5 - Deploying a simple WebApp with Lets Encrypt
