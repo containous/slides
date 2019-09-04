@@ -82,6 +82,7 @@ link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
 
 link:https://github.com/SantoDE[icon:github[] SantoDE]
 
+image::qrcode.png["QRCode to this presentation",height=150]
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
