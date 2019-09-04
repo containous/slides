@@ -5,9 +5,9 @@ include::./includes/attributes.adoc[]
 
 
 [{invert}]
-== Traefik - The Cloud Native Edge Router
+== "Dies ist keine sichere Verbindung" - Edge Router Konfiguration leicht gemacht
 [.title]
-Traefik in Action!
+
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
