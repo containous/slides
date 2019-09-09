@@ -23,7 +23,7 @@ services:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  
+
   webapp:
     image: containous/whoami
     labels:

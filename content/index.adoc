@@ -44,7 +44,7 @@ link:https://containo.us[]
 * We Believe in Open Source
 * We Deliver Traefik and Traefik Enterprise Edition
 * Commercial Support
-* 30 people, 90% tech
+* 30 people distributed, 90% tech
 
 image::containous-logo.png["Containous Logo"]
 
