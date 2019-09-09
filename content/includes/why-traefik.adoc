@@ -19,6 +19,10 @@ image::asterix-premise.jpg[Asterix - Premise]
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
+== Where's My Service?
+
+image::where-is-charlie.jpg["Where os Charlie?",width=900]
+
 [{invert}]
 == Tools of the Trade
 
@@ -37,10 +41,6 @@ image::consul.png[width=80,float=right]
 image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
-
-== Where's My Service?
-
-image::where-is-charlie.jpg["Where os Charlie?",width=900]
 
 == !
 
