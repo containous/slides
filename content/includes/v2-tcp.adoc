@@ -18,6 +18,9 @@ image::demo.jpg[]
 
 image::demo1-v2-tcp.png[width=500]
 
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
+
 [{invert}]
 == Demo 1 - Configuration
 
@@ -29,6 +32,9 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
 
 image::demo2-v2-tcp-tls.png[width=500]
 
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github[]]
+
 [{invert}]
 == Demo 2 - Configuration
 
@@ -39,6 +45,9 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github
 == Demo 3 - SNI Routing + TLS Passthrough
 
 image::demo3-v2-tcp-sni.png[width=500]
+
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 3 - Configuration
@@ -52,6 +61,5 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on ico
 image::demo4-v2-tcp-http.png[width=500]
 link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
 
-[{invert}]
-== Demo 5 - Deploying a simple WebApp with Lets Encrypt
-link:{repositoryUrl}/demo/traefik-v2/acme[Demo Code on icon:github[]]
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
