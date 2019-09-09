@@ -26,7 +26,7 @@ services:
       - "traefik.tcp.routers.mongo1.entrypoints=mongo"
 
   mongo2:
-    image: mongo
+    image: mongo:4.0
     hostname: mongo2.local
     restart: always
     labels:
@@ -41,7 +41,7 @@ services:
       - ../certs:/certs
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:0.49
     restart: always
     labels:
       - "traefik.http.routers.mongo-express.rule=Host(`dashboard-mongo1.local`)"

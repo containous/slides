@@ -26,7 +26,7 @@ services:
       - "traefik.tcp.routers.mongo1.entrypoints=mongo"
 
   mongo2:
-    image: mongo
+    image: mongo:4.0
     hostname: mongo2.local
     restart: always
     labels:

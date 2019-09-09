@@ -38,8 +38,7 @@ mongo --host mongo2.local --port 27017 --ssl --sslCAFile=../certs/minica.pem --s
 > exit
 ```
 
-* (Chrome does not work until <https://github.com/containous/traefik/pull/5150> is applied to v2.0).
-Open the Mongo Client WebUI at the URL <https://dashboard-mongo1.local:27017/>
+* Open the Mongo Client WebUI at the URL <https://dashboard-mongo1.local:27017/>
 (requires insecure OR adding the minica.pem CA root in your webbrowser).
   * Check the db "another-db-in-the-wall" exists.
 
