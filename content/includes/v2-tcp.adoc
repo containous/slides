@@ -3,16 +3,6 @@
 = TCP Support
 image::traefik-v2-tcp.png[]
 
-== HTTPS for Everyone with Let's Encrypt
-
-image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
-
-* TLS, DNS and HTTP challenges supported
-
-== Demo
-
-image::demo.jpg[]
-
 [{invert}]
 == Demo 1 - Straightforward TCP Routing
 

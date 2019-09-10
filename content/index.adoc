@@ -28,13 +28,13 @@ link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - 
 
 == Whoami
 
-* Manuel Zapf:
-** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
-* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
 
-image::manuel.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -79,15 +79,16 @@ include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
-
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 
-link:https://github.com/SantoDE[icon:github[] SantoDE]
+link:https://github.com/dduportal[icon:github[] dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
+
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
