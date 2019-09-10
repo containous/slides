@@ -18,12 +18,12 @@ version: '3'
 services:
   reverse-proxy:
     image: traefik:v2.0
-    command: --providers.docker 
+    command: --providers.docker
     ports:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  
+
   webapp:
     image: containous/whoami
     labels:
@@ -56,4 +56,15 @@ gitserver:
       - "traefik.http.routers.gitserver.rule=Host(`mycompany.org`) && PathPrefix(`/gitserver`)"
       - "traefik.http.middlewares.gitserver-stripprefix.stripprefix.prefixes=/gitserver"
       - "traefik.http.routers.gitserver.middlewares=gitserver-stripprefix"
+----
+
+== With 🐳: Websockets
+
+[source,yaml]
+----
+# https://webterminal.mycompany.org -> http://webterminal/
+webterminal:
+    image: tsl0922/ttyd
+    labels:
+      - "traefik.http.routers.devbox.rule=Host(`webterminal.mycompany.org`)"
 ----

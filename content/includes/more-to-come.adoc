@@ -1,22 +1,22 @@
 
 [{invert}]
-= More to come for v2.0
+== We Also Missed Talking About ...
+
+image::word-cloud.png[width=900]
+
+[{invert}]
+= More with v2.0
 
 * New WebUI
 * New metrics
-* UDP
-* YAML
-* Canary
+* YAML (or TOML or CLI)
+* Advanced Load-Balancing: WRR, Canary, Mirroring
+* (Not done yet) UDP
 
 [{invert}]
 == More info
 
 link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
-
-[{invert}]
-== We Also Missed Talking About ...
-
-image::word-cloud.png[width=900]
 
 [{invert}]
 == !

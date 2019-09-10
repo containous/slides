@@ -3,55 +3,49 @@
 = TCP Support
 image::traefik-v2-tcp.png[]
 
-== HTTPS for Everyone with Let's Encrypt
-
-image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
-
-* TLS, DNS and HTTP challenges supported
-
-== Demo
-
-image::demo.jpg[]
-
 [{invert}]
 == Demo 1 - Straightforward TCP Routing
 
 image::demo1-v2-tcp.png[width=500]
 
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
+
 [{invert}]
 == Demo 1 - Configuration
 
 image::demo1-v2-config.png[]
-link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 2 - Let’s Add TLS to TCP with Traefik
 
 image::demo2-v2-tcp-tls.png[width=500]
 
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github[]]
+
 [{invert}]
 == Demo 2 - Configuration
 
 image::demo2-v2-config.png[]
-link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 3 - SNI Routing + TLS Passthrough
 
 image::demo3-v2-tcp-sni.png[width=500]
 
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on icon:github[]]
+
 [{invert}]
 == Demo 3 - Configuration
 
 image::demo3-v2-config.png[]
-link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on icon:github[]]
 
 [{invert}]
 == Demo 4 - Muxing HTTPS and TCP on the Same Port
 
 image::demo4-v2-tcp-http.png[width=500]
-link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
 
-[{invert}]
-== Demo 5 - Deploying a simple WebApp with Lets Encrypt
-link:{repositoryUrl}/demo/traefik-v2/acme[Demo Code on icon:github[]]
+[.small]
+link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]

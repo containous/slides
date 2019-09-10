@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   edge:
-    image: traefik:v2.0.0-alpha4
+    image: traefik:v2.0.0-rc2-alpine
     command:
       - "--configfile=/traefik.toml"
     labels:
@@ -54,4 +54,3 @@ services:
       - "traefik.http.routers.ttyd.entrypoints=http"
       - "traefik.http.routers.ttyd.service=ttyd_traefik-v2"
       - "traefik.http.routers.ttyd.middlewares=file.stripprefix"
-
