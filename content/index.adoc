@@ -11,7 +11,7 @@ Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - Monday 09th of September 2019]
+link:https://www.meetup.com/San-Francisco-Kubernetes-Meetup/events/263848268/[San Francisco Kubernetes Meetup - Wednesday 18th of September 2019]
 
 
 == How to use these slides?
@@ -28,13 +28,13 @@ link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - 
 
 == Whoami
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* Emile vauge:
+** Creater of link:https://traefik.io/[Træfik,window=_blank] &
+link:https://containo.us/[Containous,window=_blank] CEO
+* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge,window=_blank]
+* link:https://github.com/emilevauge[icon:github[] emilevauge,window=_blank]
 
-image::damien.jpg[height=200]
+image::emile.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -82,9 +82,9 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
 
-link:https://github.com/dduportal[icon:github[] dduportal]
+link:https://github.com/emilevauge[icon:github[] emilevauge]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
