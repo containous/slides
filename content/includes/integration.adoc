@@ -3,8 +3,8 @@
 - Preconfigured for HTTPS, Metrics & External-DNS
 - Easily extendable to activate certain features such as Lets Encrypt
 
-== Use Case
-- Running quick Kubernetes Clusters on Arm, IoT or CI
+== Why should I care?
+- Running quick Kubernetes Clusters on Arm, IoT, CI or even locally!
 - Spin up is a matter of seconds
 - Can be easily run in 🐳 Containers
 
