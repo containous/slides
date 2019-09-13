@@ -1,6 +1,4 @@
-= k3s & Traefik
-
-== Integration
+= Integration
 - Installed by default as Ingress Controller
 - Preconfigured for HTTPS, Metrics & External-DNS
 - Easily extendable to activate certain features such as Lets Encrypt

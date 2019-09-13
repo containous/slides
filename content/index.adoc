@@ -69,10 +69,6 @@ include::./includes/why-k3s-traefik.adoc[]
 
 include::./includes/traefik-k3s-project.adoc[]
 
-include::./includes/k3s.adoc[]
-
-include::./includes/traefik.adoc[]
-
 include::./includes/integration.adoc[]
 
 include::./includes/the-end.adoc[]

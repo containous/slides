@@ -10,6 +10,38 @@
 * 8800+ ⭐ 500k+ ⬇️ 50+ 👷
 * Created in 2019
 
+== What is K3s?
+
+[quote]
+__
+K3s is a lightweight, fully compliant production-grade Kubernetes distribution, designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.
+__
+
+[{invert}]
+== How it works
+image::k3s-how-it-works.svg["K3s Architecture",width=900]
+
+== Adds
+
+- Simplified, super-fast installation
+- SQLite3 support in addition to etcd
+- TLS Management
+- Automatic Manifest and Helm Chart management
+- Traefik
+
+== Removes
+
+- Legacy and non-default features
+- Alpha features
+- In-tree cloud providers
+- In-tree storage drivers
+
+== Why use?
+
+- Optimized for ARM
+- Simplified Operations
+- Perfect for Edge
+
 == Traefik Project
 
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
@@ -19,4 +51,50 @@
 * Created in 2015
 * Current stable branch: `v1.7`
 
+== What is Traefik?
 
+[quote]
+__
+Traefik is a dynamic, cloud native edge router, fully designed to make your cloud native applications accessible from the outside. It offers major integrations into for example Kubernetes or Docker Swarm, but also to third-party services such as Lets Encrypt
+__
+
+[{invert}]
+== How it works
+image::traefik-architecture.png["Traefik's Architecture",width=1000]
+
+== Overview
+
+- Continuously updates its configuration (No restarts!)
+- Lets Encrypt Support
+- Circuit breakers, retry
+- Websocket, HTTP/2, GRPC ready
+- Provides metrics (Rest, Prometheus, Datadog, Statsd, InfluxDB) 
+
+[{invert}]
+== Traefik with &#9096;
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+== Did you say YAML?
+
+[source,yaml]
+----
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    # kubernetes.io/ingress.class: 'nginx'
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: mycompany.org
+    http:
+      paths:
+      - path: "/whoami"
+        backend:
+          serviceName: whoami
+          servicePort: 80
+----
