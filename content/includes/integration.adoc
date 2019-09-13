@@ -1,0 +1,27 @@
+= k3s & Traefik
+
+== Integration
+- Installed by default as Ingress Controller
+- Preconfigured for HTTPS, Metrics & External-DNS
+- Easily extendable to activate certain features such as Lets Encrypt
+
+== Use Case
+- Running quick Kubernetes Clusters on Arm, IoT or CI
+- Spin up is a matter of seconds
+- Can be easily run in 🐳 Containers
+
+== k3d aka in 🐳 Containers
+
+[source,bash]
+----
+k3d create \
+--name="maesh" \
+--workers="1" \
+--publish="80:80" \
+--publish="443:443" \
+--publish="8080:8080"
+----
+
+== Demo
+
+image::demo.jpg[]

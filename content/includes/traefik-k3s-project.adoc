@@ -1,0 +1,22 @@
+
+[{invert}]
+= Here Comes K3s & Traefik!
+
+== K3s Project
+
+* link:https://github.com/rancher/k3s[icon:github[] https://github.com/rancher/k3s]
+* Apache License 2.0
+* Written in Go
+* 8800+ ⭐ 500k+ ⬇️ 50+ 👷
+* Created in 2019
+
+== Traefik Project
+
+* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+* MIT License
+* Written in Go
+* 24,000+ ⭐ 900M+ ⬇️ 350+ 👷
+* Created in 2015
+* Current stable branch: `v1.7`
+
+

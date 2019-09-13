@@ -1,0 +1,29 @@
+
+= Why K3s & Traefik?
+
+image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
+
+Why, Mr Anderson?
+
+[{invert}]
+== Evolution of Kubernetes
+
+* 2014 Google Introduces Kubernete
+* 2015: The year of Kube v1.0 & CNCF
+* 2016: The Year Kubernetes Goes Mainstream!
+* 2017: The Year of Enterprise Adoption & Support
+* 2018: Kubernetes gets bigger and bigger
+* 2019: Kubernetes all over the World
+
+[{invert}]
+== Challenges
+* Kubernetes the hard way to setup
+* Demanding in Ressources, Knowledge...
+* Complex Concepts
+* Hard to test
+
+== What If I Told You?
+
+image::what-if-I-told-you.jpg[What If I Told You]
+
+That there is a solution?

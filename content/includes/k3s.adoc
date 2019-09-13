@@ -1,0 +1,37 @@
+
+= k3s
+
+image::k3s-feature.svg[width=400]
+
+== What is K3s?
+
+[quote]
+__
+K3s is a lightweight, fully compliant production-grade Kubernetes distribution, designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances.
+__
+
+[{invert}]
+== How it works
+image::k3s-how-it-works.svg["K3s Architecture",width=900]
+
+== Adds
+
+- Simplified, super-fast installation
+- SQLite3 support in addition to etcd
+- TLS Management
+- Automatic Manifest and Helm Chart management
+- Traefik
+
+== Removes
+
+- Legacy and non-default features
+- Alpha features
+- In-tree cloud providers
+- In-tree storage drivers
+
+== Why use?
+
+- Optimized for ARM
+- Simplified Operations
+- Perfect for Edge
+

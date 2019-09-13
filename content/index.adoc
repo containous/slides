@@ -1,18 +1,26 @@
 
 [%notitle]
-= Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+= Rancher Masterclass - Speed Up Your Cloud Native Applications Deployment Using K3s and Traefik
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+Speed Up Your Cloud Native Applications Deployment Using K3s and Traefik
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::k3s-feature.svg["K3s's Logo",height=250]
+image::traefik.logo.png["Traefik's Logo",height=250]
 
-link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - Monday 09th of September 2019]
+[{invert}]
+== How to Access the Slides?
 
+image::qrcode.png["QRCode to this presentation",height=150]
+
+[.small]
+- link:{presentationUrl}[Slides (HTML): {presentationUrl}]
+- link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
 
 == How to use these slides?
 
@@ -28,13 +36,13 @@ link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - 
 
 == Whoami
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+* Manuel Zapf:
+** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
+* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
 
-image::damien.jpg[height=200]
+image::manuel.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -57,23 +65,15 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+include::./includes/why-k3s-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
+include::./includes/traefik-k3s-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+include::./includes/k3s.adoc[]
 
-include::./includes/show-me-the-conf.adoc[]
+include::./includes/traefik.adoc[]
 
-include::./includes/v2-k8s.adoc[]
-
-include::./includes/v2-tcp.adoc[]
-
-include::./includes/more-to-come.adoc[]
-
-include::./includes/traefikee.adoc[]
-
-include::./includes/maesh.adoc[]
+include::./includes/integration.adoc[]
 
 include::./includes/the-end.adoc[]
 
@@ -82,9 +82,9 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
 
-link:https://github.com/dduportal[icon:github[] dduportal]
+link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
