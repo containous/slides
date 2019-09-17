@@ -1,20 +1,27 @@
 
 [%notitle]
-= Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+= Tales of the Kubernetes Ingress Networking: Deployment Patterns for External Load Balancers
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+Tales of the Kubernetes Ingress Networking: Deployment Patterns for External Load Balancers
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::kubernetes.svg["Traefik's Logo",height=200]
 
-link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - Monday 09th of September 2019]
+[{invert}]
+== How to Access the Slides?
 
+image::qrcode.png["QRCode to this presentation",height=150]
 
-== How to use these slides?
+[.small]
+- link:{presentationUrl}[Slides (HTML): {presentationUrl}]
+- link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
+
+== How to Use the Slides?
 
 * *Browse the slides:* Use the arrows
 ** Change chapter: Left/Right arrows
@@ -42,7 +49,7 @@ image::damien.jpg[height=200]
 link:https://containo.us[]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Traefik Enterprise Edition and Maesh
 * Commercial Support
 * 30 people distributed, 90% tech
 
@@ -57,27 +64,23 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+include::./includes/kube-101.adoc[]
 
-include::./includes/traefik-project.adoc[]
+include::./includes/notes-about-ingresses.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+include::./includes/external-lbs.adoc[]
 
-include::./includes/show-me-the-conf.adoc[]
+include::./includes/source-ip-on-kingdom-kube.adoc[]
 
-include::./includes/v2-k8s.adoc[]
-
-include::./includes/v2-tcp.adoc[]
-
-include::./includes/more-to-come.adoc[]
-
-include::./includes/traefikee.adoc[]
-
-include::./includes/maesh.adoc[]
-
-include::./includes/the-end.adoc[]
+include::./includes/demos.adoc[]
 
 :leveloffset: -1
+
+== Sources
+
+* link:https://kubernetes.io/docs/tutorials/services/source-ip/[]
+* link:https://en.wikipedia.org/wiki/Network_address_translation[]
+* link:https://www.asykim.com/blog/deep-dive-into-kubernetes-external-traffic-policies[]
 
 [{invert}]
 == Thank you!

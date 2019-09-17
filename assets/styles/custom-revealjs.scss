@@ -45,9 +45,11 @@
     color: black; }
 
 .reveal section[data-state="invert"] h1,
-.reveal section[data-state="invert"] h2,
-.reveal section[data-state="invert"] div.title p {
+.reveal section[data-state="invert"] h2,{
     color: rgb(55, 171, 200); }
+.reveal section[data-state="invert"] div.title > p {
+  // Title color only to match Kubernetes Logo
+  color: #326ce5; }
 
 .reveal section[data-state="invert"] a {
   color: rgb(134, 0, 139);

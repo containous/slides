@@ -1,0 +1,37 @@
+
+= Notes About The Ingresses
+
+== Ingress Are Standard Kubernetes Applications
+
+* Deployed as Pods (`Deployment` or as `DaemonSet`)
+* Exposed with a Service:
+** You still need access from the outside
+** But only one service to deal with (ideally)
+
+[{invert}]
+== Ingress Have Services Too
+
+image::kubernetes-ingress-impl.svg[width=900]
+
+== Why Should I Care?
+
+* Simplified Setup:
+** Single entrypoint, less configuration, better measures
+** Less resources used
+** Separation of concerns: differents algorithms for load balancing, etc.
+
+== Why Challenges Does It Make?
+
+* Designed for (simple) HTTP/HTTPS cases
+** TCP/UDP can be used, but are not first-class citizens
+** "Virtual Host First" centric
+
+* Feels like you must carefully select your (only) Ingress Controller
+
+== So What?
+
+* Kubernetes gives you freedom:
+** You can use multiple Ingress Controllers!
+
+* Kubernetes gives you choices:
+** So much deployment patterns that you can do almost anything

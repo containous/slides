@@ -1,0 +1,10 @@
+= Demo Time!
+
+[{invert}]
+== Demo 1
+
+* Amazon EKS: Capturing Source IP with the local external Load Balancer traffic policy
+
+== Demo 2
+
+* Bare-Metal Kubernetes: Use Traefik for capturing Source IP on HTTP headers

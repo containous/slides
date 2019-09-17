@@ -1,0 +1,118 @@
+
+= Source IP on the Kingdom of Kubernetes
+
+== Business Case: Source IP
+
+[quote]
+____
+As a business manager, I need my system
+to know the IP of the emitters of the requests
+to track usage, write access logs for legals reasons
+and limit traffic in some cases.
+____
+
+== NAT/DNAT/SNAT
+
+* **NAT** stands for "Network Adress Translation"
+** IPv4 world: Routers "masquerades" IPs, to allow routing from different network
+
+* **DNAT** stands for "Destination NAT"
+** Masquerade of the destination IP with the internal pod IP
+
+* **SNAT** stands for "Source NAT"
+** Masquerade of the __**source**__ IP with the router's IP
+
+[{invert}]
+== NAT/DNAT/SNAT
+
+image::nat.svg[width=800]
+
+== Preserve Source IP
+
+* Rule: We do NOT want SNAT to happen
+* Challenge: many intermediate components can
+interfere and SNAT the packets in our back!
+
+== Inside Kubernetes: kube-proxy
+
+* `kube-proxy` is a Kubernetes component, running on each worker node
+* Role: manage the virtual IPs used for Services
+* Challenge with Source IP:  `kube-proxy` might SNAT requests
+* SNAT by `kube-proxy` depends on the Service:
+** Let's do a tour of Services Types!
+
+[{invert}]
+== Source IP with Service `ClusterIP`
+
+* When `kube-proxy` is in "iptables" mode: no SNAT ✅
+** This is the default mode
+** No intermediate component
+
+image::kubernetes-source-ip-svc-cip-iptables.svg[width=700]
+
+== Source IP with Service `NodePort` (Default)
+
+* SNAT is done ❌ (routing to the node where pod is):
+** First node to node routing through nodes network
+** Then node to pod routing through pod network
+
+image::kubernetes-source-ip-svc-nodeport.svg[width=700]
+
+[{invert}]
+== Source IP with Service `NodePort` (Local Endpoint)
+
+* No SNAT ✅ with `externalTrafficPolicy` set to `Local`
+* Downside: Dropped request if no pod on receiving node
+
+image::kubernetes-source-ip-svc-nodeport-local.svg[width=700]
+
+== Source IP with Service `LoadBalancer` (Default)
+
+* Default: SNAT is done ❌, same as `NodePort`
+** External Load Balancer can route to any node
+** If no local endpoint: Node to node routing with SNAT
+
+== Source IP with Service `LoadBalancer` (Local Endpoint)
+
+* However, No SNAT ✅ for load balancers implementing Local `externalTrafficPolicy`:
+** GKE/GCE LB, Amazon NLB, etc.
+** 🛠Nodes without local endpoints are removed from the LB by failing healthchecks
+** 👍🏽Pros: no dropped request from client view, but nodes always ready
+** 👎🏼Cons: relies on healthcheck timeouts
+
+== Alternatives When SNAT Happen
+
+* Sometimes, SNAT is mandadatory
+** External LB
+** Network Constraint
+** Ingress Controller in the middle
+
+* "Network is based on layers" - let's use another layer:
+** If using HTTP, retrieve the Source IP from headers
+** If using TCP/UDP, use the "Proxy Protocol"
+** Or use distributed logging and tracing
+
+== HTTP Protocol Headers
+
+* `X-Forwarded-From` holds a comma-separated list of all the source IPs SNAT during all network hops.
+** ✅ if you have an External LoadBalancer or an Ingress Controller supporting this header.
+** ⚠️ Not standard (header starting with `X-`) so not all HTTP appliance might support it.
+*** Upcoming link:https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded[Official HTTP Header `Forwarded`]
+
+== Proxy Protocol
+
+* Introduced by link:https://www.haproxy.com/blog/haproxy/proxy-protocol/[HAProxy]
+* Happens at Layer 4 (Transport) for TCP/UDP
+* Goal: "chain proxies / reverse-proxies without losing the client information"
+* Supported by a lot of appliances in 2019: AWS ELB, Traefik, Apache, Nginx, Varnish, etc.
+* Use Case: when SNAT happen AND not way to use HTTP. H
+
+== Distributing Logging and Tracing
+
+* 🛠 __**Idea**__:
+** Collect the source IP as soon as possible in distributed logging
+** Use distributed tracing to track the request in the system
+
+* 👍🏽Pros: no more complex network setups, distributed logging and tracing stacks are already on your Kubernetes cluster
+(or will soon be)
+* 👎🏼Cons: relies on the distributed logging/tracing stacks

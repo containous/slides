@@ -1,0 +1,45 @@
+= External Load Balancers
+
+== Did you Just Say "External"?
+
+* Outside the "Borders" of Kubernetes:
+** Depends on your "platform" (as in infrastructure/cloud)
+
+* Still Managed by Kubernetes (Automation)
+** Requires "plugins" (operators/modules) per Load Balancer provider
+** No API or no Kubernetes support: requires switching to `NodePort`
+
+== Tell Me Your Kubernetes Distribution
+
+...and I'll tell you which LB to use...
+
+== Cloud Managed Kubernetes
+
+* Cloud providers provides their own external LBs
+** Fully Automated Management with APIs
+** Great UX due to the integration: works out of the box
+** Benefits from cloud provider HA and performances
+
+* But:
+** You have to pay for this :)
+** Configuration is cloud-specific (using annotations)
+** Relies on LB implementation limits
+
+== Bare-Metal Kubernetes
+
+Aka. "Run it on your boxes"
+
+* Best approach: link:https://metallb.universe.tf/[Metal LB],
+a Load Balancer implementation for Kubernetes, hosted **inside** Kubernetes
+** Uses all Kubernetes primitives (HA, deployment, etc.)
+** Allows Layer 2 routing as well as BGP
+** But... still not considered production ready
+
+* Otherwise: external static (or legacy) LB
+** Requires switching to `NodePort` Service
+
+== Cloud "Semi-Managed" Kubernetes
+
+* Depends on the compute provider: cloud or bare-metal
+* You need a tool for mananaging clusters: kubeadm, kops, etc.
+** Most of these tools already manage LB if the provider does.

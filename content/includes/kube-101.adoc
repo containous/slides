@@ -1,0 +1,80 @@
+= Once Upon A Time
+
+There was Kubernetes cluster.
+
+== This Cluster Had Nodes and Pods
+
+image::kubernetes-nodes-pods.svg[width=800]
+
+[{invert}]
+== But Pods Had Private IPs
+
+How to route traffic to these pods? And between pods on different nodes?
+
+image::kubernetes-route-pods.svg[width=900]
+
+== Services Came To The Rescue
+
+Their goal: Expose Pods to allow incoming traffic
+
+image::kubernetes-services.svg[width=900]
+
+[{invert}]
+== Services are Load-Balancers
+
+* `Services` have 1-N `Endpoints`
+* `EndPoints` are determined by Kubernetes API
+
+image::kubernetes-services-lb.svg[width=700]
+
+[.small]
+One exception: Services of types link:https://kubernetes.io/docs/concepts/services-networking/service/#externalname[ExternalName]
+
+== Different Kinds of Services
+
+for different communications use cases:
+
+* From __**inside**__: type `"ClusterIP"` (default).
+* From __**outside**__: types `"NodePort"` and `"LoadBalancer"`.
+
+[{invert}]
+== Services: ClusterIP
+
+Virtual IP, private to the cluster, cluster)-wide (e.g. works from any node to any other node)
+
+image::kubernetes-services-type-cluster-ip.svg[width=800]
+
+[.notes]
+--
+Not mentioning the patterns "next to"/"through" `kube-proxy` (modes "iptables" or `"ipvs"` / mode "user-space"),
+but useful to have in mind here.
+--
+
+== Services: NodePort
+
+Uses public IPs and ports of the nodes, kind of "Routing grid"
+
+image::kubernetes-services-type-nodeport.svg[width=600]
+
+[{invert}]
+== Services: LoadBalancer
+
+Same as `NodePort`,excepts it requires (and uses) an external Load Balancer.
+
+image::kubernetes-services-type-lb.svg[width=650]
+
+== Services are Not Enough
+
+* Context: Exposes externally a bunch of applications
+* Challenge: overhead of allocation for LBs. For each application:
+** One LB resource (either a machine or a dedicated appliance)
+** At least one public IP
+** DNS nightmare (think about the CNAMEs to create...)
+** No centralization of certificates, logs, etc.
+
+[{invert}]
+== And Then Came the Ingress
+
+Example with Traefik as Ingress Controller:
+
+image::traefik-kubernetes-diagram.png[width=900]
