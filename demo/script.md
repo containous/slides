@@ -37,23 +37,11 @@ kubectl get svc traefik --namespace kube-system
 kubectl get pods --namespace kube-system
 ```
 
-- Port Forward to pod directly to access local cluster
-
-```shell
-kubectl port-forward --address 0.0.0.0 svc/traefik 80:80 -n kube-system
-```
-
 - Apply configmap / service to expose dashboard & kill pod to reuse the new configmap
 
 ```shell
 kubectl apply -f traefik-v1/traefik/basic
 kubectl delete pod <name> -n kube-system
-```
-
-- Port Forward to pod directly to access local cluster, including dashboard
-
-```shell
-kubectl port-forward --address 0.0.0.0 svc/traefik 8080:80 8000:8080 -n kube-system
 ```
 
 - Open TraefikEE dashboard at <http://localhost:8000/dashboard/>
