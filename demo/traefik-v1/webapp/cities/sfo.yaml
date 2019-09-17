@@ -1,0 +1,33 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: sfo
+  namespace: webapp
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sfo
+    spec:
+      containers:
+      - name: sfo
+        image: containous/whoami
+        imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sfo
+  namespace: webapp
+  labels:
+    app: sfo
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: sfo
+  selector:
+    app: sfo

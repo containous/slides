@@ -1,0 +1,60 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sfo
+  namespace: webapp
+  labels:
+    app: sfo
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  rules:
+  - host: webapp.docker.localhost
+    http:
+      paths:
+      - path: /sf
+        backend:
+          serviceName: sfo
+          servicePort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nyc
+  namespace: webapp
+  labels:
+    app: nyc
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  rules:
+  - host: webapp.docker.localhost
+    http:
+      paths:
+      - path: /ny
+        backend:
+          serviceName: nyc
+          servicePort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: paris
+  namespace: webapp
+  labels:
+    app: paris
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  rules:
+  - host: webapp.docker.localhost
+    http:
+      paths:
+      - path: /paris
+        backend:
+          serviceName: paris
+          servicePort: 80
