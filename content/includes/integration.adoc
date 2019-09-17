@@ -1,21 +1,23 @@
+== Why should I care?
+- Running quick Kubernetes Clusters on Arm, IoT, CI or even locally!
+- Spin up is a matter of seconds
+- Simple to use Ingress Management built in
+- Can be easily run in 🐳 Containers
+
 = Integration
 - Installed by default as Ingress Controller
 - Preconfigured for HTTPS, Metrics & External-DNS
 - Easily extendable to activate certain features such as Lets Encrypt
 
-== Why should I care?
-- Running quick Kubernetes Clusters on Arm, IoT, CI or even locally!
-- Spin up is a matter of seconds
-- Can be easily run in 🐳 Containers
-
-== Using as integration test platform in
-- Traefik
-- TraefikEE
-- Maesh
-
 == k3d aka in 🐳 Containers
 
 image::deeper.jpeg[]
+
+[{invert}]
+== Used as integration test platform in
+image::traefik.logo.png[height=200]
+image::traefik-ee-logo.png[height=200]
+image::maesh.png[height=200]
 
 == Create Cluster
 [source,bash]
