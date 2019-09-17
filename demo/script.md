@@ -1,7 +1,11 @@
 
 # Script
 
-## integrated Traefik
+## Integrated Traefik
+
+- Requirement: make sure that `localhost`, `dashboard.traefik.localhost` and `webapp.traefik.localhost`
+are pointing to your Docker Engine
+
 - We will have a k3s platform, so install it
 
 ```shell
@@ -22,17 +26,18 @@ export KUBECONFIG="$(k3d get-kubeconfig --name='demo')"
 
 ```shell
 kubectl get nodes
-kubectl get pods -n kube-system
-kubectl logs -n kube-system <helm install pod>
+kubectl get pods --namespace kube-system
+kubectl logs --namespace kube-system <helm install pod>
 ```
 
 - Show Service
 
 ```shell
-kubectl get svc traefik --namespace kube-system
+kubectl get svc --namespace kube-system traefik
 ```
 
 - Show Pods
+
 ```shell
 kubectl get pods --namespace kube-system
 ```
@@ -41,22 +46,31 @@ kubectl get pods --namespace kube-system
 
 ```shell
 kubectl apply -f traefik-v1/traefik/basic
-kubectl delete pod <name> -n kube-system
+kubectl delete pod --namespace kube-system <name>
 ```
 
-- Open TraefikEE dashboard at <http://localhost:8000/dashboard/>
+- Open TraefikEE dashboard at <http://localhost:8080/dashboard/>
 
 - Lets move it to an ingress now
 
 ```shell
 kubectl apply -f traefik-v1/traefik/dashboard-ingress
 ```
+
 - Open TraefikEE dashboard at <http://dashboard.traefik.localhost/>
 
-- Now we deploy our "webapplication":
+- Now developement team want deploy their "webapplication".
+Start by building the webapp image and pushing it to the k3s cluster:
 
 ```shell
-kubectl apply -f webapp/
+docker build -t containous/webapp ./traefik-v1/webapp/build/
+k3d import-images containous/webapp --name=demo
+```
+
+- Then deploy the application on the cluster:
+
+```shell
+kubectl apply -f traefik-v1/webapp/
 ```
 
 Available at <http://webapp.docker.localhost>
@@ -64,15 +78,14 @@ Available at <http://webapp.docker.localhost>
 - Now we deploy the "backend cities":
 
 ```shell
-kubectl apply -f webapp/cities
+kubectl apply -f traefik-v1/webapp/cities/
 ```
 
-Check at <http://webapp.docker.localhost>: the 3 cities appear on the bottom + NYC has 2 replicas.
-
+Check at <http://webapp.docker.localhost>: the 3 cities appear on the bottom and NYC + Paris have 2 replicas each.
 
 ## Live Demo End 2 End Test
- 
-- On Mac: 
+
+- On Mac:
 
 -- Go To TraefikEE dir
 
