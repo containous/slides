@@ -50,7 +50,7 @@ image::manuel.jpg[height=200]
 link:https://containo.us[]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Traefik Enterprise Edition and Maesh
 * Commercial Support
 * 30 people distributed, 90% tech
 

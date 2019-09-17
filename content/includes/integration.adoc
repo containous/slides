@@ -8,8 +8,16 @@
 - Spin up is a matter of seconds
 - Can be easily run in 🐳 Containers
 
+== Using as integration test platform in
+- Traefik
+- TraefikEE
+- Maesh
+
 == k3d aka in 🐳 Containers
 
+image::deeper.jpeg[]
+
+== Create Cluster
 [source,bash]
 ----
 k3d create \
