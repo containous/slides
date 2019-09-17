@@ -86,6 +86,8 @@ Check at <http://webapp.docker.localhost>: the 3 cities appear on the bottom + N
  
 - On Mac: 
 
+-- Go To TraefikEE dir
+
 ```shell
 export TMPDIR=/tmp
 make e2e-nobuild TESTS="kubernetes/oneline-single-cn-install.bats"
