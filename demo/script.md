@@ -59,14 +59,6 @@ kubectl apply -f traefik-v1/traefik/dashboard-ingress
 
 - Open TraefikEE dashboard at <http://dashboard.traefik.localhost/>
 
-- Now developement team want deploy their "webapplication".
-Start by building the webapp image and pushing it to the k3s cluster:
-
-```shell
-docker build -t containous/webapp ./traefik-v1/webapp/build/
-k3d import-images containous/webapp --name=demo
-```
-
 - Then deploy the application on the cluster:
 
 ```shell
