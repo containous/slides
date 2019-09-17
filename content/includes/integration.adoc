@@ -1,11 +1,11 @@
-== Why should I care?
+= Why should I care?
 - Running quick Kubernetes Clusters on Arm, IoT, CI or even locally!
 - Spin up is a matter of seconds
 - Simple to use Ingress Management built in
 - Very low ressource usage
 - Can be easily run in 🐳 Containers
 
-= Integration
+== Integration
 - Installed by default as Ingress Controller
 - Preconfigured for HTTPS, Metrics & External-DNS
 - Easily extendable to activate certain features such as Lets Encrypt
