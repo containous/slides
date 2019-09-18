@@ -2,7 +2,7 @@ version: '3'
 
 services:
   reverse-proxy:
-    image: traefik:v2.0.0-rc2-alpine
+    image: traefik:v2.0
     command:
       - --providers.docker
       - --providers.file.filename=/certs/traefik-tls.toml

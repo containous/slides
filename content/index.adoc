@@ -1,13 +1,13 @@
 
 [%notitle]
-= Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+= A journey with Traefik 2.0 in Kubernetes
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+A journey with Traefik 2.0 in Kubernetes
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
@@ -25,16 +25,16 @@ link:https://www.meetup.com/San-Francisco-Kubernetes-Meetup/events/263848268/[Sa
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
-
+[{invert}]
 == Whoami
+Emile vauge
 
-* Emile vauge:
-** Creater of link:https://traefik.io/[Træfik,window=_blank] &
-link:https://containo.us/[Containous,window=_blank] CEO
-* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge,window=_blank]
-* link:https://github.com/emilevauge[icon:github[] emilevauge,window=_blank]
+* 🇫🇷 Developer
+* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
+* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
+* link:https://github.com/emilevauge[icon:github[] emilevauge]
 
-image::emile.jpg[height=200]
+image::emile-bw.png[height=200]
 
 [{invert}]
 == Containous
@@ -68,8 +68,6 @@ include::./includes/show-me-the-conf.adoc[]
 include::./includes/v2-k8s.adoc[]
 
 include::./includes/v2-tcp.adoc[]
-
-include::./includes/more-to-come.adoc[]
 
 include::./includes/traefikee.adoc[]
 

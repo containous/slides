@@ -2,12 +2,16 @@ version: '3'
 
 services:
   reverse-proxy:
-    image: traefik:v2.0.0-rc2-alpine
+    image: traefik:v2.0
     command:
       - --providers.file
-      - --providers.file.filename=/etc/traefik/dync_conf.toml
+      - --providers.file.filename=/etc/traefik/dync_conf.yaml
+      - --api
+      - --api.dashboard
+      - --api.insecure
     ports:
       - "80:80"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./conf:/etc/traefik/
@@ -16,9 +20,9 @@ services:
     image: containous/whoami
     restart: always
     ports:
-      - "8080:80"
+      - "8180:80"
   service2:
     image: nginx
     restart: always
     ports:
-      - "8081:80"
+      - "8181:80"

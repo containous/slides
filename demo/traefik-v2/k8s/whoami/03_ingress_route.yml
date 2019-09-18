@@ -5,12 +5,9 @@ metadata:
 spec:
   entryPoints:
     - http
-    #- https
   routes:
-  - match: Host(`meetup.manuelzapf.io`)
+  - match: Host(`testIngressRoute.docker.localhost`)
     kind: Rule
     services:
     - name: whoami
       port: 80
-  #tls:
-   #certResolver: defaults

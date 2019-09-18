@@ -35,4 +35,4 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Co
 
 == Demo 3 - Canaray Release of a WebApp
 
-== Demo 4 - Deploying a simple WebApp with Lets Encrypt
+== Demo 4 - Cheesy Kubernetes

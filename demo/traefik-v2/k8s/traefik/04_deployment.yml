@@ -19,6 +19,8 @@ spec:
           image: traefik:v2.0
           args:
             - --api
+            - --api.dashboard
+            - --api.insecure
             - --accesslog
             - --entrypoints.http.address=:80
             - --entrypoints.https.address=:443

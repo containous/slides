@@ -14,9 +14,9 @@
   [http.services.appv1]
     [http.services.appv1.loadBalancer]
       [[http.services.appv1.loadBalancer.servers]]
-        url = "http://docker.for.mac.localhost:8080"
+        url = "http://docker.for.mac.localhost:8180"
   [http.services.appv2]
     [http.services.appv2.loadBalancer]
       [[http.services.appv2.loadBalancer.servers]]
-        url = "http://docker.for.mac.localhost:8081"
+        url = "http://docker.for.mac.localhost:8181"
 

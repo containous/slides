@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: cheese
+spec:
+  entryPoints:
+    - http
+  routes:
+    - match: Host(`stilton.localhost`)
+      kind: Rule
+      services:
+        - name: stilton
+          port: 80
+    - match: Host(`cheddar.localhost`)
+      kind: Rule
+      services:
+        - name: cheddar
+          port: 80
+    - match: Host(`wensleydale.localhost`)
+      kind: Rule
+      services:
+        - name: wensleydale
+          port: 80
+    - match: Host(`canary.cheese.localhost`)
+      kind: Rule
+      services:
+        - name: cheddar
+          port: 80
+          weight: 1
+        - name: wensleydale
+          port: 80
+          weight: 2
