@@ -1,15 +1,7 @@
 
-[%notitle,{invert}]
-= TCP Support
-image::traefik-v2-tcp.png[]
+[{invert}]
 
-== HTTPS for Everyone with Let's Encrypt
-
-image::lets-encrypt-http-challenge.png[Lets Encrypt HTTP Challenge, width=900]
-
-* TLS, DNS and HTTP challenges supported
-
-== Demo
+= Demo
 image::demo.jpg[]
 
 [{invert}]
