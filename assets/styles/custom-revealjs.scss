@@ -18,26 +18,31 @@ $gray: rgb(83, 86, 90);
 .reveal section[data-state="invert"] li,
 .reveal section[data-state="invert"] small,
 .reveal section[data-state="invert"] .small {
-    color: $black; }
+  color: $white;
+}
 
 .reveal section[data-state="invert"] h1,
 .reveal section[data-state="invert"] h2,
 .reveal section[data-state="invert"] div.title p {
-    color: $primary-color; }
+    color: $white;
+}
 
 .reveal section[data-state="invert"] a {
   color: $secondary-color;
-  }
+}
 
 .reveal section[data-state="invert"] a:hover {
-    color: $tertiary-color; }
+  color: $tertiary-color;
+}
 
 .reveal .controls section[data-state="invert"]{
-  color: $primary-color; }
+  color: $primary-color;
+}
 
 .reveal .progress section[data-state="invert"]{
-  background: $gray;
-  color: $primary-color; }
+  background-color: $gray;
+  color: $primary-color;
+}
 
 .reveal .low {
   margin-top: 8em;
@@ -47,28 +52,33 @@ $gray: rgb(83, 86, 90);
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: $primary-color;
-  background-color: $primary-color; }
+  background-color: $white;
+}
 
 .reveal {
   font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: $gray; }
+  color: $gray;
+}
 
 ::selection {
   color: $white;
-  background: $secondary-color;
-  text-shadow: none; }
+  background-color: $secondary-color;
+  text-shadow: none;
+}
 
 ::-moz-selection {
   color: $white;
-  background: $secondary-color;
-  text-shadow: none; }
+  background-color: $secondary-color;
+  text-shadow: none;
+}
 
 .reveal .slides > section,
 .reveal .slides > section > section {
-  line-height: 1.3; }
+  line-height: 1.3;
+  font-weight: inherit;
+}
 
 /*********************************************
  * HEADERS
@@ -81,83 +91,109 @@ body {
 .reveal h6,
 .reveal div.title p {
   margin: 0 0 20px 0;
-  color: $gray;
   font-family: "Roboto", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: capitalize;
   text-shadow: none;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: $black;
+}
 
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 3.77em;
+}
 
 .reveal h2,
 .reveal div.title p {
-  font-size: 2em; }
+  font-size: 2.11em;
+}
 
 .reveal h3 {
-  font-size: 1.55em; }
+  font-size: 1.55em;
+}
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 .reveal h1 {
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 /*********************************************
  * OTHER
  *********************************************/
 .reveal p {
   margin: 20px 0;
-  line-height: 1.3; }
+  line-height: 1.3;
+}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
 .reveal video,
 .reveal iframe {
   max-width: 95%;
-  max-height: 95%; }
+  max-height: 95%;
+}
 
 .reveal strong,
 .reveal b {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .reveal em {
-  font-style: italic; }
+  font-style: italic;
+}
 
 .reveal ol,
 .reveal dl,
 .reveal ul {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 1em;
+}
 
 .reveal ol {
-  list-style-type: decimal; }
+  list-style-type: decimal;
+}
 
 .reveal ul {
-  list-style-type: disc; }
+  list-style-type: disc;
+}
 
 .reveal ul ul {
-  list-style-type: square; }
+  list-style-type: square;
+}
 
 .reveal ul ul ul {
-  list-style-type: circle; }
+  list-style-type: circle;
+}
 
 .reveal ul ul,
 .reveal ul ol,
 .reveal ol ol,
 .reveal ol ul {
   display: block;
-  margin-left: 40px; }
+  margin-left: 40px;
+}
 
 .reveal dt {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .reveal dd {
-  margin-left: 40px; }
+  margin-left: 40px;
+}
 
 .reveal blockquote {
   display: block;
@@ -166,15 +202,18 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: $white;
-  box-shadow: 0px 0px 2px $gray; }
+  background-color: $white;
+  box-shadow: 0px 0px 2px $gray;
+}
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .reveal q {
-  font-style: italic; }
+  font-style: italic;
+}
 
 .reveal pre {
   display: block;
@@ -186,61 +225,74 @@ body {
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 0px 6px $gray; }
+  box-shadow: 0px 0px 6px $gray;
+}
 
 .reveal code {
   font-family: monospace;
-  text-transform: none; }
+  text-transform: none;
+}
 
 .reveal pre code {
   display: block;
   padding: 5px;
   overflow: auto;
   max-height: 600px;
-  word-wrap: normal; }
+  word-wrap: normal;
+}
 
 .reveal table {
   margin: auto;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 .reveal table th {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .reveal table th,
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid;
+}
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
-  text-align: center; }
+  text-align: center;
+}
 
 .reveal table th[align="right"],
 .reveal table td[align="right"] {
-  text-align: right; }
+  text-align: right;
+}
 
 .reveal table tbody tr:last-child th,
 .reveal table tbody tr:last-child td {
-  border-bottom: none; }
+  border-bottom: none;
+}
 
 .reveal sup {
-  vertical-align: super; }
+  vertical-align: super;
+}
 
 .reveal sub {
-  vertical-align: sub; }
+  vertical-align: sub;
+}
 
 .reveal small,
 .reveal .small {
   display: inline-block;
   font-size: 0.6em;
   line-height: 1.2em;
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 .reveal small *,
 .reveal .small * {
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 /*********************************************
  * LINKS
@@ -250,39 +302,46 @@ body {
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  transition: color .15s ease;
+}
 
 .reveal a:hover {
   color: $primary-color;
   text-shadow: none;
-  border: none; }
+  border: none;
+}
 
 .reveal .roll span:after {
   color: $white;
-  background: $tertiary-color; }
+  background-color: $tertiary-color;
+}
 
 /*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: none;
+  background-color: none;
   border: none;
-  box-shadow: none; }
+  box-shadow: none;
+}
 
 .reveal section img.plain {
   border: none;
-  box-shadow: none; }
+  box-shadow: none;
+}
 
 .reveal a img {
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;
-  transition: all .15s linear; }
+  transition: all .15s linear;
+}
 
 .reveal a:hover img {
-  background: $white;
+  background-color: $white;
   border-color: $tertiary-color;
-  box-shadow: 0 0 20px $gray; }
+  box-shadow: 0 0 20px $gray;
+}
 
 .reveal span img {
   vertical-align: text-bottom;
@@ -292,19 +351,22 @@ body {
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: $gray; }
+  color: $gray;
+}
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: $gray;
-  color: $gray; }
+  background-color: $gray;
+  color: $gray;
+}
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
 
 .reveal .line-trough-title h2 {
     text-decoration: line-through;

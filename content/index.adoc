@@ -9,9 +9,17 @@ include::./includes/attributes.adoc[]
 [.title]
 Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::traefik.logo.bright.svg["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Devops Meetup - 2019]
+== How to use these slides?
+
+* *Browse the slides:* Use the arrows
+** Change chapter: Left/Right arrows
+** Next or previous slide: Top and bottom arrows
+
+* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
+
+* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
 [{invert}]
@@ -26,7 +34,10 @@ Jean-Baptiste Doumenjou
 image::jbd.jpg[height=200]
 
 [{invert}]
+[%notitle]
 == Containous
+
+image::containous-logo-white.svg["Containous Logo",width=500]
 
 link:https://containo.us[]
 
@@ -34,8 +45,6 @@ link:https://containo.us[]
 * We Deliver Traefik and Traefik Enterprise Edition
 * Commercial Support
 * 30 people distributed, 90% tech
-
-image::containous-logo.png["Containous Logo"]
 
 // //// end of Speaker Slide and Company slide
 
