@@ -3,13 +3,13 @@
 = Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 include::./includes/attributes.adoc[]
 
-[{invert}]
+[{invert-title}]
 == !
 
 [.title]
 Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 
-image::traefik.logo.bright.svg["Traefik's Logo",height=300]
+image::traefik.logo.bright.svg["Traefik's Logo",height=300,align=left]
 
 == How to use these slides?
 
@@ -63,31 +63,25 @@ link:https://containo.us[]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+// include::./includes/why-traefik.adoc[]
 
-include::./includes/traefik-project.adoc[]
+// include::./includes/traefik-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+// include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/show-me-the-conf.adoc[]
+// include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/v2-k8s.adoc[]
+// include::./includes/v2-k8s.adoc[]
 
-include::./includes/v2-tcp.adoc[]
+// include::./includes/v2-tcp.adoc[]
 
-include::./includes/more-to-come.adoc[]
+// include::./includes/more-to-come.adoc[]
 
-include::./includes/traefikee.adoc[]
+// include::./includes/traefikee.adoc[]
 
-include::./includes/maesh.adoc[]
+// include::./includes/maesh.adoc[]
 
-include::./includes/more-to-come.adoc[]
-
-include::./includes/traefikee.adoc[]
-
-include::./includes/maesh.adoc[]
-
-include::./includes/the-end.adoc[]
+// include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 

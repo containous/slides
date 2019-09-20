@@ -13,33 +13,33 @@ $black: rgb(0,0,0);
 $white: rgb(255,255,255);
 $gray: rgb(83, 86, 90);
 
-.reveal section[data-state="invert"] p,
-.reveal section[data-state="invert"] ul,
-.reveal section[data-state="invert"] li,
-.reveal section[data-state="invert"] small,
-.reveal section[data-state="invert"] .small {
+.reveal section[data-state|="invert"] p,
+.reveal section[data-state|="invert"] ul,
+.reveal section[data-state|="invert"] li,
+.reveal section[data-state|="invert"] small,
+.reveal section[data-state|="invert"] .small {
   color: $white;
 }
 
-.reveal section[data-state="invert"] h1,
-.reveal section[data-state="invert"] h2,
-.reveal section[data-state="invert"] div.title p {
+.reveal section[data-state|="invert"] h1,
+.reveal section[data-state|="invert"] h2,
+.reveal section[data-state|="invert"] div.title p {
     color: $white;
 }
 
-.reveal section[data-state="invert"] a {
+.reveal section[data-state|="invert"] a {
   color: $secondary-color;
 }
 
-.reveal section[data-state="invert"] a:hover {
+.reveal section[data-state|="invert"] a:hover {
   color: $tertiary-color;
 }
 
-.reveal .controls section[data-state="invert"]{
+.reveal .controls section[data-state|="invert"]{
   color: $primary-color;
 }
 
-.reveal .progress section[data-state="invert"]{
+.reveal .progress section[data-state|="invert"]{
   background-color: $gray;
   color: $primary-color;
 }
@@ -53,6 +53,49 @@ $gray: rgb(83, 86, 90);
  *********************************************/
 body {
   background-color: $white;
+}
+
+// D2IQ Logo everywhere
+body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  width: 50px;
+  height: 50px;
+  background-image: url('../images/d2iq-logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 100;
+}
+
+.invert-title body:before {
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/d2iq-logo-white.png');
+}
+
+.invert body:before {
+  background-image: url('../images/d2iq-logo-white.png');
+}
+
+.invert-title .paragraph,
+.invert-title .imageblock {
+  width: 66%;
+}
+
+.invert-title .title {
+  p {
+    text-align: left;
+  }
+  p:first-child {
+    border-top: 4px solid $secondary-color;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $secondary-color;
+    margin-top: 2em;
+    font-size: 56px;
+  }
 }
 
 .reveal {
