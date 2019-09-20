@@ -1,17 +1,17 @@
 
 [%notitle]
-= A journey with Traefik 2.0 in Kubernetes
+= Traefik v2.0 in Docker
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-A journey with Traefik 2.0 in Kubernetes
+Traefik v2.0 in Docker
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/San-Francisco-Kubernetes-Meetup/events/263848268/[San Francisco Kubernetes Meetup - Wednesday 18th of September 2019]
+link:https://events.docker.com/events/details/docker-san-francisco-presents-traefik-v20-in-docker-containerd-updates/#/[San Francisco Docker Meetup - Tuesday 24th of September 2019]
 
 
 == How to use these slides?
@@ -64,8 +64,6 @@ include::./includes/traefik-project.adoc[]
 include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
-
-include::./includes/v2-k8s.adoc[]
 
 include::./includes/v2-tcp.adoc[]
 
