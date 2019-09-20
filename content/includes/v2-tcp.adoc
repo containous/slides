@@ -26,5 +26,3 @@ image::demo4-v2-tcp-http.png[width=500]
 link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
 
 == Demo 3 - Canaray Release of a WebApp
-
-== Demo 4 - Cheesy Kubernetes
