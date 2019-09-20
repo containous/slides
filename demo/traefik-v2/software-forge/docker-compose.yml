@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   edge:
-    image: traefik:v2.0.0
+    image: traefik:v2.0
     command:
       - "--configfile=/traefik.toml"
     labels:

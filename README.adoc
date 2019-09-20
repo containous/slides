@@ -1,6 +1,6 @@
 = Containous Slides
 
-== How-to Work with this?
+== How-to Work with this Presentation?
 
 === Requirements
 

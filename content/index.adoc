@@ -1,13 +1,13 @@
 
 [%notitle]
-= Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
+= Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-(🇫🇷) Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
+Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
@@ -38,6 +38,14 @@ link:https://containo.us[]
 image::containous-logo.png["Containous Logo"]
 
 // //// end of Speaker Slide and Company slide
+
+
+// Abstract:
+// Konvoy is a fully-fledged tool by D2IQ for provisioning pure Kubernetes clusters providing a nice out-of-the-box experience. Built on top of a set of Cloud Native Computing Foundation (CNCF) and community-contributed components, it gives you super-hero powers in your journey to a production-ready Kubernetes platform.
+// Sharing the same values around open source, simplicity and user-experience, Traefik (natively available in Konvoy) and Maesh by Containous are routing your requests from end user to your applications:
+// Traefik is a dynamic edge router which acts as an Ingress Controller in Kubernetes, installed and configured out of the box in Konvoy. It routes requests from outside to the applications inside your Kubernetes cluster.
+// Maesh is a lightweight, easy to configure, and non-invasive service mesh that allows visibility and management of the traffic flows inside any Kubernetes cluster.
+// In this session, we’ll do a tour of your super-power journey by demonstrating the built-in features available in Konvoy with Traefik, and then we’ll add Maesh to the mix for a complete traffic management.
 
 
 // ///////////////////////

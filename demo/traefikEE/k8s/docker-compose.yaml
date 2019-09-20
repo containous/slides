@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   traefik:
-    image: traefik:v2.0.0
+    image: traefik:v2.0
     command: --global.debug --api --entryPoints='Name:http Address::80' --entryPoints='Name:https Address::443' --providers.docker.exposedByDefault=false
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
