@@ -1,0 +1,22 @@
+= Why Konvoy
+
+// D2IQ, formelry known as Mesosphere
+// Day-Two-I-Q
+// 10 years in cloud native development
+
+// Day 2 is a devops concept that has been around for some time, referring to the phase of the development lifecycle that follows initial deployment where the real application demands exist.
+
+// A smarter approach to Day 2 operations.
+// D2iQ is your trusted guide to the cloud native landscape. We deliver
+// a unique set of technology solutions, training, and services to simplify operational efforts for maximum impact.
+
+// for Kubernetes
+// Ksphere is designed for companies to successfully embrace Kubernetes, whether you're just beginning your journey or preparing for Day 2 operations.
+// KSphere: End-to-end support for Kubernetes and the full stack of supporting services your organization depends upon
+// - Konvoy [https://d2iq.com/solutions/ksphere/konvoy]: Designed so companies can install Kubernetes with push-button ease. Konvoy is integrated with an opinionated set of supporting cloud native services so you can deliver an out-of-the-box, production-ready experience.
+// - Mesosphere Kubernetes Engine (MKE)[https://d2iq.com/solutions/ksphere/mesosphere-kubernetes-engine]: Designed to assist companies in the move to a highly mature state of Kubernetes. By tapping into the power of DC/OS, MKE centralizes scattered and sprawling Kubernetes clusters across any environment, so you can reduce operational overhead and dramatically cut IT costs.
+
+// - Gain Flexibility Across Any Infrastructure
+// - Manage Operations With Ease
+// - Ensure Rapid Technology Adoption and Scale
+// - Harness Premiere Domain Expertise

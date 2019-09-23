@@ -11,6 +11,16 @@ Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konv
 
 image::traefik.logo.bright.svg["Traefik's Logo",height=300,align=left]
 
+[{invert}]
+== How to Access the Slides?
+
+image::qrcode.png["QRCode to this presentation",height=150]
+
+[.small]
+- link:{presentationUrl}[Slides (HTML): {presentationUrl}]
+- link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
+
 == How to use these slides?
 
 * *Browse the slides:* Use the arrows
@@ -45,6 +55,12 @@ link:https://containo.us[]
 * We Deliver Traefik and Traefik Enterprise Edition
 * Commercial Support
 * 30 people distributed, 90% tech
+* We are hiring!
++
+[source,bash]
+--
+docker run -it containous/jobs
+--
 
 // //// end of Speaker Slide and Company slide
 
@@ -63,27 +79,27 @@ link:https://containo.us[]
 // ///////////////////////
 :leveloffset: +1
 
-// include::./includes/why-traefik.adoc[]
+// 1. Konvoy / KSphere
+includes::./includes/d2iq/why-konvoy.adoc
+includes::./includes/d2iq/what-is-konvoy.adoc
+includes::./includes/d2iq/demo1.adoc
 
-// include::./includes/traefik-project.adoc[]
+// 2. Traefik
+includes::./includes/d2iq/why-traefik.adoc
+includes::./includes/d2iq/traefik-core-concepts.adoc
+includes::./includes/d2iq/traefik-and-konvoy.adoc
+includes::./includes/d2iq/demo2.adoc
 
-// include::./includes/traefik-core-concepts.adoc[]
-
-// include::./includes/show-me-the-conf.adoc[]
-
-// include::./includes/v2-k8s.adoc[]
-
-// include::./includes/v2-tcp.adoc[]
-
-// include::./includes/more-to-come.adoc[]
-
-// include::./includes/traefikee.adoc[]
-
-// include::./includes/maesh.adoc[]
-
-// include::./includes/the-end.adoc[]
+// 3. Maesh
+includes::./includes/d2iq/why-maesh.adoc
+includes::./includes/d2iq/what-is-maesh.adoc
+includes::./includes/d2iq/konvoy-and-maesh.adoc
+includes::./includes/d2iq/demo3.adoc
 
 :leveloffset: -1
+
+
+== That's All Folks!
 
 [{invert}]
 == Thank you!
