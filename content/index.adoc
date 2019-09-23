@@ -1,17 +1,17 @@
 
 [%notitle]
-= Traefik v2.0 in Docker
+= Traefik Enterprise Edition & Maesh
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Traefik v2.0 in Docker
+Traefik Enterprise Edition & Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://events.docker.com/events/details/docker-san-francisco-presents-traefik-v20-in-docker-containerd-updates/#/[San Francisco Docker Meetup - Tuesday 24th of September 2019]
+link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris Kubernetes Days - Wednesday 25th of September 2019]
 
 
 == How to use these slides?
@@ -26,15 +26,25 @@ link:https://events.docker.com/events/details/docker-san-francisco-presents-trae
 
 // //// Speaker Slide and Company slide
 [{invert}]
-== Whoami
-Emile vauge
+== Whoami 1/2
+Manuel Zapf
 
-* 🇫🇷 Developer
-* Creator of link:https://traefik.io/[Træfik], Founder of link:https://containo.us/[Containous]
-* link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
-* link:https://github.com/emilevauge[icon:github[] emilevauge]
+* 🇩🇪 link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
+* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
 
-image::emile-bw.png[height=200]
+image::manuel.jpg[height=200]
+
+[{invert}]
+== Whoami 2/2
+Adrien Martinet
+
+* 🇫🇷 Sales @ link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
+* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
+
+image::adrien.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -61,15 +71,13 @@ include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
-
-include::./includes/show-me-the-conf.adoc[]
-
-include::./includes/v2-tcp.adoc[]
-
 include::./includes/traefikee.adoc[]
 
+include::./includes/show-me-the-conf-v1.adoc[]
+
 include::./includes/maesh.adoc[]
+
+include::./includes/demo.adoc[]
 
 include::./includes/the-end.adoc[]
 
