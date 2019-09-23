@@ -9,7 +9,7 @@ include::./includes/attributes.adoc[]
 [.title]
 Traefik Enterprise Edition & Maesh
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::traefik-ee-logo.png["Traefik's Logo",height=300]
 
 link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris Kubernetes Days - Wednesday 25th of September 2019]
 
