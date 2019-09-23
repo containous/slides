@@ -86,9 +86,11 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/emilevauge[icon:twitter[] @emilevauge]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
+* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
+* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
+* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
 
-link:https://github.com/emilevauge[icon:github[] emilevauge]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
