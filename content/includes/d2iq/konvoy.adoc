@@ -1,0 +1,68 @@
+
+[{invert}]
+= Konvoy
+
+== Konvoy Concepts
+
+* Standalone **Native** Distribution of Kubernetes
+* "One button push" User Experience
+* Packaged with a set of services for **Operations**
+
+== Konvoy Architecture
+
+[.noshadow]
+image::Konvoy-arch-diagram.png["Konvoy Architecture",width=900]
+
+[.small]
+Diagram form link:https://docs.d2iq.com/ksphere/konvoy/latest/concepts/[Konvoy Documentation]
+
+== Quick Start
+
+Install a Konvoy Cluster in AWS EC2:
+
+* Prepare installation:
++
+[source,bash]
+----
+$ konvoy init --provisioner=aws
+----
+
+* Run installation:
++
+[source,bash]
+----
+$ konvoy init --provisioner=aws
+----
+
+* Use it:
++
+[source,bash]
+----
+$ konvoy apply kubeconfig && kubectl cluster-info
+
+Kubernetes master is running at (...)
+KubeDNS is running at (...)
+kubernetes-dashboard is running at (...)
+----
+
+[{invert}]
+== Konvoy Operations
+
+* Operations Portal
+* Network: CoreDNS, Calico, MetalLB, Traefik
+* Security: Identity Management, SSO, TLS
+* Logging: Fluentbit, Elasticsearch, Kibana
+* Monitoring and Metrics: Prometheus, Grafana
+* Back up and restore: Velero
+
+== Operations Portal
+
+image::konvoy-opsportal.png["Operations Portal",width=1100]
+
+== Operation Portal Components
+
+image::konvoy-opsportal-components.png["Operations Portal Components",width=1100]
+
+== !
+
+image::konvoy-opsportal-components-traefik-emphasis.png["Emphasis on Traefik",width=1100]

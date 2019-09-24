@@ -1,4 +1,5 @@
 
+[{invert}]
 = Why Traefik?
 
 image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
@@ -9,7 +10,6 @@ Why, Mr Anderson?
 [%notitle]
 == Evolution of Software Design
 
-//image::evolution-of-software-design.jpg[Evolution of Software Design]
 image::pasta-architecture.png["Evolution of Software Design", height = 800]
 
 == The Premise of Microservices...
@@ -25,32 +25,46 @@ image::asterix-fight.jpg[Asterix - Fighting]
 
 image::where-is-charlie.jpg["Where os Charlie?",width=900]
 
-[{invert}]
 == Tools of the Trade
 
+[.noshadow]
 image::docker.png[width=80,float=left]
+[.noshadow]
 image::rancher-os.png[width=80,float=left]
+[.noshadow]
 image::docker-swarm.png[width=80,float=left]
+[.noshadow]
 image::kubernetes.png[width=80,float=left]
+[.noshadow]
 image::marathon.png[width=80,float=left]
+[.noshadow]
 image::ec2.png[width=80,float=left]
+[.noshadow]
 image::mesos.png[width=80,float=left]
 
+[.noshadow]
 image::dynamodb.png[width=80,float=right]
+[.noshadow]
 image::ecs.png[width=80,float=right]
+[.noshadow]
 image::service-fabric.png[width=80,float=right]
+[.noshadow]
 image::consul.png[width=80,float=right]
+[.noshadow]
 image::netflix_oss.png[width=80,float=right]
+[.noshadow]
 image::etcd.png[width=80,float=right]
+[.noshadow]
 image::zookeeper.png[width=80,float=right]
 
 == !
 
-image::yaml.jpg[width=900]
+image::yaml.jpg[background,size=contains]
 
-[.small][.small]
-Source: https://twitter.com/Caged/status/1039937162769096704[]
+// [.small][.small]
+// Source: https://twitter.com/Caged/status/1039937162769096704[]
 
+[{invert}]
 == What If I Told You?
 
 image::what-if-I-told-you.jpg[What If I Told You]

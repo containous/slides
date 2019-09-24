@@ -9,12 +9,16 @@ include::./includes/attributes.adoc[]
 [.title]
 Harness your routing super-hero power in Kubernetes with Traefik, Maesh and Konvoy
 
-image::traefik.logo.bright.svg["Traefik's Logo",height=300,align=left]
+[.left.noshadow]
+image::traefik.logo.bright.svg["Traefik's Logo",height=300]
+
+[.left.noshadow]
+image::maesh.png["Maesh's Logo",height=300]
 
 [{invert}]
-== How to Access the Slides?
+== How to Access these Slides?
 
-image::qrcode.png["QRCode to this presentation",height=150]
+image::qrcode.png["QRCode to this presentation",height=200]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
@@ -47,12 +51,13 @@ image::jbd.jpg[height=200]
 [%notitle]
 == Containous
 
+[.noshadow]
 image::containous-logo-white.svg["Containous Logo",width=500]
 
 link:https://containo.us[]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Traefik Enterprise Edition and Maesh
 * Commercial Support
 * 30 people distributed, 90% tech
 * We are hiring!
@@ -79,22 +84,24 @@ docker run -it containous/jobs
 // ///////////////////////
 :leveloffset: +1
 
-// 1. Konvoy / KSphere
-includes::./includes/d2iq/why-konvoy.adoc
-includes::./includes/d2iq/what-is-konvoy.adoc
-includes::./includes/d2iq/demo1.adoc
+// 1. Konvoy / Traefik
+include::./includes/d2iq/why-konvoy.adoc[]
+include::./includes/d2iq/konvoy.adoc[]
+include::./includes/d2iq/why-traefik.adoc[]
+include::./includes/d2iq/traefik-project.adoc[]
+include::./includes/d2iq/demo1.adoc[]
 
-// 2. Traefik
-includes::./includes/d2iq/why-traefik.adoc
-includes::./includes/d2iq/traefik-core-concepts.adoc
-includes::./includes/d2iq/traefik-and-konvoy.adoc
-includes::./includes/d2iq/demo2.adoc
+// 2. Traefik v2
+include::./includes/d2iq/traefik-v2.adoc[]
+include::./includes/d2iq/traefik-core-concepts.adoc[]
+include::./includes/d2iq/traefik-and-konvoy.adoc[]
+include::./includes/d2iq/demo2.adoc[]
 
 // 3. Maesh
-includes::./includes/d2iq/why-maesh.adoc
-includes::./includes/d2iq/what-is-maesh.adoc
-includes::./includes/d2iq/konvoy-and-maesh.adoc
-includes::./includes/d2iq/demo3.adoc
+include::./includes/d2iq/why-maesh.adoc[]
+include::./includes/d2iq/what-is-maesh.adoc[]
+include::./includes/d2iq/konvoy-and-maesh.adoc[]
+include::./includes/d2iq/demo3.adoc[]
 
 :leveloffset: -1
 

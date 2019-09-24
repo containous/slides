@@ -80,9 +80,22 @@ body:before {
   background-image: url('../images/d2iq-logo-white.png');
 }
 
-.invert-title .paragraph,
-.invert-title .imageblock {
+.invert-title .paragraph {
   width: 66%;
+}
+
+.invert-title .imageblock {
+  display: inline;
+}
+
+.left {
+  float: left;
+  margin-right: 2em;
+}
+
+.right {
+  float: right;
+  margin-left: 2em;
 }
 
 .invert-title .title {
@@ -366,8 +379,13 @@ body:before {
   margin: 15px 0px;
   background-color: none;
   border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.reveal section .noshadow img {
   box-shadow: none;
 }
+
 
 .reveal section img.plain {
   border: none;

@@ -1,49 +1,41 @@
 
+[{invert}]
 = Traefik (v2.0) Core Concepts
 
 image::bored-minion.jpg[Bored Minion]
 
-[{invert}]
-== Traefik is an Edge Router
+== Traefik is an Edge Proxy
 
 image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
-[{invert}]
-== Dynamically Discovers Services
+== It Dynamically Discovers Services
 
 image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
 
-[{invert}]
 == Architecture (v2.0) at a Glance
 
 image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
 
-[{invert}]
 == Entrypoints
 
 image::architecture-at-a-glance-entrypoints.png["Traefik's Entrypoints", width=1000]
 
-[{invert}]
 == Routers
 
 image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 
-[{invert}]
 == Middlewares
 
 image::traefik-v2-middlewares.png["Traefik Middlewares",width=1000]
 
-[{invert}]
 == Services
 
 image::architecture-at-a-glance-services.png["Traefik's Services",width=1000]
 
-[{invert}]
 == Architecture (again) at a Glance
 
 image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
 
-[{invert}]
 == Static & Dynamic Configuration
 
 image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=1000]
