@@ -15,10 +15,6 @@ spec:
     port: 443
     protocol: TCP
     targetPort: 443
-  - name: dashboard
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
   selector:
     app: traefik
     release: traefik
