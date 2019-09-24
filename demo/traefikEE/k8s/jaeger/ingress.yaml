@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   rules:
-  - host: jaeger.docker.localhost
+  - host: jaeger.platform9.traefikee-demo.containous.cloud
     http:
       paths:
       - backend:

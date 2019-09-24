@@ -1,0 +1,10 @@
+---
+apiVersion: specs.smi-spec.io/v1alpha1
+kind: HTTPRouteGroup
+metadata:
+  name: app-routes
+  namespace: apps
+matches:
+- name: all
+  pathRegex: "/"
+  methods: ["*"]

@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   rules:
-  - host: grafana.docker.localhost
+  - host: grafana.platform9.traefikee-demo.containous.cloud
     http:
       paths:
       - backend:

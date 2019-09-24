@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: containous/webapp
+        image: dduportal/webapp-traefik
         imagePullPolicy: IfNotPresent
 
 ---
