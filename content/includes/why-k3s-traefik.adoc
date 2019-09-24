@@ -15,6 +15,16 @@ Why, Mr Anderson?
 * 2018: Kubernetes gets bigger and bigger
 * 2019: Kubernetes all over the World
 
+[.notes]
+--
+* 2014 Google introduced Kubernetes as an open source version of Borg, June 7 initial release, July Docker, RedHat, Microsoft, IBM join Community
+* 2015 July 21: Kubernetes v1.0 gets released, November 9-11: KubeCon 2015 first time San Francisco
+* 2016 Minikube, Kops, Kubeadm, Pokemon Go Case Study, Kube 1.5
+* 2017 May Google and IBM announce Istio, Oracle Joined CNCF, RBAC, EKS
+* 2018 DOKS, GKE, Kube 1.11 announced
+* 2019 Biggest Kubecon ever, Kube 1.16, CRD's...
+--
+
 [{invert}]
 == Challenges
 * Kubernetes the hard way to setup
