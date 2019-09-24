@@ -50,9 +50,9 @@ k8s - 5 = k3s ;-)
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
 * Written in Go
-* 24,000+ ⭐ 900M+ ⬇️ 350+ 👷
+* 24,000+ ⭐ 1B+ ⬇️ 400+ 👷
 * Created in 2015
-* Current stable branch: `v1.7`
+* Current stable branch: `v2.0`
 
 == What is Traefik?
 
