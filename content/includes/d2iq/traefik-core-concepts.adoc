@@ -4,14 +4,6 @@
 
 image::bored-minion.jpg[Bored Minion]
 
-== Traefik is an Edge Proxy
-
-image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
-
-== It Dynamically Discovers Services
-
-image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
-
 == Architecture (v2.0) at a Glance
 
 image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]

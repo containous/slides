@@ -93,14 +93,10 @@ include::./includes/d2iq/demo1.adoc[]
 
 // 2. Traefik v2
 include::./includes/d2iq/traefik-v2.adoc[]
-include::./includes/d2iq/traefik-core-concepts.adoc[]
-include::./includes/d2iq/traefik-and-konvoy.adoc[]
 include::./includes/d2iq/demo2.adoc[]
 
 // 3. Maesh
-include::./includes/d2iq/why-maesh.adoc[]
-include::./includes/d2iq/what-is-maesh.adoc[]
-include::./includes/d2iq/konvoy-and-maesh.adoc[]
+include::./includes/d2iq/maesh.adoc[]
 include::./includes/d2iq/demo3.adoc[]
 
 :leveloffset: -1

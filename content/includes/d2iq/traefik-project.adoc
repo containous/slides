@@ -13,3 +13,13 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * 25,000+ ⭐ 1B+ ⬇️ 400+ 👷
 * Created in 2015, 4Y 🎂
 * Current stable branch: `v2.0`
+
+== Traefik is an Edge Proxy
+
+[.noshadow]
+image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
+
+== It Dynamically Discovers Services
+
+[.noshadow]
+image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
