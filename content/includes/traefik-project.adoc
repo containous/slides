@@ -9,9 +9,9 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 * MIT License
 * Written in Go
-* 24,000+ ⭐ 900M+ ⬇️ 350+ 👷
+* 24,000+ ⭐ 900M+ ⬇️ 400+ 👷
 * Created in 2015
-* Current stable branch: `v1.7`
+* Current stable branch: `v2.0`
 
 [%notitle]
 == Back To Traefik 2.0
