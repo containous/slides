@@ -1,18 +1,17 @@
 
 [%notitle]
-= Traefik Enterprise Edition & Maesh
+= Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Traefik Enterprise Edition & Maesh
+Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
 
 image::traefik-ee-logo.png["Traefik's Logo",height=300]
 
-link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris Kubernetes Days - Wednesday 25th of September 2019]
-
+link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium Kubernetes Meetup - October 2019 @ Louvain]
 
 == How to use these slides?
 
