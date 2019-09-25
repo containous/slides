@@ -12,3 +12,21 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * 24,000+ ⭐ 1B+ ⬇️ 400+ 👷
 * Created in 2015, 4Y 🎂
 * Current stable branch: `v2.0`
+
+[%notitle]
+== Back To Traefik 2.0
+
+image::back-to-2.0.png[background, size=cover]
+
+== Traefik 2.0 Quick Overview
+
+* Revamped Documentation
+* Clarified Concepts
+* Expressive Routing Rule Syntax
+* Middlewares
+* TCP Support
+* Canary / Mirroring
+* And so Much More...
+
+[.small]
+Learn more on the link:bit.ly/traefik-v2[blog post]

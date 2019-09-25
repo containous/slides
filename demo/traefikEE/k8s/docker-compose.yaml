@@ -1,8 +1,8 @@
 version: '3.4'
 services:
   traefik:
-    image: traefik:v2.0.0-alpha3
-    command: --global.debug --api --entryPoints='Name:http Address::80' --entryPoints='Name:https Address::443' --providers.docker.exposedByDefault=false 
+    image: traefik:v2.0.0
+    command: --global.debug --api --entryPoints='Name:http Address::80' --entryPoints='Name:https Address::443' --providers.docker.exposedByDefault=false
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
@@ -44,4 +44,3 @@ services:
     environment:
       - K3S_URL=https://server:6443
       - K3S_CLUSTER_SECRET=somethingtotallyrandom
-

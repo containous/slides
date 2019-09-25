@@ -54,4 +54,3 @@ services:
       - "traefik.http.routers.ttyd.entrypoints=http"
       - "traefik.http.routers.ttyd.service=ttyd_traefik-v2"
       - "traefik.http.routers.ttyd.middlewares=file.stripprefix"
-
