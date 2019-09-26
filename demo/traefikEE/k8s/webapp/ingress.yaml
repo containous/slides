@@ -10,7 +10,7 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   rules:
-  - host: webapp.docker.localhost
+  - host: webapp.platform9.traefikee-demo.containous.cloud
     http:
       paths:
       - backend:

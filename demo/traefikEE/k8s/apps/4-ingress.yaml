@@ -1,0 +1,35 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apps-client
+  namespace: apps
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: apps.platform9.traefikee-demo.containous.cloud
+    http:
+      paths:
+      - backend:
+          serviceName: apps-client
+          servicePort: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: apps-client
+  namespace: apps
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  entryPoints:
+    - http
+    - https
+  routes:
+    - match: Host(`apps.platform9.traefikee-demo.containous.cloud`)
+      kind: Rule
+      services:
+        - name: apps-client
+          port: 80

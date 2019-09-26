@@ -11,6 +11,15 @@ You came to the wrong neighbour
 
 image::cluster-traefikee.png[]
 
+== Value Proposition
+* Community Driven Edge Router
+* Cloud Native & Agnostic
+* Configuration Auto-Discovery
+* Native Observability & Tracing
+* Deploy Easily and Operate at Scale
+* Security : Encryption & Separation of Concern
+* High Availability
+
 [state=invert,background-color="rgb(249,248,248)"]
 [%notitle]
 == An Highly Available Traefik

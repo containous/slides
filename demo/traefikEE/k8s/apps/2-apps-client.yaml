@@ -1,0 +1,39 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: apps-client
+  namespace: apps
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apps-client
+    spec:
+      serviceAccount: apps-client
+      containers:
+      - name: apps-client
+        image: containous/app-demo:latest
+        args:
+          - "-client"
+          - "-servers=http://apps.apps.maesh" ## Pass through maesh
+          - "-servers=http://apps.apps.maesh"
+          - "-servers=http://apps.apps.svc.cluster.local" ## Does not Pass through maesh
+          - "-servers=http://apps.apps.svc.cluster.local"
+        imagePullPolicy: IfNotPresent
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apps-client
+  namespace: apps
+  labels:
+    app: apps-client
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: apps-client
+  selector:
+    app: apps-client
