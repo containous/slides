@@ -11,7 +11,7 @@ metadata:
     traefik.frontend.passHostHeader: 'true'
 spec:
   rules:
-  - host: hotrod.platform9.traefikee-demo.containous.cloud
+  - host: hotrod.docker.localhost
     http:
       paths:
       - backend:

@@ -11,7 +11,7 @@ metadata:
     traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
 spec:
   rules:
-  - host: webapp.platform9.traefikee-demo.containous.cloud
+  - host: webapp.docker.localhost
     http:
       paths:
       - path: /sf
@@ -31,7 +31,7 @@ metadata:
     traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
 spec:
   rules:
-  - host: webapp.platform9.traefikee-demo.containous.cloud
+  - host: webapp.docker.localhost
     http:
       paths:
       - path: /ny
@@ -51,7 +51,7 @@ metadata:
     traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
 spec:
   rules:
-  - host: webapp.platform9.traefikee-demo.containous.cloud
+  - host: webapp.docker.localhost
     http:
       paths:
       - path: /paris

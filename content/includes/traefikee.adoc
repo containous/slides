@@ -4,7 +4,6 @@
 
 image::cluster-traefikee.png[]
 
-
 [state=invert,background-color="rgb(249,248,248)"]
 == !
 

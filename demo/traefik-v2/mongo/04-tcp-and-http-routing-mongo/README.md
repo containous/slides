@@ -3,7 +3,7 @@
 * (Optional): Re-generate Certificates:
 
 ```shell
-bash ../certs/generate-certificates.sh "mongo1.local,mongo2.local,dashboard-mongo1.local" ./
+bash ../root-certs/generate-certificates.sh "mongo1.local,mongo2.local,dashboard-mongo1.local" ./
 ```
 
 * Start the stack:
