@@ -15,7 +15,7 @@ deploy:
     local-dir: ./docs/
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
-    keep-history: true
+    keep-history: false
     target-branch: gh-pages
     verbose: true
     on:
@@ -25,7 +25,7 @@ deploy:
     local-dir: ./docs/
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
-    keep-history: true
+    keep-history: false
     target-branch: gh-pages
     verbose: true
     on:
