@@ -1,9 +1,6 @@
-= Smart Routing et HTTPS pour tous : Traefik en action (🇫🇷)
+= Containous Slides
 
-Traefik est le très populaire edge router open source qui permet de faire du reverse-proxy dynamique.
-Les concepts clés de cet outil sont la simplicité et l'automatisation permettant un gain de temps considérable lors du développement, déploiement et la gestion de vos applications. Traefik supprime le besoin de mise à jour de configuration de routage de votre environnement containerisé, et s'intégre dans un très large écosystème de backends modernes (Docker, Mesos, Marathon, Kubernetes, Etcd, Consul, Zookeeper, ect.)
-
-== How-to Work with this Presentation?
+== How-to Work with this?
 
 === Requirements
 
