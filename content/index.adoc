@@ -1,29 +1,40 @@
 
 [%notitle]
-= Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
+= Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-(🇫🇷) Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
+Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Devops Meetup - 2019]
+link:https://osseu19.sched.com/event/TLHO/easy-https-for-your-microservice-architectures-julien-salleyron-containous[Open Source Summit Europe - Lyon 2019]
+
+== How to use these slides?
+
+* *Browse the slides:* Use the arrows
+** Change chapter: Left/Right arrows
+** Next or previous slide: Top and bottom arrows
+
+* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
+
+* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
 [{invert}]
 == Whoami
 Jean-Baptiste Doumenjou
 
-* 🇫🇷 Developer
-* Maintainer of link:https://traefik.io/[Træfik]
-* link:https://twitter.com/jbdoumenjou[+++<span class="fab fa-twitter"></span>+++ @jbdoumenjou]
-* link:https://github.com/jbdoumenjou[+++<span class="fab fa-github"></span>+++ jbdoumenjou]
+Julien Salleyron
 
-image::jbd.jpg[height=200]
+* link:https://traefik.io/[Træfik,window=_blank]'s Senior Software Engineer @
+link:https://containo.us/[Containous,window=_blank]
+** link:https://github.com/juliens[icon:github[] juliens,window=_blank]
+
+image::juliens.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -77,7 +88,9 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-image::qrcode.png["QRCode to this presentation",height=400]
+* link:https://github.com/juliens[icon:github[] juliens,window=_blank]
+
+image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
