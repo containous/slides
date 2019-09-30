@@ -9,7 +9,7 @@ include::./includes/attributes.adoc[]
 [.title]
 Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
 
-image::traefik-ee-logo.png["Traefik's Logo",height=300]
+image::traefik.logo.png["Traefik's Logo",height=300]
 
 link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium Kubernetes Meetup - October 2019 @ Louvain]
 
@@ -24,26 +24,16 @@ link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium K
 * *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
 
 // //// Speaker Slide and Company slide
-[{invert}]
-== Whoami 1/2
-Manuel Zapf
 
-* 🇩🇪 link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+== Whoami
+
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
-* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
+* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
 
-image::manuel.jpg[height=200]
-
-[{invert}]
-== Whoami 2/2
-Adrien Martinet
-
-* 🇫🇷 Sales @ link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
-* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
-
-image::adrien.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -70,13 +60,19 @@ include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-project.adoc[]
 
+include::./includes/traefik-core-concepts.adoc[]
+
+include::./includes/show-me-the-conf.adoc[]
+
+include::./includes/v2-k8s.adoc[]
+
+include::./includes/v2-tcp.adoc[]
+
+include::./includes/more-to-come.adoc[]
+
 include::./includes/traefikee.adoc[]
 
-include::./includes/show-me-the-conf-v1.adoc[]
-
 include::./includes/maesh.adoc[]
-
-include::./includes/demo.adoc[]
 
 include::./includes/the-end.adoc[]
 
@@ -85,11 +81,9 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
-* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
-* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
-* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
+link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 
+link:https://github.com/dduportal[icon:github[] dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
