@@ -1,18 +1,17 @@
 
 [%notitle]
-= Traefik Enterprise Edition & Maesh
+= Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Traefik Enterprise Edition & Maesh
+(🇫🇷) Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
 
-image::traefik-ee-logo.png["Traefik's Logo",height=300]
+image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris Kubernetes Days - Wednesday 25th of September 2019]
-
+link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Devops Meetup - 2019]
 
 == How to use these slides?
 
@@ -27,24 +26,15 @@ link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris
 // //// Speaker Slide and Company slide
 [{invert}]
 == Whoami 1/2
-Manuel Zapf
 
-* 🇩🇪 link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+Jean-Baptiste Doumenjou
+
+* link:https://traefik.io/[Træfik,window=_blank]'s Señor Software Developer @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
-* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
+* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou,window=_blank]
+* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou,window=_blank]
 
-image::manuel.jpg[height=200]
-
-[{invert}]
-== Whoami 2/2
-Adrien Martinet
-
-* 🇫🇷 Sales @ link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
-* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
-
-image::adrien.jpg[height=200]
+image::jb.png[height=200]
 
 [{invert}]
 == Containous
@@ -71,13 +61,19 @@ include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-project.adoc[]
 
+include::./includes/traefik-core-concepts.adoc[]
+
+include::./includes/show-me-the-conf.adoc[]
+
+include::./includes/v2-k8s.adoc[]
+
+include::./includes/v2-tcp.adoc[]
+
+include::./includes/more-to-come.adoc[]
+
 include::./includes/traefikee.adoc[]
 
-include::./includes/show-me-the-conf-v1.adoc[]
-
 include::./includes/maesh.adoc[]
-
-include::./includes/demo.adoc[]
 
 include::./includes/the-end.adoc[]
 
@@ -86,11 +82,8 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
-* link:https://twitter.com/martinet_adrien[icon:twitter[] @martinet_adrien,window=_blank]
-* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
-* link:https://www.linkedin.com/in/adrimartinet/[icon:linkedin[] adrimartinet,window=_blank]
-
+* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou,window=_blank]
+* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou,window=_blank]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
