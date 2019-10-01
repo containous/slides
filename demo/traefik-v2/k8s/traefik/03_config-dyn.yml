@@ -11,10 +11,10 @@ data:
         api:
           rule: Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
           service: api@internal
-      #     middlewares:
-      #       - auth
-      # middlewares:
-      #   auth:
-      #     basicAuth:
-      #       users:
-      #         - "traefik:$$apr1$$kkheftUN$$qbTSFds/Vy9hlCtlyAXj40"
+          middlewares:
+            - auth
+      middlewares:
+        auth:
+          basicAuth:
+            users:
+              - "traefik:$apr1$RPlPZdQ0$qfSKvjR19pCqdtAD2wQ6q."
