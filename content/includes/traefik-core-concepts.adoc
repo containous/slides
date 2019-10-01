@@ -9,7 +9,7 @@ image::bored-minion.jpg[Bored Minion]
 image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
 [{invert}]
-== Traefik Dynamically Discovers Services
+== Dynamically Discovers Services
 
 image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
 
