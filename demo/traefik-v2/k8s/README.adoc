@@ -21,18 +21,55 @@ k3d create --name="demo" \
     --server-arg="--no-deploy=traefik" --workers="3"
 ----
 
+== Initial Setup
+
+*  Check the Kubernetes status:
+
+[source,bash]
+----
+export KUBECONFIG="$(k3d get-kubeconfig --name='demo')"
+
+kubectl cluster-info
+
+kubectl get nodes
+
+kubectl get pod --all-namespaces # Wait for CoreDNS startup
+----
+
+* Open the URL http://localhost[]: no answer (no HTTP server listening)
+
 == Install Traefik
 
 * Install Traefik in the cluster:
 +
 [source,bash]
 ----
-kubectl apply -f ./traefik/
+kubectl apply -f ./01-traefik/
 ----
+
+* Open the URL http://localhost[]: error HTTP `404 Not Found`: Traefik answers.
+
+* Open the URL http://localhost/dashboard/[] (user: `traefik`, password: `demo`): Traefik Dashboard.
 
 == Deploy and Expose an HTTP application
 
+* Deploy the default webapp:
++
+[source,bash]
+----
+kubectl apply -f ./02-webapp/
+----
+
+* Open the URL http://localhost[]: web application answers. Reload multiple times: round robin laod balancing.
+
 == Deploy and Expose a TCP application
+
+* Deploy the default webapp "whoami"
++
+[source,bash]
+----
+kubectl apply -f ./03-mongo/
+----
 
 == Cleanup
 

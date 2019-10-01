@@ -2,13 +2,16 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: simpleingressroute
+  name: webapp
+  namespace: front
+  labels:
+    app: webapp
 spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`webapp.localhost`)
+  - match: Host(`localhost`)
     kind: Rule
     services:
-    - name: whoami
+    - name: webapp
       port: 80
