@@ -1,12 +1,13 @@
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: simpleingressroute
 spec:
   entryPoints:
-    - http
+    - web
   routes:
-  - match: Host(`testIngressRoute.docker.localhost`)
+  - match: Host(`webapp.localhost`)
     kind: Rule
     services:
     - name: whoami
