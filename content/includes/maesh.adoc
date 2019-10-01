@@ -29,3 +29,69 @@ image::after-maesh-graphic.png[width=500,float=right]
 - Opt-in by default.
 
 link:https://mae.sh[Maesh Website]
+
+== Show Me The Code!
+
+* Install Maesh (Helm Chart):
++
+[source,bash]
+----
+helm repo add maesh https://containous.github.io/maesh/charts
+helm repo update
+helm install --name=maesh --namespace=maesh maesh/maesh --values=./maesh/values.yaml
+----
+
+* Deploy Applications:
++
+[source,bash]
+----
+kubectl apply -f apps/0-namespace.yaml
+kubectl apply -f apps/1-svc-accounts.yaml
+kubectl apply -f apps/2-apps-client.yaml
+kubectl apply -f apps/3-apps-servers.yaml
+kubectl apply -f apps/4-ingressroutes.yaml
+----
+
+* Deploy SMI Objects to allow traffic in the mesh:
++
+[source,bash]
+----
+kubectl apply -f apps/5-smi-http-route-groups.yaml
+kubectl apply -f apps/6-smi-traffic-targets.yaml
+----
+
+[{invert}]
+== A Closer Look to SMI Objects
+
+[source,bash]
+----
+apiVersion: specs.smi-spec.io/v1alpha1
+kind: HTTPRouteGroup
+metadata:
+  name: app-routes
+  namespace: apps
+matches:
+- name: all
+  pathRegex: "/"
+  methods: ["*"]
+---
+apiVersion: access.smi-spec.io/v1alpha1
+kind: TrafficTarget
+metadata:
+  name: client-apps
+  namespace: apps
+destination:
+  kind: ServiceAccount
+  name: apps-server
+  namespace: apps
+specs:
+- kind: HTTPRouteGroup
+  name: app-routes
+  matches:
+  - all
+sources:
+- kind: ServiceAccount
+  name: apps-client
+  namespace: apps
+
+----
