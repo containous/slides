@@ -64,9 +64,7 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/v2-k8s.adoc[]
-
-include::./includes/v2-tcp.adoc[]
+include::./includes/demo.adoc[]
 
 include::./includes/more-to-come.adoc[]
 
