@@ -64,11 +64,31 @@ kubectl apply -f ./02-webapp/
 
 == Deploy and Expose a TCP application
 
-* Deploy the default webapp "whoami"
+* Show that there is no mongodb service available:
++
+[source,bash]
+----
+mongo --host=localhost --port=27017
+# Should timeout
+----
+
+* Deploy the MongoDB database:
 +
 [source,bash]
 ----
 kubectl apply -f ./03-mongo/
+----
+
+* Check Traefik Dashboard until both TCP routers and TCP services are 100% success
+
+* Connect to the MongoDB database:
++
+[source,bash]
+----
+mongo --host=localhost --port=27017
+> show dbs
+...
+> exit
 ----
 
 == Cleanup
