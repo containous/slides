@@ -1,3 +1,15 @@
 = Demo
 
 image::demo.jpg[]
+
+== Demo Menu
+
+1. Install Traefik v2 in Kubernetes cluster
+2. Deploy and expose an HTTP application
+3. Deploy and expose a TCP application
+
+== Install Traefik
+
+== Deploy and Expose an HTTP application
+
+== Deploy and Expose a TCP application

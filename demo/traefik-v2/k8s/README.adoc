@@ -1,0 +1,44 @@
+
+= Demo: Traefik v2 in Kubernetes
+
+== Requirements
+
+* `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.1`)
+* A docker engine (tested with Docker 19.03.2 and Docker4Mac 19.03.2)
+* A bash prompt
+
+== Prepare Environment
+
+* Using the `k3d` command, start a Kubernetes cluster with the following properties:
+** 1 master node and 3 worker nodes,
+** ports 80, 443 and 27017 published on the host machine,
+** Default k3s deployments, but NO Traefik Ingress (as it is currently `1.7.x` version).
+
+[source,bash]
+----
+k3d create --name="demo" \
+    --publish="80:80" --publish="443:443" --publish="27017:27017" \
+    --server-arg="--no-deploy=traefik" --workers="3"
+----
+
+== Install Traefik
+
+* Install Traefik in the cluster:
++
+[source,bash]
+----
+kubectl apply -f ./traefik/
+----
+
+== Deploy and Expose an HTTP application
+
+== Deploy and Expose a TCP application
+
+== Cleanup
+
+* Cleanup the Kubernetes cluster:
++
+[source,bash]
+----
+k3d delete --name=demo
+----
