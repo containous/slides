@@ -7,6 +7,7 @@ script:
 
 before_deploy:
 - make deploy
+- cat .release-notes/template.md | envsubst > .release-notes/tmp-notes-${TRAVIS_TAG}.md
 
 # From https://github.com/travis-ci/travis-ci/issues/7780#issuecomment-302389370
 # we have to duplicate to meet tags and master
