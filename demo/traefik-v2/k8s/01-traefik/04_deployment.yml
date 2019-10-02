@@ -1,0 +1,52 @@
+# declare Traefik deployment
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: default
+  name: traefik-ingress-controller
+  labels:
+    app: traefik-ingress-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik-ingress-controller
+  template:
+    metadata:
+      labels:
+        app: traefik-ingress-controller
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      containers:
+        - name: traefik
+          image: traefik:v2.0.0
+          args:
+            - --api.dashboard
+            - --accesslog
+            - --entrypoints.web.address=:80
+            - --entrypoints.websecure.address=:443
+            - --entrypoints.mongo.address=:27017
+            - --log.level=debug
+            - --providers.kubernetescrd
+            - --providers.file.filename=/etc/traefik/dynamic_conf.yml
+          ports:
+            - name: http
+              containerPort: 80
+            - name: https
+              containerPort: 443
+            - name: mongo
+              containerPort: 27017
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/traefik
+      volumes:
+        - name: config-volume
+          configMap:
+            name: traefik-config

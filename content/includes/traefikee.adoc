@@ -1,67 +1,33 @@
 
-= The Herd
-
-image::herd-of-goats.jpg[width=800]
-
-[.small]
-You came to the wrong neighbour
-
 [{invert}]
-== Traefik comes in Herd
+= Traefik also comes in Herd
 
 image::cluster-traefikee.png[]
 
-== Value Proposition
-* Community Driven Edge Router
-* Cloud Native & Agnostic
-* Configuration Auto-Discovery
-* Native Observability & Tracing
-* Deploy Easily and Operate at Scale
-* Security : Encryption & Separation of Concern
-* High Availability
 
 [state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== An Highly Available Traefik
+== !
 
 ++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
+<video class="center" width="512" height="384" autoplay muted controls loop>
   <source src="videos/traefik-ee-high-availability.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 ++++
 
-[.small]
-High Availability
-
-[state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== A Safe Traefik
-
 ++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
+<video class="center" width="512" height="384" autoplay muted controls loop>
   <source src="videos/traefik-ee-safety.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 ++++
 
-[.small]
-Security
-
-[state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== A Scalable Traefik
-
 ++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
+<video class="center" width="512" height="384" autoplay muted controls loop>
   <source src="videos/traefik-ee-scalability.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 ++++
-
-[.small]
-Scalability
-
 
 [{invert}]
 == !

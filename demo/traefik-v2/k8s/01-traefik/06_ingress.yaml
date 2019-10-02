@@ -1,0 +1,16 @@
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: dashboard
+#   namespace: default
+# spec:
+#   entryPoints:
+#     - http
+#     - https
+#   routes:
+#     - match: Host(`dashboard.docker.localhost`)
+#       kind: Rule
+#       services:
+#         - name: traefik-ingress-controller
+#           port: 8080

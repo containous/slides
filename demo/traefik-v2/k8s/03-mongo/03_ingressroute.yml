@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: mongo
+  namespace: back
+  labels:
+    app: mongo
+spec:
+  entryPoints:
+    - mongo
+  routes:
+  - match: HostSNI(`*`)
+    services:
+    - name: mongo
+      port: 27017

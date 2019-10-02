@@ -6,10 +6,10 @@ spec:
   ports:
     - name: web
       port: 80
-    - name: admin
-      port: 8080
     - name: websecure
       port: 443
+    - name: mongo
+      port: 27017
   selector:
     app: traefik-ingress-controller
   type: LoadBalancer

@@ -1,0 +1,101 @@
+
+= Demo: Traefik v2 in Kubernetes
+
+== Requirements
+
+* `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.1`)
+* A docker engine (tested with Docker 19.03.2 and Docker4Mac 19.03.2)
+* A bash prompt
+
+== Prepare Environment
+
+* Using the `k3d` command, start a Kubernetes cluster with the following properties:
+** 1 master node and 3 worker nodes,
+** ports 80, 443 and 27017 published on the host machine,
+** Default k3s deployments, but NO Traefik Ingress (as it is currently `1.7.x` version).
+
+[source,bash]
+----
+k3d create --name="demo" \
+    --publish="80:80" --publish="443:443" --publish="27017:27017" \
+    --server-arg="--no-deploy=traefik" --workers="3"
+----
+
+== Initial Setup
+
+*  Check the Kubernetes status:
+
+[source,bash]
+----
+export KUBECONFIG="$(k3d get-kubeconfig --name='demo')"
+
+kubectl cluster-info
+
+kubectl get nodes
+
+kubectl get pod --all-namespaces # Wait for CoreDNS startup
+----
+
+* Open the URL http://localhost[]: no answer (no HTTP server listening)
+
+== Install Traefik
+
+* Install Traefik in the cluster:
++
+[source,bash]
+----
+kubectl apply -f ./01-traefik/
+----
+
+* Open the URL http://localhost[]: error HTTP `404 Not Found`: Traefik answers.
+
+* Open the URL http://localhost/dashboard/[] (user: `traefik`, password: `demo`): Traefik Dashboard.
+
+== Deploy and Expose an HTTP application
+
+* Deploy the default webapp:
++
+[source,bash]
+----
+kubectl apply -f ./02-webapp/
+----
+
+* Open the URL http://localhost[]: web application answers. Reload multiple times: round robin laod balancing.
+
+== Deploy and Expose a TCP application
+
+* Show that there is no mongodb service available:
++
+[source,bash]
+----
+mongo --host=localhost --port=27017
+# Should timeout
+----
+
+* Deploy the MongoDB database:
++
+[source,bash]
+----
+kubectl apply -f ./03-mongo/
+----
+
+* Check Traefik Dashboard until both TCP routers and TCP services are 100% success
+
+* Connect to the MongoDB database:
++
+[source,bash]
+----
+mongo --host=localhost --port=27017
+> show dbs
+...
+> exit
+----
+
+== Cleanup
+
+* Cleanup the Kubernetes cluster:
++
+[source,bash]
+----
+k3d delete --name=demo
+----
