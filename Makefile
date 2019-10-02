@@ -54,12 +54,12 @@ shell: $(DIST_DIR)
 	@docker-compose up --build --force-recreate -d wait
 	@docker-compose exec --user root wait sh
 
-$(DIST_DIR)/index.html: build
-
 pdf: $(DIST_DIR)/index.html
 	@docker run --rm -t \
 		-v $(DIST_DIR):/slides \
 		--user $(CURRENT_UID) \
+		--read-only=true \
+		--tmpfs=/tmp \
 		astefanutti/decktape:2.9 \
 		/slides/index.html \
 		/slides/slides.pdf \
