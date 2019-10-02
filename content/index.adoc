@@ -25,16 +25,15 @@ link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Dev
 
 // //// Speaker Slide and Company slide
 [{invert}]
-== Whoami 1/2
-
+== Whoami
 Jean-Baptiste Doumenjou
 
-* link:https://traefik.io/[Træfik,window=_blank]'s Señor Software Developer @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou,window=_blank]
-* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou,window=_blank]
+* 🇫🇷 Developer
+* Maintainer of link:https://traefik.io/[Træfik]
+* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou]
+* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou]
 
-image::jb.png[height=200]
+image::jbd.jpg[height=200]
 
 [{invert}]
 == Containous

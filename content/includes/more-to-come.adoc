@@ -7,11 +7,11 @@ image::word-cloud.png[width=900]
 [{invert}]
 = More with v2.0
 
-* New WebUI
-* New metrics
-* YAML (or TOML or CLI)
-* Advanced Load-Balancing: WRR, Canary, Mirroring
-* (Not done yet) UDP
+* New Helm Chart for v2.0
+* Advanced Load-Balancing with CRDs: Canary, Mirroring, StickySession, etc.
+** Available today with File and Docker providers
+* Example and Guides
+* UDP (WIP)
 
 [{invert}]
 == More info

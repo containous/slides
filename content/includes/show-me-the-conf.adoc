@@ -34,7 +34,7 @@ services:
 
 [source,yaml]
 ----
-# https://mycompany.org/jenkins -> http://jenkins:8080/jenkins
+# http://mycompany.org/jenkins -> http://jenkins:8080/jenkins
 jenkins:
     image: jenkins/jenkins:lts
     environment:
@@ -49,7 +49,7 @@ jenkins:
 
 [source,yaml]
 ----
-# https://mycompany.org/gitserver -> http://gitserver:3000/
+# http://mycompany.org/gitserver -> http://[container IP]:3000
 gitserver:
     image: gitea/gitea
     labels:
@@ -58,22 +58,22 @@ gitserver:
       - "traefik.http.routers.gitserver.middlewares=gitserver-stripprefix"
 ----
 
-== With 🐳: Websockets
-
-[source,yaml]
-----
-# https://webterminal.mycompany.org -> http://webterminal/
-webterminal:
-    image: tsl0922/ttyd
-    labels:
-      - "traefik.http.routers.devbox.rule=Host(`webterminal.mycompany.org`)"
-----
+//== With 🐳: Websockets
+//
+//[source,yaml]
+//----
+//# https://webterminal.mycompany.org -> http://webterminal/
+//webterminal:
+//    image: tsl0922/ttyd
+//    labels:
+//      - "traefik.http.routers.devbox.rule=Host(`webterminal.mycompany.org`)"
+//----
 
 
 
 == With File Configuration
 
-== Canaray releases
+== Canary releases
 [source,yaml]
 ----
 http:
@@ -84,7 +84,7 @@ http:
         - name: appv1
           weight: 3 # 75%
         - name: appv2
-          weight: 1 #25%
+          weight: 1 # 25%
     appv1:
       loadBalancer:
         servers:
