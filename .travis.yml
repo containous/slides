@@ -30,3 +30,12 @@ deploy:
     verbose: true
     on:
       tags: true
+  - provider: releases
+    api_key:
+      secure: $GITHUB_TOKEN
+    skip_cleanup: true
+    name: $TRAVIS_TAG
+    edge: true
+    release_notes_file: ".release-notes/tmp-notes-${TRAVIS_TAG}.md"
+    on:
+      tags: true
