@@ -11,7 +11,7 @@ DOCS_DIR="${CURRENT_DIR}/../docs"
 rm -rf "${DOCS_DIR}"
 if curl -sSLI --fail "${ARCHIVE_URL}"
 then
-    curl -sSLO "${ARCHIVE_URL}"
+    time curl -sSLO "${ARCHIVE_URL}"
     unzip -o "./${ZIP_FILE}"
     mv ./"$(basename "${REPOSITORY_BASE_URL}")"-${ZIP_FILE%%.*} "${DOCS_DIR}" # No ".zip" at the end
     rm -f "./${ZIP_FILE}"
@@ -28,4 +28,4 @@ mkdir -p "${DEPLOY_DIR}"
 # Generate QRCode and overwrite the default one
 make qrcode
 
-rsync -av ./dist/ "${DEPLOY_DIR}"
+time rsync -av ./dist/ "${DEPLOY_DIR}"
