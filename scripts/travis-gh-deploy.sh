@@ -9,13 +9,7 @@ echo "== Using git ref. ${TRAVIS_BRANCH}"
 
 # Rebuild the docs directory which will be uploaded to gh-pages
 rm -rf "${DOCS_DIR}"
-if git branch --remotes | grep "origin/${DEPLOY_BRANCH}"
-then
-    time git worktree add --force "${DOCS_DIR}" "${DEPLOY_BRANCH}"
-else
-    echo "== No gh-pages found, I assume this is the first time."
-    mkdir -p "${DOCS_DIR}"
-fi
+time git worktree add --force "${DOCS_DIR}" "${DEPLOY_BRANCH}"
 
 # If a tag triggered the build, then TRAVIS_BRANCH == TRAVIS_TAG
 DEPLOY_DIR="${DOCS_DIR}/${TRAVIS_BRANCH}"
