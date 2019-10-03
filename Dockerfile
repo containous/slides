@@ -1,6 +1,6 @@
 FROM node:11-alpine
 
-LABEL Maintainers="Damien DUPORTAL<damien.duportal@gmail.com>"
+LABEL Maintainers="Damien DUPORTAL<damien@containo.us>"
 
 # Install Global dependencies and gulp 4.x globally
 RUN apk add --no-cache \
