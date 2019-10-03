@@ -2,6 +2,11 @@
 services:
 - docker
 
+# From https://github.com/travis-ci/travis-ci/issues/5358#issuecomment-248915326
+before_install:
+  # Load cached docker images
+  - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
+
 script:
 - make all
 - make deploy
@@ -39,3 +44,14 @@ deploy:
     release_notes_file: ".release-notes/tmp-notes-${TRAVIS_TAG}.md"
     on:
       tags: true
+
+# From https://github.com/travis-ci/travis-ci/issues/5358#issuecomment-248915326
+before_cache:
+  - >
+    mkdir -p ${HOME}/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
+    | xargs -n 2 -t sh -c 'test -e ${HOME}/docker/$1.tar.gz || docker save ${0} | gzip -2 > ${HOME}/docker/${1}.tar.gz'
+
+# From https://github.com/travis-ci/travis-ci/issues/5358#issuecomment-248915326
+cache:
+  directories:
+    - $HOME/docker
