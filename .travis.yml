@@ -4,8 +4,6 @@ services:
 
 script:
 - make all
-
-before_deploy:
 - make deploy
 - cat .release-notes/template.md | envsubst > .release-notes/tmp-notes-${TRAVIS_TAG}.md
 
@@ -21,6 +19,7 @@ deploy:
     verbose: true
     on:
       all_branches: true
+      tags: false
       condition: $TRAVIS_BRANCH != ^gh-pages$
   - provider: pages
     local-dir: ./docs/
