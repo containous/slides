@@ -2,8 +2,7 @@ version: '2.2'
 
 # Reusable options
 x-slides-base: &slides-base
-  build: ./
-  image: slides-builder
+  image: dduportal/slider
   environment:
     - PRESENTATION_URL=${PRESENTATION_URL}
     - REPOSITORY_URL=${REPOSITORY_URL}
