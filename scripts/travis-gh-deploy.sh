@@ -23,6 +23,7 @@ fi
 # If a tag triggered the build, then TRAVIS_BRANCH == TRAVIS_TAG
 echo "== Using git ref. ${TRAVIS_BRANCH}"
 DEPLOY_DIR="${DOCS_DIR}/${TRAVIS_BRANCH}"
+mkdir -p "${DEPLOY_DIR}"
 
 # Generate QRCode and overwrite the default one
 make qrcode
