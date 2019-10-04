@@ -26,23 +26,26 @@ mkdir -p "${DEPLOY_DIR}"
 # Generate QRCode to ./dist/images/qrcode.png and overwrite the default one
 make qrcode
 
+# Get current branch dist dir to docs root
+rsync -av "${DIST_DIR}/" "${DEPLOY_DIR}"
+
 ### Factorize resources already existing
 # Factorization is done on filename: if you don't name your file correctly it will be overriden
 # (reason: if any image optim happens on branches, then the same image will be duplicated for nothing)
 for resource_dir in videos images fonts
 do
-    for resource in "${DIST_DIR}/${resource_dir}"/*
+    common_resource_dir="${DOCS_DIR}/${resource_dir}"
+    for resource in "${DEPLOY_DIR}/${resource_dir}"/*
     do
         resource_file="$(basename "${resource}")"
-        if [ -f "${DOCS_DIR}/${resource_dir}/${resource_file}" ]
+        if [ -f "${common_resource_dir}/${resource_file}" ]
         then
-            pushd "${DIST_DIR}/${resource_dir}"
+            # if we find a resource with the same name in the corresponding "common resource dir", we factorize by linking it
+            pushd "${DEPLOY_DIR}/${resource_dir}"
             rm -f "${resource_file}"
-            ln -s "${DOCS_DIR}/${resource_dir}/${resource_file}" "${resource_file}"
+            # We expect only 2 levels of directories!
+            ln -s "../../${resource_dir}/${resource_file}" "${resource_file}"
             popd
         fi
     done
 done
-
-
-rsync -av "${DIST_DIR}" "${DEPLOY_DIR}"
