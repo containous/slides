@@ -1,11 +1,15 @@
 #!/bin/bash
 
-set -eu
+set -eux
 
 CURRENT_DIR="$(cd "$(dirname "${0}")" && pwd -P)"
 DOCS_DIR="${CURRENT_DIR}/../docs"
 DEPLOY_BRANCH="gh-pages"
 DIST_DIR="${CURRENT_DIR}/../dist"
+
+# If a tag triggered the build, then TRAVIS_BRANCH == TRAVIS_TAG
+# We replace / by _ to avoid nested directories
+CURRENT_REFERENCE="$(echo "${TRAVIS_BRANCH}" | tr '/' '_')"
 
 echo "== Using git reference '${TRAVIS_BRANCH}'"
 
@@ -14,8 +18,7 @@ git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 git fetch --unshallow origin "${DEPLOY_BRANCH}" 2>/dev/null  || git fetch origin
 git worktree add -b "${DEPLOY_BRANCH}" "${DOCS_DIR}" origin/"${DEPLOY_BRANCH}" 2>/dev/null || git worktree add --force "${DOCS_DIR}" origin/"${DEPLOY_BRANCH}" 2>/dev/null
 
-# If a tag triggered the build, then TRAVIS_BRANCH == TRAVIS_TAG
-DEPLOY_DIR="${DOCS_DIR}/${TRAVIS_BRANCH}"
+DEPLOY_DIR="${DOCS_DIR}/${CURRENT_REFERENCE}"
 mkdir -p "${DEPLOY_DIR}"
 
 # TODO: update index.html
