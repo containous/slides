@@ -9,11 +9,12 @@ __
 
 * Provides extended functionality (Service Discovery, Load Balancing...) 
 * Centralized Place instead of having to reimplement across Services
-* ...
-
+* Provides abstraction layer for network functions
+* Traffic Control 
 
 == Challenges
 * Current solutions can be complex to understand
 * Ressource Hungry
-* ...
+* Slowness: Service meshes are an invasive and intricate technology
+* Lock-In 
  
