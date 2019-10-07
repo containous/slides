@@ -3,7 +3,7 @@
 
 image::maesh.png[width=600]
 
-== What is Maesh?
+= What is Maesh?
 
 [quote]
 __
