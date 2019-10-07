@@ -86,7 +86,7 @@ Check at <http://webapp.platform9.traefikee-demo.containous.cloud>: the 3 cities
 - Configure TraefikEE to report to the administration stack:
 
 ```shell
-traefikeectl deploy --clustername=k8s \
+traefikeectl deploy --clustername=kubernetes-days \
     --defaultentrypoints=http,https \
     --entryPoints='Name:http Address::80' \
     --entryPoints='Name:https Address::443 TLS' \
