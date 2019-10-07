@@ -7,7 +7,6 @@ services:
       - --providers.file
       - --providers.file.filename=/etc/traefik/dync_conf.yaml
       - --api
-      - --api.dashboard
       - --api.insecure
     ports:
       - "80:80"
