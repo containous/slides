@@ -1,0 +1,19 @@
+= What the hell is a service mesh?
+
+[quote]
+__
+A service mesh is a configurable network layer inside your cluster to handle network‑based communication among your applications. It ensures that this communication is fast, reliable and secure. 
+__
+
+== Benefits
+
+* Provides extended functionality (Service Discovery, Load Balancing...) 
+* Centralized Place instead of having to reimplement across Services
+* ...
+
+
+== Challenges
+* Current solutions can be complex to understand
+* Ressource Hungry
+* ...
+ 

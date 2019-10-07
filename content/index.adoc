@@ -1,17 +1,17 @@
 
 [%notitle]
-= Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+= Maesh Online Meetup - October 2018
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Look Ma’, a Dynamic Edge Proxy with HTTP, TCP and no Hands!
+Maesh Online Meetup - October 2018
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::maesh.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - Monday 09th of September 2019]
+link:https://zoom.us/webinar/register/WN_-WSsD0iMRxa_scOOoopTUQ?utm_campaign=Maesh%20Online%20Meetup,%20Oct%202019&utm_content=101869753&utm_medium=social&utm_source=linkedin&hss_channel=lcp-17887475[Maesh Online Meetup - October 2018]
 
 
 == How to use these slides?
@@ -26,15 +26,44 @@ link:https://www.meetup.com/fr-FR/DevOpsMalmo/events/263834695/[DevOps Malmö - 
 
 // //// Speaker Slide and Company slide
 
-== Whoami
+== Whoami 1/4
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+* Michael Matur
+
+** Devops & Developer @ link:https://containo.us/[Containous,window=_blank]
+* Blacksmith on link:https://traefik.io/[Traefik]
+* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur,window=_blank]
+* link:https://github.com/mmatur[icon:github[] mmatur,window=_blank]
+
+image::michael.jpg[height=200]
+
+== Whoami 2/4
+* Gerald Croes:
+** link:https://traefik.io/[Træfik,window=_blank]'s VP of Engineering 🧰 Advocate @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* link:https://twitter.com/geraldcroes[icon:twitter[] @geraldcroes,window=_blank]
+* link:https://github.com/geraldcroes[icon:github[] geraldcroes,window=_blank]
 
 image::damien.jpg[height=200]
+
+== Whoami 3/4
+* Daniel Tomcej:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/daniel_tomcej[icon:twitter[] @daniel_tomcej,window=_blank]
+* link:https://github.com/dtomcej[icon:github[] dtomcej,window=_blank]
+
+image::damien.jpg[height=200]
+
+== Whoami 4/4
+* Manuel Zapf:
+** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
+* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
+
+image::manuel.jpg[height=200]
+
 
 [{invert}]
 == Containous
@@ -57,6 +86,14 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
+include::./includes/service-mesh.adoc[]
+
+include::./includes/maesh.adoc[]
+
+include::./includes/demo.adoc[]
+
+include::./includes/the-end.adoc[]
+
 include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-project.adoc[]
@@ -73,9 +110,6 @@ include::./includes/more-to-come.adoc[]
 
 include::./includes/traefikee.adoc[]
 
-include::./includes/maesh.adoc[]
-
-include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
