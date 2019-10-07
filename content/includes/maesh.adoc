@@ -3,11 +3,6 @@
 
 image::maesh.png[width=600]
 
-
-= Traefik and West/East Traffic
-
-image::compass.svg[width=400]
-
 == What is Maesh?
 
 [quote]

@@ -1,13 +1,6 @@
 
 = That's All Folks!
 
-== We have
-
-[.title]
-stickers!
-
-image::stickers.jpg[background, size=cover]
-
 [{invert}]
 
 == We are hiring!
