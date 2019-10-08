@@ -99,10 +99,6 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
-
-link:https://github.com/dduportal[icon:github[] dduportal]
-
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
