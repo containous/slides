@@ -29,3 +29,6 @@ __
 image::before-maesh-graphic.png[width=500,float=left]
 
 image::after-maesh-graphic.png[width=500,float=right]
+
+== Communication Flow
+image::maesh-arch-detailled.svg[width=500,float=left]
