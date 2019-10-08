@@ -1,0 +1,131 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grafana-core
+  namespace: monitoring
+  labels:
+    app: grafana
+    component: core
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grafana
+        component: core
+    spec:
+      securityContext:
+        runAsUser: 472
+        fsGroup: 472
+      containers:
+      - image: grafana/grafana:6.0.0
+        name: grafana-core
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        # env:
+        #   - name: GF_PATHS_CONFIG
+        #     value: /var/grafana/grafana.ini
+        readinessProbe:
+          httpGet:
+            path: /login
+            port: 3000
+        volumeMounts:
+        - name: monitoring-storage
+          mountPath: /var/lib/grafana
+        - name: grafana-dashboard
+          mountPath: /var/lib/grafana/dashboards
+        - name: grafana-config
+          mountPath: /etc/grafana
+          readOnly: true
+      volumes:
+      - name: monitoring-storage
+        persistentVolumeClaim:
+          claimName: monitoring-storage
+      - name: grafana-dashboard
+        configMap:
+          name: grafana-dashboard
+      - name: grafana-config
+        configMap:
+          name: grafana-config
+          items:
+          - key: grafana.ini
+            path: grafana.ini
+          - key: datasources.yaml
+            path: provisioning/datasources/datasources.yaml
+          - key: dashboards.yaml
+            path: provisioning/dashboards/dashboards.yaml
+
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: grafana-config
+  namespace: monitoring
+data:
+  grafana.ini: |-
+    instance_name = containous-grafana
+
+    [auth]
+    disable_login_form = true
+
+    [auth.anonymous]
+    enabled = true
+    org_role = Admin
+
+    [auth.basic]
+    enabled = false
+
+    [analytics]
+    check_for_updates = false
+  datasources.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: prometheus
+      type: prometheus
+      orgId: 1
+      url: http://prometheus.monitoring.svc.cluster.local:9090
+      isDefault: true
+      access: proxy
+      jsonData:
+        timeInterval: "5s"
+      version: 1
+      editable: true
+
+  dashboards.yaml: |-
+    apiVersion: 1
+    providers:
+    - name: 'default'
+      orgId: 1
+      folder: ''
+      type: file
+      disableDeletion: true
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards
+      
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: grafana
+    component: core
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+  selector:
+    app: grafana
+    component: core
+
+

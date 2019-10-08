@@ -1,0 +1,49 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: petclinic-v2
+  namespace: petclinic
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: petclinic
+        version: v2
+    spec:
+      serviceAccountName: client
+      containers:
+      - name: petclinic-v2
+        image: mmatur/traefik:petclinic-v2
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
+            name: http
+        args:
+          - java
+          - -jar
+          - -Dspring.datasource.url=jdbc:mysql://mysql.mysql.svc.cluster.local/petclinic
+          - -Dspring.datasource.username=root
+          - -Dspring.datasource.password=petclinic
+          # - -Dspring.datasource.initialization-mode=always
+          - -Dspring.profiles.active=mysql
+          - /app/app.jar
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic-v2
+  namespace: petclinic
+  labels:
+    app: petclinic
+    version: v2
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    name: petclinic
+  selector:
+    app: petclinic
+    version: v2

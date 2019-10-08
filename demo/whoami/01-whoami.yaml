@@ -1,0 +1,89 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: whoami
+  namespace: whoami
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      serviceAccount: whoami-server
+      containers:
+      - name: whoami
+        image: containous/whoami:v1.0.1
+        imagePullPolicy: IfNotPresent
+
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: whoami-tcp
+  namespace: whoami
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: whoami-tcp
+    spec:
+      serviceAccount: whoami-server
+      containers:
+      - name: whoami-tcp
+        image: containous/whoamitcp:latest
+        imagePullPolicy: IfNotPresent
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami
+  namespace: whoami
+  labels:
+    app: whoami
+  annotations:
+    maesh.containo.us/traffic-type: "http"
+    maesh.containo.us/retry-attempts: "2"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: whoami
+  selector:
+    app: whoami
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-tcp
+  namespace: whoami
+  labels:
+    app: whoami-tcp
+  annotations:
+    maesh.containo.us/traffic-type: "tcp"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      name: whoami-tcp
+  selector:
+    app: whoami-tcp
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: whoami-client
+  namespace: whoami
+spec:
+  serviceAccountName: whoami-client
+  containers:
+    - name: whoami-client
+      image: giantswarm/tiny-tools:3.9
+      command:
+      - "sleep"
+      - "3600"

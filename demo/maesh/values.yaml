@@ -1,0 +1,16 @@
+controller:
+  ignoreNamespaces: "local-path-storage,traefikee,traefik,webapp,monitoring,jaeger,hotrod,apps"
+
+smi: true
+
+tracing:
+  deploy: false
+  jaeger:
+    enabled: true
+    localagenthostport: jaeger-agent.jaeger.svc.cluster.local:6831
+    samplingserverurl: http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling
+
+metrics:
+  deploy: false
+  prometheus:
+    enabled: true
