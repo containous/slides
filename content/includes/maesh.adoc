@@ -7,7 +7,7 @@ image::maesh.png[width=600]
 
 [quote]
 __
-Maesh is a lightweight, easy to configure, and non-invasive service mesh that allows visibility and management of the traffic flows inside any Kubernetes cluster.
+Maesh is a lightweight, easy to configure, and non-invasive service mesh that allows visibility and management of traffic flow inside any Kubernetes cluster.
 __
 
 == More on Maesh

@@ -48,7 +48,7 @@ image::gerald.jpg[height=200]
 
 == Whoami 3/4
 * Daniel Tomcej:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+** link:https://traefik.io/[Træfik,window=_blank] Developer @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/daniel_tomcej[icon:twitter[] @daniel_tomcej,window=_blank]
 * link:https://github.com/dtomcej[icon:github[] dtomcej,window=_blank]

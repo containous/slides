@@ -1,4 +1,4 @@
-= What the hell is a service mesh?
+= What the heck is a service mesh?
 
 [quote]
 __
@@ -7,14 +7,14 @@ __
 
 == Benefits
 
-* Provides extended functionality (Service Discovery, Load Balancing...) 
-* Centralized Place instead of having to reimplement across Services
+* Provides extended functionality (Service Discovery, Load Balancing...)
+* Centralized instead of having to reimplement features across Services
 * Provides abstraction layer for network functions
-* Traffic Control 
+* Traffic Control
 
 == Challenges
 * Current solutions can be complex to understand
-* Ressource Hungry
+* Resource Intensive
 * Slowness: Service meshes are an invasive and intricate technology
-* Lock-In 
+* Lock-In
  
