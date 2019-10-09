@@ -45,21 +45,3 @@ spec:
     name: petclinic
   selector:
     app: petclinic
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: petclinic-v1
-  namespace: petclinic
-  labels:
-    app: petclinic
-    version: v1
-spec:
-  type: ClusterIP
-  ports:
-  - port: 8080
-    name: petclinic
-  selector:
-    app: petclinic
-    version: v1

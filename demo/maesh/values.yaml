@@ -1,7 +1,7 @@
 controller:
   ignoreNamespaces: "local-path-storage,traefikee,traefik,webapp,monitoring,jaeger,hotrod,apps"
 
-smi: true
+smi: false
 
 tracing:
   deploy: false

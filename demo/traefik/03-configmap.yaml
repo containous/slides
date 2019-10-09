@@ -25,3 +25,8 @@ data:
       insecure = true
     [metrics]
       [metrics.prometheus]
+    [tracing]
+      [tracing.jaeger]
+        samplingServerURL = "http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling"
+        localAgentHostPort = "jaeger-agent.jaeger.svc.cluster.local:6831"
+

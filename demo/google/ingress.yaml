@@ -2,15 +2,14 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: petclinic
-  namespace: maesh
+  name: frontend
 spec:
   entryPoints:
     - http
   routes:
-    - match: Host(`petclinic.docker.localhost`)
+    - match: Host(`frontend.docker.localhost`)
       kind: Rule
       services:
-        - name: maesh-petclinic-petclinic
-          port: 8080
+        - name: frontend
+          port: 80
 
