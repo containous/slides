@@ -29,4 +29,7 @@ data:
       [tracing.jaeger]
         samplingServerURL = "http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling"
         localAgentHostPort = "jaeger-agent.jaeger.svc.cluster.local:6831"
+        traceContextHeaderName = "grpc-trace-bin"
+        # [tracing.jaeger.collector]
+        #   endpoint = "http:/jaeger-agent.jaeger.svc.cluster.local:14268/api/traces?format=jaeger.thrift"
 
