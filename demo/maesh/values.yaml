@@ -1,5 +1,6 @@
-image:
-  tag: v2.0
+mesh:
+  image:
+    name: traefik:v2.0
 controller:
   ignoreNamespaces:
     - local-path-storage
@@ -16,7 +17,7 @@ smi: false
 tracing:
   deploy: false
   jaeger:
-    enabled: false
+    enabled: true
     localagenthostport: jaeger-agent.jaeger.svc.cluster.local:6831
     samplingserverurl: http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling
 

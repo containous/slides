@@ -61,6 +61,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
+  annotations:
+    maesh.containo.us/scheme: h2c
 spec:
   type: ClusterIP
   selector:
@@ -129,6 +131,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  annotations:
+    maesh.containo.us/scheme: h2c
 spec:
   type: ClusterIP
   selector:
@@ -276,19 +280,7 @@ spec:
   - name: http
     port: 80
     targetPort: 8080
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: frontend-external
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     app: frontend
-#   ports:
-#   - name: http
-#     port: 80
-#     targetPort: 8080
+
 ---
 apiVersion: apps/v1
 kind: Deployment
