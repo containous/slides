@@ -26,27 +26,18 @@ link:https://zoom.us/webinar/register/WN_-WSsD0iMRxa_scOOoopTUQ?utm_campaign=Mae
 
 // //// Speaker Slide and Company slide
 
-== Whoami 1/4
+== Whoami 1/3
 
 * Michael Matur
 
-** Devops & Developer @ link:https://containo.us/[Containous,window=_blank]
+** Devops & Solution Architect @ link:https://containo.us/[Containous,window=_blank]
 * Blacksmith on link:https://traefik.io/[Traefik]
 * link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur,window=_blank]
 * link:https://github.com/mmatur[icon:github[] mmatur,window=_blank]
 
 image::michael.jpg[height=200]
 
-== Whoami 2/4
-* Gerald Croes:
-** link:https://traefik.io/[Træfik,window=_blank]'s VP of Engineering 🧰 Advocate @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/geraldcroes[icon:twitter[] @geraldcroes,window=_blank]
-* link:https://github.com/geraldcroes[icon:github[] geraldcroes,window=_blank]
-
-image::gerald.jpg[height=200]
-
-== Whoami 3/4
+== Whoami 2/3
 * Daniel Tomcej:
 ** link:https://traefik.io/[Træfik,window=_blank] Developer @
 link:https://containo.us/[Containous,window=_blank]
@@ -55,7 +46,7 @@ link:https://containo.us/[Containous,window=_blank]
 
 image::daniel.jpg[height=200]
 
-== Whoami 4/4
+== Whoami 3/3
 * Manuel Zapf:
 ** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
 link:https://containo.us/[Containous,window=_blank]
