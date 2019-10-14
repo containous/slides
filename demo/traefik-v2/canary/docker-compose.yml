@@ -1,8 +1,8 @@
-version: '3'
+version: '3.5'
 
 services:
-  reverse-proxy:
-    image: traefik:v2.0
+  rproxy:
+    image: traefik:v2.0.2
     command:
       - --providers.file
       - --providers.file.filename=/etc/traefik/dync_conf.yaml
@@ -14,14 +14,32 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./conf:/etc/traefik/
+    networks:
+      net:
+        aliases:
+          - traefik
 
   service1:
     image: containous/whoami
     restart: always
-    ports:
-      - "8180:80"
+    networks:
+      net:
+        aliases:
+          - whoami
+
   service2:
     image: nginx
     restart: always
-    ports:
-      - "8181:80"
+    networks:
+      net:
+        aliases:
+          - nginx
+
+
+networks:
+  net:
+    name: "net"
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.1.0/27

@@ -27,6 +27,7 @@ mongo --host mongo1.local --port 27017 --ssl --sslCAFile=../certs/minica.pem --s
 > show dbs
 > use meetup
 > db.movie.insert({"name":"Traefik-Awesome"})
+> db.movie.find()
 > show dbs
 > exit
 ```
