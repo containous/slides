@@ -1,10 +1,5 @@
 
 [{invert}]
-== We Also Missed Talking About ...
-
-image::word-cloud.png[width=900]
-
-[{invert}]
 = More with v2.0
 
 * New Helm Chart for v2.0
@@ -14,10 +9,12 @@ image::word-cloud.png[width=900]
 * UDP (WIP)
 
 [{invert}]
-== More info
+== We Also Missed Talking About ...
 
-link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
+image::word-cloud.png[width=900]
 
 [{invert}]
-== !
-image::to-be-continued.jpg[background, size=cover]
+== More info
+
+* link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
+* link:https://community.containo.us/[community.containo.us]
