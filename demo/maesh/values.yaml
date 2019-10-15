@@ -4,7 +4,6 @@ mesh:
 controller:
   ignoreNamespaces:
     - local-path-storage
-    - traefikee
     - traefik
     - webapp
     - monitoring

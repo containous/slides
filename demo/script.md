@@ -24,7 +24,7 @@ kubectl apply -f traefik/
 
 Open Traefik v2 dashboard at <http://dashboard.docker.localhost>
 
-### Install Maesh with SMI
+### Install Maesh
 
 - Now we add our helm chart for maesh:
 
