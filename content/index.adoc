@@ -1,17 +1,17 @@
 
 [%notitle]
-= Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
+= DevOps Enterprise Transformation: Easy Routing for Your Applications
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
+DevOps Enterprise Transformation: Easy Routing for Your Applications
 
-image::traefik.logo.png["Traefik's Logo",height=300]
+image::containous-logo.png[" Containou's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium Kubernetes Meetup - October 2019 @ Louvain]
+link:https://www.credit-suisse.com/microsites/events/devops-expo-singapore/home/agenda.html[Credit Suise Devops Day - October 2019 @ Singapore]
 
 == How to use these slides?
 
@@ -27,13 +27,13 @@ link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium K
 
 == Whoami
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+* Manuel Zapf:
+** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal,window=_blank]
 
-image::damien.jpg[height=200]
+image::manuel.jpg[height=200]
 
 [{invert}]
 == Containous

@@ -13,6 +13,12 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * Created in 2015, 4Y 🎂
 * Current stable branch: `v2.0`
 
+== Deployment
+
+* Single Binary
+* Docker Image
+* Runs nearly everywhere, VM's, Cloud, Hybrid...
+
 [%notitle]
 == Back To Traefik 2.0
 
