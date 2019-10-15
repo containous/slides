@@ -4,6 +4,10 @@
 
 image::cluster-traefikee.png[]
 
+[{invert}]
+== !
+
+image::traefikee-architecture-gray-bg.png[background, size=cover]
 
 [state=invert,background-color="rgb(249,248,248)"]
 == !
@@ -29,11 +33,6 @@ Your browser does not support the video tag.
 </video>
 ++++
 
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[background, size=cover]
-
 == As Simple As Traefik
 
 * Install it:
@@ -57,6 +56,10 @@ traefikeectl deploy \
     --acme.tlsChallenge
     ...
 ----
+
+= Demo 2
+
+image::demo.jpg[]
 
 [{invert}]
 == Free Trial

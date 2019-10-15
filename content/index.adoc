@@ -11,7 +11,7 @@ DevOps Enterprise Transformation: Easy Routing for Your Applications
 
 image::containous-logo.png[" Containou's Logo",height=300]
 
-link:https://www.credit-suisse.com/microsites/events/devops-expo-singapore/home/agenda.html[Credit Suise Devops Day - October 2019 @ Singapore]
+link:https://www.credit-suisse.com/microsites/events/devops-expo-singapore/home/agenda.html[Credit Suisse Devops Day - October 2019 @ Singapore]
 
 == How to use these slides?
 
@@ -27,13 +27,13 @@ link:https://www.credit-suisse.com/microsites/events/devops-expo-singapore/home/
 
 == Whoami
 
-* Manuel Zapf:
-** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect 🔨 @
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal,window=_blank]
 * link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal,window=_blank]
 
-image::manuel.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 == Containous
