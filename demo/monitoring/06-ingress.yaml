@@ -8,7 +8,6 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   entryPoints:
-    - http
     - https
   routes:
     - match: Host(`grafana.docker.localhost`)
@@ -29,7 +28,6 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   entryPoints:
-    - http
     - https
   routes:
     - match: Host(`prometheus.docker.localhost`)

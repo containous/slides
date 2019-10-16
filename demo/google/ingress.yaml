@@ -5,7 +5,7 @@ metadata:
   name: frontend
 spec:
   entryPoints:
-    - http
+    - https
   routes:
     - match: Host(`frontend.docker.localhost`)
       kind: Rule

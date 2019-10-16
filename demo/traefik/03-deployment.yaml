@@ -36,7 +36,7 @@ spec:
             - --tracing.jaeger.samplingServerURL=http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling
             - --tracing.jaeger.localAgentHostPort=jaeger-agent.jaeger.svc.cluster.local:6831
             - --certificatesresolvers.default.acme.tlschallenge
-            - --certificatesresolvers.default.acme.email=michael@containo.us
+            - --certificatesresolvers.default.acme.email=your@email.com
             - --certificatesresolvers.default.acme.storage=acme.json
           ports:
             - name: http

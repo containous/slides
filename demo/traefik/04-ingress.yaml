@@ -2,11 +2,29 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: dashboard
+  name: http-catchall
   namespace: traefik
 spec:
   entryPoints:
     - http
+  routes:
+    - match: HostRegexp(`{host:.+}`)
+      kind: Rule
+      services:
+        - name: traefik
+          port: 8080
+      middlewares:
+        - name: redirect
+          namespace: default
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: traefik
+spec:
+  entryPoints:
     - https
   routes:
     - match: Host(`dashboard.docker.localhost`)
@@ -16,3 +34,13 @@ spec:
           port: 8080
   tls:
     certResolver: default
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect
+  namespace: default
+spec:
+  redirectScheme:
+    scheme: https

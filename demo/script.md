@@ -22,7 +22,7 @@ kubectl apply -f jaeger/
 kubectl apply -f traefik/
 ```
 
-Open Traefik v2 dashboard at <http://dashboard.docker.localhost>
+Open Traefik v2 dashboard at <https://dashboard.docker.localhost>
 
 ### Install Maesh
 
@@ -47,9 +47,27 @@ helm install --name=maesh --namespace=maesh maesh/maesh --values=./maesh/values.
 
 ### Install custom applications
 
-- We may need to build the image if not already built:
+- Dema based on https://github.com/GoogleCloudPlatform/microservices-demo
 
 ```shell
-kubectl apply -f google/
+kubectl apply -f google/ad.yaml
+kubectl apply -f google/checkout.yaml
+kubectl apply -f google/currency.yaml
+kubectl apply -f google/email.yaml
+kubectl apply -f google/frontend.yaml
+kubectl apply -f google/payment.yaml
+kubectl apply -f google/productcatalog.yaml
+kubectl apply -f google/recommendation.yaml
+kubectl apply -f google/shipping.yaml
+
+kubectl apply -f google/ingress.yaml
+
+kubectl apply -f google/redis.yaml
+kubectl apply -f google/cart.yaml
+
+kubectl apply -f google/load.yaml
 ```
 
+- Dashboard avaialble at https://grafana.docker.localhost
+
+- Application available at https://frontent.docker.localhost

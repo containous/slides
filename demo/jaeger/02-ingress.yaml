@@ -8,7 +8,6 @@ metadata:
     kubernetes.io/ingress.class: 'traefik'
 spec:
   entryPoints:
-    - http
     - https
   routes:
     - match: Host(`jaeger.docker.localhost`)
