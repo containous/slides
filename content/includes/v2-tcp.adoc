@@ -38,5 +38,7 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Co
 
 == Demo 5 - Canary Release of a WebApp
 
+image::canary.png[width=500]
+
 [.small]
 link:{repositoryUrl}/demo/traefik-v2/canary[Demo Code on icon:github[]]
