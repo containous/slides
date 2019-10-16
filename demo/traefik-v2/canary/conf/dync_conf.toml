@@ -14,9 +14,9 @@
   [http.services.appv1]
     [http.services.appv1.loadBalancer]
       [[http.services.appv1.loadBalancer.servers]]
-        url = "http://whoami"
+        url = "http://webapp1"
   [http.services.appv2]
     [http.services.appv2.loadBalancer]
       [[http.services.appv2.loadBalancer.servers]]
-        url = "http://nginx"
+        url = "http://webapp2"
 

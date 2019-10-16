@@ -14,8 +14,8 @@ http:
     appv1:
       loadBalancer:
         servers:
-          - url: 'http://whoami'
+          - url: 'http://webapp1'
     appv2:
       loadBalancer:
         servers:
-          - url: 'http://nginx'
+          - url: 'http://webapp2'

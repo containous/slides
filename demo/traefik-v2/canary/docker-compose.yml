@@ -25,7 +25,7 @@ services:
     networks:
       net:
         aliases:
-          - whoami
+          - webapp1
 
   service2:
     image: nginx
@@ -33,7 +33,7 @@ services:
     networks:
       net:
         aliases:
-          - nginx
+          - webapp2
 
 
 networks:
