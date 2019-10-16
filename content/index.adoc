@@ -81,10 +81,7 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou,window=_blank]
-* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou,window=_blank]
-
-image::qrcode.png["QRCode to this presentation",height=150]
+image::qrcode.png["QRCode to this presentation",height=400]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]

@@ -16,5 +16,6 @@ image::word-cloud.png[width=900]
 [{invert}]
 == More info
 
-* link:http://bit.ly/traefik-v2[bit.ly/traefik-v2]
-* link:https://community.containo.us/[community.containo.us]
+* link:http://bit.ly/traefik-v2[Back to Traefik 2.0]
+* link:https://community.containo.us/[Community Forum]
+* link:https://docs.traefik.io/v2.0/[Official Documentation]
