@@ -1,21 +1,4 @@
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: grafana
-  namespace: monitoring
-  annotations:
-    kubernetes.io/ingress.class: 'traefik'
-spec:
-  rules:
-  - host: grafana.docker.localhost
-    http:
-      paths:
-      - backend:
-          serviceName: grafana
-          servicePort: 3000
-
----
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -33,6 +16,8 @@ spec:
       services:
         - name: grafana
           port: 3000
+  tls:
+    certResolver: default
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -52,3 +37,5 @@ spec:
       services:
         - name: prometheus
           port: 9090
+  tls:
+    certResolver: default

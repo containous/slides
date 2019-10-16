@@ -238,8 +238,8 @@ spec:
           - name: PORT
             value: "8080"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
-            value: "productcatalogservice:3550"
-            # value: "productcatalogservice.default.maesh:3550"
+            # value: "productcatalogservice:3550"
+            value: "productcatalogservice.default.maesh:3550"
           - name: CURRENCY_SERVICE_ADDR
             #value: "currencyservice:7000"
             value: "currencyservice.default.maesh:7000"
@@ -247,8 +247,8 @@ spec:
             #value: "cartservice:7070"
             value: "cartservice.default.maesh:7070"
           - name: RECOMMENDATION_SERVICE_ADDR
-            value: "recommendationservice:8080"
-            # value: "recommendationservice.default.maesh:8080"
+            # value: "recommendationservice:8080"
+            value: "recommendationservice.default.maesh:8080"
           - name: SHIPPING_SERVICE_ADDR
             #value: "shippingservice:50051"
             value: "shippingservice.default.maesh:50051"

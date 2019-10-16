@@ -82,7 +82,7 @@ spec:
         runAsNonRoot: true
       containers:
       - name: prometheus
-        image: prom/prometheus:v2.7.2
+        image: prom/prometheus:v2.13.0
         args:
           - '--storage.tsdb.retention=60d'
           - '--storage.tsdb.path="/prometheus/data/"'
@@ -105,27 +105,27 @@ spec:
           mountPath: /prometheus/rules
         - name: prometheus-storage
           mountPath: /prometheus
-      - name: configmap-reload
-        image: jimmidyson/configmap-reload:v0.2.2
-        imagePullPolicy: IfNotPresent
-        args:
-          - --volume-dir=/etc/config
-          - --volume-dir=/etc/rules
-          - --webhook-url=http://localhost:9090/-/reload
-        volumeMounts:
-          - name: config-volume
-            mountPath: /etc/config
-            readOnly: true
-          - name: rules-volume
-            mountPath: /etc/rules
-            readOnly: true
-        resources:
-          limits:
-            cpu: 10m
-            memory: 10Mi
-          requests:
-            cpu: 10m
-            memory: 10Mi
+      # - name: configmap-reload
+      #   image: jimmidyson/configmap-reload:v0.2.2
+      #   imagePullPolicy: IfNotPresent
+      #   args:
+      #     - --volume-dir=/etc/config
+      #     - --volume-dir=/etc/rules
+      #     - --webhook-url=http://localhost:9090/-/reload
+      #   volumeMounts:
+      #     - name: config-volume
+      #       mountPath: /etc/config
+      #       readOnly: true
+      #     - name: rules-volume
+      #       mountPath: /etc/rules
+      #       readOnly: true
+      #   resources:
+      #     limits:
+      #       cpu: 10m
+      #       memory: 10Mi
+      #     requests:
+      #       cpu: 10m
+      #       memory: 10Mi
       volumes:
       - name: prometheus-storage
         persistentVolumeClaim:

@@ -1,21 +1,4 @@
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: jaeger
-  namespace: jaeger
-  annotations:
-    kubernetes.io/ingress.class: 'traefik'
-spec:
-  rules:
-  - host: jaeger.docker.localhost
-    http:
-      paths:
-      - backend:
-          serviceName: jaeger-query
-          servicePort: 16686
-
----
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -33,3 +16,5 @@ spec:
       services:
         - name: jaeger-query
           port: 16686
+  tls:
+    certResolver: default
