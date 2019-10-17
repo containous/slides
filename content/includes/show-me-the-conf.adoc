@@ -2,11 +2,6 @@
 = Show Me the Configuration!
 
 [{invert}]
-== Traefik with 🐳
-
-image::quickstart-diagram.png["Quickstart Diagram",width=800]
-
-[{invert}]
 == Example With 🐳
 
 [source,yaml]

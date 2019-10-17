@@ -28,10 +28,11 @@ Run K3s script
 
 ```shell
 ./scripts/run.sh
-``` 
-
-Connect kubectl with local cluster
 ```
+
+Connect kubectl with local cluster:
+
+```shell
 KUBECONFIG="$(k3d get-kubeconfig --name="maesh")"
 export KUBECONFIG
 ```
@@ -51,7 +52,7 @@ traefikeectl install \
   --kubernetes.helmvaluespath=./traefikee/values.yaml
 ```
 
-### Install pebble, monitoring, tracing, whoami, hotrod 
+### Install pebble, monitoring, tracing, whoami, hotrod
 
 - Connect to the live cluster again
 
@@ -73,7 +74,6 @@ kubectl apply -f webapp
 
 Available at <http://webapp.platform9.traefikee-demo.containous.cloud>
 
-
 - Now we deploy the "backend cities":
 
 ```shell
@@ -81,7 +81,6 @@ kubectl apply -f webapp/cities
 ```
 
 Check at <http://webapp.platform9.traefikee-demo.containous.cloud>: the 3 cities appear on the bottom + NYC has 2 replicas.
-```
 
 - Configure TraefikEE to report to the administration stack:
 

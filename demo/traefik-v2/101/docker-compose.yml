@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.0
+    ports:
+      - "80:80"
+      - "27017:27017"
+    command:
+      - --providers.docker=true
+      - --api.dashboard=true
+      - --entrypoints.web.address=:80
+      - --entrypoints.mongo.address=:27017
+    labels:
+      - traefik.http.routers.traefik-dashboard.rule=Host(`traefik.localhost`)
+      - traefik.http.routers.traefik-dashboard.service=api@internal
+      - traefik.http.routers.traefik-dashboard.entrypoints=web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+  
+  webapp:
+    image: dduportal/webapp-traefik:latest
+    labels:
+      - traefik.http.routers.webapp.rule=Host(`webapp.localhost`)
+      - traefik.http.routers.webapp.entrypoints=web
+  
+  mongo:
+    image: mongo:4.0
+    labels:
+      - traefik.tcp.routers.mongo.rule=HostSNI(`*`)
+      - traefik.tcp.routers.mongo.entrypoints=mongo
