@@ -1,12 +1,11 @@
 
 [{invert}]
-= More with v2.0
+= What Next
 
-* New Helm Chart for v2.0
-* Advanced Load-Balancing with CRDs: Canary, Mirroring, StickySession, etc.
-** Available today with File and Docker providers
-* Example and Guides
-* UDP (WIP)
+* KV Store
+* UDP
+* Canary and Mirroring With K8s CRD
+* And More...
 
 [{invert}]
 == We Also Missed Talking About ...

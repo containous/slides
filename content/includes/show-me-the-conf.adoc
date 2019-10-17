@@ -40,7 +40,7 @@ jenkins:
     environment:
       - JENKINS_OPTS=--prefix=/jenkins
     labels:
-      - "traefik.http.services.jenkins.LoadBalancer.server.Port=8080" # Because 50000 is also exposed
+      - "traefik.http.services.jenkins.loadBalancer.server.port=8080" # Because 50000 is also exposed
       - "traefik.http.routers.jenkins.rule=Host(`mycompany.org`) && PathPrefix(`/jenkins`)"
       - "traefik.http.routers.jenkins.service=jenkins"
 ----

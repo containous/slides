@@ -13,16 +13,6 @@ image::traefik.logo.png["Traefik's Logo",height=300]
 
 link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Devops Meetup - 2019]
 
-== How to use these slides?
-
-* *Browse the slides:* Use the arrows
-** Change chapter: Left/Right arrows
-** Next or previous slide: Top and bottom arrows
-
-* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
-
-* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
-
 // //// Speaker Slide and Company slide
 [{invert}]
 == Whoami
