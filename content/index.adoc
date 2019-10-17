@@ -30,8 +30,8 @@ link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium K
 * Damien DUPORTAL:
 ** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal,window=_blank]
 
 image::damien.jpg[height=200]
 
@@ -79,13 +79,13 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
+link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal]
 
-link:https://github.com/dduportal[icon:github[] dduportal]
+link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
+- link:{repositoryUrl}[Source on +++<i class="fab fa-github"></i>+++: {repositoryUrl}]

@@ -10,7 +10,7 @@ image::demo.jpg[]
 image::demo3-v2-tcp-sni.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on +++<i class="fab fa-github"></i>+++]
 
 [{invert}]
 == Demo 1 - Configuration
@@ -23,6 +23,6 @@ image::demo3-v2-config.png[]
 image::demo4-v2-tcp-http.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on +++<i class="fab fa-github"></i>+++]
 
 == Demo 3 - Canaray Release of a WebApp
