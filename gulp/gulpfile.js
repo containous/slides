@@ -47,9 +47,7 @@ gulp.task('build', gulp.series(
         'images',
         'videos',
         'favicon',
-        'prepare:revealjs',
-        'prepare:highlightjs',
-        'prepare:fontawesome',
+        'prepare:dependencies',
         'styles'
     ),
     'html'

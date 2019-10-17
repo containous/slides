@@ -11,10 +11,11 @@ module.exports = function (gulp, plugins, current_config) {
                         safe: 'unsafe',
                         backend: 'revealjs',
                         attributes: {
-                            'revealjsdir': 'node_modules/reveal.js@',
                             'docinfosPath': current_config.docinfosPath,
                             'presentationUrl': process.env.PRESENTATION_URL,
                             'repositoryUrl': process.env.REPOSITORY_URL,
+                            'revealjs_plugins': current_config.scriptsSrcPath + '/revealjs-plugins/list.js',
+                            'revealjs_plugins_configuration': current_config.scriptsSrcPath + '/revealjs-plugins/conf.js'
                         },
                         to_dir: current_config.distDir,
                     }
