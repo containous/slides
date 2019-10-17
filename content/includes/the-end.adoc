@@ -1,19 +1,19 @@
 
 = That's All Folks!
 
-== We have
+// == We have
 
-[.title]
-stickers!
+// [.title]
+// stickers!
 
-image::stickers.jpg[background, size=cover]
+// image::stickers.jpg[background, size=cover]
 
-[{invert}]
+// [{invert}]
 
-== We are hiring!
+// == We are hiring!
 
-image::containous-logo.png["Containous"]
+// image::containous-logo.png["Containous"]
 
-```
-docker run -it containous/jobs
-```
+// ```
+// docker run -it containous/jobs
+// ```

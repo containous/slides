@@ -13,16 +13,6 @@ image::containous-logo.png[" Containou's Logo",height=300]
 
 link:https://www.credit-suisse.com/microsites/events/devops-expo-singapore/home/agenda.html[Credit Suisse Devops Day - October 2019 @ Singapore]
 
-== How to use these slides?
-
-* *Browse the slides:* Use the arrows
-** Change chapter: Left/Right arrows
-** Next or previous slide: Top and bottom arrows
-
-* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
-
-* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
-
 // //// Speaker Slide and Company slide
 
 == Whoami
@@ -66,7 +56,7 @@ include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/demo.adoc[]
 
-include::./includes/more-to-come.adoc[]
+include::./includes/next.adoc[]
 
 include::./includes/traefikee.adoc[]
 

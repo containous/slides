@@ -1,0 +1,24 @@
+
+[{invert}]
+= What's Next?
+
+* KV Store
+* UDP
+* Canary and Mirroring With K8s CRD
+* And More...
+
+
+[{invert}]
+== Where to Start?
+
+* link:https://community.containo.us/[Community Forum]
+* link:https://docs.traefik.io/v2.0/[Official Documentation]
+* Blog Posts:
+** link:http://bit.ly/traefik-v2[Back to Traefik 2.0]
+** link:https://blog.containo.us/traefik-2-0-6531ec5196c2[Traefik 2.0: The Wait Is Over!]
+** link:https://blog.containo.us/traefik-2-0-docker-101-fc2893944b9d[Traefik 2.0 & Docker 101]
+
+[{invert}]
+== We Also Missed Talking About ...
+
+image::word-cloud.png[width=900]

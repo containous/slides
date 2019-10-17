@@ -1,13 +1,8 @@
 
 [{invert}]
-= Traefik also comes in Herd
+= Traefik Enterprise Edition
 
 image::cluster-traefikee.png[]
-
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[background, size=cover]
 
 [state=invert,background-color="rgb(249,248,248)"]
 == !
@@ -33,6 +28,11 @@ Your browser does not support the video tag.
 </video>
 ++++
 
+[{invert}]
+== TraefikEE Architecture
+
+image::traefikee-architecture-gray-bg.png[width=1000]
+
 == As Simple As Traefik
 
 * Install it:
@@ -57,7 +57,7 @@ traefikeectl deploy \
     ...
 ----
 
-= Demo 2
+== Demo 2
 
 image::demo.jpg[]
 
