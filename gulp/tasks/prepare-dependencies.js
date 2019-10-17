@@ -59,7 +59,6 @@ module.exports = function (gulp, plugins, current_config) {
 
     ////////////////////////////// Managing fontawesome and dependencies
     gulp.task('prepare:fontawesome', function () {
-
         var fontAwesomeCss = gulp.src(current_config.nodeModulesDir + '/font-awesome/css/**/*')
             .pipe(gulp.dest(current_config.distDir + '/styles/'));
 
@@ -68,4 +67,22 @@ module.exports = function (gulp, plugins, current_config) {
 
         return plugins.mergeStreams(fontAwesomeCss, fontAwesomeFonts);
     });
+
+    ////////////////////////////// Managing RevelaJS Menu Plugin and dependencies
+    gulp.task('prepare:revealjs-menu', function () {
+        return gulp.src(
+            current_config.nodeModulesDir + '/reveal.js-menu/**/*',
+            {
+                base: current_config.nodeModulesDir + '/reveal.js-menu'
+            })
+            .pipe(gulp.dest(current_config.distDir + '/reveal.js/plugin/reveal.js-menu'));
+    });
+
+    ////////////////////////////// Aggregating Dependencies
+    gulp.task('prepare:dependencies', gulp.parallel(
+        'prepare:revealjs',
+        'prepare:highlightjs',
+        'prepare:fontawesome',
+        'prepare:revealjs-menu'
+    ));
 };
