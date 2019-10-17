@@ -30,8 +30,8 @@ Jean-Baptiste Doumenjou
 
 * 🇫🇷 Developer
 * Maintainer of link:https://traefik.io/[Træfik]
-* link:https://twitter.com/jbdoumenjou[icon:twitter[] @jbdoumenjou]
-* link:https://github.com/jbdoumenjou[icon:github[] jbdoumenjou]
+* link:https://twitter.com/jbdoumenjou[+++<span class="fab fa-twitter"></span>+++ @jbdoumenjou]
+* link:https://github.com/jbdoumenjou[+++<span class="fab fa-github"></span>+++ jbdoumenjou]
 
 image::jbd.jpg[height=200]
 
@@ -86,4 +86,4 @@ image::qrcode.png["QRCode to this presentation",height=400]
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
+- link:{repositoryUrl}[Source on +++<span class="fab fa-github"></span>+++: {repositoryUrl}]

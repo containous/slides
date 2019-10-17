@@ -10,7 +10,7 @@ image::demo.jpg[]
 image::demo1-v2-tcp.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on +++<span class="fab fa-github"></span>+++]
 
 [{invert}]
 == Demo 2 - TCP + TLS
@@ -18,7 +18,7 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/01-mongo[Demo Code on icon:github[]]
 image::demo2-v2-tcp-tls.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on +++<span class="fab fa-github"></span>+++]
 
 [{invert}]
 == Demo 3 - SNI Routing + TLS Passthrough for TCP
@@ -26,7 +26,7 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/02-tls-mongo[Demo Code on icon:github
 image::demo3-v2-tcp-sni.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on +++<span class="fab fa-github"></span>+++]
 
 [{invert}]
 == Demo 4 - Muxing HTTPS and TCP on the Same Port
@@ -34,11 +34,11 @@ link:{repositoryUrl}/demo/traefik-v2/mongo/03-sni-routing-mongo[Demo Code on ico
 image::demo4-v2-tcp-http.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/mongo/04-tcp-and-http-routing-mongo[Demo Code on +++<span class="fab fa-github"></span>+++]
 
 == Demo 5 - Canary Release of a WebApp
 
 image::canary.png[width=500]
 
 [.small]
-link:{repositoryUrl}/demo/traefik-v2/canary[Demo Code on icon:github[]]
+link:{repositoryUrl}/demo/traefik-v2/canary[Demo Code on +++<span class="fab fa-github"></span>+++]

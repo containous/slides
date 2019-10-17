@@ -6,7 +6,7 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 == Traefik Project
 
-* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+* link:https://github.com/containous/traefik[+++<span class="fab fa-github"></span>+++ https://github.com/containous/traefik]
 * MIT License
 * Written in Go
 * 25,000+ ⭐ 1B+ ⬇️ 400+ 👷
