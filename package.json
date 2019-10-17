@@ -12,14 +12,14 @@
         "asciidoctor-reveal.js": "2.0.0",
         "browser-sync": "^2.26.7",
         "gulp": "4.0.2",
-        "gulp-autoprefixer": "7.0.0",
+        "gulp-autoprefixer": "7.0.1",
         "gulp-csso": "3.0.1",
         "gulp-exec": "4.0.0",
         "gulp-ignore": "3.0.0",
         "gulp-rename": "1.4.0",
         "gulp-sass": "^4.0.2",
         "merge-stream": "2.0.0",
-        "npm-check-updates": "3.1.21",
-        "qrcode": "1.4.1"
+        "npm-check-updates": "3.1.24",
+        "qrcode": "1.4.2"
     }
 }
