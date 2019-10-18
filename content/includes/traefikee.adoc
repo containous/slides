@@ -57,7 +57,7 @@ traefikeectl deploy \
     ...
 ----
 
-== Demo 2
+== Demo of TraefikEE
 
 image::demo.jpg[]
 
