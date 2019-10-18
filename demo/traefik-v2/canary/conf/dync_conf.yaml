@@ -14,8 +14,8 @@ http:
     appv1:
       loadBalancer:
         servers:
-          - url: 'http://docker.for.mac.localhost:8180'
+          - url: 'http://webapp1'
     appv2:
       loadBalancer:
         servers:
-          - url: 'http://docker.for.mac.localhost:8181'
+          - url: 'http://webapp2'

@@ -1,32 +1,9 @@
-
-= East / West Traefik
-
-image::compass.svg[width=400]
-
 [{invert}]
-== Say Hello to Maesh
+= Say Hello to Maesh
 
 image::maesh.png[width=600]
 
-== What is Maesh?
-
-[quote]
-__
-Maesh is a lightweight, easy to configure, and non-invasive service mesh that allows visibility and management of the traffic flows inside any Kubernetes cluster.
-__
-
-[{invert}]
-== Maesh Architecture
-
-image::before-maesh-graphic.png[width=500,float=left]
-
-image::after-maesh-graphic.png[width=500,float=right]
-
 == More on Maesh
-
-- Built on top of Traefik,
-- SMI (Service Mesh Interface specification) compliant,
-- Opt-in by default.
 
 link:https://mae.sh[Maesh Website]
 

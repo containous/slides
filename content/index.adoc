@@ -1,39 +1,29 @@
 
 [%notitle]
-= Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
+= Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Traefik v2.0 & Maesh: Look Ma’, routing HTTP and TCP with no Hands!
+(🇫🇷) Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements?
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/kubernetes-belgium/events/264700528/[Belgium Kubernetes Meetup - October 2019 @ Louvain]
-
-== How to use these slides?
-
-* *Browse the slides:* Use the arrows
-** Change chapter: Left/Right arrows
-** Next or previous slide: Top and bottom arrows
-
-* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
-
-* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
+link:https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/[Toulouse Devops Meetup - 2019]
 
 // //// Speaker Slide and Company slide
-
+[{invert}]
 == Whoami
+Jean-Baptiste Doumenjou
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
-link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal,window=_blank]
+* 🇫🇷 Developer
+* Maintainer of link:https://traefik.io/[Træfik]
+* link:https://twitter.com/jbdoumenjou[+++<span class="fab fa-twitter"></span>+++ @jbdoumenjou]
+* link:https://github.com/jbdoumenjou[+++<span class="fab fa-github"></span>+++ jbdoumenjou]
 
-image::damien.jpg[height=200]
+image::jbd.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -64,7 +54,15 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/demo.adoc[]
+include::./includes/v2-k8s.adoc[]
+
+include::./includes/v2-tcp.adoc[]
+
+include::./includes/more-to-come.adoc[]
+
+include::./includes/traefikee.adoc[]
+
+include::./includes/maesh.adoc[]
 
 include::./includes/more-to-come.adoc[]
 
@@ -79,11 +77,7 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal]
-
-link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal]
-
-image::qrcode.png["QRCode to this presentation",height=150]
+image::qrcode.png["QRCode to this presentation",height=400]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
