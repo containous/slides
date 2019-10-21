@@ -1,7 +1,7 @@
 
 = Here Comes Traefik!
 
-[.noshadow]
+
 image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 [{invert}]
@@ -16,10 +16,10 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 == Traefik is an Edge Proxy
 
-[.noshadow]
+
 image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
 == It Dynamically Discovers Services
 
-[.noshadow]
+
 image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]

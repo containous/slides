@@ -4,12 +4,12 @@
 
 What about routing traffic from service to services?
 
-[.noshadow]
+
 image::compass.svg[width=400]
 
 == Say Hello to Maesh
 
-[.noshadow]
+
 image::maesh.png[width=600]
 
 [{invert}]
@@ -22,10 +22,10 @@ __
 
 == Maesh Architecture
 
-[.noshadow]
+
 image::before-maesh-graphic.png[width=500,float=left]
 
-[.noshadow]
+
 image::after-maesh-graphic.png[width=500,float=right]
 
 == More on Maesh

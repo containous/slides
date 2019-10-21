@@ -6,7 +6,6 @@ image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
 
 Why, Mr Anderson?
 
-[{invert}]
 [%notitle]
 == Evolution of Software Design
 
@@ -27,34 +26,34 @@ image::where-is-charlie.jpg["Where os Charlie?",width=900]
 
 == Tools of the Trade
 
-[.noshadow]
+
 image::docker.png[width=80,float=left]
-[.noshadow]
+
 image::rancher-os.png[width=80,float=left]
-[.noshadow]
+
 image::docker-swarm.png[width=80,float=left]
-[.noshadow]
+
 image::kubernetes.png[width=80,float=left]
-[.noshadow]
+
 image::marathon.png[width=80,float=left]
-[.noshadow]
+
 image::ec2.png[width=80,float=left]
-[.noshadow]
+
 image::mesos.png[width=80,float=left]
 
-[.noshadow]
+
 image::dynamodb.png[width=80,float=right]
-[.noshadow]
+
 image::ecs.png[width=80,float=right]
-[.noshadow]
+
 image::service-fabric.png[width=80,float=right]
-[.noshadow]
+
 image::consul.png[width=80,float=right]
-[.noshadow]
+
 image::netflix_oss.png[width=80,float=right]
-[.noshadow]
+
 image::etcd.png[width=80,float=right]
-[.noshadow]
+
 image::zookeeper.png[width=80,float=right]
 
 == !

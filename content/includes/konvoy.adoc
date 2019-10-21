@@ -10,7 +10,7 @@
 
 == Konvoy Architecture
 
-[.noshadow]
+
 image::Konvoy-arch-diagram.png["Konvoy Architecture",width=900]
 
 [.small]
@@ -31,7 +31,7 @@ $ konvoy init --provisioner=aws
 +
 [source,bash]
 ----
-$ konvoy init --provisioner=aws
+$ konvoy up
 ----
 
 * Use it:

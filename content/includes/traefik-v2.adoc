@@ -8,10 +8,74 @@ image::traefik-v2.png[]
 
 == Architecture at a Glance
 
-[.noshadow]
+
 image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1100]
 
 == Static & Dynamic Configuration
 
-[.noshadow]
+
 image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=900]
+
+// == Traefik with 🐳
+
+// image::quickstart-diagram.png["Quickstart Diagram",width=800]
+
+== Traefik in &#9096;
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+[{invert}]
+== But...
+
+image::traefik-ingress-annotations.png[float=left,height=500]
+
+image::nginx-ingress-annotations.png[float=right,height=500]
+
+
+[{invert}]
+== &#9096; CRD - Custom Resources Definition
+
+[source,yaml]
+----
+# File "webapp.yaml"
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simpleingressroute
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`localhost`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: webapp
+      port: 80
+----
+
+[source,bash]
+----
+$ kubectl apply -f webapp.yaml
+$ kubectl get ingressroute
+----
+
+== &#9096; & TCP (with CRD)
+
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: ingressroutetcpmongo.crd
+spec:
+  entryPoints:
+    - mongotcp
+  routes:
+  - match: HostSNI(`mongo-prod`)
+    services:
+    - name: mongo-prod
+      port: 27017
+----
