@@ -1,0 +1,17 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: webapp
+  namespace: webapp
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: containous/whoami
+        imagePullPolicy: Always

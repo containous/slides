@@ -7,9 +7,31 @@
 (from <https://docs.d2iq.com/ksphere/konvoy/latest/tutorials/provision-a-custom-cluster/>):
 
 ```shell
-konvoy init --provisioner=aws
+konvoy init
 ```
 
-* Edit `cluster.yaml` to your needs (switched to 2 worker node only). We want to use us-west-1.
+* Start the cluster (takes ~15 min) with
 
-* Start cluster with `konvoy up`
+```shell
+konvoy up --yes
+```
+
+* Retrieve the kubeconfig with:
+
+```shell
+konvoy apply kubeconfig
+# (...)
+kubectl get nodes
+```
+
+## Demo 1
+
+### Tour
+
+* Open Operation Portal
+* Open all the sub dashboard
+* Do a tour of Traefik Dashboard
+
+### Demo Application
+
+

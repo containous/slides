@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  namespace: webapp
+  labels:
+    app: webapp
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: webapp
+  selector:
+    app: webapp
