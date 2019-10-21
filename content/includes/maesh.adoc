@@ -1,10 +1,6 @@
-[{invert}]
-= Say Hello to Maesh
-
-image::maesh.png[width=600]
 
 [{invert}]
-== East / West Traefik
+= East / West Traefik
 
 What about routing traffic from service to services?
 
@@ -13,6 +9,7 @@ image::compass.svg[width=400]
 
 == Say Hello to Maesh
 
+[.noshadow]
 image::maesh.png[width=600]
 
 [{invert}]

@@ -14,4 +14,4 @@ image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Gla
 == Static & Dynamic Configuration
 
 [.noshadow]
-image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=1000]
+image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=900]

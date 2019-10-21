@@ -10,11 +10,11 @@ Why, Mr Anderson?
 [%notitle]
 == Evolution of Software Design
 
-image::pasta-architecture.png["Evolution of Software Design", height = 800]
+image::pasta-architecture.png["Evolution of Software Design", height=700]
 
 == The Premise of Microservices...
 
-image::asterix-premise.jpg["Asterix - Premise", height = 550]
+image::asterix-premise.jpg["Asterix - Premise", height=550]
 
 [{invert}]
 == ...and What Happens

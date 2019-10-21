@@ -18,34 +18,23 @@ image::maesh.png["Maesh's Logo",height=300]
 [{invert}]
 == How to Access these Slides?
 
-image::qrcode.png["QRCode to this presentation",height=200]
+image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]
-
-== How to use these slides?
-
-* *Browse the slides:* Use the arrows
-** Change chapter: Left/Right arrows
-** Next or previous slide: Top and bottom arrows
-
-* *Overview of the slides:* keyboard's shortcut "kbd:[o]"
-
-* *Speaker mode (and notes):* keyboard's shortcut "kbd:[s]"
+- link:{repositoryUrl}[Source on +++<i class="fab fa-github"></i>+++: {repositoryUrl}]
 
 // //// Speaker Slide and Company slide
-[{invert}]
 == Whoami
-Jean-Baptiste Doumenjou
 
-* 🇫🇷 Developer
-* Maintainer of link:https://traefik.io/[Træfik]
-* link:https://twitter.com/jbdoumenjou[+++<span class="fab fa-twitter"></span>+++ @jbdoumenjou]
-* link:https://github.com/jbdoumenjou[+++<span class="fab fa-github"></span>+++ jbdoumenjou]
+* Damien DUPORTAL:
+** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+link:https://containo.us/[Containous,window=_blank]
+* link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal,window=_blank]
+* link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal,window=_blank]
 
-image::jbd.jpg[height=200]
+image::damien.jpg[height=200]
 
 [{invert}]
 [%notitle]
@@ -85,19 +74,19 @@ docker run -it containous/jobs
 :leveloffset: +1
 
 // 1. Konvoy / Traefik
-include::./includes/d2iq/why-konvoy.adoc[]
-include::./includes/d2iq/konvoy.adoc[]
-include::./includes/d2iq/why-traefik.adoc[]
-include::./includes/d2iq/traefik-project.adoc[]
-include::./includes/d2iq/demo1.adoc[]
+include::./includes/why-konvoy.adoc[]
+include::./includes/konvoy.adoc[]
+include::./includes/why-traefik.adoc[]
+include::./includes/traefik-project.adoc[]
+include::./includes/demo1.adoc[]
 
 // 2. Traefik v2
-include::./includes/d2iq/traefik-v2.adoc[]
-include::./includes/d2iq/demo2.adoc[]
+include::./includes/traefik-v2.adoc[]
+include::./includes/demo2.adoc[]
 
 // 3. Maesh
-include::./includes/d2iq/maesh.adoc[]
-include::./includes/d2iq/demo3.adoc[]
+include::./includes/maesh.adoc[]
+include::./includes/demo3.adoc[]
 
 :leveloffset: -1
 
@@ -107,7 +96,11 @@ include::./includes/d2iq/demo3.adoc[]
 [{invert}]
 == Thank you!
 
-image::qrcode.png["QRCode to this presentation",height=400]
+link:https://twitter.com/DamienDuportal[+++<i class="fab fa-twitter"></i>+++ @DamienDuportal]
+
+link:https://github.com/dduportal[+++<i class="fab fa-github"></i>+++ dduportal]
+
+image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
