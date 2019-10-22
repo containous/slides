@@ -1,0 +1,21 @@
+controller:
+  ignoreNamespaces:
+    - kommander
+    - kube-node-lease
+    - kube-public
+    - kube-system
+    - kubeaddons
+    - velero
+    - velero-minio-operator
+
+smi: true
+
+tracing:
+  deploy: false
+  jaeger:
+    enabled: false
+
+metrics:
+  deploy: false
+  prometheus:
+    enabled: false
