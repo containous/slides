@@ -1,0 +1,32 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: webapp
+  namespace: webapp
+spec:
+  selector:
+    matchLabels:
+      app: webapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: dduportal/webapp:traefik
+        imagePullPolicy: Always
+        env:
+          - name: HUGO_BASE_URL
+            value: http://localhost:80/webapp/
+          - name: HUGO_ENV
+            value: kubernetes
+        resources:
+          limits:
+            cpu: 1
+            memory: 1G
+          requests:
+            cpu: 1
+            memory: 1G

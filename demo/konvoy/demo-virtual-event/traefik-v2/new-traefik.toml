@@ -1,0 +1,43 @@
+# Compress on entry point "http" must be converted manually. Look https://docs.traefik.io/v2.0/middlewares/compress/
+# Redirect on entry point "http" must be converted manually. Look https://docs.traefik.io/v2.0/middlewares/redirectscheme/
+# Compress on entry point "https" must be converted manually. Look https://docs.traefik.io/v2.0/middlewares/compress/
+# TLS on entry point "https" must be converted manually. Look https://docs.traefik.io/v2.0/routing/routers/#tls
+# The entry point (traefik) defined in API must be converted manually. Look https://docs.traefik.io/v2.0/operations/api/
+
+[global]
+  checkNewVersion = true
+  sendAnonymousUsage = true
+
+[serversTransport]
+  insecureSkipVerify = true
+  maxIdleConnsPerHost = 0
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+  [entryPoints.https]
+    address = ":443"
+  [entryPoints.traefik]
+    address = ":8080"
+
+[providers]
+  providersThrottleDuration = "2s"
+  [providers.kubernetesIngress]
+    throttleDuration = "0s"
+    [providers.kubernetesIngress.ingressEndpoint]
+      publishedService = "kubeaddons/traefik-kubeaddons"
+
+[api]
+  insecure = true
+  dashboard = true
+
+[metrics]
+  [metrics.prometheus]
+    entryPoint = "traefik"
+
+[ping]
+  entryPoint = "http"
+
+[log]
+  level = "info"
+  format = "json"

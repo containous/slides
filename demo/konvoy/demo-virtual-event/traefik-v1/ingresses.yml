@@ -1,0 +1,291 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+  creationTimestamp: "2019-10-21T09:44:12Z"
+  generation: 1
+  labels:
+    app: kommander-kubeaddons
+    chart: kommander-0.1.21
+    heritage: Tiller
+    release: ""
+  name: kommander-kubeaddons
+  namespace: kommander
+  resourceVersion: "2239"
+  selfLink: /apis/extensions/v1beta1/namespaces/kommander/ingresses/kommander-kubeaddons
+  uid: ea3708d1-4391-4a29-a728-aeb348432a67
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: kommander
+          servicePort: 80
+        path: /ops/portal/kommander
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  creationTimestamp: "2019-10-21T09:47:32Z"
+  generation: 1
+  labels:
+    app: dex-k8s-authenticator
+    chart: dex-k8s-authenticator-1.1.6
+    env: dev
+    heritage: Tiller
+    release: dex-k8s-authenticator-kubeaddons
+  name: dex-k8s-authenticator-kubeaddons
+  namespace: kubeaddons
+  resourceVersion: "3527"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/dex-k8s-authenticator-kubeaddons
+  uid: 678e53dd-14c0-44f2-8fb1-6a5f1425b94a
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: dex-k8s-authenticator-kubeaddons
+          servicePort: 5555
+        path: /token
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/protocol: https
+    kubernetes.io/ingress.class: traefik
+  creationTimestamp: "2019-10-21T09:47:34Z"
+  generation: 1
+  labels:
+    app: dex
+    chart: dex-1.5.4
+    heritage: Tiller
+    release: dex-kubeaddons
+  name: dex-kubeaddons
+  namespace: kubeaddons
+  resourceVersion: "3624"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/dex-kubeaddons
+  uid: 4a321ce9-b148-4572-8510-c203cf8878ff
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: dex-kubeaddons
+          servicePort: 8080
+        path: /dex
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/auth-response-headers: X-Forwarded-User
+    traefik.ingress.kubernetes.io/auth-type: forward
+    traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
+    traefik.ingress.kubernetes.io/priority: "2"
+  creationTimestamp: "2019-10-21T09:43:38Z"
+  generation: 1
+  name: opsportal-kubeaddons-addons
+  namespace: kubeaddons
+  resourceVersion: "2079"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/opsportal-kubeaddons-addons
+  uid: a05b8916-57df-4241-8e8c-cc1f7e556d12
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: bearerproxy
+          servicePort: 9091
+        path: /ops/portal/kubernetes
+      - backend:
+          serviceName: kibana-kubeaddons
+          servicePort: 5601
+        path: /ops/portal/kibana
+      - backend:
+          serviceName: prometheus-kubeaddons-grafana
+          servicePort: 3000
+        path: /ops/portal/grafana
+      - backend:
+          serviceName: prometheus-kubeaddons-prom-prometheus
+          servicePort: 9090
+        path: /ops/portal/prometheus
+      - backend:
+          serviceName: prometheus-kubeaddons-prom-alertmanager
+          servicePort: 9093
+        path: /ops/portal/alertmanager
+      - backend:
+          serviceName: traefik-kubeaddons-dashboard
+          servicePort: 80
+        path: /ops/portal/traefik
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/auth-response-headers: X-Forwarded-User
+    traefik.ingress.kubernetes.io/auth-type: forward
+    traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
+    traefik.ingress.kubernetes.io/priority: "1"
+  creationTimestamp: "2019-10-21T09:43:38Z"
+  generation: 1
+  labels:
+    app: opsportal-kubeaddons-kommander
+    chart: kommander-0.1.21
+    heritage: Tiller
+    release: ""
+  name: opsportal-kubeaddons-kommander
+  namespace: kubeaddons
+  resourceVersion: "2066"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/opsportal-kubeaddons-kommander
+  uid: c1333945-eebe-4279-af53-384646607f09
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: opsportal
+          servicePort: 80
+        path: /ops/portal/
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/rule-type: Path
+  creationTimestamp: "2019-10-21T09:43:38Z"
+  generation: 1
+  name: opsportal-landing
+  namespace: kubeaddons
+  resourceVersion: "2088"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/opsportal-landing
+  uid: 96b01531-e522-4135-8f3e-a340a77621dd
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: opsportal-landing
+          servicePort: 80
+        path: /ops/landing
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/protocol: https
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/auth-type: forward
+    traefik.ingress.kubernetes.io/auth-url: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
+  creationTimestamp: "2019-10-21T09:47:45Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: traefik-forward-auth-kubeaddons
+    app.kubernetes.io/managed-by: Tiller
+    app.kubernetes.io/name: traefik-forward-auth
+    helm.sh/chart: traefik-forward-auth-0.1.6
+  name: traefik-forward-auth-kubeaddons
+  namespace: kubeaddons
+  resourceVersion: "3761"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/traefik-forward-auth-kubeaddons
+  uid: f42f093d-fbfb-410d-84f0-72ce8967cd81
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: traefik-forward-auth-kubeaddons
+          servicePort: http
+        path: /_oauth
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  creationTimestamp: "2019-10-21T09:43:15Z"
+  generation: 1
+  labels:
+    app: traefik
+    chart: traefik-1.71.3
+    heritage: Tiller
+    release: traefik-kubeaddons
+  name: traefik-kubeaddons-dashboard
+  namespace: kubeaddons
+  resourceVersion: "1801"
+  selfLink: /apis/extensions/v1beta1/namespaces/kubeaddons/ingresses/traefik-kubeaddons-dashboard
+  uid: 8d34c4e2-3939-4e36-9e04-d97ade2ddc81
+spec:
+  rules:
+  - host: traefik.localhost.localdomain
+    http:
+      paths:
+      - backend:
+          serviceName: traefik-kubeaddons-dashboard
+          servicePort: dashboard-http
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  generation: 1
+  labels:
+    app: webapp
+  name: webapp
+  namespace: webapp
+  resourceVersion: "22563"
+  selfLink: /apis/extensions/v1beta1/namespaces/webapp/ingresses/webapp
+  uid: 3cf11e52-7fc0-4583-9e19-df40b405972d
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: webapp
+          servicePort: 80
+        path: /webapp
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a624e39a058484f69ac209516ebec97f-2124272583.us-west-2.elb.amazonaws.com

@@ -1,0 +1,28 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: true
+serversTransport:
+  insecureSkipVerify: true
+entryPoints:
+  http:
+    address: :80
+  https:
+    address: :443
+  traefik:
+    address: :8080
+providers:
+  providersThrottleDuration: 2s
+  kubernetesIngress:
+    ingressEndpoint:
+      publishedService: kubeaddons/traefik-kubeaddons
+api:
+  insecure: true
+  dashboard: true
+metrics:
+  prometheus:
+    entryPoint: traefik
+ping:
+  entryPoint: http
+log:
+  level: info
+  format: json

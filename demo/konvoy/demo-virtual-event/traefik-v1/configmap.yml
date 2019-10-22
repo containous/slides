@@ -1,0 +1,49 @@
+apiVersion: v1
+data:
+  traefik.toml: |
+    # traefik.toml
+    logLevel = "info"
+    InsecureSkipVerify = true
+    defaultEntryPoints = ["http","https"]
+    [entryPoints]
+      [entryPoints.http]
+      address = ":80"
+      compress = true
+        [entryPoints.http.redirect]
+          regex = "^http://(.*)"
+          replacement = "https://$1"
+      [entryPoints.https]
+      address = ":443"
+      compress = true
+        [entryPoints.https.tls]
+          [[entryPoints.https.tls.certificates]]
+          CertFile = "/ssl/tls.crt"
+          KeyFile = "/ssl/tls.key"
+      [entryPoints.traefik]
+      address = ":8080"
+    [ping]
+    entryPoint = "http"
+    [kubernetes]
+      [kubernetes.ingressEndpoint]
+      publishedService = "kubeaddons/traefik-kubeaddons"
+    [traefikLog]
+      format = "json"
+    [api]
+      entryPoint = "traefik"
+      dashboard = true
+    [metrics]
+      [metrics.prometheus]
+        entryPoint = "traefik"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2019-10-21T09:43:14Z"
+  labels:
+    app: traefik
+    chart: traefik-1.71.3
+    heritage: Tiller
+    release: traefik-kubeaddons
+  name: traefik-kubeaddons
+  namespace: kubeaddons
+  resourceVersion: "1647"
+  selfLink: /api/v1/namespaces/kubeaddons/configmaps/traefik-kubeaddons
+  uid: ec94bb48-cee2-4ea9-b8c3-04aa8c6f9adb

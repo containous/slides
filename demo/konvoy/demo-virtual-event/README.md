@@ -34,4 +34,8 @@ kubectl get nodes
 
 ### Demo Application
 
+* Deploy it with `kubectl apply -f ./webapp/`
 
+* Docker image can be rebuilts with content from `./webapp/docker-image`
+
+## Demo 2

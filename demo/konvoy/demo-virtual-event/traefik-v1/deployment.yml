@@ -1,0 +1,147 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    checksum/config: da264776072267f337aa38dc944f9ecf2c79c365d75db1c24e0d06cc66fd306e
+    cni.projectcalico.org/podIP: 192.168.66.2/32
+  creationTimestamp: "2019-10-21T09:43:15Z"
+  generateName: traefik-kubeaddons-6485fb848b-
+  labels:
+    app: traefik
+    chart: traefik-1.71.3
+    heritage: Tiller
+    pod-template-hash: 6485fb848b
+    release: traefik-kubeaddons
+  name: traefik-kubeaddons-6485fb848b-4l99w
+  namespace: kubeaddons
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: traefik-kubeaddons-6485fb848b
+    uid: 1edcd231-5279-4631-8982-e9559f0efdc7
+  resourceVersion: "1953"
+  selfLink: /api/v1/namespaces/kubeaddons/pods/traefik-kubeaddons-6485fb848b-4l99w
+  uid: 9e8aaf86-b92b-4934-adae-26b62f15f3e6
+spec:
+  containers:
+  - args:
+    - --configfile=/config/traefik.toml
+    image: traefik:1.7.12
+    imagePullPolicy: Always
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /ping
+        port: 80
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 2
+    name: traefik-kubeaddons
+    ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+    - containerPort: 8880
+      name: httpn
+      protocol: TCP
+    - containerPort: 443
+      name: https
+      protocol: TCP
+    - containerPort: 8080
+      name: dash
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 1
+      httpGet:
+        path: /ping
+        port: 80
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 2
+    resources:
+      limits:
+        cpu: "2"
+      requests:
+        cpu: "1"
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /config
+      name: config
+    - mountPath: /ssl
+      name: ssl
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: traefik-kubeaddons-token-pvxjk
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: ip-10-0-129-57.us-west-2.compute.internal
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: traefik-kubeaddons
+  serviceAccountName: traefik-kubeaddons
+  terminationGracePeriodSeconds: 60
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: traefik-kubeaddons
+    name: config
+  - name: ssl
+    secret:
+      defaultMode: 420
+      secretName: traefik-kubeaddons-default-cert
+  - name: traefik-kubeaddons-token-pvxjk
+    secret:
+      defaultMode: 420
+      secretName: traefik-kubeaddons-token-pvxjk
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2019-10-21T09:43:15Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2019-10-21T09:43:31Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2019-10-21T09:43:31Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2019-10-21T09:43:15Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://6ea7f137d4f8da057e60f887c85c7ad54dff18f69231fc07662336ecda822cad
+    image: docker.io/library/traefik:1.7.12
+    imageID: docker.io/library/traefik@sha256:02cfdb77b0cd82d973dffb3dafe498283f82399bd75b335797d7f0fe3ebeccb8
+    lastState: {}
+    name: traefik-kubeaddons
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: "2019-10-21T09:43:21Z"
+  hostIP: 10.0.129.57
+  phase: Running
+  podIP: 192.168.66.2
+  qosClass: Burstable
+  startTime: "2019-10-21T09:43:15Z"
