@@ -1,7 +1,6 @@
 FROM golang:1.13
 
 WORKDIR /app
-
 COPY go.mod ./
 COPY . .
 

@@ -132,9 +132,7 @@ kubectl apply -f ./maesh/crds/
 * Install demo app
 
 ```shell
-kubectl apply -f apps/0-namespace.yaml
-kubectl apply -f apps/1-sas.yaml
-kubectl apply -f apps/2-apps-client.yaml
-kubectl apply -f apps/3-apps-servers.yaml
-kubectl apply -f apps/4-ingress.yaml
+kubectl apply -f ./maesh/0-apps/
 ```
+
+* Open the apps webpage: only 2 images using the normal service network
