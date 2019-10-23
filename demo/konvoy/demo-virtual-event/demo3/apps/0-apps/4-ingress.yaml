@@ -1,0 +1,29 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: apps-client
+  namespace: apps
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: PathPrefix(`/maesh`)
+      kind: Rule
+      services:
+        - name: apps-client
+          port: 80
+      middlewares:
+        - name: maesh-prefix-strip
+          namespace: apps
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: maesh-prefix-strip
+  namespace: apps
+spec:
+  stripPrefix:
+    prefixes:
+    - /maesh

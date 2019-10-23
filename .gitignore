@@ -7,5 +7,11 @@ demo/lab-docker-k8s/02-k8s-traefik/traefik/ingress-kops.yml
 **/*/hugo/resources/
 **/*/hugo/public/
 **/*/hugo/node_modules/
-
+state/
+runs/
+demo/konvoy/**/admin.conf
+demo/konvoy/**/cluster*.yaml
+demo/konvoy/**/konvoy-ssh*
+demo/konvoy/**/inventory.yaml
+demo/konvoy/**/migration/
 .idea/

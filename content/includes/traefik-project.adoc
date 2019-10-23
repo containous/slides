@@ -23,3 +23,10 @@ image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
 
 image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
+
+== Traefik With &#9096;
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]

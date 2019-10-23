@@ -137,7 +137,7 @@ func clientHandler(w http.ResponseWriter, req *http.Request) {
 				data = data + `<div class="row">`
 			}
 
-			data = data + `<div class="column"><img width="128px" alt="" src="data:image/png;base64,` + value + `" /></div>`
+			data = data + `<div class="column"><img height="128px" width="128px" alt="" src="data:image/png;base64,` + value + `" /></div>`
 			if i%2 != 0 {
 				data = data + `</div>`
 			}

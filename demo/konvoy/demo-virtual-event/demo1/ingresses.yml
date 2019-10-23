@@ -4,7 +4,6 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.rule.type: PathPrefixStrip
   creationTimestamp: "2019-10-21T09:44:12Z"
   generation: 1
   labels:
@@ -269,14 +268,15 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+  creationTimestamp: "2019-10-24T13:52:05Z"
   generation: 1
   labels:
     app: webapp
   name: webapp
   namespace: webapp
-  resourceVersion: "22563"
+  resourceVersion: "623171"
   selfLink: /apis/extensions/v1beta1/namespaces/webapp/ingresses/webapp
-  uid: 3cf11e52-7fc0-4583-9e19-df40b405972d
+  uid: 8aa1c9cc-1327-4d85-ae18-14d9255bbc74
 spec:
   rules:
   - http:

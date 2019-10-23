@@ -224,7 +224,6 @@ spec:
     address: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
     authResponseHeaders:
     - X-Forwarded-User
-    #tls: {}
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -271,7 +270,6 @@ spec:
     address: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
     authResponseHeaders:
     - X-Forwarded-User
-    #tls: {}
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -323,7 +321,6 @@ metadata:
 spec:
   forwardAuth:
     address: http://traefik-forward-auth-kubeaddons.kubeaddons.svc.cluster.local:4181/
-    #tls: {}
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute

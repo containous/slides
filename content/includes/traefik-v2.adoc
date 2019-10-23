@@ -20,7 +20,7 @@ image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Con
 
 // image::quickstart-diagram.png["Quickstart Diagram",width=800]
 
-== Traefik in &#9096;
+== Remember Traefik in &#9096;?
 
 image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
 
