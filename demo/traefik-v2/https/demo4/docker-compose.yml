@@ -1,0 +1,40 @@
+version: '3'
+services:
+  reverseproxy:
+    image: traefik:v2.0
+    command:
+      - --configfile=/traefik.yml
+      - --log.level=DEBUG
+      - --api.insecure=true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.yml:/traefik.yml
+      - ./pebble.minica.pem:/pebble.minica.pem
+    environment:
+      - LEGO_CA_CERTIFICATES=/pebble.minica.pem
+      - LEGO_CA_SERVER_NAME=pebble
+
+  demo1:
+    image: juliens/webapp
+    environment:
+      - APPNAME=DEMO1
+
+  demo2:
+    image: juliens/webapp
+    environment:
+      - APPNAME=DEMO2
+    labels:
+      - traefik.http.routers.demo2.rule=Host(`myapp.com`)
+      - traefik.http.routers.demo2.tls.certResolver=myLE
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.30.51.0/24

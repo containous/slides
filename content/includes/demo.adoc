@@ -4,40 +4,16 @@ image::demo.jpg[]
 
 == Demo Menu
 
-link:{repositoryUrl}/demo/traefik-v2/k8s#demo-traefik-v2-in-kubernetes[Click here for demo's instructions]
+1. Deploying Traefik and configure a service
+2. Configure a dashboard
+3. Configure the load balancing for scaled service
+4. Configure a service on a specific path
+5. Configure Let's encrypt in Traefik
+6. Generate certificates for our services
 
-1. Install Traefik v2 in Kubernetes cluster
-2. Deploy and expose an HTTP application
-3. Deploy and expose a TCP application
-
-== Install Traefik in Kubernetes
-
-link:{repositoryUrl}/demo/traefik-v2/k8s#install-traefik[Click here for demo's instructions]
-
-1. 🛠 Custom Resource Definitions
-2. ‍👮 Configure RBAC
-** To allow watching the Kubernetes API
-3. 📦 Install Traefik as a Deployment
-4. 🚪 Expose and 📣 publish Traefik with the right Service type
-** `LoadBalancer`, `NodePort`?
-5. ✅ Configure Traefik and its features
-
-== Example: HTTP application
-
-link:{repositoryUrl}/demo/traefik-v2/k8s#deploy-and-expose-an-http-application[Click here for demo's instructions]
-
-1. 📦 Install the web application as a Deployment
-2. 🚪 Expose the web application with a Service of type `ClusterIP`
-** Internal access only
-3. 📣 Publish the web application with an `IngressRoute`
-
-== Example: TCP application
-
-link:{repositoryUrl}/demo/traefik-v2/k8s#deploy-and-expose-a-tcp-application[Click here for demo's instructions]
-
-Example with MongoDB:
-
-1. 📦 Install MongoDB as a Deployment
-2. 🚪 Expose MongoDB with a Service of type `ClusterIP`
-** Internal access only
-3. 📣 Publish MongoDB with an `IngressRouteTCP`
+== Deploying Traefik and configure a service
+== Configure a dashboard
+== Configure the load balancing for scaled service
+== Configure a service on a specific path
+== Configure Let's encrypt in Traefik
+== Generate certificates for our services

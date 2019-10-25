@@ -1,16 +1,15 @@
+[{invert}]
+== We Also Missed Talking About ...
+
+image::word-cloud.png[width=900]
 
 [{invert}]
 = What's Next
 
 * KV Store
 * UDP
-* Canary and Mirroring With K8s CRD
 * And More...
 
-[{invert}]
-== We Also Missed Talking About ...
-
-image::word-cloud.png[width=900]
 
 [{invert}]
 == More info

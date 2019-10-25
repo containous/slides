@@ -1,0 +1,22 @@
+log:
+    level: DEBUG
+
+providers:
+    docker: true
+
+entrypoints:
+    my-web:
+        address: ":80"
+    my-secure:
+        address: ":443"
+
+api:
+    insecure: true
+
+certificatesResolvers:
+    myLE:
+        acme:
+            email: julien@containo.us
+            caserver: https://10.30.51.1:14000/dir
+            tlsChallenge: {}
+
