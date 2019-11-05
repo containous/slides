@@ -59,7 +59,7 @@ kubectl apply -f ./demo1/webapp/
 
 ### Install Traefik v2
 
-* Helm chart is in the repo (frozen state). Otherwise get it at <https://github.com/containous/traefik-helm-chart>.
+* Helm chart is in the repo (frozen state + customizations). Otherwise get it at <https://github.com/containous/traefik-helm-chart>.
 
 * Install it with the following:
 
@@ -140,6 +140,29 @@ kubectl apply -f ./demo2/ingressroutes.yml
 kubectl delete --namespace=kubeaddons ingressroute traefik-kubeaddons-dashboard
 ``` -->
 
+* Deploy MongoDB:
+
+```shell
+kubectl apply -f ./demo2/mongo/
+```
+
+Check the deployment:
+
+```shell
+kubectl get pod --namespace=mongo
+```
+
+Check Traefik Dashboard for TCP routers
+
+Validate mongodb access with:
+
+```shell
+mongo --port=27017 --host=<Traefik DNS>
+
+> show dbs
+> exit
+```
+
 ## Demo 3 (Maesh)
 
 * Install Maesh:
@@ -171,11 +194,12 @@ kubectl apply -f ./demo3/apps/1-smis/
 * Remove Helm deploments:
 
 ```shell
-helm delete --purge maesh traefik-v2
+helm delete --purge maesh
+helm delete --purge traefik-v2
 ```
 
 * Remove namespaces (and the related resources):
 
 ```shell
-kubectl delete namespaces apps webapp maesh traefik-v2
+kubectl delete namespaces apps webapp maesh traefik-v2 mongo
 ```

@@ -1,7 +1,7 @@
 ## Default values for Traefik
 image:
   name: traefik
-  tag: 2.0.2
+  tag: 2.0.4
 #
 deployment:
   replicas: 1
@@ -13,6 +13,8 @@ ports:
     port: 8443
   traefik:
     port: 9000
+  mongo:
+    port: 27017
 
 service:
   externalTrafficPolicy: Cluster
@@ -21,12 +23,12 @@ logs:
   loglevel: INFO
 #
 yaml:
-  resources:
-    requests:
-      cpu: "100m"
-      memory: "50Mi"
-    limits:
-      cpu: "300m"
-      memory: "150Mi"
+  # resources:
+  #   requests:
+  #     cpu: "100m"
+  #     memory: "50Mi"
+  #   limits:
+  #     cpu: "300m"
+  #     memory: "150Mi"
 #  nodeSelector: {}
 #  tolerations: []

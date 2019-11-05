@@ -20,3 +20,6 @@ spec:
   - port: 443
     name: websecure
     targetPort: websecure
+  - port: 27017
+    name: mongo
+    targetPort: mongo

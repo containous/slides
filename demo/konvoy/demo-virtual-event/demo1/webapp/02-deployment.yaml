@@ -23,10 +23,3 @@ spec:
             value: http://localhost:80/webapp/
           - name: HUGO_ENV
             value: kubernetes
-        resources:
-          limits:
-            cpu: 1
-            memory: 1G
-          requests:
-            cpu: 1
-            memory: 1G

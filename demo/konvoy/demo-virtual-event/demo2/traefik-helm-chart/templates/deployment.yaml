@@ -72,10 +72,14 @@ spec:
         - name: traefik
           containerPort: {{ .Values.ports.traefik.port }}
           protocol: TCP
+        - name: mongo
+          containerPort: {{ .Values.ports.mongo.port }}
+          protocol: TCP
         args:
           - "--entryPoints.web.address=:{{ .Values.ports.web.port }}"
           - "--entryPoints.websecure.address=:{{ .Values.ports.websecure.port }}"
           - "--entryPoints.traefik.address=:{{ .Values.ports.traefik.port }}"
+          - "--entryPoints.mongo.address=:{{ .Values.ports.mongo.port }}"
           - "--api.dashboard=true"
           - "--api.insecure=true"
           - "--ping=true"
