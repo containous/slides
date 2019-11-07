@@ -1,0 +1,19 @@
+= Router 101
+
+== asdahdiasdada
+* A router sits at the Edge of your infrastructure
+* Its job is to forward the incoming requests to your microservice
+* That management is done in k8s via an Ingress
+* Easy Management of incoming requests for everyone
+
+== Ingress 101
+* Ingress is a collection of rules for inbound access
+* Provides Lvl 7 Loadbalancer capabilities
+* TLS, Name Based Virtual Hosting…
+* Easy Management by the whole Team!
+
+== Not Enough?
+* Lets Encrypt automated TLS
+* TCP
+* Advanced Routing capabilities (API-Gateway?)
+* Middlewares to edit Request / Responses?

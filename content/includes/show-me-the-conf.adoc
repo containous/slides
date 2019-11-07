@@ -1,45 +1,21 @@
 
-= Show Me the Configuration!
+= Traefik With &#9096;
 
 [{invert}]
-== Traefik with 🐳
-
-image::quickstart-diagram.png["Quickstart Diagram",width=800]
-
-[{invert}]
-== Example With 🐳
-
-[source,yaml]
-----
-version: '3'
-
-services:
-  reverse-proxy:
-    image: traefik:v2.0
-    command: --providers.docker.endpoint="tcp://proxy-docker.svc.local:2376"
-    ports:
-      - "80:80"
-
-  corporate-webapp:
-    image: company/corporate-webapp:1.2.3
-    labels:
-      - "traefik.http.routers.webapp.rule=Host(`company.com`)"
-
-  admin-webapp:
-    image: company/admin-webapp:15.2.2
-    labels:
-      - "traefik.http.routers.admin-webapp.rule=Host(`company.com`) && PathPrefix(`/admin`)"
-      - "traefik.http.services.admin-svc.loadbalancer.server.port=9999"
-----
-
-
-[{invert}]
-== Traefik With &#9096;
+== Architecture
 
 image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
 
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
+
+[{invert}]
+== Default Ingress Controller in
+
+image::logo-k3s.svg["Traefik with Kubernetes Diagram",height=250]
+
+image::d2iq-logo.png["Traefik with Kubernetes Diagram",height=250]
+
 
 [{invert}]
 == Ingress Example with &#9096;
@@ -136,3 +112,9 @@ http:
         servers:
         - url: "http://private-ip-server-2/"
 ----
+
+== Obervability by default
+
+* Supports OpenTracing (DataDog, Instana, Jaeger...)
+* Metrics (Prometheus, Grafana...)
+

@@ -1,28 +1,17 @@
 
 [%notitle]
-= Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+= Easy Ingress Management for your Containerized Journey
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+Easy Ingress Management for your Containerized Journey
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://osseu19.sched.com/event/TLHO/easy-https-for-your-microservice-architectures-julien-salleyron-containous[Open Source Summit Europe - Lyon 2019]
-
-[{invert}]
-== Whoami
-Julien Salleyron
-
-* link:https://traefik.io/[Træfik,window=_blank]'s Senior Software Engineer @
-link:https://containo.us/[Containous,window=_blank]
-** link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
-
-
-image::juliens.jpg[height=200]
+Kubecon US - San Diego 2019
 
 [{invert}]
 == Containous
@@ -45,24 +34,22 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+include::./includes/demestify.adoc[]
 
 include::./includes/traefik-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+include::./includes/show-me-the-conf.adoc[]
 
-include::./includes/demo.adoc[]
+include::./includes/maesh.adoc[]
 
-include::./includes/traefikee.adoc[]
+include::./includes/hiring.adoc[]
 
-include::./includes/more-to-come.adoc[]
+include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
 [{invert}]
 == Thank you!
-
-* link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
