@@ -42,8 +42,6 @@ include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/maesh.adoc[]
 
-include::./includes/hiring.adoc[]
-
 include::./includes/the-end.adoc[]
 
 :leveloffset: -1
