@@ -61,16 +61,19 @@ image::wordcloud_v3.png[width=650]
 image::logo-k3s.svg["Traefik with Kubernetes Diagram",height=250]
 
 image::d2iq-logo.png["Traefik with Kubernetes Diagram",height=250]
+DSiQ (Konvoy)
 
 [{invert}]
 == TraefikCE Kubernetes Specifics
-image::crd.png[width=150]
+image::crd.png[width=120]
+[.crd.text]
+Kubernetes CRD
 
-image::opentracing-logo.png[width=150]
+image::opentracing-logo.png[width=120]
 
-image::prometheus.png[width=150]
+image::prometheus.png[width=120]
 
-image::grafana.jpg[width=150]
+image::grafana.jpg[width=120]
 
 == East / West Traefik
 
