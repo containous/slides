@@ -1,7 +1,34 @@
 [{invert}]
 == We Also Missed Talking About ...
 
-image::word-cloud.png[width=900]
+image::traefik-word-cloud.svg[width=900]
+
+[.notes]
+--
+Routing
+ACME
+Let's Encrypt
+TCP
+Canary
+HTTPS
+TLS-SSL
+GRPC
+Websockets
+OpenTracing
+Metrics
+Observability
+Dynamic-Configuration
+Authentication
+Circuit-Breaker
+Middlewares
+Secrets
+Rate-Limiting
+Headers
+Ingress
+CRDs
+Proxy
+Error-Pages
+--
 
 [{invert}]
 = What's Next

@@ -14,7 +14,9 @@ image::traefik.logo.png["Traefik's Logo",height=300]
 Kubecon US - San Diego 2019
 
 [{invert}]
-== Containous
+== !
+
+image::containous-logo.png["Containous Logo", width=150]
 
 link:https://containo.us[]
 
@@ -22,36 +24,46 @@ link:https://containo.us[]
 * We Deliver Traefik and Traefik Enterprise Edition
 * Commercial Support
 * 30 people distributed, 90% tech
-
-image::containous-logo.png["Containous Logo"]
-
-// //// end of Speaker Slide and Company slide
-
-
-// ///////////////////////
-// Include chapter here with a blank line between each
-// Notice the offset to have chapters as autonomous documents
-// ///////////////////////
-:leveloffset: +1
-
-include::./includes/demestify.adoc[]
-
-include::./includes/traefik-project.adoc[]
-
-include::./includes/show-me-the-conf.adoc[]
-
-include::./includes/maesh.adoc[]
-
-include::./includes/the-end.adoc[]
-
-:leveloffset: -1
+* We're hiring!
++
+[source,bash]
+----
+docker run -it containous/jobs
+----
 
 [{invert}]
-== Thank you!
+== Demestifying Edge Proxy & Ingress
 
-image::qrcode.png["QRCode to this presentation",height=150]
+image::edge-proxy-ingress.svg[width=1200]
 
-[.small]
-- link:{presentationUrl}[Slides (HTML): {presentationUrl}]
-- link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on +++<i class="fab fa-github"></i>+++: {repositoryUrl}]
+[.notes]
+--
+* Edge Proxy
+** A router sits at the Edge of your infrastructure
+** Its job is to forward the incoming requests to your microservice
+** That management is done in k8s via an Ingress
+** Easy Management of incoming requests for everyone
+* Ingress 101
+** Ingress is a collection of rules for inbound access
+** Provides Lvl 7 Loadbalancer capabilities
+** TLS, Name Based Virtual Hosting…
+** Easy Management by the whole Team!
+--
+
+// === What is a router's job (Internet => Private Net)
+// === What is Ingress
+// === Why is that important?
+
+== Do you need...
+
+image::traefik-word-cloud.svg[width=900]
+
+== Kubernetes TraefikCE Specifics
+=== Integrated by Default: K3, D2IQ (Konvoy)
+=== CRD
+=== OpenTracing / Metrics
+
+== Taking it further Service-Mesh
+=== Maesh
+=== Benefits (East / Weast)
+=== Build on Traefik
