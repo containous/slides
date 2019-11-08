@@ -16,7 +16,7 @@ Docker4Mac, Docker4Windows or a local Linux Docker install)
 * If you want to generate the slide-deck in "one shot":
 ** Clone the repository
 ** Run the following `make` command:
-+
+
 [source,bash]
 ----
 make build
@@ -33,7 +33,7 @@ to get a WYSIWYG experience:
 
 ** Clone the repository
 ** Run the following `make` command:
-+
+
 [source,bash]
 ----
 make serve
@@ -50,14 +50,14 @@ of the generated slide deck.
 
 If you already generated the file `./dist/index.html`,
 then run the following `make` command:
-+
+
 [source,bash]
 ----
 make verify
 ----
 
 Otherwise, you can run the `all` command ,as the CI process is doing:
-+
+
 [source,bash]
 ----
 make all
@@ -67,7 +67,7 @@ make all
 
 If you want to get a shell inside the "build and serve" container,
 run the following `make` command:
-+
+
 [source,bash]
 ----
 make shell
