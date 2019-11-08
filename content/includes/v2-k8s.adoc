@@ -1,19 +1,21 @@
 
 [{invert}]
-= Traefik with &#9096;
+= Traefik With &#9096;
 
 image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
 
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
 
-== Example Code with &#9096;
+[{invert}]
+== Ingress Example with &#9096;
 
 [source,yaml]
 ----
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  name: corporate-webapp
   annotations:
     kubernetes.io/ingress.class: 'traefik'
 spec:
@@ -21,11 +23,17 @@ spec:
   - host: localhost
     http:
       paths:
-      - path: "/whoami"
-        backend:
-          serviceName: webapp
+      - backend:
+          serviceName: corporate-webapp
           servicePort: 80
 ----
+
+
+== But...
+
+image::traefik-ingress-annotations.png[float=left,height=600]
+
+image::nginx-ingress-annotations.png[float=right,height=600]
 
 [{invert}]
 == &#9096; CRD - Custom Resources Definition

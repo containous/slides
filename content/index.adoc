@@ -1,33 +1,33 @@
 
 [%notitle]
-= Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+= Easy Routing in Kubernetes with Traefik for Application Delivery
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+Easy Routing in Kubernetes with Traefik for Application Delivery
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://osseu19.sched.com/event/TLHO/easy-https-for-your-microservice-architectures-julien-salleyron-containous[Open Source Summit Europe - Lyon 2019]
+link:https://www.meetup.com/fr-FR/sf-DevOps/events/265384051/[SF DevOps Meetup - November 2019]
 
 [{invert}]
 == Whoami
-Julien Salleyron
+Emile vauge
 
-* link:https://traefik.io/[Træfik,window=_blank]'s Senior Software Engineer @
-link:https://containo.us/[Containous,window=_blank]
-** link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
+* 🇫🇷 Developer
+* Creator of link:https://traefik.io/[Træfik,window="_blank"], Founder of link:https://containo.us/[Containous,window="_blank"]
+* link:https://twitter.com/emilevauge[+++<span class="fab fa-twitter"></span>+++ @emilevauge,window="_blank"]
+* link:https://github.com/emilevauge[+++<span class="fab fa-github"></span>+++ emilevauge,window="_blank"]
 
-
-image::juliens.jpg[height=200]
+image::emile-bw.png[height=200]
 
 [{invert}]
 == Containous
 
-link:https://containo.us[]
+link:https://containo.us[window="_blank"]
 
 * We Believe in Open Source
 * We Deliver Traefik and Traefik Enterprise Edition
@@ -51,18 +51,27 @@ include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/demo.adoc[]
+include::./includes/traefik-and-le.adoc[]
+
+include::./includes/show-me-the-conf.adoc[]
+
+include::./includes/v2-k8s.adoc[]
+
+include::./includes/v2-tcp.adoc[]
 
 include::./includes/traefikee.adoc[]
 
-include::./includes/more-to-come.adoc[]
+include::./includes/maesh.adoc[]
+
+include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
 [{invert}]
 == Thank you!
 
-* link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
+* link:https://twitter.com/emilevauge[+++<span class="fab fa-twitter"></span>+++ @emilevauge,window="_blank"]
+* link:https://github.com/emilevauge[+++<span class="fab fa-github"></span>+++ emilevauge,window="_blank"]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
