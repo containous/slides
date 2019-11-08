@@ -29,6 +29,8 @@ spec:
             - --log.level=debug
             - --providers.kubernetescrd
             - --providers.file.filename=/etc/traefik/dynamic_conf.yml
+            - --certificatesResolvers.myLE.acme.email=manuel@containo.us
+            - --certificatesResolvers.myLE.acme.caserver=https://pebble.pebble.svc.cluster.local/dir
           ports:
             - name: http
               containerPort: 80

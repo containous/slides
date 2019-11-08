@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`localhost`)
+  - match: Host(`webapp.docker.localhost`)
     kind: Rule
     services:
     - name: webapp
