@@ -54,9 +54,10 @@ image::edge-proxy-ingress.svg[width=1200]
 // === What is Ingress
 // === Why is that important?
 
+[{invert}]
 == Do you need...
 
-image::traefik-word-cloud.svg[width=900]
+image::traefik-word-cloud.png[width=1000]
 
 == Kubernetes TraefikCE Specifics
 === Integrated by Default: K3, D2IQ (Konvoy)

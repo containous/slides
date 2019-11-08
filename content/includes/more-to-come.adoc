@@ -1,7 +1,7 @@
 [{invert}]
 == We Also Missed Talking About ...
 
-image::traefik-word-cloud.svg[width=900]
+image::traefik-word-cloud.png[width=900]
 
 [.notes]
 --
