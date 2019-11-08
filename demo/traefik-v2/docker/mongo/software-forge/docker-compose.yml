@@ -1,0 +1,56 @@
+version: '2.4'
+
+services:
+  edge:
+    image: traefik:v2.0.0
+    command:
+      - "--configfile=/traefik.toml"
+    labels:
+      - "traefik.enable=false"
+    ports:
+      - "80:80"       # The HTTP port
+      - "443:443"     # The HTTPS port
+      - "8080:8080"   # The API port
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+  web:
+    build: ./hugo/
+    labels:
+      - "traefik.http.routers.web.rule=Host(`${EXTERNAL_HOST}`)"
+      - "traefik.http.routers.web.entrypoints=http"
+      - "traefik.http.routers.web.service=service-web"
+      - "traefik.http.services.service-web.loadbalancer.server.port=80"
+  jenkins:
+    image: jenkins/jenkins:2.164.1-alpine
+    expose:
+      - 8080
+      - 50000
+    environment:
+      - JENKINS_OPTS=--prefix=/jenkins
+    labels:
+      - "traefik.http.routers.jenkins.rule=Host(`${EXTERNAL_HOST}`) && PathPrefix(`/jenkins`)"
+      - "traefik.http.routers.jenkins.entrypoints=http"
+      - "traefik.http.routers.jenkins.service=service-jenkins"
+      - "traefik.http.services.service-jenkins.loadbalancer.server.port=8080"
+  gitserver:
+    image: gitea/gitea:latest
+    expose:
+      - "3000"
+      - "22"
+    environment:
+      - ROOT_URL=/gitserver
+    labels:
+      - "traefik.http.routers.gitserver.rule=Host(`${EXTERNAL_HOST}`) && PathPrefix(`/gitserver`)"
+      - "traefik.http.routers.gitserver.entrypoints=http"
+      - "traefik.http.routers.gitserver.service=service-git"
+      - "traefik.http.routers.gitserver.middlewares=file.stripprefix"
+      - "traefik.http.services.service-git.loadbalancer.server.port=3000"
+
+  ttyd:
+    image: tsl0922/ttyd
+    labels:
+      - "traefik.http.routers.ttyd.rule=Host(`${EXTERNAL_HOST}`) && PathPrefix(`/ttyd`)"
+      - "traefik.http.routers.ttyd.entrypoints=http"
+      - "traefik.http.routers.ttyd.service=ttyd_traefik-v2"
+      - "traefik.http.routers.ttyd.middlewares=file.stripprefix"

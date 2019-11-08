@@ -1,0 +1,6 @@
+baseURL = "http://localhost/"
+languageCode = "en-us"
+title = "Containous, the Traefik Company"
+
+theme = ["containo.us"]
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {{- partial "head.html" . -}}
+    {{- block "preload" . }}{{- end }}
+    </head>
+    <body>
+        <div class="traefik-content">
+            {{- partial "top-menu.html" . -}}
+            {{- block "main" . }}{{- end }}
+            {{- partial "footer.html" . -}}
+        </div>
+    </body>
+</html>

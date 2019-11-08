@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+  rproxy:
+    image: traefik:v2.0.2
+    command:
+      - --providers.file
+      - --providers.file.filename=/etc/traefik/dync_conf.yaml
+      - --api
+      - --api.insecure
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./conf:/etc/traefik/
+    networks:
+      net:
+        aliases:
+          - traefik
+
+  service1:
+    image: containous/whoami
+    restart: always
+    networks:
+      net:
+        aliases:
+          - webapp1
+
+  service2:
+    image: nginx
+    restart: always
+    networks:
+      net:
+        aliases:
+          - webapp2
+
+
+networks:
+  net:
+    name: "net"
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.1.0/27
