@@ -1,15 +1,33 @@
+[{invert}]
+= HTTPS & Let's encrypt
+
+image::traefik-lets-encrypt-diagram.png["Lets encrypt",width=1000]
 
 [{invert}]
+== Let's encrypt DNS Challenge
+
+image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
+
+
+[{invert}]
+== Let's encrypt HTTP Challenge
+
+image::lets-encrypt-http-challenge.png["Lets encrypt HTTP Challenge",width=1000]
+
+[{invert}]
+== Let's encrypt TLS Challenge
+
+image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
+
 = Show Me the Configuration!
 
 [{invert}]
-== Simple Example with 🐳
+== Traefik with 🐳
 
 image::quickstart-diagram.png["Quickstart Diagram",width=800]
 
-== With 🐳
-
-* With Docker Compose:
+[{invert}]
+== Example With 🐳
 
 [source,yaml]
 ----
@@ -18,62 +36,106 @@ version: '3'
 services:
   reverse-proxy:
     image: traefik:v2.0
-    command: --providers.docker
+    command: --providers.docker.endpoint="tcp://proxy-docker.svc.local:2376"
     ports:
       - "80:80"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
-  webapp:
-    image: containous/whoami
+  corporate-webapp:
+    image: company/corporate-webapp:1.2.3
     labels:
-      - "traefik.http.routers.webapp.rule=Host(`localhost`)"
+      - "traefik.http.routers.webapp.rule=Host(`company.com`)"
+
+  admin-webapp:
+    image: company/admin-webapp:15.2.2
+    labels:
+      - "traefik.http.routers.admin-webapp.rule=Host(`company.com`) && PathPrefix(`/admin`)"
+      - "traefik.http.services.admin-svc.loadbalancer.server.port=9999"
 ----
 
-== With 🐳: Context
+
+[{invert}]
+== Traefik With &#9096;
+
+image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=900]
+
+[.small]
+Diagram from link:https://medium.com/@geraldcroes[]
+
+[{invert}]
+== Ingress Example with &#9096;
 
 [source,yaml]
 ----
-# https://mycompany.org/jenkins -> http://jenkins:8080/jenkins
-jenkins:
-    image: jenkins/jenkins:lts
-    environment:
-      - JENKINS_OPTS=--prefix=/jenkins
-    labels:
-      - "traefik.http.services.jenkins.LoadBalancer.server.Port=8080" # Because 50000 is also exposed
-      - "traefik.http.routers.jenkins.rule=Host(`mycompany.org`) && PathPrefix(`/jenkins`)"
-      - "traefik.http.routers.jenkins.service=jenkins"
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: corporate-webapp
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - backend:
+          serviceName: corporate-webapp
+          servicePort: 80
 ----
 
-== With 🐳: Rewrites
+
+== But...
+
+image::traefik-ingress-annotations.png[float=left,height=600]
+
+image::nginx-ingress-annotations.png[float=right,height=600]
+
+[{invert}]
+== &#9096; CRD - Custom Resources Definition
 
 [source,yaml]
 ----
-# https://mycompany.org/gitserver -> http://gitserver:3000/
-gitserver:
-    image: gitea/gitea
-    labels:
-      - "traefik.http.routers.gitserver.rule=Host(`mycompany.org`) && PathPrefix(`/gitserver`)"
-      - "traefik.http.middlewares.gitserver-stripprefix.stripprefix.prefixes=/gitserver"
-      - "traefik.http.routers.gitserver.middlewares=gitserver-stripprefix"
+# File "webapp.yaml"
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simpleingressroute
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`localhost`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: webapp
+      port: 80
 ----
 
-== With 🐳: Websockets
+[source,bash]
+----
+$ kubectl apply -f webapp.yaml
+$ kubectl get ingressroute
+----
+
+== &#9096; & TCP (with CRD)
 
 [source,yaml]
 ----
-# https://webterminal.mycompany.org -> http://webterminal/
-webterminal:
-    image: tsl0922/ttyd
-    labels:
-      - "traefik.http.routers.devbox.rule=Host(`webterminal.mycompany.org`)"
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: ingressroutetcpmongo.crd
+spec:
+  entryPoints:
+    - mongotcp
+  routes:
+  - match: HostSNI(`mongo-prod`)
+    services:
+    - name: mongo-prod
+      port: 27017
 ----
 
+== Canary releases
 
-
-== With File Configuration
-
-== Canaray releases
 [source,yaml]
 ----
 http:
@@ -84,7 +146,7 @@ http:
         - name: appv1
           weight: 3 # 75%
         - name: appv2
-          weight: 1 #25%
+          weight: 1 # 25%
     appv1:
       loadBalancer:
         servers:

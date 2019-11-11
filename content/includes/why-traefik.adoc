@@ -8,7 +8,7 @@ Why, Mr Anderson?
 [{invert}]
 == Evolution of Software Design
 
-image::evolution-of-software-design.jpg[Evolution of Software Design]
+image::pasta-architecture.png[Evolution of Software Design, height = 800]
 
 == The Premise of Microservices...
 

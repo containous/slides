@@ -20,53 +20,10 @@ image::cluster-traefikee.png[]
 * Security : Encryption & Separation of Concern
 * High Availability
 
-[state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== An Highly Available Traefik
-
-++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
-  <source src="videos/traefik-ee-high-availability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-[.small]
-High Availability
-
-[state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== A Safe Traefik
-
-++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
-  <source src="videos/traefik-ee-safety.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-[.small]
-Security
-
-[state=invert,background-color="rgb(249,248,248)"]
-[%notitle]
-== A Scalable Traefik
-
-++++
-<video class="center" width="1024" height="768" autoplay muted controls loop>
-  <source src="videos/traefik-ee-scalability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-[.small]
-Scalability
-
-
 [{invert}]
 == !
 
-image::traefikee-architecture-gray-bg.png[background, size=cover]
+image::ee-architecture-new.png[]
 
 == As Simple As Traefik
 

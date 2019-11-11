@@ -9,9 +9,10 @@ include::./includes/attributes.adoc[]
 [.title]
 Traefik Enterprise Edition & Maesh
 
-image::traefik-ee-logo.png["Traefik's Logo",height=300]
+image:traefik-ee-logo.png["Traefik's Logo",height=300]
+image:maesh.png["Traefik's Logo",height=300]
 
-link:https://www.eventbrite.com/e/paris-kubernetes-day-tickets-72356567441[Paris Kubernetes Days - Wednesday 25th of September 2019]
+link:https://www.meetup.com/nl-NL/CloudGURUS/events/265524643/[CloudGURUS Netherlands - Tuesday 12th of November 2011]
 
 
 == How to use these slides?
@@ -73,7 +74,7 @@ include::./includes/traefik-project.adoc[]
 
 include::./includes/traefikee.adoc[]
 
-include::./includes/show-me-the-conf-v1.adoc[]
+include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/maesh.adoc[]
 
