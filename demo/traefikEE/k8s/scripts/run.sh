@@ -8,9 +8,6 @@ NAME="maesh"
 
 pushd "${DEMO_DIR}"
 
-# Prepare Docker Images
-docker build -t containous/app-demo:latest ./apps/app1
-
 # Create k3s cluster
 k3d create \
 --name="${NAME}" \
@@ -21,7 +18,6 @@ k3d create \
 
 
 k3d import-images --name="${NAME}" containous/whoami:v1.0.1
-k3d import-images --name="${NAME}" containous/app-demo:latest
 
 echo "== Waiting for cluster being ready"
 sleep 10
