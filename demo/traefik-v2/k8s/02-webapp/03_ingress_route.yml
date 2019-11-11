@@ -9,9 +9,12 @@ metadata:
 spec:
   entryPoints:
     - web
+    #- websecure
   routes:
   - match: Host(`webapp.docker.localhost`)
     kind: Rule
     services:
     - name: webapp
       port: 80
+  #tls:
+    #certResolver: myLE

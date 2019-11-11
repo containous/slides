@@ -17,4 +17,4 @@ data:
         auth:
           basicAuth:
             users:
-              - "traefik:$apr1$RPlPZdQ0$qfSKvjR19pCqdtAD2wQ6q."
+              - "traefik:$apr1$vg9o1njw$PC83XopuGBGOCof5FQ6iW/" #traefik/kubecon

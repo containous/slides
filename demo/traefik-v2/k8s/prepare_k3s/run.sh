@@ -4,39 +4,54 @@ set -eu -o pipefail
 
 CURRENT_DIR="$(cd "$(dirname "${0}")" && pwd -P)"
 DEMO_DIR="${CURRENT_DIR}/.."
-IMAGE_DIR="${DEMO_DIR}/images"
-SIND_CLUSTERNAME=dockerswarm
-DOCKER_IMAGE_NAME="containous/${SIND_CLUSTERNAME}"
-export DOCKER_HOST=""
+NAME="kubecon"
 
 pushd "${DEMO_DIR}"
 
-# Prepare Docker Images
-docker build -t containous/webapp ./webapp/build
-docker pull containous/whoami
-
-mkdir -p ${IMAGE_DIR}
-docker save containous/webapp -o ${IMAGE_DIR}/webapp.tar
-
 # Create k3s cluster
-docker-compose --file ${DEMO_DIR}/docker-compose.yaml up -d --scale node=2
+k3d create \
+--name="${NAME}" \
+--workers="1" \
+--publish="80:80" \
+--publish="443:443" \
+--publish="8080:8080" --server-arg="--no-deploy=traefik" --server-arg="--no-deploy=coredns"
 
-# Use correct KUBECONFIG file
-export KUBECONFIG=/tmp/k3s-output/kubeconfig.yaml
+
+k3d import-images --name="${NAME}" containous/whoami:v1.0.1
 
 echo "== Waiting for cluster being ready"
 sleep 10
 
-kubectl --kubeconfig="${KUBECONFIG}" apply -f ${DEMO_DIR}//k3s/local-path-storage.yaml
+KUBECONFIG="$(k3d get-kubeconfig --name="${NAME}")"
+export KUBECONFIG
+
+# Install Helm
+echo 'apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system'| kubectl --kubeconfig="${KUBECONFIG}" apply -f -
+helm init --service-account tiller --upgrade
+
+# Install core dns
+kubectl --kubeconfig="${KUBECONFIG}" apply -f ${DEMO_DIR}//k3s/coredns.yaml
+
+# Install local-path-storage
+kubectl --kubeconfig="${KUBECONFIG}" apply -f "${DEMO_DIR}/k3s/local-path-storage.yaml"
 kubectl --kubeconfig="${KUBECONFIG}" patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
-# Install pebble, monitoring, tracing, whoami, hotrod 
-
-kubectl --kubeconfig="${KUBECONFIG}" apply -f pebble/
-kubectl --kubeconfig="${KUBECONFIG}" apply -f monitoring/
-kubectl --kubeconfig="${KUBECONFIG}" apply -f jaeger/
-kubectl --kubeconfig="${KUBECONFIG}" apply -f whoami/
-kubectl --kubeconfig="${KUBECONFIG}" apply -f hotrod/
 
 echo "== K3s cluster ready"
 

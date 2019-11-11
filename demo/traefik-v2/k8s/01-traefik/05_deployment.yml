@@ -31,6 +31,12 @@ spec:
             - --providers.file.filename=/etc/traefik/dynamic_conf.yml
             - --certificatesResolvers.myLE.acme.email=manuel@containo.us
             - --certificatesResolvers.myLE.acme.caserver=https://pebble.pebble.svc.cluster.local/dir
+            - --certificatesResolvers.myLE.acme.httpChallenge.entryPoint=web
+          env:
+            - name: LEGO_CA_CERTIFICATES
+              value: /etc/certs/cert.pem
+            - name: LEGO_CA_SERVER_NAME
+              value: pebble.pebble.svc.cluster.local
           ports:
             - name: http
               containerPort: 80
@@ -48,7 +54,15 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /etc/traefik
+            - name: local-ca-cert
+              mountPath: /etc/certs/
       volumes:
         - name: config-volume
           configMap:
             name: traefik-config
+        - name: local-ca-cert
+          secret:
+            secretName: local-ca-certs
+            items:
+              - key: cert.pem
+                path: cert.pem
