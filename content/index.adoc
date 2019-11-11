@@ -134,7 +134,7 @@ image::cluster-traefikee.png[]
 
 [{invert}]
 == Future Proof Architecture
-image::traefikee-architecture-gray-bg.png[]
+image::ee-architecture-new.png[]
 
 [{invert}]
 == TrafikeEE
