@@ -23,15 +23,10 @@ image::containous-logo.png["Containous Logo", width=150]
 link:https://containo.us[]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Maesh and Traefik Enterprise Edition
 * Commercial Support
 * 30 people distributed, 90% tech
-* We're hiring!
-+
-[source,bash]
-----
-docker run -it containous/jobs
-----
+* We're hiring: `docker run -it containous/jobs`
 
 [{invert}]
 == Demestifying Edge Proxy & Ingress
@@ -55,37 +50,36 @@ image::edge-proxy-ingress-svc.svg[width=1200]
 
 [{invert}]
 == Do you need...
-image::wordcloud_v3.png[width=650]
+image::wordcloud_v3.png[width=800]
 
 [{invert}]
-== !
+[%notitle]
+== Traefik
+
 image::traefik.logo.png[width=200]
-* Simple to Use
+
+* Simple to use
 * Truly dynamic
-* Just a single binary
+* Only a single binary
 * Made for containers
 
 [{invert}]
 == Bundled with
 
-image::logo-k3s.svg["Traefik with Kubernetes Diagram",height=250]
+image::logo-k3s.svg["Traefik with Kubernetes Diagram",height=250,float=left]
 
-image::d2iq-logo.png["Traefik with Kubernetes Diagram",height=250]
-DSiQ (Konvoy)
+image::d2iq-logo.png["Traefik with Kubernetes Diagram",height=250,float=right]
 
 
 [{invert}]
 == Fully integrated with
 
-image:crd.png[width=120]
-[.crd.text]
-Kubernetes CRD
+image:crd.png[width=150,role="grid crd"]
 
-image:opentracing-logo.png[width=120]
+image:opentracing-logo.png[width=150,role="grid"]
+image:prometheus.png[width=120,role="grid"]
 
-image:prometheus.png[width=120]
-
-image:grafana.jpg[width=120]
+image:grafana-logo.png[width=250,role="grid"]
 
 == East / West Traefik
 
@@ -104,11 +98,14 @@ Maesh is a lightweight, easy to configure, and non-invasive service mesh that al
 __
 
 [{invert}]
-== !
-image::maesh.png[height=400]
+[%notitle]
+== Maesh
+
+image::maesh.png[height=300]
+
 * Non invasive
 * Lightweight
-* Built on top of Traefik,
+* Built on top of Traefik
 * SMI (Service Mesh Interface specification) compliant
 * Opt-in by default.
 
@@ -120,29 +117,30 @@ image::before-maesh-graphic.png[width=500,float=left]
 image::after-maesh-graphic.png[width=500,float=right]
 
 == Benefits
+
 * Observability
 * Traffic Management
 * Security & Safety
 * Open Source
 
 More?
-https://mae.sh
+link:https://mae.sh[]
 
 [{invert}]
 == You want to go Day2 and beyond?
 image::cluster-traefikee.png[]
 
 [{invert}]
+[%notitle]
 == Future Proof Architecture
-image::ee-architecture-new.png[]
+image::ee-architecture-new.png[background]
 
 [{invert}]
-== TrafikeEE
+== Trafik Enterprise Edition
 image::traefikee.png[]
-* Centralized governance definition 
+* Centralized governance definition
 * Centralized observability
-* Distributed middletier management
-* High Availabity by default
-
+* Distributed middle-tiers management
+* High Availability by default
 
 = That's All Folks!
