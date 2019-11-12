@@ -11,7 +11,6 @@
 * A bash prompt
 * The following domain names should point to the Docker Engine used with `k3d` (tip: use `/etc/hosts`):
 ** `traefik.localhost`
-** `app.localhost`
 ** `app.canary.localhost`
 * `kubectl` and `helm` binaries
 
@@ -49,8 +48,6 @@ kubectl get pod --all-namespaces
 kubectl apply -f ./00-prepare/
 ----
 
-== Run Demo
-
 * Install Traefik v2.0 in the cluster:
 ** Please note this is YAML from the beta Helm chart, as we cannot use it for now.
 
@@ -58,6 +55,29 @@ kubectl apply -f ./00-prepare/
 ----
 kubectl apply -f ./01-traefik/
 ----
+
+== Run Demo
+
+* Open Traefik dashboard at http://traefik.localhost/dashboard/[]
+
+* Deploy the app-v1 (eg. the "production" application):
+
+[source,bash]
+----
+kubectl apply -f ./02-webapp/
+----
+
+* Open the webapp application at http://app.canary.localhost[] and reload it 4-5 times to show the changing IP (e.g. load balancer in action)
+
+* Deploy the app-v2 and set it to canary for 25% requests:
+
+
+[source,bash]
+----
+kubectl apply -f ./03-canary/
+----
+
+* Reload the webapp at http://app.canary.localhost[]: you see the page changing.
 
 == Cleanup
 

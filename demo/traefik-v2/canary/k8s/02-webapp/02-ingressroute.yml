@@ -8,7 +8,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`app.localhost`)
+    - match: Host(`app.canary.localhost`)
       kind: Rule
       services:
       - name: webapp-v1
