@@ -1,22 +1,25 @@
-# HTTP Router with a WWR Load Balancer
+
+= HTTP Router with a WWR Load Balancer
 
 * Start the stack:
 
-```shell
+[source,bash]
+----
 docker-compose up -d
-```
+----
 
+* Check the load balancing
 
-*  Check the load balancing
-
-```bash
+[source,bash]
+----
 curl http://canary.docker.localhost
-```
+----
 
 Send the request at least 3 times and check that we have 3 whoami response then 1 nginx response.
 
 * Cleanup:
 
-```shell
+[source,bash]
+----
 docker-compose down -v
-```
+----
