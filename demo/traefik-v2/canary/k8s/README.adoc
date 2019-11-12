@@ -1,0 +1,67 @@
+
+= HTTP Router with a WWR Load Balancer in Kubernetes
+
+== Requirements
+
+
+== Requirements
+
+* `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.1`)
+* A docker engine (tested with Docker 19.03.2 and Docker4Mac 19.03.2)
+* A bash prompt
+* The following domain names should point to the Docker Engine used with `k3d` (tip: use `/etc/hosts`):
+** `traefik.localhost`
+** `app.localhost`
+** `app.canary.localhost`
+* `kubectl` and `helm` binaries
+
+== Prepare Demo
+
+* Using the `k3d` command, start a Kubernetes cluster with the following properties:
+** 1 master node and 3 worker nodes,
+** ports 80 and 443 published on the Docker Engine,
+** Default k3s deployments, but without the default Traefik Ingress (as it is currently `1.7.x` version).
+
+[source,bash]
+----
+k3d create --name="demo" \
+    --publish="80:80" --publish="443:443" \
+    --server-arg="--no-deploy=traefik" --workers="3"
+----
+
+* Check the Kubernetes status, CoreDNS and "local" path provisioner must be in `READY` state (with `1/1` replica):
+
+[source,bash]
+----
+export KUBECONFIG="$(k3d get-kubeconfig --name='demo')"
+
+kubectl cluster-info
+
+kubectl get nodes
+
+kubectl get pod --all-namespaces
+----
+
+* Prepare cluster for Traefik v2.0 installation (namespace, RBAC, CRDs):
+
+[source,bash]
+----
+kubectl apply -f ./00-prepare/
+----
+
+== Run Demo
+
+* Install Traefik v2.0 in the cluster:
+** Please note this is YAML from the beta Helm chart, as we cannot use it for now.
+
+[source,bash]
+----
+kubectl apply -f ./01-traefik/
+----
+
+== Cleanup
+
+[source,bash]
+----
+k3d delete --name=demo
+----
