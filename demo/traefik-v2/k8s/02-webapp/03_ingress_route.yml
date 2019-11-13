@@ -9,7 +9,7 @@ metadata:
 spec:
   entryPoints:
     - web
-    #- websecure
+    - websecure
   routes:
   - match: Host(`webapp.localhost`)
     kind: Rule

@@ -62,7 +62,7 @@ kubectl apply -f ./01-traefik/
 
 Open dashboard at http://traefik.localhost/dashboard/
 
-== Show Webapp without TLS
+== Show Webapp in HTTP
 
 [source,bash]
 ----
@@ -71,7 +71,11 @@ kubectl apply -f ./02-webapp/
 
 Open webapp at http://webapp.localhost
 
-Comment in TLS and redeploy for TLS
+== Show Webapp with HTTPS (TLS)
+
+Edit the file `./02-webapp/03_ingress_route.yml`, 
+and uncomment the block `tls:`,
+and re-deploy the web application:
 
 [source,bash]
 ----
