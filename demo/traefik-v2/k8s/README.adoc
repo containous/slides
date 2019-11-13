@@ -94,3 +94,5 @@ k3d delete --name=kubecon
 == TODO
 
 * [ ] Cleanup in the beginning of `run.sh` for idempotency
+* [ ] Configure HTTP to HTTPS redirect when tlizing the webapp
+* [ ] Document the MongoDB example
