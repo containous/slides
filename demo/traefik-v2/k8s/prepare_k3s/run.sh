@@ -8,8 +8,8 @@ NAME="kubecon"
 
 pushd "${DEMO_DIR}"
 
-# Cleanup old cluster
-bash "${CURRENT_DIR}/clean.sh"
+# Cleanup old cluster, never errors
+bash "${CURRENT_DIR}/clean.sh" || true
 
 # Create k3s cluster
 k3d create \

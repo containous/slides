@@ -1,0 +1,49 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webapp
+  namespace: webapp
+  labels:
+    app: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`webapp.localhost`)
+      kind: Rule
+      services:
+        - name: webapp
+          port: 80
+      middlewares:
+        - name: webapp-redirect-http-to-https
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: webapp-redirect-http-to-https
+  namespace: webapp
+  labels:
+    app: webapp
+spec:
+  redirectScheme:
+    scheme: https
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webapp-tls
+  namespace: webapp
+  labels:
+    app: webapp
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`webapp.localhost`)
+    kind: Rule
+    services:
+    - name: webapp
+      port: 80
+  tls:
+    certResolver: myLE

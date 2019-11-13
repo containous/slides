@@ -67,7 +67,7 @@ Open dashboard at: http://traefik.localhost/dashboard/
 
 Open dashboard (password less) at: http://traefik:kubecon@traefik.localhost/dashboard/
 
-== Show Webapp in HTTP
+== Deploy Webapp in HTTP
 
 [source,bash]
 ----
@@ -76,18 +76,11 @@ kubectl apply -f ./02-webapp/
 
 Open webapp at http://webapp.localhost:80
 
-== Show Webapp with HTTPS (TLS)
-
-Manually edit the file `./02-webapp/03_ingress_route.yml`, 
-and uncomment the block:
-  #tls:
-    #certResolver: myLE
-
-== Re-deploy the web application:
+== Deploy Webapp with HTTPS (TLS) Enabled + HTTP to HTTPS redirection
 
 [source,bash]
 ----
-kubectl apply -f ./02-webapp/
+kubectl apply -f ./03-tls-webapp/
 ----
 
 Open webapp (TLS) at https://webapp.localhost:443
@@ -104,6 +97,6 @@ bash ./prepare_k3s/clean.sh
 == TODO
 
 * [x] Cleanup in the beginning of `run.sh` for idempotency
-* [ ] Configure HTTP to HTTPS redirect when tls-izing the webapp
+* [x] Configure HTTP to HTTPS redirect when tls-izing the webapp
 * [ ] Document the MongoDB example
 * [ ] Nicer webapp
