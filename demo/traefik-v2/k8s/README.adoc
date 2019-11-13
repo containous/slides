@@ -5,9 +5,8 @@ Context:
 
 Quick Demo of Traefik v2 in Kubernetes (5 min), to show its basic functionality during Kubecon if asked for.
 
-* Deploy Dummy WebApp
-* Show That
-* Enable ACME
+* Deploy an HTTP Webapp
+* Configure HTTPS (TLS) on the webapp using ACME
 
 More advanced scenarios can be found in the parent folder, show-casing the same feature set with docker instead of Kubernetes.
 
@@ -24,12 +23,14 @@ More advanced scenarios can be found in the parent folder, show-casing the same 
 
 == Prepare Environment
 
-* Prepare Docker Images cache:
+* Prepare cache (Pull docker images, etc.):
 
 [source,bash]
 ----
 bash ./prepare_k3s/cache.sh
 ----
+
+== Create Cluster
 
 * Start the local Kubernetes cluster:
 
@@ -49,7 +50,7 @@ export KUBECONFIG="$(k3d get-kubeconfig --name='kubecon')"
 
 [source,bash]
 ----
-kubectl apply -f ./pebble/
+kubectl apply -f ./00-pebble/
 ----
 
 == Spawn Traefik V2
@@ -85,3 +86,7 @@ Open TLS-ized webapp at https://webapp.localhost
 ----
 k3d delete --name=kubecon
 ----
+
+== TODO
+
+* [ ] Cleanup in the beginning of `run.sh` for idempotency

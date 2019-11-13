@@ -9,7 +9,7 @@ data:
     http:
       routers:
         api:
-          rule: Host(`traefik.localhost`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
+          rule: Host(`traefik.localhost`)
           service: api@internal
           entrypoints:
             - web
