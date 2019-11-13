@@ -34,7 +34,6 @@ spec:
             - --certificatesResolvers.myLE.acme.caserver=https://pebble.pebble.svc.cluster.local/dir
             - --certificatesResolvers.myLE.acme.httpChallenge.entryPoint=web
             - --ping.entryPoint=ping
-
           env:
             - name: LEGO_CA_CERTIFICATES
               value: /etc/certs/cert.pem

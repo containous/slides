@@ -8,6 +8,9 @@ NAME="kubecon"
 
 pushd "${DEMO_DIR}"
 
+# Cleanup old cluster
+bash "${CURRENT_DIR}/clean.sh"
+
 # Create k3s cluster
 k3d create \
 --name="${NAME}" \

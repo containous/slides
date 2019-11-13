@@ -16,7 +16,7 @@ More advanced scenarios can be found in the parent folder, show-casing the same 
 * A docker engine (tested with Docker 19.03.2 and Docker4Mac 19.03.2)
 * A bash prompt
 * `kubectl` (https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed in your PATH  (tested with `v1.16.2`)
-* `helm` (https://github.com/helm/helm) installed in your PATH (version `2.16` at least link:https://github.com/helm/helm/releases/tag/v2.16.0[])
+* `helm` (https://github.com/helm/helm) installed in your PATH (version `2.16` at least link:https://github.com/helm/helm/releases/tag/v2.16.0)
 * The following domains must point to the Docker Engine used by `k3d`, usually the IP `127.0.0.1` (tip: use `/etc/hosts`): 
 ** `traefik.localhost`
 ** `webapp.localhost`
@@ -98,11 +98,12 @@ Great, the demo is over :)
 
 [source,bash]
 ----
-k3d delete --name=kubecon
+bash ./prepare_k3s/clean.sh
 ----
 
 == TODO
 
-* [ ] Cleanup in the beginning of `run.sh` for idempotency
-* [ ] Configure HTTP to HTTPS redirect when tlizing the webapp
+* [x] Cleanup in the beginning of `run.sh` for idempotency
+* [ ] Configure HTTP to HTTPS redirect when tls-izing the webapp
 * [ ] Document the MongoDB example
+* [ ] Nicer webapp
