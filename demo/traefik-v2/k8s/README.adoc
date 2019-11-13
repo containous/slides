@@ -46,21 +46,26 @@ bash ./prepare_k3s/run.sh
 export KUBECONFIG="$(k3d get-kubeconfig --name='kubecon')"
 ----
 
-== Spawn Pebble
+== Deploy Pebble
 
 [source,bash]
 ----
 kubectl apply -f ./00-pebble/
 ----
 
-== Spawn Traefik V2
+== Deploy Traefik V2
 
 [source,bash]
 ----
 kubectl apply -f ./01-traefik/
 ----
 
-Open dashboard at http://traefik.localhost/dashboard/
+Open dashboard at: http://traefik.localhost/dashboard/
+
+  USER: traefik
+  PASSWORD: kubecon
+
+Open dashboard (password less) at: http://traefik:kubecon@traefik.localhost/dashboard/
 
 == Show Webapp in HTTP
 
@@ -69,20 +74,25 @@ Open dashboard at http://traefik.localhost/dashboard/
 kubectl apply -f ./02-webapp/
 ----
 
-Open webapp at http://webapp.localhost
+Open webapp at http://webapp.localhost:80
 
 == Show Webapp with HTTPS (TLS)
 
-Edit the file `./02-webapp/03_ingress_route.yml`, 
-and uncomment the block `tls:`,
-and re-deploy the web application:
+Manually edit the file `./02-webapp/03_ingress_route.yml`, 
+and uncomment the block:
+  #tls:
+    #certResolver: myLE
+
+== Re-deploy the web application:
 
 [source,bash]
 ----
 kubectl apply -f ./02-webapp/
 ----
 
-Open TLS-ized webapp at https://webapp.localhost
+Open webapp (TLS) at https://webapp.localhost:443
+
+Great, the demo is over :)
 
 == Cleanup
 
