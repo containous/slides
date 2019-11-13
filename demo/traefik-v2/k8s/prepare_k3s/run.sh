@@ -54,7 +54,7 @@ helm init --service-account tiller --upgrade
 
 # Patch CoreDNS to be able to intercept Pebble/ACME requests
 kubectl --kubeconfig="${KUBECONFIG}" get configmap -n kube-system coredns -o yaml \
-  | awk '{sub(/health$/,"health\n        rewrite name regex (.*)\\.localhost traefik-ingress-controller.default.svc.cluster.local")}1' \
+  | awk '{sub(/health$/,"health\n        rewrite name regex (.*)\\.localhost traefik-ingress-controller.traefik.svc.cluster.local")}1' \
   | kubectl --kubeconfig="${KUBECONFIG}" apply -f -
 
 echo "== K3s cluster ready"
