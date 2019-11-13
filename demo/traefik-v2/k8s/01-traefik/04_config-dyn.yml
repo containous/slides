@@ -11,7 +11,7 @@ data:
         api:
           rule: Host(`traefik.localhost`)
           service: api@internal
-          entrypoints:
+          entryPoints:
             - web
             - websecure
           middlewares:
