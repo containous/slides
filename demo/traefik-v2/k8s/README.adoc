@@ -1,6 +1,17 @@
 
 = Demo: Traefik v2 in Kubernetes
 
+Context:
+
+Quick Demo of Traefik v2 in K8s (5 min), to show its basic functionality during Kubecon if asked for.
+
+* Deploy Dummy WebApp
+* Show That
+* Enable ACME
+
+More advnaced scnarios can be found in the parent foldeer, show-casing that on docker.
+
+
 == Requirements
 
 * `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.1`)
@@ -11,7 +22,7 @@
 
 ```shell
 ./prepare_k3s/run.sh
-``
+```
 
 == Spawn Pebble
 
@@ -34,9 +45,4 @@ kubectl apply -f 02-webapp
 Comment in TLS and redeploy for TLS
 ```shell
 kubectl apply -f 02-webapp
-```
-
-== Deploy Mongo
-```shell
-kubectl apply -f 03-mongo
 ```
