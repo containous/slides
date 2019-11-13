@@ -1,0 +1,5 @@
+containous/whoami:v1.4.0
+traefik:v2.0
+rancher/local-path-provisioner:v0.0.11
+gcr.io/kubernetes-helm/tiller:v2.16.0
+coredns/coredns:1.6.3

@@ -11,7 +11,7 @@ spec:
     - web
     #- websecure
   routes:
-  - match: Host(`webapp.docker.localhost`)
+  - match: Host(`webapp.localhost`)
     kind: Rule
     services:
     - name: webapp

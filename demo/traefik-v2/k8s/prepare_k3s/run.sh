@@ -11,13 +11,16 @@ pushd "${DEMO_DIR}"
 # Create k3s cluster
 k3d create \
 --name="${NAME}" \
---workers="1" \
+--workers="2" \
 --publish="80:80" \
 --publish="443:443" \
---publish="8080:8080" --server-arg="--no-deploy=traefik" --server-arg="--no-deploy=coredns"
+--server-arg="--no-deploy=traefik"
 
-
-k3d import-images --name="${NAME}" containous/whoami:v1.0.1
+echo "== Loading Image Cache"
+while IFS= read -r IMAGE
+do
+  k3d import-images --name="${NAME}" "${IMAGE}"
+done < <(cat "${CURRENT_DIR}/images_list")
 
 echo "== Waiting for cluster being ready"
 sleep 10
@@ -46,12 +49,10 @@ subjects:
     namespace: kube-system'| kubectl --kubeconfig="${KUBECONFIG}" apply -f -
 helm init --service-account tiller --upgrade
 
-# Install core dns
-kubectl --kubeconfig="${KUBECONFIG}" apply -f ${DEMO_DIR}//k3s/coredns.yaml
-
-# Install local-path-storage
-kubectl --kubeconfig="${KUBECONFIG}" apply -f "${DEMO_DIR}/k3s/local-path-storage.yaml"
-kubectl --kubeconfig="${KUBECONFIG}" patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+# Patch CoreDNS to be able to intercept Pebble/ACME requests
+kubectl --kubeconfig="${KUBECONFIG}" get configmap -n kube-system coredns -o yaml \
+  | awk '{sub(/health$/,"health\n        rewrite name regex (.*)\\.localhost traefik-ingress-controller.default.svc.cluster.local")}1' \
+  | kubectl --kubeconfig="${KUBECONFIG}" apply -f -
 
 echo "== K3s cluster ready"
 
