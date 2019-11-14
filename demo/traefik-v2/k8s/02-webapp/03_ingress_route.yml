@@ -3,18 +3,15 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: webapp
-  namespace: front
+  namespace: webapp
   labels:
     app: webapp
 spec:
   entryPoints:
     - web
-    #- websecure
   routes:
-  - match: Host(`webapp.docker.localhost`)
+  - match: Host(`webapp.localhost`)
     kind: Rule
     services:
     - name: webapp
       port: 80
-  #tls:
-    #certResolver: myLE

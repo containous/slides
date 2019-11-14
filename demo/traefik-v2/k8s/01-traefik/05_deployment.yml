@@ -1,8 +1,8 @@
-# declare Traefik deployment
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  namespace: default
+  namespace: traefik
   name: traefik-ingress-controller
   labels:
     app: traefik-ingress-controller
@@ -19,12 +19,13 @@ spec:
       serviceAccountName: traefik-ingress-controller
       containers:
         - name: traefik
-          image: traefik:v2.0.0
+          image: traefik:v2.0
           args:
             - --api.dashboard
             - --accesslog
             - --entrypoints.web.address=:80
             - --entrypoints.websecure.address=:443
+            - --entrypoints.ping.address=:9000
             - --entrypoints.mongo.address=:27017
             - --log.level=debug
             - --providers.kubernetescrd
@@ -32,6 +33,7 @@ spec:
             - --certificatesResolvers.myLE.acme.email=manuel@containo.us
             - --certificatesResolvers.myLE.acme.caserver=https://pebble.pebble.svc.cluster.local/dir
             - --certificatesResolvers.myLE.acme.httpChallenge.entryPoint=web
+            - --ping.entryPoint=ping
           env:
             - name: LEGO_CA_CERTIFICATES
               value: /etc/certs/cert.pem
@@ -39,18 +41,38 @@ spec:
               value: pebble.pebble.svc.cluster.local
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8000
             - name: https
-              containerPort: 443
+              containerPort: 8443
+            - name: ping
+              containerPort: 9000
             - name: mongo
               containerPort: 27017
           resources:
             limits:
-              cpu: "1"
-              memory: "1Gi"
+              cpu: 300m
+              memory: 150Mi
             requests:
-              cpu: "1"
-              memory: "1Gi"
+              cpu: 100m
+              memory: 50Mi
+          readinessProbe:
+            httpGet:
+              path: /ping
+              port: 9000
+            failureThreshold: 1
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 9000
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
           volumeMounts:
             - name: config-volume
               mountPath: /etc/traefik

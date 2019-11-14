@@ -3,46 +3,100 @@
 
 Context:
 
-Quick Demo of Traefik v2 in K8s (5 min), to show its basic functionality during Kubecon if asked for.
+Quick Demo of Traefik v2 in Kubernetes (5 min), to show its basic functionality during Kubecon if asked for.
 
-* Deploy Dummy WebApp
-* Show That
-* Enable ACME
+* Deploy an HTTP Webapp
+* Configure HTTPS (TLS) on the webapp using ACME
 
-More advnaced scnarios can be found in the parent foldeer, show-casing that on docker.
-
+More advanced scenarios can be found in the parent folder, show-casing the same feature set with docker instead of Kubernetes.
 
 == Requirements
 
-* `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.1`)
+* `k3d` (https://github.com/rancher/k3d) installed in your PATH (tested with `v1.3.4`)
 * A docker engine (tested with Docker 19.03.2 and Docker4Mac 19.03.2)
 * A bash prompt
+* `kubectl` (https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed in your PATH  (tested with `v1.16.2`)
+* `helm` (https://github.com/helm/helm) installed in your PATH (version `2.16` at least link:https://github.com/helm/helm/releases/tag/v2.16.0)
+* The following domains must point to the Docker Engine used by `k3d`, usually the IP `127.0.0.1` (tip: use `/etc/hosts`): 
+** `traefik.localhost`
+** `webapp.localhost`
 
 == Prepare Environment
 
-```shell
-./prepare_k3s/run.sh
-```
+* Prepare cache (Pull docker images, etc.):
 
-== Spawn Pebble
+[source,bash]
+----
+bash ./prepare_k3s/cache.sh
+----
 
-```shell
-kubectl apply -f pebble
-```
+== Create Cluster
 
-== Spawn V2
+* Start the local Kubernetes cluster:
 
-```shell
-kubectl apply -f 01-traefik
-```
+[source,bash]
+----
+bash ./prepare_k3s/run.sh
+----
 
-== Show Webapp without TLS
+* Configure the local `kubectl`:
 
-```shell
-kubectl apply -f 02-webapp
-```
+[source,bash]
+----
+export KUBECONFIG="$(k3d get-kubeconfig --name='kubecon')"
+----
 
-Comment in TLS and redeploy for TLS
-```shell
-kubectl apply -f 02-webapp
-```
+== Deploy Pebble
+
+[source,bash]
+----
+kubectl apply -f ./00-pebble/
+----
+
+== Deploy Traefik V2
+
+[source,bash]
+----
+kubectl apply -f ./01-traefik/
+----
+
+Open dashboard at: http://traefik.localhost/dashboard/
+
+  USER: traefik
+  PASSWORD: kubecon
+
+Open dashboard (password less) at: http://traefik:kubecon@traefik.localhost/dashboard/
+
+== Deploy Webapp in HTTP
+
+[source,bash]
+----
+kubectl apply -f ./02-webapp/
+----
+
+Open webapp at http://webapp.localhost:80
+
+== Deploy Webapp with HTTPS (TLS) Enabled + HTTP to HTTPS redirection
+
+[source,bash]
+----
+kubectl apply -f ./03-tls-webapp/
+----
+
+Open webapp (TLS) at https://webapp.localhost:443
+
+Great, the demo is over :)
+
+== Cleanup
+
+[source,bash]
+----
+bash ./prepare_k3s/clean.sh
+----
+
+== TODO
+
+* [x] Cleanup in the beginning of `run.sh` for idempotency
+* [x] Configure HTTP to HTTPS redirect when tls-izing the webapp
+* [ ] Document the MongoDB example
+* [ ] Nicer webapp
