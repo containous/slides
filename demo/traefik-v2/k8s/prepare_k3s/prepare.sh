@@ -21,5 +21,5 @@ do
     docker build -t "${image_name}" "${image_context}" &
   fi
 done < <(cat "${CURRENT_DIR}/images_list")
-# wait
+wait
 echo "== Cache pulled successfully"
