@@ -20,9 +20,10 @@ k3d create \
 --server-arg="--no-deploy=traefik"
 
 echo "== Loading Image Cache"
-while IFS= read -r IMAGE
+while IFS= read -r LINE
 do
-  k3d import-images --name="${NAME}" "${IMAGE}"
+  image_name="$(echo "${LINE}" | cut -d'|' -f2)"
+  k3d import-images --name="${NAME}" "${image_name}"
 done < <(cat "${CURRENT_DIR}/images_list")
 
 echo "== Waiting for cluster being ready"

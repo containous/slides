@@ -1,0 +1,14 @@
+{
+  "name": "containo.us-website",
+  "version": "1.0.0",
+  "description": "The containous website",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Containous",
+  "license": "Apache 2",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {}
+}

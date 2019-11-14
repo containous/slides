@@ -18,7 +18,12 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: containous/whoami
+          image: containous/webapp:traefik # BUilt from local source
+          env:
+            - name: HUGO_BASE_URL
+              value: webapp.localhost
+            - name: HUGO_ENV
+              value: kubernetes
           ports:
             - name: web
               containerPort: 80
