@@ -27,7 +27,7 @@ More advanced scenarios can be found in the parent folder, show-casing the same 
 
 [source,bash]
 ----
-bash ./prepare_k3s/cache.sh
+bash ./prepare_k3s/prepare.sh
 ----
 
 == Create Cluster
@@ -99,4 +99,4 @@ bash ./prepare_k3s/clean.sh
 * [x] Cleanup in the beginning of `run.sh` for idempotency
 * [x] Configure HTTP to HTTPS redirect when tls-izing the webapp
 * [ ] Document the MongoDB example
-* [ ] Nicer webapp
+* [x] Nicer webapp

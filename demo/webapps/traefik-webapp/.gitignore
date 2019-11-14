@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+node_modules/
+.sass-cache/
+scss/containous.cs.map
+scss/containous.css.map
+public/
+resources/_gen/
