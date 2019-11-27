@@ -1,28 +1,26 @@
 
 [%notitle]
-= Easy Routing in Kubernetes with Traefik for Application Delivery
+= How to easily deploy and manage your microservices with Traefik and Maesh
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Easy Routing in Kubernetes with Traefik for Application Delivery
+How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/sf-DevOps/events/265384051/[SF DevOps Meetup - November 2019]
-
 [{invert}]
 == Whoami
-Emile vauge
+Michael Matur
 
-* 🇫🇷 Developer
-* Creator of link:https://traefik.io/[Træfik,window="_blank"], Founder of link:https://containo.us/[Containous,window="_blank"]
-* link:https://twitter.com/emilevauge[+++<span class="fab fa-twitter"></span>+++ @emilevauge,window="_blank"]
-* link:https://github.com/emilevauge[+++<span class="fab fa-github"></span>+++ emilevauge,window="_blank"]
+* Solution Architect @ link:https://containo.us/[Containous,window=_blank]
+* link:https://traefik.io/[Traefik] maintainers
+* link:https://twitter.com/michaelmatur[+++<span class="fab fa-twitter"></span>+++ @michaelmatur,window="_blank"]
+* link:https://github.com/mmatur[+++<span class="fab fa-github"></span>+++ mmatur,window="_blank"]
 
-image::emile-bw.png[height=200]
+image::michael-bw.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -30,7 +28,7 @@ image::emile-bw.png[height=200]
 link:https://containo.us[window="_blank"]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Traefik Enterprise Edition, Maesh
 * Commercial Support
 * 30 people distributed, 90% tech
 
@@ -70,8 +68,8 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/emilevauge[+++<span class="fab fa-twitter"></span>+++ @emilevauge,window="_blank"]
-* link:https://github.com/emilevauge[+++<span class="fab fa-github"></span>+++ emilevauge,window="_blank"]
+* link:https://twitter.com/michaelmatur[+++<span class="fab fa-twitter"></span>+++ @michaelmatur,window="_blank"]
+* link:https://github.com/mmatur[+++<span class="fab fa-github"></span>+++ mmatur,window="_blank"]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
