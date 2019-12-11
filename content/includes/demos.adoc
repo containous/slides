@@ -1,10 +1,28 @@
-= Demo Time!
+= Use Cases
 
 [{invert}]
-== Demo 1
+== External Load Balancer with traffic policy
 
-* Amazon EKS: Capturing Source IP with the local external Load Balancer traffic policy
+* 👍🏽Pros: full automation
+* 👎Cons: depends on actual LB implementation
 
-== Demo 2
+[.notes]
+--
+Pros:  full automation based on K8s primitives (LB Config, Pod Scheduling...)
+Cons: depends on actual LB implementation (support of traffic policy?)
+--
 
-* Bare-Metal Kubernetes: Use Traefik for capturing Source IP on HTTP headers
+image::use-case1.svg["Use Case 1 Illustration", width=800]
+
+[{invert}]
+== Capturing Source IP from HTTP headers
+
+* 👍🏽Pros: Simplified Setup
+* 👎Cons: Only works with HTTP
+
+[.notes]
+--
+Pros:  Simplified Setup (relying on HTTP)
+--
+
+image::use-case2.svg["Use Case 2 Illustration", width=500]

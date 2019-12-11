@@ -35,13 +35,13 @@ image::qrcode.png["QRCode to this presentation",height=150]
 
 == Whoami
 
-* Damien DUPORTAL:
-** link:https://traefik.io/[Træfik,window=_blank]'s Developer 🥑 Advocate @
+* Manuel Zapf:
+** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect @
 link:https://containo.us/[Containous,window=_blank]
-* link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal,window=_blank]
-* link:https://github.com/dduportal[icon:github[] dduportal,window=_blank]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
+* link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
 
-image::damien.jpg[height=200]
+image::manuel.jpg[height=200]
 
 [{invert}]
 == Containous
