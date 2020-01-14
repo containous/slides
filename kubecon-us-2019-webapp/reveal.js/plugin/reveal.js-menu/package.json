@@ -1,0 +1,49 @@
+{
+  "_from": "reveal.js-menu@1.2.0",
+  "_id": "reveal.js-menu@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-jOuMjakDx90GO01Z29Vq6MS3qogjML/qTA14werk/PDj9zpV5Pl0GRLwWq91b20vS1JgYi4sD1POd33deDQAQg==",
+  "_location": "/reveal.js-menu",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "reveal.js-menu@1.2.0",
+    "name": "reveal.js-menu",
+    "escapedName": "reveal.js-menu",
+    "rawSpec": "1.2.0",
+    "saveSpec": null,
+    "fetchSpec": "1.2.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/reveal.js-menu/-/reveal.js-menu-1.2.0.tgz",
+  "_shasum": "b8d8f060a25b933fad253ffb51012662e31b8c0d",
+  "_spec": "reveal.js-menu@1.2.0",
+  "_where": "/app",
+  "author": {
+    "name": "Greg Denehy"
+  },
+  "bugs": {
+    "url": "https://github.com/denehyg/reveal.js-menu/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A slideout menu for navigating reveal.js presentations",
+  "homepage": "https://github.com/denehyg/reveal.js-menu#readme",
+  "keywords": [
+    "reveal",
+    "menu"
+  ],
+  "license": "MIT, Copyright (C) 2016 Greg Denehy",
+  "name": "reveal.js-menu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denehyg/reveal.js-menu.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.0"
+}

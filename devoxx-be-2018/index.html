@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Traefik: The Cloud Native Edge Router</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="./reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="./styles/build.css" id="theme"><link rel="stylesheet" href="styles/font-awesome.min.css"><link href="./reveal.js/plugin/highlight/styles/github.min.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "./reveal.js/css/print/pdf.css" : "./reveal.js/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="./reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section id="traefik" data-background-color="white" data-background-image="images/devoxx-background.jpg" data-background-size="cover" data-state="invert"><h2>Traefik</h2><div class="paragraph title"><p>A Scalable and Highly Available Edge Router</p></div>
+<div class="imageblock" style=""><img src="images/traefik.logo.png" alt="Traefik's Logo" height="200"></div>
+<div class="imageblock" style=""><img src="images/qrcode.png" alt="QRCode to this presentation" height="150"></div>
+<div class="paragraph small"><small>Presentation available at <a href="https://containous.github.io/slides/devoxx-be-2018" class="bare">https://containous.github.io/slides/devoxx-be-2018</a></small></div></section>
+<section id="whoami"><h2>Whoami</h2><div class="ulist"><ul><li><p>Damien DUPORTAL:</p><div class="ulist"><ul><li><p><a href="https://traefik.io/">Træfik</a>'s Developer Advocate @
+<a href="https://containo.us/">Containous</a> and Freelancer</p></li><li><p>Former Training Engineer @ CloudBees</p></li></ul></div></li><li><p><a href="https://twitter.com/DamienDuportal"><span class="icon"><i class="fa fa-twitter"></i></span> @DamienDuportal</a></p></li><li><p><a href="https://github.com/dduportal"><span class="icon"><i class="fa fa-github"></i></span> dduportal</a></p></li></ul></div>
+<div class="imageblock" style=""><img src="images/damien.jpg" alt="damien" height="200"></div></section>
+<section id="how_to_use_these_slides" data-background-color="white" data-state="invert"><h2>How to use these slides?</h2><div class="ulist"><ul><li><p><strong>Browse the slides:</strong> Use the arrows</p><div class="ulist"><ul><li><p>Change chapter: Left/Right arrows</p></li><li><p>Next or previous slide: Top and bottom arrows</p></li></ul></div></li><li><p><strong>Overview of the slides:</strong> keyboard&#8217;s shortcut "<kbd>o</kbd>"</p></li><li><p><strong>Speaker mode (and notes):</strong> keyboard&#8217;s shortcut "<kbd>s</kbd>"</p></li></ul></div></section>
+<section id="containous"><h2>Containous</h2><div class="ulist"><ul><li><p><a href="https://containo.us" class="bare">https://containo.us</a></p></li><li><p>We Believe in Open Source</p></li><li><p>We Deliver Traefik</p></li><li><p>Commercial Support for Traefik</p></li><li><p>12 people, 90% technical experts</p></li></ul></div>
+<div class="imageblock" style=""><img src="images/containous-logo.png" alt="Containous Logo"></div></section>
+<section><section id="why_traefik"><h2>Why Traefik?</h2><div class="imageblock" style=""><img src="images/why-mr-anderson.jpg" alt="Why, Mr Anderson?" width="800"></div><div class="paragraph"><p>Why, Mr Anderson?</p></div></section><section id="evolution_of_software_design" data-background-color="white" data-state="invert"><h2>Evolution of Software Design</h2><div class="imageblock" style=""><img src="images/evolution-of-software-design.jpg" alt="Evolution of Software Design"></div></section><section id="the_premise_of_microservices"><h2>The Premise of Microservices&#8230;&#8203;</h2><div class="imageblock" style=""><img src="images/asterix-premise.jpg" alt="Asterix - Premise"></div></section><section id="and_what_happens" data-background-color="white" data-state="invert"><h2>&#8230;&#8203;and What Happens</h2><div class="imageblock" style=""><img src="images/asterix-fight.jpg" alt="Asterix - Fighting"></div></section><section id="where_is_the_service"><h2>Where is the Service?</h2><div class="imageblock" style=""><img src="images/where-is-charlie.jpg" alt="Where os Charlie?" width="900"></div></section><section id="tools_of_the_trade" data-background-color="white" data-state="invert"><h2>Tools of the Trade</h2><div class="imageblock" style="float: left"><img src="images/docker.png" alt="docker" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/rancher-os.png" alt="rancher os" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/docker-swarm.png" alt="docker swarm" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/kubernetes.png" alt="kubernetes" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/marathon.png" alt="marathon" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/ec2.png" alt="ec2" width="80"></div>
+<div class="imageblock" style="float: left"><img src="images/mesos.png" alt="mesos" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/dynamodb.png" alt="dynamodb" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/ecs.png" alt="ecs" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/service-fabric.png" alt="service fabric" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/consul.png" alt="consul" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/netflix_oss.png" alt="netflix oss" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/etcd.png" alt="etcd" width="80"></div>
+<div class="imageblock" style="float: right"><img src="images/zookeeper.png" alt="zookeeper" width="80"></div></section><section><div class="imageblock" style=""><img src="images/yaml.jpg" alt="yaml" width="900"></div>
+<div class="paragraph small][ small"><small>Source: <a href="https://twitter.com/Caged/status/1039937162769096704" class="bare">https://twitter.com/Caged/status/1039937162769096704</a></small></div></section><section id="what_if_i_told_you"><h2>What If I Told You?</h2><div class="imageblock" style=""><img src="images/what-if-I-told-you.jpg" alt="What If I Told You"></div>
+<div class="paragraph"><p>That You Don&#8217;t Have to Write This Configuration File&#8230;&#8203;?</p></div></section><section id="here_comes_traefik" data-background-color="white" data-state="invert"><h2>Here Comes Traefik!</h2><div class="imageblock" style=""><img src="images/traefik-architecture.png" alt="Traefik's Architecture" width="900"></div></section></section>
+<section><section id="the_project" data-background-color="white" data-state="invert"><h2>The Project</h2><div class="imageblock" style=""><img src="images/traefik.logo.png" alt="Traefik's Logo" width="300"></div></section><section id="traefik_project"><h2>Traefik Project</h2><div class="ulist"><ul><li><p><a href="https://github.com/containous/traefik"><span class="icon"><i class="fa fa-github"></i></span> https://github.com/containous/traefik</a></p></li><li><p>MIT License</p></li><li><p>18,500+ ⭐</p></li><li><p>100M+ ⬇️</p></li><li><p>1400+ LGTM</p></li><li><p>330+ 👷</p></li></ul></div></section><section id="i_ve_found_a_bug"><h2>I&#8217;ve Found A Bug!</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="bash language-bash">./traefik bug</code></pre></div></div>
+<div class="paragraph"><p>Autofills the issue template (environment, configuration files, &#8230;&#8203;)</p></div></section></section>
+<section><section id="traefik_core_concepts"><h2>Traefik Core Concepts</h2><div class="imageblock" style=""><img src="images/bored-minion.jpg" alt="Bored Minion"></div></section><section id="remember_the_diagram" data-background-color="white" data-state="invert"><h2>Remember the Diagram?</h2><div class="imageblock" style=""><img src="images/traefik-architecture.png" alt="Traefik's Architecture" width="1200"></div></section><section id="let_s_simplify" data-background-color="white" data-state="invert"><h2>Let&#8217;s Simplify</h2><div class="imageblock" style=""><img src="images/architecture-simplified.png" alt="Traefik's Simplified Architecture" width="1200"></div></section><section id="providers" data-background-color="white" data-state="invert"><h2>Providers</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance-provider.png" alt="Traefik's Simplified Architecture" width="1200"></div></section><section id="entrypoints" data-background-color="white" data-state="invert"><h2>Entrypoints</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance-entrypoints.png" alt="Traefik's Entrypoints" width="1200"></div></section><section id="backends" data-background-color="white" data-state="invert"><h2>Backends</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance-backends.png" alt="Traefik's Backends" width="1200"></div></section><section id="frontends" data-background-color="white" data-state="invert"><h2>Frontends</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance-frontends.png" alt="Traefik's Frontends" width="1200"></div></section><section id="at_a_glance" data-background-color="white" data-state="invert"><h2>At a Glance</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance.png" alt="Traefik Architecture At A Glance" width="1200"></div></section><section id="in_practice" data-background-color="white" data-state="invert"><h2>In Practice</h2><div class="imageblock" style=""><img src="images/architecture-at-a-glance-in-practice.png" alt="Traefik in Practise" width="1200"></div></section></section>
+<section><section id="a_glimpse_on_traefik_s_features"><h2>A Glimpse on Traefik&#8217;s Features</h2><div class="paragraph"><p>Keep It Simple</p></div></section><section id="show_me_the_code"><h2>Show me the code!</h2><div class="ulist"><ul><li><p>With Docker:</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml">entrypoint:
+    image: traefik:v1.7
+    command:
+      - "--docker"
+      - "--docker.domain=mycompany.org"
+      - "--acme.email=ssl-admin@mycompany.org"
+      - "--acme.httpChallenge.entryPoint=http"
+      # Or you could use a TOML file with "--configFile=/etc/traefik/traefik.toml
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock</code></pre></div></div></section><section id="https_for_everyone_with_let_s_encrypt"><h2>HTTPS for Everyone with Let&#8217;s Encrypt</h2><div class="imageblock" style=""><img src="images/lets-encrypt-http-challenge.png" alt="Lets Encrypt HTTP Challenge" width="900"></div>
+<div class="imageblock" style=""><img src="images/lets-encrypt-dns-challenge.png" alt="Lets Encrypt DNS Challenge" width="900"></div></section><section id="with_docker_simple_backend"><h2>With Docker: Simple backend</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml"># https://www.mycompany.org
+webserver:
+    image: nginx:alpine
+    labels:
+      - "traefik.frontend.rule=Host:www.mycompany.org"</code></pre></div></div></section><section id="with_docker_websockets"><h2>With Docker: Websockets</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml"># https://mycompany.org/webterminal
+webterminal:
+    image: tsl0922/ttyd
+    labels:
+      - "traefik.frontend.rule=PathPrefixStrip:/webterminal"
+    expose:
+      - "7681"</code></pre></div></div></section><section id="with_docker_context"><h2>With Docker: Context</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml"># http://mycompany.org/jenkins
+jenkins:
+    image: jenkins/jenkins:lts
+    labels:
+      - "traefik.frontend.rule=PathPrefix:/jenkins"
+      - "traefik.port=8080" # Because 50000 is also exposed
+    environment:
+      - JENKINS_OPTS=--prefix=/jenkins</code></pre></div></div></section><section id="with_docker_rewrites"><h2>With Docker: Rewrites</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml"># http://mycompany.org/gitserver
+gitserver:
+    image: gitea/gitea:1.5
+    labels:
+      - "traefik.frontend.rule=PathPrefixStrip:/gitserver"
+      - "traefik.port=3000" # Because 22 is also exposed</code></pre></div></div></section><section id="traefik_with_kubernetes" data-background-color="white" data-state="invert"><h2>Traefik with Kubernetes</h2><div class="imageblock" style=""><img src="images/traefik-kubernetes-diagram.png" alt="Traefik with Kubernetes Diagram" width="900"></div>
+<div class="paragraph small"><small>Diagram from <a href="https://medium.com/@geraldcroes" class="bare">https://medium.com/@geraldcroes</a></small></div></section><section id="with_kubernetes_too"><h2>With Kubernetes Too!</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="yaml language-yaml">apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    # kubernetes.io/ingress.class: 'nginx'
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: mycompany.org
+    http:
+      paths:
+      - path: "/whoami"
+        backend:
+          serviceName: whoami
+          servicePort: 80</code></pre></div></div></section><section id="we_missed_talking_about" data-background-color="white" data-state="invert"><h2>We Missed Talking About &#8230;&#8203;</h2><div class="imageblock" style=""><img src="images/word-cloud.png" alt="word cloud" width="900"></div></section></section>
+<section><section id="did_you_say_high_availability"><h2>Did you Say "High Availability"?</h2></section><section id="an_highly_available_traefik" data-background-color="rgb(249,248,248)" data-state="invert"><h2>An Highly-Available Traefik</h2><div class="imageblock" style=""><img src="images/verysecretproject-high-availability.png" alt="verysecretproject high availability" width="1100"></div></section><section id="a_safe_traefik" data-background-color="rgb(249,248,248)" data-state="invert"><h2>A Safe Traefik</h2><div class="imageblock" style=""><img src="images/verysecretproject-safety.png" alt="verysecretproject safety" width="1100"></div></section><section id="a_scalable_traefik" data-background-color="rgb(249,248,248)" data-state="invert"><h2>A Scalable Traefik</h2><div class="imageblock" style=""><img src="images/verysecretproject-scalability.png" alt="verysecretproject scalability" width="1100"></div></section><section id="teaser" data-background-color="white" data-state="invert"><h2>Teaser</h2><div class="imageblock" style=""><img src="images/traefik-k8s-diagram-full.jpg" alt="Traefik with Kubernetes Full Diagram" width="900"></div></section><section id="very_secret_project"><h2>Very Secret Project</h2><div class="videoblock"><video src="images/devoxx-verysecretproject.mp4" width="1280" height="640" controls>Your browser does not support the video tag.</video></div></section><section id="stay_tuned"><h2>Stay Tuned</h2></section></section>
+<section data-background-image="images/devoxx-PleaseRateMe.jpg" data-background-size="cover"></section></div></div><script src="./reveal.js/lib/js/head.min.js"></script><script src="./reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1280,
+  height: 800,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: './reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: './reveal.js/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>
