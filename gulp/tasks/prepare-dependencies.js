@@ -41,7 +41,7 @@ module.exports = function (gulp, plugins, current_config) {
     // so.. reusing. cf. https://github.com/hakimel/reveal.js/#dependencies
     /////////////////
     gulp.task('prepare:highlightjs', function () {
-        var highlightNodeModule = current_config.nodeModulesDir + '/highlightjs',
+        var highlightNodeModule = current_config.nodeModulesDir + '/highlight.js',
             highlightDestDir = current_config.distDir + '/reveal.js/plugin/highlight',
             highlightjsStyleRename = gulp.src(highlightNodeModule + '/styles/*.css')
                 .pipe(plugins.rename(function (path) {
@@ -49,11 +49,11 @@ module.exports = function (gulp, plugins, current_config) {
                     path.basename += ".min";
                 }))
                 .pipe(gulp.dest(highlightDestDir + '/styles/')),
-            highlightScriptMinified = gulp.src(highlightNodeModule + '/highlight.pack.min.js')
-                .pipe(plugins.rename('highlight.js'))
+            highlightScript = gulp.src(highlightNodeModule + '/lib/highlight.js')
+                // .pipe(plugins.rename('highlight.js'))
                 .pipe(gulp.dest(highlightDestDir));
 
-        return plugins.mergeStreams(highlightjsStyleRename, highlightScriptMinified);
+        return plugins.mergeStreams(highlightjsStyleRename, highlightScript);
 
     });
 
@@ -86,10 +86,15 @@ module.exports = function (gulp, plugins, current_config) {
             .pipe(gulp.dest(current_config.distDir + '/reveal.js/plugin/'));
     });
 
-    ////////////////////////////// Aggregating Dependencies
-    gulp.task('prepare:dependencies', gulp.parallel(
-        'prepare:revealjs',
-        'prepare:highlightjs',
-        'prepare:revealjs-plugins'
-    ));
+    ////////////////////////////// Managing fontawesome and dependencies
+    gulp.task('prepare:fontawesome', function () {
+
+        var fontAwesomeCss = gulp.src(current_config.nodeModulesDir + '/font-awesome/css/**/*')
+            .pipe(gulp.dest(current_config.distDir + '/styles/'));
+
+        var fontAwesomeFonts = gulp.src(current_config.nodeModulesDir + '/font-awesome/fonts/**/*')
+            .pipe(gulp.dest(current_config.distDir + '/fonts/'));
+
+        return plugins.mergeStreams(fontAwesomeCss, fontAwesomeFonts);
+    });
 };
