@@ -36,8 +36,7 @@ image::qrcode.png["QRCode to this presentation",height=150]
 == Whoami
 
 * Manuel Zapf:
-** link:https://traefik.io/[Træfik,window=_blank]'s Solution Architect @
-link:https://containo.us/[Containous,window=_blank]
+** Head of Product Open Source @ link:https://containo.us/[Containous,window=_blank]
 * link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE,window=_blank]
 * link:https://github.com/SantoDE[icon:github[] SantoDE,window=_blank]
 
@@ -53,7 +52,7 @@ link:https://containo.us[]
 * Commercial Support
 * 30 people distributed, 90% tech
 
-image::containous-logo.png["Containous Logo"]
+image::containous-logo-black.png["Containous Logo", height=200]
 
 // //// end of Speaker Slide and Company slide
 
@@ -83,11 +82,21 @@ include::./includes/demos.adoc[]
 * link:https://www.asykim.com/blog/deep-dive-into-kubernetes-external-traffic-policies[]
 
 [{invert}]
+== Read More
+
+image::microservices-architecture-white-paper.png["Containous Logo", height=400]
+
+link:https://info.containo.us/request-white-paper-routing-in-the-cloud[]
+
+
+[{invert}]
 == Thank you!
 
-link:https://twitter.com/DamienDuportal[icon:twitter[] @DamienDuportal]
 
-link:https://github.com/dduportal[icon:github[] dduportal]
+
+link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+
+link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
