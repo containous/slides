@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: jaeger
+  namespace: jaeger
+spec:
+  entryPoints:
+    - http
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`jaeger.meetup.containous.tech`)
+      services:
+        - name: jaeger-query
+          port: 16686

@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  entryPoints:
+    - http
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`grafana.meetup.containous.tech`)
+      services:
+        - name: grafana
+          port: 3000

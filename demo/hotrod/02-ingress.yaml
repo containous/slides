@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hotrod
+  namespace: hotrod
+spec:
+  entryPoints:
+    - http
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`hotrod.meetup.containous.tech`)
+      services:
+        - name: hotrod
+          port: 8080
