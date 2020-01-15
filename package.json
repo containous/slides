@@ -6,9 +6,7 @@
     "dependencies": {
         "highlight.js": "^9.17.1",
         "reveal.js": "3.8.0",
-        "font-awesome": "^4.7.0",
-        "reveal.js-menu": "1.2.0",
-        "reveal.js-toolbar": "0.2.1"
+        "font-awesome": "^4.7.0"
     },
     "devDependencies": {
         "asciidoctor-reveal.js": "2.0.1",

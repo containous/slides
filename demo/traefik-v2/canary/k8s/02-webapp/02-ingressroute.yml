@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webapp
+  namespace: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`app.canary.localhost`)
+      kind: Rule
+      services:
+      - name: webapp-v1
+        port: 80

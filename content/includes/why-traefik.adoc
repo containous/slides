@@ -1,4 +1,9 @@
-== Evolution of Software Design
+
+= Why Traefik
+
+image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
+
+Why, Mr Anderson?
 
 [{invert}]
 [%notitle]
@@ -44,12 +49,6 @@ image::yaml.jpg[width=900]
 
 [.small][.small]
 Source: https://twitter.com/Caged/status/1039937162769096704[]
-
-= Why Traefik?
-
-image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
-
-Why, Mr Anderson?
 
 
 == What If I Told You?

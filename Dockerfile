@@ -1,5 +1,7 @@
 FROM node:11-alpine
 
+RUN npm config set unsafe-perm true
+
 LABEL Maintainers="Damien DUPORTAL<damien@containo.us>"
 
  RUN npm config set unsafe-perm true

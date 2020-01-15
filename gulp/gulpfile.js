@@ -29,11 +29,9 @@ var tasks_dir_path = './tasks',
         distDir: '/app/dist',
         sourcesDir: '/app/content',
         nodeModulesDir: '/app/node_modules',
-        revealJSPluginList: '/tmp/revealjs-plugins-list.js',
         listen_ip: process.env.LISTEN_IP || '0.0.0.0',
         listen_port: process.env.LISTEN_PORT || 8000,
         livereload_port: process.env.LIVERELOAD_PORT || 35729,
-        revealjsPlugins: ["reveal.js-menu","reveal.js-toolbar"],
     };
 plugins.asciidoctorRevealjs.register();
 
@@ -52,7 +50,6 @@ gulp.task('build', gulp.series(
         'prepare:revealjs',
         'prepare:highlightjs',
         'prepare:fontawesome',
-        'prepare:revealjs-plugins',
         'styles'
     ),
     'html'

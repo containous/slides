@@ -1,36 +1,36 @@
 
 [%notitle]
-= Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+= How to easily deploy and manage your microservices with Traefik and Maesh
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-Easy HTTPS for your Microservice Architectures - Julien Salleyron, Containous
+How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://osseu19.sched.com/event/TLHO/easy-https-for-your-microservice-architectures-julien-salleyron-containous[Open Source Summit Europe - Lyon 2019]
+link:https://www.meetup.com/fr-FR/OpenShift-France/events/267746250/[OpenShift meetup #9 - -Janvier 2020]
 
 [{invert}]
 == Whoami
-Julien Salleyron
+Michael Matur
 
-* link:https://traefik.io/[Træfik,window=_blank]'s Senior Software Engineer @
-link:https://containo.us/[Containous,window=_blank]
-** link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
+* Solution Architect @ link:https://containo.us/[Containous,window=_blank]
+* Blacksmith on link:https://traefik.io/[Traefik]
+* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
+* link:https://github.com/mmatur[icon:github[] mmatur]
 
-
-image::juliens.jpg[height=200]
+image::michael.png[height=200]
 
 [{invert}]
 == Containous
 
-link:https://containo.us[]
+link:https://containo.us[window="_blank"]
 
 * We Believe in Open Source
-* We Deliver Traefik and Traefik Enterprise Edition
+* We Deliver Traefik, Traefik Enterprise Edition, Maesh
 * Commercial Support
 * 30 people distributed, 90% tech
 
@@ -51,22 +51,31 @@ include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/demo.adoc[]
+include::./includes/traefik-and-le.adoc[]
+
+// include::./includes/show-me-the-conf.adoc[]
+
+include::./includes/v2-k8s.adoc[]
+
+// include::./includes/v2-tcp.adoc[]
 
 include::./includes/traefikee.adoc[]
 
-include::./includes/more-to-come.adoc[]
+include::./includes/maesh.adoc[]
+
+include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
 [{invert}]
 == Thank you!
 
-* link:https://github.com/juliens[+++<span class="fab fa-github"></span>+++ juliens]
+* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
+* link:https://github.com/mmatur[icon:github[] mmatur]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 
 [.small]
 - link:{presentationUrl}[Slides (HTML): {presentationUrl}]
 - link:{presentationUrl}/slides.pdf[Slides (PDF): {presentationUrl}/slides.pdf]
-- link:{repositoryUrl}[Source on +++<i class="fab fa-github"></i>+++: {repositoryUrl}]
+- link:{repositoryUrl}[Source on icon:github[]: {repositoryUrl}]

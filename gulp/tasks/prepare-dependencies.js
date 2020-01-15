@@ -57,35 +57,6 @@ module.exports = function (gulp, plugins, current_config) {
 
     });
 
-    ////////////////////////////// Managing RevelaJS Menu Plugin and dependencies
-    gulp.task('prepare:revealjs-plugins', function () {
-        var revealjsPluginsLoaderContent = '',
-            revealjsPluginsDirs = [];
-
-        current_config.revealjsPlugins.forEach(function(revealjsPluginName) {
-
-            // Append plugin to the loader list
-            // Note that revelajs plugins follow a naming convention for the "main" JS file.
-            revealjsPluginsLoaderContent +=
-                "{ src: 'reveal.js/plugin/" + revealjsPluginName +
-                "/" + revealjsPluginName.split("-")[1] + ".js'},\n";
-
-            revealjsPluginsDirs.push(current_config.nodeModulesDir + '/' + revealjsPluginName + '/**/*')
-
-        } );
-
-        // Write plugin list to file system
-        plugins.fs.writeFile(current_config.revealJSPluginList, revealjsPluginsLoaderContent, function() {});
-
-        // Copy plugins contents from nodes_modules
-        return gulp.src(
-            revealjsPluginsDirs,
-            {
-                base: current_config.nodeModulesDir
-            })
-            .pipe(gulp.dest(current_config.distDir + '/reveal.js/plugin/'));
-    });
-
     ////////////////////////////// Managing fontawesome and dependencies
     gulp.task('prepare:fontawesome', function () {
 

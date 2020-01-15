@@ -2,7 +2,7 @@
 :allow-uri-read:
 :linkattrs:
 :idprefix:
-:imagesdir: ./images
+:imagesdir: images
 :revealjsdir: ./reveal.js
 :revealjs_customtheme: ./styles/build.css
 :revealjs_history: true
