@@ -4,14 +4,17 @@
 
 image::traefik-architecture.png["Traefik's Architecture",width=900]
 
+[{invert}]
 == Traefik Project
 
-* link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
-* MIT License
-* Written in Go
-* 26,000+ ⭐ 1.3B+ ⬇️ 400+ 👷
-* Created in 2015, 4Y 🎂
-* Current stable branch: `v2.0`
+// * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
+// * MIT License
+// * Written in Go
+// * Created in 2015, 4Y 🎂
+// * Current stable branch: `v2.0`
+
+image::traefik-stats.png["Traefik's Stats",width=900]
+
 
 == Traefik 2.0 Quick Overview
 

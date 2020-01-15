@@ -11,6 +11,8 @@ How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
+link:https://www.meetup.com/fr-FR/OpenShift-France/events/267746250/[OpenShift meetup #9 - -Janvier 2020]
+
 [{invert}]
 == Whoami
 Michael Matur
@@ -51,7 +53,7 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/traefik-and-le.adoc[]
 
-include::./includes/show-me-the-conf.adoc[]
+// include::./includes/show-me-the-conf.adoc[]
 
 include::./includes/v2-k8s.adoc[]
 

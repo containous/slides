@@ -1,5 +1,7 @@
 FROM node:11-alpine
 
+RUN npm config set unsafe-perm true
+
 LABEL Maintainers="Damien DUPORTAL<damien@containo.us>"
 
 # Install Global dependencies and gulp 4.x globally

@@ -28,13 +28,6 @@ spec:
           servicePort: 80
 ----
 
-
-== But...
-
-image::traefik-ingress-annotations.png[float=left,height=600]
-
-image::nginx-ingress-annotations.png[float=right,height=600]
-
 [{invert}]
 == &#9096; CRD - Custom Resources Definition
 
