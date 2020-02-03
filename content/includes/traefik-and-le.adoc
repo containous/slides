@@ -6,18 +6,18 @@
 
 image::traefik-lets-encrypt-diagram.png["Lets encrypt",width=1000]
 
-[{invert}]
-== Let's encrypt DNS Challenge
+// [{invert}]
+// == Let's encrypt DNS Challenge
 
-image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
+// image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
 
 
-[{invert}]
-== Let's encrypt HTTP Challenge
+// [{invert}]
+// == Let's encrypt HTTP Challenge
 
-image::lets-encrypt-http-challenge.png["Lets encrypt HTTP Challenge",width=1000]
+// image::lets-encrypt-http-challenge.png["Lets encrypt HTTP Challenge",width=1000]
 
-[{invert}]
-== Let's encrypt TLS Challenge
+// [{invert}]
+// == Let's encrypt TLS Challenge
 
-image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
+// image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]

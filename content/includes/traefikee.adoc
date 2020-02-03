@@ -41,24 +41,21 @@ image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
 [source,bash]
 ----
 # Cluster Installation
-traefikeectl install \
-    --licensekey="SuperSecretLicence" \
-    --dashboard \
-    --kubernetes # Or --swarm
+teectl setup --kubernetes --force
+teectl setup gen --license="${TRAEFIKEE_LICENSE}" --controllers=1 --proxies=2 | kubectl apply -f -
 ----
 
 * Configure it:
 
 [source,bash]
 ----
-# Routing Configuration, same as Traefik's
-traefikeectl deploy \
-  --defaultentrypoints=http,https \
-  --entryPoints='Name:http Address::80' \
-  --entryPoints='Name:https Address::443 TLS' \
-  --logLevel=INFO \
-  --kubernetes
+# Routing Configuration
+teectl apply --file=./traefikee/config.toml
 ----
+
+== Demo
+
+image::demo.jpg[]
 
 [{invert}]
 == Free Trial

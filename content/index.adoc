@@ -11,7 +11,7 @@ How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/OpenShift-France/events/267746250/[OpenShift meetup #9 - -Janvier 2020]
+link:https://www.meetup.com/fr-FR/OpenShift-France/events/267874125/[OpenShift meetup #11 - Février 2020]
 
 [{invert}]
 == Whoami
@@ -31,7 +31,6 @@ link:https://containo.us[window="_blank"]
 
 * We Believe in Open Source
 * We Deliver Traefik, Traefik Enterprise Edition, Maesh
-* Commercial Support
 * 30 people distributed, 90% tech
 
 image::containous-logo.png["Containous Logo"]
@@ -59,7 +58,7 @@ include::./includes/traefik-and-le.adoc[]
 
 // include::./includes/v2-tcp.adoc[]
 
-include::./includes/demo.adoc[]
+// include::./includes/demo.adoc[]
 
 include::./includes/traefikee.adoc[]
 
