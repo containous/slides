@@ -1,0 +1,9 @@
+## Dynamic configuration
+[http.services]
+  [http.services.app]
+    [[http.services.app.weighted.services]]
+      name = "appv1@docker"
+      weight = 50
+    [[http.services.app.weighted.services]]
+      name = "appv2@docker"
+      weight = 50

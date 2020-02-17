@@ -1,17 +1,15 @@
 
 [%notitle]
-= How to easily deploy and manage your microservices with Traefik and Maesh
+= Docker & Traefik 101
 include::./includes/attributes.adoc[]
 
 [{invert}]
 == !
 
 [.title]
-How to easily deploy and manage your microservices with Traefik and Maesh
+Docker & Traefik 101
 
 image::traefik.logo.png["Traefik's Logo",height=300]
-
-link:https://www.meetup.com/fr-FR/OpenShift-France/events/267874125/[OpenShift meetup #11 - Février 2020]
 
 [{invert}]
 == Whoami
@@ -25,12 +23,24 @@ Michael Matur
 image::michael.png[height=200]
 
 [{invert}]
+== Whoami
+Ludovic Fernandez
+
+* Developer @ link:https://containo.us/[Containous,window=_blank]
+* Maintainer of link:https://traefik.io/[Traefik]
+* link:https://twitter.com/ludnadez[icon:twitter[] @ludnadez]
+* link:https://github.com/ldez[icon:github[] ldez]
+
+image::ldez.png[height=200]
+
+
+[{invert}]
 == Containous
 
 link:https://containo.us[window="_blank"]
 
 * We Believe in Open Source
-* We Deliver Traefik, Traefik Enterprise Edition, Maesh
+* We Deliver Traefik, TraefikEE, Maesh, Yaegi
 * 30 people distributed, 90% tech
 
 image::containous-logo.png["Containous Logo"]
@@ -44,13 +54,13 @@ image::containous-logo.png["Containous Logo"]
 // ///////////////////////
 :leveloffset: +1
 
-include::./includes/why-traefik.adoc[]
+// include::./includes/why-traefik.adoc[]
 
 include::./includes/traefik-project.adoc[]
 
-include::./includes/traefik-core-concepts.adoc[]
+// include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/traefik-and-le.adoc[]
+// include::./includes/traefik-and-le.adoc[]
 
 // include::./includes/show-me-the-conf.adoc[]
 
@@ -60,19 +70,16 @@ include::./includes/traefik-and-le.adoc[]
 
 // include::./includes/demo.adoc[]
 
-include::./includes/traefikee.adoc[]
+// include::./includes/traefikee.adoc[]
 
-include::./includes/maesh.adoc[]
+// include::./includes/maesh.adoc[]
 
-include::./includes/the-end.adoc[]
+// include::./includes/the-end.adoc[]
 
 :leveloffset: -1
 
 [{invert}]
 == Thank you!
-
-* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
-* link:https://github.com/mmatur[icon:github[] mmatur]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 

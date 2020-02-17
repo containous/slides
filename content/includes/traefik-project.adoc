@@ -1,11 +1,6 @@
 
 [{invert}]
-= Here Comes Traefik!
-
-image::traefik-architecture.png["Traefik's Architecture",width=900]
-
-[{invert}]
-== Traefik Project
+= Traefik Project
 
 // * link:https://github.com/containous/traefik[icon:github[] https://github.com/containous/traefik]
 // * MIT License
@@ -15,16 +10,47 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 
 image::traefik-stats.png["Traefik's Stats",width=900]
 
+[{invert}]
+== Here Comes Traefik!
 
-== Traefik 2.0 Quick Overview
+image::traefik-architecture.png["Traefik's Architecture",width=900]
 
-* Revamped Documentation
-* Clarified Concepts
-* Expressive Routing Rule Syntax
-* Middlewares
-* TCP Support
-* Canary / Mirroring
-* And so Much More...
+[{invert}]
+== Docker
 
-[.small]
-Learn more on the link:bit.ly/traefik-v2[blog post]
+image::quickstart-diagram.png["Traefik",width=800]
+
+[{invert}]
+== Static & Dynamic Configuration
+
+image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=900]
+
+[{invert}]
+== Architecture at a Glance
+
+image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
+
+[{invert}]
+== HTTPS & Let's Encrypt
+
+image::traefik-lets-encrypt-diagram.png["Lets encrypt",width=1000]
+
+[{invert}]
+== Entrypoints
+
+image::architecture-at-a-glance-entrypoints.png["Traefik's Entrypoints", width=1000]
+
+[{invert}]
+== Routers
+
+image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
+
+[{invert}]
+== Middlewares
+
+image::traefik-v2-middlewares.png["Traefik Middlewares",width=1000]
+
+[{invert}]
+== Services
+
+image::architecture-at-a-glance-services.png["Traefik's Services",width=1000]

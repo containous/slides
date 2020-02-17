@@ -1,0 +1,58 @@
+version: "3.3"
+
+services:
+  traefik:
+    image: traefik:v2.1
+    depends_on:
+      - pebble
+    environment:
+      - LEGO_CA_CERTIFICATES=/ssl/pebble.minica.pem
+      - LEGO_CA_SERVER_NAME=pebble
+    command:
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --providers.docker
+      - --api.insecure
+      - --certificatesresolvers.leresolver.acme.caserver=https://pebble:14000/dir
+      - --certificatesresolvers.leresolver.acme.email=your@email.com
+      - --certificatesresolvers.leresolver.acme.storage=/acme.json
+      - --certificatesresolvers.leresolver.acme.tlsChallenge=true
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./ssl/:/ssl"
+    networks:
+      default:
+        aliases:
+          - whoami.docker.localhost
+
+  app:
+    image: containous/whoami:v1.4.0
+    depends_on:
+      - traefik
+    labels:
+      traefik.http.routers.app.rule: Host(`whoami.docker.localhost`)
+      traefik.http.routers.app.middlewares: auth
+      traefik.http.routers.app.entrypoints: websecure
+      traefik.http.routers.app.tls.certresolver: leresolver
+      traefik.http.middlewares.auth.basicauth.users: "user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/" # user/password
+
+  pebble:
+    image: letsencrypt/pebble:2018-11-02
+    command: pebble -config /pebble/config.json
+    ports:
+      - 14000:14000
+    environment:
+      # https://github.com/letsencrypt/pebble#testing-at-full-speed
+      - PEBBLE_VA_NOSLEEP=1
+      # https://github.com/letsencrypt/pebble#invalid-anti-replay-nonce-errors
+      - PEBBLE_WFE_NONCEREJECT=0
+    volumes:
+      - "./pebble:/pebble"
+
+
+# Dashboard (http://localhost:8080)
+# Route (https://whoami.docker.localhost/)
