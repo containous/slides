@@ -18,10 +18,11 @@ spec:
     spec:
       containers:
         - name: app-v2
-          image: nginx:alpine
+          image: mmatur/cheese:cheddar
+          imagePullPolicy: Always
           ports:
             - name: web
-              containerPort: 80
+              containerPort: 8080
           resources:
             limits:
               cpu: 300m
@@ -43,5 +44,6 @@ spec:
     - protocol: TCP
       name: web
       port: 80
+      targetPort: 8080
   selector:
     app: app-v2

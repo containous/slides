@@ -8,14 +8,15 @@ spec:
   weighted:
     services:
       - name: app-v1
-        weight: 3
+        weight: 80
         port: 80
         # Optional, as it is the default value
         kind: Service
       - name: app-v2
-        weight: 1
+        weight: 20
         port: 80
         kind: Service
+
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -25,6 +26,21 @@ metadata:
 spec:
   entryPoints:
     - http
+  routes:
+    - match: Host(`app.meetup.containous.tech`)
+      kind: Rule
+      services:
+      - name: app-canary
+        kind: TraefikService
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: app-tls
+  namespace: app
+spec:
+  entryPoints:
     - https
   routes:
     - match: Host(`app.meetup.containous.tech`)
@@ -32,3 +48,5 @@ spec:
       services:
       - name: app-canary
         kind: TraefikService
+  tls:
+    certResolver: default

@@ -41,7 +41,7 @@ openshift-install create cluster --dir="${OS_CLUSTER_INSTALL_PATH}" --log-level 
 ### Manage security constraint
 
 ```
-kubectl create namespace traefik
+kubectl create namespace traefikee
 oc create -f openshift/traefik-scc.yaml
 oc adm policy add-scc-to-user traefik-scc -z default -n traefik
 kubectl apply -f traefik/01-crd,yaml
@@ -59,6 +59,20 @@ kubectl apply -f hotrod/
 
 ```bash
 kubectl apply -f traefik/
+```
+
+## Install TraefikEE
+
+```bash
+teectl setup --cluster="meetup" --kubernetes --force
+teectl setup gen --cluster="meetup" --license="${TRAEFIKEE_LICENSE}" --controllers=1 --proxies=2 | kubectl apply -f -
+
+for item in $(kubectl -n traefikee get pods -l component=proxies --output=name); do
+kubectl annotate -n traefikee ${item} prometheus.io/scrape='true';
+kubectl annotate -n traefikee ${item} prometheus.io/port='8080';
+done
+
+teectl apply --cluster=meetup --file=./traefikee/config.toml
 ```
 
 ## Run Demo

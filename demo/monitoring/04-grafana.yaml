@@ -18,9 +18,9 @@ spec:
         app: grafana
         component: core
     spec:
-      securityContext:
-        runAsUser: 472
-        fsGroup: 472
+      # securityContext:
+      #   runAsUser: 472
+      #   fsGroup: 472
       containers:
       - image: grafana/grafana:6.0.0
         name: grafana-core
@@ -124,7 +124,7 @@ metadata:
     app: grafana
     component: core
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 3000
   selector:

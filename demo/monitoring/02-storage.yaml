@@ -21,7 +21,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: default
+  storageClassName: gp2
 
 ---
 apiVersion: v1
@@ -35,4 +35,4 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: default
+  storageClassName: gp2

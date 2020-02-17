@@ -1,0 +1,19 @@
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+
+  [entryPoints.https]
+    address = ":443"
+
+[api]
+ insecure = true
+ dashboard = true
+
+[providers.kubernetesCRD]
+
+[metrics]
+  [metrics.prometheus]
+
+[certificatesResolvers.default.acme]
+  email = "tee-prod@containo.us"
+  [certificatesResolvers.default.acme.tlschallenge]

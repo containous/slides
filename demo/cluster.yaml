@@ -1,0 +1,355 @@
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: traefikee
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "meetup-svc-acc"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: "meetup-svc-acc-role"
+  labels:
+    app: traefikee
+    release: "meetup"
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - endpoints
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - create
+      - update
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - extensions
+    resources:
+      - ingresses
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - "extensions"
+    resources:
+      - ingresses/status
+    verbs:
+      - update
+  - apiGroups:
+      - traefik.containo.us
+    resources:
+      - ingressroutes
+      - ingressroutetcps
+      - tlsoptions
+      - middlewares
+      - traefikservices
+    verbs:
+      - get
+      - list
+      - watch
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: "meetup-svc-acc"
+  labels:
+    app: traefikee
+    release: "meetup"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: "meetup-svc-acc-role"
+subjects:
+  - kind: ServiceAccount
+    name: "meetup-svc-acc"
+    namespace: traefikee
+
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: "meetup-mtls"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+data:
+  bundle.zip: "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"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "meetup-ctrl-svc"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+spec:
+  selector:
+    app: traefikee
+    release: "meetup"
+    component: controllers
+  clusterIP: None
+  publishNotReadyAddresses: true
+  ports:
+    - port: 8080
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "meetup-controller"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+spec:
+  selector:
+    matchLabels:
+      app: traefikee
+      release: "meetup"
+      component: controllers
+  podManagementPolicy: Parallel
+  serviceName: "meetup-ctrl-svc"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: traefikee
+        release: "meetup"
+        component: controllers
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "4646"
+    spec:
+      serviceAccountName: "meetup-svc-acc"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: component
+                      operator: In
+                      values:
+                        - controllers
+                topologyKey: "kubernetes.io/hostname"
+      terminationGracePeriodSeconds: 30
+      initContainers:
+        - name: wait-dns
+          image: busybox:1.31.1
+          command: ['sh', '-c', 'until nslookup -type=a meetup-ctrl-svc.traefikee.svc.cluster.local; do echo waiting for published dns records; sleep 1; done;']
+      containers:
+        - name: "meetup-controller"
+          image: mmatur/traefik:ee
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          securityContext:
+            readOnlyRootFilesystem: true
+          ports:
+            - containerPort: 4242
+              name: control-port
+            - containerPort: 8080
+              name: api
+          readinessProbe:
+            tcpSocket:
+              port: control-port
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: "120Mi"
+              cpu: "100m"
+            limits:
+              memory: "200Mi"
+              cpu: "100m"
+          volumeMounts:
+            - name: mtls
+              mountPath: /var/run/mtls
+            - name: data
+              mountPath: /var/lib/traefikee
+            - name: sockets
+              mountPath: /var/run/traefikee
+          command:
+            - "/traefikee"
+            - "controller"
+            - "--name=$(POD_NAME)"
+            - "--advertise=$(POD_NAME).meetup-ctrl-svc.$(POD_NAMESPACE):4242"
+            - "--discovery.dns.bootstrapexpected=1"
+            - "--discovery.dns.domain=meetup-ctrl-svc.$(POD_NAMESPACE)"
+            - "--jointoken.kubernetes.prefix=meetup"
+            - "--jointoken.kubernetes.namespace=traefikee"
+            - "--license=6dd261e4-abcb-4f11-89b0-105bd3b87f2d"
+            - "--log.level="
+            - "--log.filepath="
+            - "--log.format="
+            - "--api.bundle=/var/run/mtls/bundle.zip"
+      volumes:
+        - name: mtls
+          secret:
+            secretName: "meetup-mtls"
+        - name: sockets
+          emptyDir: {}
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "meetup-proxy-svc"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
+  selector:
+    app: traefikee
+    release: "meetup"
+    component: proxies
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "meetup-proxy"
+  namespace: traefikee
+  labels:
+    app: traefikee
+    release: "meetup"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: traefikee
+      release: "meetup"
+      component: proxies
+  template:
+    metadata:
+      labels:
+        app: traefikee
+        release: "meetup"
+        component: proxies
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "4646"
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: component
+                      operator: In
+                      values:
+                        - proxies
+                topologyKey: "kubernetes.io/hostname"
+      terminationGracePeriodSeconds: 30
+      automountServiceAccountToken: false
+      initContainers:
+        - name: wait-dns
+          image: busybox:1.31.1
+          command: ['sh', '-c', 'until nslookup -type=a meetup-ctrl-svc.traefikee.svc.cluster.local; do echo waiting for published dns records; sleep 1; done;']
+      containers:
+        - name: "meetup-proxy"
+          image: mmatur/traefik:ee
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          securityContext:
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          ports:
+            - containerPort: 4545
+              name: ping
+            - containerPort: 80
+              name: http
+            - containerPort: 443
+              name: https
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: http
+          #   initialDelaySeconds: 2
+          #   periodSeconds: 5
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "100Mi"
+              cpu: "100m"
+          volumeMounts:
+            - name: "meetup-proxy-data"
+              mountPath: "/var/lib/traefikee"
+            - name: "join-token"
+              mountPath: "/var/run/secrets"
+          command:
+            - "/traefikee"
+            - "proxy"
+            - "--name=$(POD_NAME)"
+            - "--discovery.dns.domain=meetup-ctrl-svc.$(POD_NAMESPACE)"
+            - "--jointoken.file.path=/var/run/secrets"
+            - "--log.level="
+            - "--log.filepath="
+            - "--log.format="
+      volumes:
+        - name: "meetup-proxy-data"
+          emptyDir: {}
+        - name: "join-token"
+          secret:
+            secretName: "meetup-tokens"

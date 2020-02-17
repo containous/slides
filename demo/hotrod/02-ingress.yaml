@@ -7,6 +7,24 @@ metadata:
 spec:
   entryPoints:
     - http
+  routes:
+    - kind: Rule
+      match: Host(`hotrod.meetup.containous.tech`)
+      services:
+        - name: hotrod
+          port: 8080
+      # middlewares:
+      #   - name: https-redirect
+      #     namespace: traefikee
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hotrod-tls
+  namespace: hotrod
+spec:
+  entryPoints:
     - https
   routes:
     - kind: Rule
@@ -14,3 +32,5 @@ spec:
       services:
         - name: hotrod
           port: 8080
+  tls:
+    certResolver: default

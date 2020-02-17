@@ -2,6 +2,6 @@ GET http://whoami.meetup.containous.tech
 POST http://whoami.meetup.containous.tech
 PUT http://whoami.meetup.containous.tech
 DELETE http://whoami.meetup.containous.tech
-# GET http://dashboard.meetup.containous.tech
+GET http://app.meetup.containous.tech
 GET http://grafana.meetup.containous.tech
 HEAD http://hotrod.meetup.containous.tech

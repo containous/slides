@@ -1,0 +1,53 @@
+# ---
+# apiVersion: apps/v1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     kubernetes.io/ingress.class: traefik
+#   name: traefikee-dashboard
+#   namespace: traefikee
+# spec:
+#   rules:
+#     - host: dashboard.meetup.containous.tech
+#       http:
+#         paths:
+#           - backend:
+#               serviceName: traefikee-k8s-web-svc
+#               servicePort: 8080
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: traefikee
+spec:
+  entryPoints:
+    - http
+  routes:
+    - kind: Rule
+      match: Host(`dashboard.meetup.containous.tech`)
+      services:
+        - name: api@internal
+          kind: TraefikService
+      # middlewares:
+      #   - name: https-redirect
+      #     namespace: traefikee
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard-tls
+  namespace: traefikee
+spec:
+  entryPoints:
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`dashboard.meetup.containous.tech`)
+      services:
+        - name: api@internal
+          kind: TraefikService
+  tls:
+    certResolver: default

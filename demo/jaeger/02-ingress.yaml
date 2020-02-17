@@ -7,6 +7,24 @@ metadata:
 spec:
   entryPoints:
     - http
+  routes:
+    - kind: Rule
+      match: Host(`jaeger.meetup.containous.tech`)
+      services:
+        - name: jaeger-query
+          port: 16686
+      # middlewares:
+      #   - name: https-redirect
+      #     namespace: traefikee
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: jaeger-tls
+  namespace: jaeger
+spec:
+  entryPoints:
     - https
   routes:
     - kind: Rule
@@ -14,3 +32,5 @@ spec:
       services:
         - name: jaeger-query
           port: 16686
+  tls:
+    certResolver: default

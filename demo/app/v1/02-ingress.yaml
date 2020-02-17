@@ -14,3 +14,21 @@ spec:
       services:
         - name: app-v1
           port: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: app-tls
+  namespace: app
+spec:
+  entryPoints:
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`app.meetup.containous.tech`)
+      services:
+        - name: app-v1
+          port: 80
+  tls:
+    certResolver: default
