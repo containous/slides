@@ -42,7 +42,7 @@ services:
       traefik.http.middlewares.auth.basicauth.users: user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/ # user/password
 
   pebble:
-    image: letsencrypt/pebble:2018-11-02
+    image: letsencrypt/pebble:v2.3.0
     command: pebble -config /pebble/config.json
     ports:
       - 14000:14000
@@ -56,4 +56,4 @@ services:
 
 
 # Dashboard (http://localhost:8080)
-# Route (https://whoami.docker.localhost/)
+# Route (https://whoami.localhost/)

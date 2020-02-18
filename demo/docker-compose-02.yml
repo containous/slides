@@ -19,4 +19,4 @@ services:
       traefik.http.routers.app.rule: Host(`whoami.localhost`)
 
 # Dashboard (http://localhost:8080)
-# Route (http://whoami.docker.localhost/)
+# Route (http://whoami.localhost/)
