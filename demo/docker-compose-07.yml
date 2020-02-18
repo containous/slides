@@ -38,6 +38,7 @@ services:
       traefik.http.routers.traefik.service: api@internal
       traefik.http.routers.traefik.tls.certresolver: leresolver
       traefik.http.routers.traefik.middlewares: authtraefik
+      
       traefik.http.middlewares.authtraefik.basicauth.users: user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/ # user/password
 
       # global redirect to https
