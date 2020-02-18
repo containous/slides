@@ -12,7 +12,6 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --providers.docker
-      - --providers.file.filename=/traefik/file.toml
       - --api.insecure
       - --certificatesresolvers.leresolver.acme.caserver=https://pebble:14000/dir
       - --certificatesresolvers.leresolver.acme.email=your@email.com
@@ -25,20 +24,20 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./ssl/:/ssl"
-      - "./traefik:/traefik"
     networks:
       default:
         aliases:
-          - whoami.docker.localhost
-          - traefik.docker.localhost
+          - whoami.localhost
+          - traefik.localhost
     labels:
-     # Dashboard
-      traefik.http.routers.traefik.rule: Host(`traefik.docker.localhost`)
+      # Dashboard
+      traefik.http.routers.traefik.rule: Host(`traefik.localhost`)
       traefik.http.routers.traefik.entrypoints: websecure
       traefik.http.routers.traefik.service: api@internal
       traefik.http.routers.traefik.tls.certresolver: leresolver
       traefik.http.routers.traefik.middlewares: authtraefik
-      traefik.http.middlewares.authtraefik.basicauth.users: "user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/" # user/password
+
+      traefik.http.middlewares.authtraefik.basicauth.users: user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/ # user/password
 
       # global redirect to https
       traefik.http.routers.http-catchall.rule: hostregexp(`{host:.+}`)
@@ -48,27 +47,16 @@ services:
       # middleware redirect
       traefik.http.middlewares.redirect-to-https.redirectscheme.scheme: https
 
-  appv1:
+  app:
     image: containous/whoami:v1.4.0
     depends_on:
       - traefik
     labels:
-      traefik.http.routers.appv1.rule: Host(`whoami.docker.localhost`)
-      traefik.http.routers.appv1.entrypoints: websecure
-      traefik.http.routers.appv1.tls.certresolver: leresolver
-      traefik.http.routers.appv1.service: app@file
-      traefik.http.services.appv1.loadbalancer.server.port: 80
-
-  appv2:
-    image: mmatur/cheese:cheddar
-    depends_on:
-      - traefik
-    labels:
-      traefik.http.routers.appv2.rule: Host(`whoami.docker.localhost`)
-      traefik.http.routers.appv2.entrypoints: websecure
-      traefik.http.routers.appv2.tls.certresolver: leresolver
-      traefik.http.routers.appv2.service: app@file
-      traefik.http.services.appv2.loadbalancer.server.port: 8080
+      traefik.http.routers.app.rule: Host(`whoami.localhost`)
+      traefik.http.routers.app.middlewares: auth
+      traefik.http.routers.app.entrypoints: websecure
+      traefik.http.routers.app.tls.certresolver: leresolver
+      traefik.http.middlewares.auth.basicauth.users: user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/ # user/password
 
   pebble:
     image: letsencrypt/pebble:2018-11-02

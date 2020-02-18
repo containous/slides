@@ -16,9 +16,7 @@ services:
   app:
     image: containous/whoami:v1.4.0
     labels:
-      traefik.http.routers.app.rule: Host(`whoami.docker.localhost`)
-      traefik.http.routers.app.middlewares: auth
-      traefik.http.middlewares.auth.basicauth.users: "user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/" # user/password
+      traefik.http.routers.app.rule: Host(`whoami.localhost`)
 
 # Dashboard (http://localhost:8080)
 # Route (http://whoami.docker.localhost/)

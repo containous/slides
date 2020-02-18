@@ -27,7 +27,7 @@ services:
     networks:
       default:
         aliases:
-          - whoami.docker.localhost
+          - whoami.localhost
     labels:
       # global redirect to https
       traefik.http.routers.http-catchall.rule: hostregexp(`{host:.+}`)
@@ -41,11 +41,12 @@ services:
     depends_on:
       - traefik
     labels:
-      traefik.http.routers.app.rule: Host(`whoami.docker.localhost`)
+      traefik.http.routers.app.rule: Host(`whoami.localhost`)
       traefik.http.routers.app.middlewares: auth
       traefik.http.routers.app.entrypoints: websecure
       traefik.http.routers.app.tls.certresolver: leresolver
-      traefik.http.middlewares.auth.basicauth.users: "user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/" # user/password
+      
+      traefik.http.middlewares.auth.basicauth.users: user:$$apr1$$q8eZFHjF$$Fvmkk//V6Btlaf2i/ju5n/ # user/password
 
   pebble:
     image: letsencrypt/pebble:2018-11-02
