@@ -11,18 +11,18 @@ How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/OpenShift-France/events/267746250/[OpenShift meetup #9 - -Janvier 2020]
+link:https://www.meetup.com/London-DevOps/events/268771287/[London Devops #50 - February 25 2020]
 
 [{invert}]
 == Whoami
-Michael Matur
+Manuel Zapf
 
-* Solution Architect @ link:https://containo.us/[Containous,window=_blank]
-* Blacksmith on link:https://traefik.io/[Traefik]
-* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
-* link:https://github.com/mmatur[icon:github[] mmatur]
+* Head of Product Open Source @ link:https://containo.us/[Containous,window=_blank]
+* Maintainer on link:https://traefik.io/[Traefik]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+* link:https://github.com/SantoDE[icon:github[] SantoDE]
 
-image::michael.png[height=200]
+image::manuel.jpg[height=200]
 
 [{invert}]
 == Containous
@@ -70,8 +70,8 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
-* link:https://github.com/mmatur[icon:github[] mmatur]
+* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+* link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 

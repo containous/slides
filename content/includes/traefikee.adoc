@@ -4,35 +4,19 @@
 
 image::cluster-traefikee.png[]
 
-
-[state=invert,background-color="rgb(249,248,248)"]
-== !
-
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-high-availability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-safety.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-scalability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
 [{invert}]
 == !
 
 image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
+
+
+= Advantages
+
+* High availablity by default
+* Cluster consensus build on Raft
+* Shared State
+* Distributed Middlewares
+* Distributed Lets Encrypt
 
 == As Simple As Traefik
 
