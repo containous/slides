@@ -4,6 +4,16 @@
 
 image::traefik-architecture.png["Traefik's Architecture",width=900]
 
+== What is Traefik ?
+
+* TCP and HTTP Reverse Proxy
+* Versatile
+* Fully Dynamic
+* Expressive Routing Rule Syntax
+* Middlewares
+* Canary / Mirroring
+* And so Much More...
+
 [{invert}]
 == Traefik Project
 
@@ -14,17 +24,3 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 // * Current stable branch: `v2.0`
 
 image::traefik-stats.png["Traefik's Stats",width=900]
-
-
-== Traefik 2.0 Quick Overview
-
-* Revamped Documentation
-* Clarified Concepts
-* Expressive Routing Rule Syntax
-* Middlewares
-* TCP Support
-* Canary / Mirroring
-* And so Much More...
-
-[.small]
-Learn more on the link:bit.ly/traefik-v2[blog post]

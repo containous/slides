@@ -6,18 +6,89 @@
 
 image::traefik-lets-encrypt-diagram.png["Lets encrypt",width=1000]
 
-[{invert}]
-== Let's encrypt DNS Challenge
-
-image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
-
+[.notes]
+--
+The Automatic Certificate Management Environment
+--
 
 [{invert}]
 == Let's encrypt HTTP Challenge
 
 image::lets-encrypt-http-challenge.png["Lets encrypt HTTP Challenge",width=1000]
 
+[.notes]
+--
+Pros:
+
+- It’s easy to automate without extra knowledge about a domain’s configuration.
+- It works with off-the-shelf web servers.
+
+Cons:
+- It doesn’t work if your ISP blocks port 80 (this is rare, but some residential ISPs do this).
+- Let’s Encrypt doesn’t let you use this challenge to issue wildcard certificates.
+- If you have multiple web servers, you have to make sure the file is available on all of them
+--
+
 [{invert}]
-== Let's encrypt TLS Challenge
+== Let's encrypt TLS-ALPN Challenge
 
 image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
+
+[.notes]
+--
+Relies on TLS-ALPN : Application Layer Protocol Negociation
+
+Pros:
+- It works if port 80 is unavailable to you.
+- It can be performed purely at the TLS layer.
+
+Cons:
+- It’s not supported by Apache, Nginx, or Certbot, and probably won’t be soon.
+- Like HTTP-01, if you have multiple servers they need to all answer with the same content.
+--
+
+[{invert}]
+== Let's encrypt DNS Challenge
+
+image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
+
+[.notes]
+--
+Pros:
+- You can use this challenge to issue certificates containing wildcard domain names.
+- It works well even if you have multiple web servers.
+
+Cons:
+- Keeping API credentials on your web server is risky.
+- Your DNS provider might not offer an API.
+- Your DNS API may not provide information on propagation times.
+--
+
+== Certificate resolvers
+
+static-config.toml
+[source,toml]
+----
+# [...]
+[certificatesResolvers.tls.acme]
+  email = "your-email@your-domain.org"
+  caserver = "https://pebble.pebble.svc.cluster.local/dir"
+  [certificatesResolvers.tls.acme.tlsChallenge]
+----
+
+app-route.yaml
+[source,yaml]
+----
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: blogtls
+spec:
+  # [...]
+  routes:
+  - match: Host(`company.com`) && Path(`/blog`)
+  # [...]
+  tls:
+    certresolver: tls
+----

@@ -1,5 +1,5 @@
 
-= Traefik (v2.0) Core Concepts
+= Traefik Core Concepts
 
 image::bored-minion.jpg[Bored Minion]
 
@@ -8,42 +8,108 @@ image::bored-minion.jpg[Bored Minion]
 
 image::traefik-concepts-edge.png["Traefik Edge Router",width=1000]
 
+[.notes]
+--
+- Traefik sits between the internet and your platform
+- It is on of the first compoment handling the requests coming to your cluster
+- And is in charge of routing them
+--
+
 [{invert}]
 == Dynamically Discovers Services
 
-image::traefik-concepts-auto.png["Traefik Automatic Config",width=1000]
+image::traefik-concepts-auto.png["Traefik Automatic Config",width=800]
+
+[.notes]
+--
+- It listens to an external source of configuration, called a provider
+- It updates its routing confguration without any restarts, in ANY situation
+- It doesn't loose any requests doing this (THANK YOU GOLANG)
+--
 
 [{invert}]
-== Architecture (v2.0) at a Glance
+== Architecture at a Glance
 
-image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
+image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=800]
+
+[.notes]
+--
+- DO NOT DIVE INTO DETAILS RIGHT NOW !
+- Enumerate core concepts and that's it.
+--
 
 [{invert}]
 == Entrypoints
 
 image::architecture-at-a-glance-entrypoints.png["Traefik's Entrypoints", width=1000]
 
+[.notes]
+--
+- Entrypoints defines which ports are being listened on by Traefik
+- Carries all the network listening configuration (like allowed timeouts)
+--
+
 [{invert}]
 == Routers
 
 image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
+
+[.notes]
+--
+- Routers matches an incoming request with a service according to rules.
+- Both with HTTP and TCP.
+- HTTP routes according to request metadata
+- TCP routes according to the entrypoint OR the SNI in case of TLS traffic. 
+  - You can multiplex TLS traffic onver the same port with Traefik !
+--
 
 [{invert}]
 == Middlewares
 
 image::traefik-v2-middlewares.png["Traefik Middlewares",width=1000]
 
+[.notes]
+--
+- Pieces of software in charge of tweaking the incoming / outgoing requests.
+  - Rewrite request path
+  - Perform redirections
+  - Rate limit ?
+  - Authentication
+--
+
 [{invert}]
 == Services
 
 image::architecture-at-a-glance-services.png["Traefik's Services",width=1000]
+
+[.notes]
+--
+- Responsible for configuring how to reach the actual services.
+- Server Addresses !
+- How do we want to loadbalance ? WRR ? Do we want to mirror traffic ?
+--
 
 [{invert}]
 == Architecture (again) at a Glance
 
 image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Glance",width=1000]
 
+[.notes]
+--
+- To sum up
+- Request arrivethrough an entrypoint
+- ..Is matched by a router
+- ..Is tweaked by some middlewares attached to this router
+- ..Is forwared to a service that does the loadbalancing and sent to an actual server.
+--
+
 [{invert}]
-== Static & Dynamic Configuration
+== Static vs Dynamic
 
 image::traefik-concepts-static-dynamic-configuration.png["Static and Dynamic Configuration",width=1000]
+
+[.notes]
+--
+- Static is the startup configuration of Traefik, and can't be updated without a restart.
+- Dynamic is the actual routing configuration and is derived from the provider.
+--

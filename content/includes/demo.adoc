@@ -1,19 +1,34 @@
-= Demo
 
+[{invert}]
+
+= Demo
 image::demo.jpg[]
 
-== Demo Menu
+[.notes]
+--
+## Setup
 
-1. Deploying Traefik and configure a service
-2. Configure a dashboard
-3. Configure the load balancing for scaled service
-4. Configure a service on a specific path
-5. Configure Let's encrypt in Traefik
-6. Generate certificates for our services
+- `k3d create --workers=3 --publish 80:80 --server-arg --no-deploy --server-arg traefik`
+- `k3d import-images traefik:v2.1 containous/whoami:v1.4`
+- `cd demo`
+- Term on the left, browser on private session on the right
+- `export KUBECONFIG="$(k3d get-kubeconfig --name='k3s-default')`
 
-== Deploying Traefik and configure a service
-== Configure a dashboard
-== Configure the load balancing for scaled service
-== Configure a service on a specific path
-== Configure Let's encrypt in Traefik
-== Generate certificates for our services
+## Demo
+
+- k3s cluster running, using k3d (thank you rancher <3)
+- Install Traefik `kubectl apply -f ./traefik`
+- Show the Traefik static configuration.
+- Show the ingress route for the dashboard, and show the dashboard dashboard.localhost
+- Deploy the app `kubectl apply -f ./app/webapp.yaml`
+- Deploy show and explain the ingress route `kubectl apply -f ./app/webapp-ingress.yaml`
+- Refresh the dashboard and show that the route is broken !
+- Change the entrypoint of the route to http.
+- Refresh and boom it works.
+- Access to webapp webapp.localhost
+
+## Reset Demo
+
+- k delete -f demo/app && k delete -f demo/traefik
+
+--

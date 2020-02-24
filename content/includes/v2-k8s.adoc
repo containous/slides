@@ -7,7 +7,11 @@ image::traefik-kubernetes-diagram.png["Traefik with Kubernetes Diagram",width=90
 [.small]
 Diagram from link:https://medium.com/@geraldcroes[]
 
-[{invert}]
+[.notes]
+--
+- How many ppl knows k8s in the room ?  Using it ? Using Traefik ?
+--
+
 == Ingress Example with &#9096;
 
 [source,yaml]
@@ -28,34 +32,26 @@ spec:
           servicePort: 80
 ----
 
-[{invert}]
-== &#9096; CRD - Custom Resources Definition
+== &#9096; Ingress Route (HTTP)
 
+webapp.yaml
 [source,yaml]
 ----
-# File "webapp.yaml"
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: simpleingressroute
+  name: myapp
 spec:
   entryPoints:
     - web
   routes:
   - match: Host(`localhost`) && PathPrefix(`/whoami`)
-    kind: Rule
     services:
     - name: webapp
       port: 80
 ----
 
-[source,bash]
-----
-$ kubectl apply -f webapp.yaml
-$ kubectl get ingressroute
-----
-
-== &#9096; & TCP (with CRD)
+== &#9096; Ingress Route (TCP)
 
 [source,yaml]
 ----

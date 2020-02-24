@@ -1,0 +1,31 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: traefik
+  labels:
+    app: traefik
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      containers:
+        - name: traefik
+          image: traefik:v2.1
+          ports:
+            - name: http
+              containerPort: 80
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/traefik
+      volumes:
+        - name: config-volume
+          configMap:
+            name: traefik-config

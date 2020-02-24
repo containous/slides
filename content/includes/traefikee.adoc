@@ -1,64 +1,22 @@
 
 [{invert}]
-= Traefik also comes in Herd
+= Doing More with Traefik
 
 image::cluster-traefikee.png[]
 
-
 [state=invert,background-color="rgb(249,248,248)"]
-== !
 
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-high-availability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
+== What is TraefikEE ?
 
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-safety.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
-
-++++
-<video class="center" width="512" height="384" autoplay muted controls loop>
-  <source src="videos/traefik-ee-scalability.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-++++
+- Makes multiple instances of Traefik acts like one
+- Separated Control plane and Data plane
+- Highly available
+- Secure
 
 [{invert}]
-== !
+== TraefikEE architecture
 
 image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
-
-== As Simple As Traefik
-
-* Install it:
-
-[source,bash]
-----
-# Cluster Installation
-traefikeectl install \
-    --licensekey="SuperSecretLicence" \
-    --dashboard \
-    --kubernetes # Or --swarm
-----
-
-* Configure it:
-
-[source,bash]
-----
-# Routing Configuration, same as Traefik's
-traefikeectl deploy \
-  --defaultentrypoints=http,https \
-  --entryPoints='Name:http Address::80' \
-  --entryPoints='Name:https Address::443 TLS' \
-  --logLevel=INFO \
-  --kubernetes
-----
 
 [{invert}]
 == Free Trial

@@ -1,40 +1,43 @@
-
-[%notitle]
-= How to easily deploy and manage your microservices with Traefik and Maesh
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== !
-
-[.title]
-How to easily deploy and manage your microservices with Traefik and Maesh
+== How to easily deploy and manage your microservices with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/fr-FR/OpenShift-France/events/267746250/[OpenShift meetup #9 - -Janvier 2020]
+link:https://www.socallinuxexpo.org/scale/18x/presentations/easy-https-your-microservice-architectures[Scale 18x - March 8th 2020]
 
 [{invert}]
 == Whoami
-Michael Matur
+Julien Levesy
 
-* Solution Architect @ link:https://containo.us/[Containous,window=_blank]
-* Blacksmith on link:https://traefik.io/[Traefik]
-* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
-* link:https://github.com/mmatur[icon:github[] mmatur]
+* Software Engineer @ link:https://containo.us/[Containous,window=_blank]
+* Works on link:https://containo.us/traefikee[Traefik Enterprise Edition]
+* link:https://twitter.com/jlevesy[icon:twitter[] jlevesy]
+* link:https://github.com/jlevesy[icon:github[]  jlevesy]
 
-image::michael.png[height=200]
+image::jlevesy.png[height=200]
 
 [{invert}]
 == Containous
 
 link:https://containo.us[window="_blank"]
 
+* We Deliver Traefik, Maesh, Yaegi and Traefik Enterprise Edition
 * We Believe in Open Source
-* We Deliver Traefik, Traefik Enterprise Edition, Maesh
-* Commercial Support
-* 30 people distributed, 90% tech
+* 30-ish (and counting !) people from everywhere
 
 image::containous-logo.png["Containous Logo"]
+
+[{invert}]
+== Agenda
+
+* Why Traefik ?
+* What is Traefik ?
+* Core concepts
+* Demo
+* A word about service mesh
+* Doing more with Traefik
 
 // //// end of Speaker Slide and Company slide
 
@@ -53,15 +56,13 @@ include::./includes/traefik-core-concepts.adoc[]
 
 include::./includes/traefik-and-le.adoc[]
 
-// include::./includes/show-me-the-conf.adoc[]
-
 include::./includes/v2-k8s.adoc[]
 
-// include::./includes/v2-tcp.adoc[]
-
-include::./includes/traefikee.adoc[]
+include::./includes/demo.adoc[]
 
 include::./includes/maesh.adoc[]
+
+include::./includes/traefikee.adoc[]
 
 include::./includes/the-end.adoc[]
 
@@ -70,8 +71,8 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/michaelmatur[icon:twitter[] @michaelmatur]
-* link:https://github.com/mmatur[icon:github[] mmatur]
+* link:https://twitter.com/jlevesy[icon:twitter[] @jlevesy]
+* link:https://github.com/jlevesy[icon:github[] jlevesy]
 
 image::qrcode.png["QRCode to this presentation",height=150]
 

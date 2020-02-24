@@ -1,3 +1,0 @@
-[[tls.certificates]]
-  certFile = "/certs/cert.pem"
-  keyFile = "/certs/key.pem"

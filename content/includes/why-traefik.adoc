@@ -5,24 +5,61 @@ image::why-mr-anderson.jpg["Why, Mr Anderson?",width=800]
 
 Why, Mr Anderson?
 
+[.notes]
+--
+- Why reinventing reverse proxies ?
+- This is a problem that has already been solved ?
+
+- To understand that we need to take a step back and look at the evolution of software design
+--
+
 [{invert}]
 [%notitle]
 == Evolution of Software Design
-//image::evolution-of-software-design.jpg[Evolution of Software Design]
 image::pasta-architecture.png["Evolution of Software Design", height = 800]
 
-== The Premise of Microservices...
+[.notes]
+--
+- The way we write software is changing continuously
+- We went from spaghetti code (who likes a good SQL query in an HTML template ?)
+- ...To lasagna (aka lasagna monolith). Huge and somehow complex codebases, making difficult to avoid coupling, too many layers ?
+- ...To the Raviolis, aka microservices ! Each component has its own set on responsabillity, and wrapped up in neat communication layers.
+--
+
+
+== The Promise of Microservices...
 
 image::asterix-premise.jpg["Asterix - Premise", height = 550]
+
+[.notes]
+--
+- Looks good !
+- They look clean, well designed, collaborating to make great things together !
+- This is from a french comics called Asterix, and the story is about a small Gallic village resisting the rome Empire in Britany.
+--
 
 [{invert}]
 == ...and What Happens
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
-== Where's My Service?
+[.notes]
+--
+- ... but sometimes it doesn't work so well ? Things breaks ? Network gets networky ?
+-  Everybody ends up shouting at each other, just like our Gallic friends !
+- ... That's what microservices are in real life. It's complicated and raises a looot of new questions.
+--
 
-image::where-is-charlie.jpg["Where os Charlie?",width=900]
+== How do I talk to my service ?
+(from outside)
+
+image::where-is-charlie.jpg["Where os Charlie?",width=800]
+
+[.notes]
+--
+- The question we're more focused on here at containous
+- ... How can I talk to my service from outside ?
+--
 
 [{invert}]
 == Tools of the Trade
@@ -43,16 +80,31 @@ image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
 
-== !
+[.notes]
+--
+- We're engineers, we built great tools to help us solve those problems.
+- But let's face it
+--
 
-image::yaml.jpg[width=900]
+== Configuring proxies with microservices IS a hard thing
 
-[.small][.small]
-Source: https://twitter.com/Caged/status/1039937162769096704[]
+[.notes]
+--
+- But the struggle is real: configuring proxies for microservices is hard.
+- Because the workload moves and changes all the time.
+- Because the routing can be complex
+- Because you want the developers to handle this for you ?
 
+- Imagine doing this with with a configuration file ?
+--
 
 == What If I Told You?
 
 image::what-if-I-told-you.jpg[What If I Told You]
 
 That You Don't Have to Write This Configuration File...?
+
+[.notes]
+--
+- 
+--
