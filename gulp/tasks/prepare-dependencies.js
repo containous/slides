@@ -6,6 +6,8 @@ module.exports = function (gulp, plugins, current_config) {
             revealJsDestDir = current_config.distDir + '/reveal.js',
             mainRevealCss = gulp.src(baseRevealJSPath + '/css/reveal.css')
                 .pipe(gulp.dest(revealJsDestDir + '/css/')),
+            resetRevealCss= gulp.src(baseRevealJSPath + '/css/reset.css')
+                .pipe(gulp.dest(revealJsDestDir + '/css/')),
             paperCSS = gulp.src(baseRevealJSPath + '/css/print/paper.css')
                 .pipe(gulp.dest(revealJsDestDir + '/css/print')),
             mainRevealJs = gulp.src(baseRevealJSPath + '/js/reveal.js')
@@ -25,6 +27,7 @@ module.exports = function (gulp, plugins, current_config) {
 
         return plugins.mergeStreams(
             mainRevealCss,
+            resetRevealCss,
             paperCSS,
             mainRevealJs,
             zenBurnCss,
