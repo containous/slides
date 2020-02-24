@@ -1,0 +1,35 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: grafana.docker.localhost
+    http:
+      paths:
+      - backend:
+          serviceName: grafana
+          servicePort: 3000
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  entryPoints:
+    - http
+    - https
+  routes:
+    - match: Host(`grafana.docker.localhost`)
+      kind: Rule
+      services:
+        - name: grafana
+          port: 3000

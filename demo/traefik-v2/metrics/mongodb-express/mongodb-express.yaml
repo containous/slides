@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mongodb-express
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongodb-express
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mongodb-express
+    spec:
+      serviceAccountName: mongodb-express
+      containers:
+      - image: mongo-express
+        name: mongodb-express
+        env:
+        - name: ME_CONFIG_MONGODB_SERVER
+          value: mongodb.default.maesh
+        ports:
+          - containerPort: 8081
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-express
+spec:
+  ports:
+  - name: mongodb-express
+    port: 8081
+    targetPort: 8081
+  selector:
+    app: mongodb-express
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mongodb-express
+  annotations:
+    kubernetes.io/ingress.class: 'traefik'
+spec:
+  rules:
+  - host: mongodb-express.docker.localhost
+    http:
+      paths:
+      - backend:
+          serviceName: mongodb-express
+          servicePort: 8081

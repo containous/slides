@@ -1,0 +1,20 @@
+apiVersion: specs.smi-spec.io/v1alpha1
+kind: TCPRoute
+metadata:
+  name: mongodb-tcp
+---
+kind: TrafficTarget
+apiVersion: access.smi-spec.io/v1alpha1
+metadata:
+  name: allow-mongodb
+destination:
+  kind: ServiceAccount
+  name: mongodb
+  port: "27017"
+  namespace: default
+specs:
+- kind: TCPRoute
+  name: mongodb-tcp
+sources:
+- kind: ServiceAccount
+  name: mongodb-express
