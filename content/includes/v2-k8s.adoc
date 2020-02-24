@@ -72,3 +72,78 @@ spec:
     - name: mongo-prod
       port: 27017
 ----
+
+== Redirect HTTP to HTTPS
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-http
+  namespace: webapp  
+spec:
+  redirectScheme:
+    scheme: https
+----
+
+== Rewrite Path
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-http
+  namespace: webapp  
+spec:
+  redirectScheme:
+    scheme: https
+----
+
+== Redirect with domain replacement
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-redirectregex
+spec:
+  redirectRegex:
+    regex: ^http://localhost/(.*)
+    replacement: http://mydomain/${1}
+----
+
+== Strip Prefix
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-stripprefix
+spec:
+  stripPrefix:
+    prefixes:
+      - /foobar
+      - /fiibar
+----
+
+== Canary
+[source,yaml]
+----
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: webapp-canary
+  namespace: webapp
+spec:
+  weighted:
+    services:
+      - name: webapp-v1
+        weight: 3
+        port: 80
+        # Optional, as it is the default value
+        kind: Service
+      - name: webapp-v2
+        weight: 1
+        port: 80
+        kind: Service
+----

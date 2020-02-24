@@ -11,7 +11,7 @@ Why, Mr Anderson?
 //image::evolution-of-software-design.jpg[Evolution of Software Design]
 image::pasta-architecture.png["Evolution of Software Design", height = 800]
 
-== The Premise of Microservices...
+== The Promise of Microservices...
 
 image::asterix-premise.jpg["Asterix - Premise", height = 550]
 
@@ -42,6 +42,12 @@ image::consul.png[width=80,float=right]
 image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
+
+== Common Problems
+
+* Repetitive Configuration
+* Pure amount hard to manage
+* How to handle rewrites, redirects, tls...?
 
 == !
 

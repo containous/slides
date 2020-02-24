@@ -7,11 +7,11 @@ include::./includes/attributes.adoc[]
 == !
 
 [.title]
-How to easily deploy and manage your microservices with Traefik and Maesh
+Ease your Ingress Management and observability with Traefik and Maesh
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/London-DevOps/events/268771287/[London Devops #50 - February 25 2020]
+link:https://www.eventbrite.com/e/ease-your-ingress-management-and-observability-with-traefik-tickets-88820441331[Containous & Nuaware]
 
 [{invert}]
 == Whoami
@@ -50,6 +50,8 @@ include::./includes/why-traefik.adoc[]
 include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
+
+include::./includes/traefik-metrics-tracing.adoc[]
 
 include::./includes/traefik-and-le.adoc[]
 

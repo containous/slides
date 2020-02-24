@@ -1,0 +1,29 @@
+= Observability & Tracing with Traefik
+
+image::three-pillars-of-observability-logs-metrics-tracs-apm-banner.jpg["Traefik Edge Router",width=1000]
+
+link:https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/bltf85be52d51892228/5c98d45f8e3cc6505f19f678/three-pillars-of-observability-logs-metrics-tracs-apm.png[source]
+
+== Logs
+
+* Difference between access / system logs
+* Can you show internal behavior of your application
+* Historical View
+
+== Metrics
+
+* Ressource metrics (CPU / Memory / IO Performance...)
+* Application metrics (Req/s, Open Connections...) 
+* Short-time period view
+
+== Tracing
+
+* Deep-Dive into how the app works
+* Calltrace
+
+== Result
+
+* Combining all 3
+* Possibility to fully diagnose problems
+* Combination of Logs / Metric might show missbehaving apps
+* Tracing for finding root cause
