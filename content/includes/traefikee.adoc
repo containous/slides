@@ -12,6 +12,7 @@ image::cluster-traefikee.png[]
 - Separated Control plane and Data plane
 - Highly available
 - Secure
+- 24/7 support
 
 [{invert}]
 == TraefikEE architecture
