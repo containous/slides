@@ -245,6 +245,7 @@ spec:
     - web
   routes:
   - match: Host(`localhost`) &amp;&amp; PathPrefix(`/whoami`)
+    kind: Rule
     services:
     - name: webapp
       port: 80</code></pre></div></div>
