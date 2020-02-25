@@ -4,12 +4,6 @@
 
 image::cluster-traefikee.png[]
 
-[{invert}]
-== !
-
-image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
-
-
 = Advantages
 
 * High availablity by default
@@ -17,6 +11,21 @@ image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
 * Shared State
 * Distributed Middlewares
 * Distributed Lets Encrypt
+
+[{invert}]
+== !
+
+image::archi-v2-ee.png[height=90%,width=90%]
+
+[{invert}]
+== UI
+
+image::ui-ee.png[height=90%,width=90%]
+
+[{invert}]
+== UI
+
+image::customers.png[height=90%,width=90%]
 
 == As Simple As Traefik
 
@@ -43,6 +52,11 @@ traefikeectl deploy \
   --logLevel=INFO \
   --kubernetes
 ----
+
+[{invert}]
+== Pricing
+
+image::pricing-ee.png[height=90%,width=90%]
 
 [{invert}]
 == Free Trial
