@@ -23,7 +23,7 @@ image::archi-v2-ee.png[height=90%,width=90%]
 image::ui-ee.png[height=90%,width=90%]
 
 [{invert}]
-== UI
+== Customers
 
 image::customers.png[height=90%,width=90%]
 
