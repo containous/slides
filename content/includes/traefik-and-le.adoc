@@ -9,6 +9,11 @@ image::traefik-lets-encrypt-diagram.png["Lets encrypt",width=1000]
 [.notes]
 --
 The Automatic Certificate Management Environment
+
+- Traefik derives the list of certificates it needs to load from its dynamic configuration
+- Asks a certificate authority and passes challenges to prove that the webserver is behind the domain it asks for.
+- That's the ACME protocol
+- 3 types of challenges
 --
 
 [{invert}]
@@ -16,19 +21,13 @@ The Automatic Certificate Management Environment
 
 image::lets-encrypt-http-challenge.png["Lets encrypt HTTP Challenge",width=1000]
 
-[.notes]
---
-Pros:
+[{invert}]
+== HTTP-01 Pro and Cons
 
-- It’s easy to automate without extra knowledge about a domain’s configuration.
-- It works with off-the-shelf web servers.
+- ✅ Easy to understand
 
-Cons:
-
-- It doesn’t work if your ISP blocks port 80 (this is rare, but some residential ISPs do this).
-- Let’s Encrypt doesn’t let you use this challenge to issue wildcard certificates.
-- If you have multiple web servers, you have to make sure the file is available on all of them
---
+- ❌ Requires port 80 to be exposed publicly
+- ❌ No wildcard certificates
 
 [{invert}]
 == Let's encrypt TLS-ALPN Challenge
@@ -37,37 +36,32 @@ image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
 
 [.notes]
 --
-Relies on TLS-ALPN : Application Layer Protocol Negociation
-
-Pros:
-
-- It works if port 80 is unavailable to you.
-- It can be performed purely at the TLS layer.
-
-Cons:
-
-- It’s not supported by Apache, Nginx, or Certbot, and probably won’t be soon.
-- Like HTTP-01, if you have multiple servers they need to all answer with the same content.
+- Same cinematic that HTTP-01
+- On port 443
+- Relies on TLS-ALPN : Application Layer Protocol Negociation to ensure that only host aware of this challenge answers
+- Validation are SNI based:
 --
+
+[{invert}]
+== TLS-ALPN-01 Pro and Cons
+
+- ✅ It works if port 80 is unavailable
+- ✅ More Secure
+
+- ❌ No wildcard certificates
 
 [{invert}]
 == Let's encrypt DNS Challenge
 
 image::lets-encrypt-dns-challenge.png["Lets encrypt DNS Challenge",width=1000]
 
-[.notes]
---
-Pros:
+[{invert}]
+== DNS-01 challenge Pro and Cons
 
-- You can use this challenge to issue certificates containing wildcard domain names.
-- It works well even if you have multiple web servers.
+- ✅ Supports wildcard certificates
+- ✅ Works for non exposed instances
 
-Cons:
-
-- Keeping API credentials on your web server is risky.
-- Your DNS provider might not offer an API.
-- Your DNS API may not provide information on propagation times.
---
+- ❌ Needs DNS provider with an API
 
 == Certificate resolvers
 
@@ -77,7 +71,6 @@ static-config.toml
 # [...]
 [certificatesResolvers.tls.acme]
   email = "your-email@your-domain.org"
-  caserver = "https://pebble.pebble.svc.cluster.local/dir"
   [certificatesResolvers.tls.acme.tlsChallenge]
 ----
 

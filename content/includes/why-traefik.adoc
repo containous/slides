@@ -14,18 +14,19 @@ Why, Mr Anderson?
 --
 
 [{invert}]
-[%notitle]
 == Evolution of Software Design
-image::pasta-architecture.png["Evolution of Software Design", height = 800]
+
+Mainframe ➡️  3-tiers ➡️ Microservices ➡️ ?
 
 [.notes]
 --
 - The way we write software is changing continuously
-- We went from spaghetti code (who likes a good SQL query in an HTML template ?)
-- ...To lasagna (aka lasagna monolith). Huge and somehow complex codebases, making difficult to avoid coupling, too many layers ?
-- ...To the Raviolis, aka microservices ! Each component has its own set on responsabillity, and wrapped up in neat communication layers.
+- A server is something that answers requests from a client.
+- Huge mainframe that does everything
+- 3 tiers => presentation - business - database => splitting by logical role => How to organize ?
+- Microservices => splitting by business role => How to scale ?
+- What's next ?
 --
-
 
 == The Promise of Microservices...
 
@@ -33,21 +34,25 @@ image::asterix-premise.jpg["Asterix - Premise", height = 550]
 
 [.notes]
 --
-- Looks good !
-- They look clean, well designed, collaborating to make great things together !
-- This is from a french comics called Asterix, and the story is about a small Gallic village resisting the rome Empire in Britany.
+- Smaller and cleaner codebases
+- More flexibility
+- Scalability
 --
 
 [{invert}]
-== ...and What Happens
+== ...and What Happens !
 
 image::asterix-fight.jpg[Asterix - Fighting]
 
 [.notes]
 --
-- ... but sometimes it doesn't work so well ? Things breaks ? Network gets networky ?
--  Everybody ends up shouting at each other, just like our Gallic friends !
-- ... That's what microservices are in real life. It's complicated and raises a looot of new questions.
+But sometimes it doesn't work so well ?
+
+- Network is unreliable
+- Service gets too chatty
+- It becomes a mess to debug
+- Everybody ends up shouting at each other, just like our friends !
+- That's what microservices are in real life. It's complicated and raises a looot of new questions.
 --
 
 == How do I talk to my service ?
@@ -86,16 +91,16 @@ image::zookeeper.png[width=80,float=right]
 - But let's look a it from the proxy point of view
 --
 
-== Configuring proxies with microservices IS hard 
+== Configuring proxies with microservices IS hard
 
 (Imagine the configuration file)
 
 [.notes]
 --
 - But the struggle is real: configuring proxies for microservices is hard.
-- Because the workload moves and changes all the time.
+
+- Because the workload moves and changes all the time => The proxy needs to be reconfigured at each change.
 - Because the routing can be complex
-- More deployment means more reconfigurations
 
 - Imagine doing this with with a configuration file ?
 --

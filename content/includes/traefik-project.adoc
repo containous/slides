@@ -7,11 +7,11 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 == What is Traefik ?
 
 * TCP and HTTP Reverse Proxy
-* Versatile
 * Fully Dynamic
 * Expressive Routing Rule Syntax
 * Middlewares
-* Canary / Mirroring
+* Advanced Loadbalancing
+* Versatile
 * And so Much More...
 
 [{invert}]

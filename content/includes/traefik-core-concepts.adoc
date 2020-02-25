@@ -24,7 +24,6 @@ image::traefik-concepts-auto.png["Traefik Automatic Config",width=800]
 --
 - It listens to an external source of configuration, called a provider
 - It updates its routing confguration without any restarts, in ANY situation
-- It doesn't loose any requests doing this (THANK YOU GOLANG)
 --
 
 [{invert}]
@@ -68,12 +67,14 @@ image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 HTTP
 [source,bash]
 ----
+# The host is `traefik.io` OR the host is `containo.us` and the path this `/traefik`
 Host(`traefik.io`) || (Host(`containo.us`) && Path(`/traefik`))
 ----
 
 TCP
 [source,bash]
 ----
+# If the incoming connection is TLS and has SNI enabled.
 HostSNI(`traefik.io`)
 ----
 
@@ -113,8 +114,8 @@ image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Gla
 [.notes]
 --
 - To sum up
-- Request arrivethrough an entrypoint
-- ..Is matched by a router according to the rules
+- Request arrives through an entrypoint
+- ..Is matched by a router according to its rules
 - ..Is tweaked by some middlewares attached to this router
 - ..Is forwared to a service that does the loadbalancing and sent to an actual server.
 --

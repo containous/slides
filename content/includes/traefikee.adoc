@@ -9,7 +9,7 @@ image::cluster-traefikee.png[]
 == What is TraefikEE ?
 
 - Makes multiple instances of Traefik acts like one
-- Highly available and Secure
+- Highly Available and Secure
 - 24/7 support
 
 [.notes]

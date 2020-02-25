@@ -14,7 +14,7 @@ Diagram from link:https://medium.com/@geraldcroes[]
   its own CRD: ingress route.
 --
 
-== Ingress Example with &#9096;
+== &#9096; Ingress
 
 [source,yaml]
 ----
