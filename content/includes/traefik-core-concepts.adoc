@@ -59,9 +59,24 @@ image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 - Routers matches an incoming request with a service according to rules.
 - Both with HTTP and TCP.
 - HTTP routes according to request metadata
-- TCP routes according to the entrypoint OR the SNI in case of TLS traffic. 
+- TCP routes according to the entrypoint OR the SNI in case of TLS traffic.
   - You can multiplex TLS traffic onver the same port with Traefik !
 --
+
+== Routing Rules
+
+HTTP
+[source,bash]
+----
+Host(`traefik.io`) || (Host(`containo.us`) && Path(`/traefik`))
+----
+
+TCP
+[source,bash]
+----
+HostSNI(`traefik.io`)
+----
+
 
 [{invert}]
 == Middlewares
@@ -75,6 +90,7 @@ image::traefik-v2-middlewares.png["Traefik Middlewares",width=1000]
   - Perform redirections
   - Rate limit ?
   - Authentication
+- You can control the order in which they are applied.
 --
 
 [{invert}]
@@ -98,7 +114,7 @@ image::traefik-concepts-architecture-overview.png["Traefik Architecture At A Gla
 --
 - To sum up
 - Request arrivethrough an entrypoint
-- ..Is matched by a router
+- ..Is matched by a router according to the rules
 - ..Is tweaked by some middlewares attached to this router
 - ..Is forwared to a service that does the loadbalancing and sent to an actual server.
 --

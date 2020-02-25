@@ -83,17 +83,19 @@ image::zookeeper.png[width=80,float=right]
 [.notes]
 --
 - We're engineers, we built great tools to help us solve those problems.
-- But let's face it
+- But let's look a it from the proxy point of view
 --
 
-== Configuring proxies with microservices IS a hard thing
+== Configuring proxies with microservices IS hard 
+
+(Imagine the configuration file)
 
 [.notes]
 --
 - But the struggle is real: configuring proxies for microservices is hard.
 - Because the workload moves and changes all the time.
 - Because the routing can be complex
-- Because you want the developers to handle this for you ?
+- More deployment means more reconfigurations
 
 - Imagine doing this with with a configuration file ?
 --
@@ -102,9 +104,4 @@ image::zookeeper.png[width=80,float=right]
 
 image::what-if-I-told-you.jpg[What If I Told You]
 
-That You Don't Have to Write This Configuration File...?
-
-[.notes]
---
-- 
---
+That You Don't Have to Write This Configuration File

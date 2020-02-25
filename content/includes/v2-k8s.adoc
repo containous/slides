@@ -10,6 +10,8 @@ Diagram from link:https://medium.com/@geraldcroes[]
 [.notes]
 --
 - How many ppl knows k8s in the room ?  Using it ? Using Traefik ?
+- Traefik sticks under the hood to its model, but supports the k8s style of doing things by reading ingress ressources and
+  its own CRD: ingress route.
 --
 
 == Ingress Example with &#9096;
@@ -32,9 +34,15 @@ spec:
           servicePort: 80
 ----
 
+[.notes]
+--
+- Pretty limited
+- Relies a lot on annotations to enable extended features
+- Nobody is really happy with it.
+--
+
 == &#9096; Ingress Route (HTTP)
 
-webapp.yaml
 [source,yaml]
 ----
 apiVersion: traefik.containo.us/v1alpha1
@@ -50,6 +58,11 @@ spec:
     - name: webapp
       port: 80
 ----
+
+[.notes]
+--
+- Comes with a set of resources (Middlewares, TLSOption, TraefikService...)
+--
 
 == &#9096; Ingress Route (TCP)
 

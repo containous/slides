@@ -9,7 +9,7 @@ image::demo.jpg[]
 ## Setup
 
 - `k3d create --workers=3 --publish 80:80 --server-arg --no-deploy --server-arg traefik`
-- `k3d import-images traefik:v2.1 containous/whoami:v1.4`
+- `k3d import-images traefik:v2.1 containous/whoami:v1.4.0`
 - `cd demo`
 - Term on the left, browser on private session on the right
 - `export KUBECONFIG="$(k3d get-kubeconfig --name='k3s-default')`
@@ -20,12 +20,24 @@ image::demo.jpg[]
 - Install Traefik `kubectl apply -f ./traefik`
 - Show the Traefik static configuration.
 - Show the ingress route for the dashboard, and show the dashboard dashboard.localhost
-- Deploy the app `kubectl apply -f ./app/webapp.yaml`
-- Deploy show and explain the ingress route `kubectl apply -f ./app/webapp-ingress.yaml`
+- Access to app app.localhost
+- Deploy the app `kubectl apply -f ./app/app.yaml`
+- Deploy show and explain the ingress route `kubectl apply -f ./app/route.yaml`
 - Refresh the dashboard and show that the route is broken !
 - Change the entrypoint of the route to http.
 - Refresh and boom it works.
-- Access to webapp webapp.localhost
+- Add a request header `kubectl apply -f ./app/middleware.yaml`
+- Update the route with the following snippet
+- Apply and that's it.
+- Access to app app.localhost
+
+```
+routes:
+   - match: Host(`app.localhost`)
+     kind: Rule
+     middlewares:
+      - name: add-scalex
+```
 
 ## Reset Demo
 

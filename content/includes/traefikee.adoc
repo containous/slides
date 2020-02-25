@@ -9,10 +9,16 @@ image::cluster-traefikee.png[]
 == What is TraefikEE ?
 
 - Makes multiple instances of Traefik acts like one
-- Separated Control plane and Data plane
-- Highly available
-- Secure
+- Highly available and Secure
 - 24/7 support
+
+[.notes]
+--
+- TraefikEE is a platform to manage the routing
+- Offers distributed features out of the box
+- Offers access control out of the box
+- As simple as Traefik
+--
 
 [{invert}]
 == TraefikEE architecture
