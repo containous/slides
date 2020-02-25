@@ -7,8 +7,7 @@ image::cluster-traefikee.png[]
 [{invert}]
 == !
 
-image::traefikee-architecture-gray-bg.png[height=90%,width=90%]
-
+image::archi-v2-ee.png[height=90%,width=90%]
 
 = Advantages
 
