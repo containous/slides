@@ -16,16 +16,17 @@ Why, Mr Anderson?
 [{invert}]
 == Evolution of Software Design
 
-Mainframe ➡️  3-tiers ➡️ Microservices ➡️ ?
+Mainframe ➡️  3-tiers ➡️ Microservices
 
 [.notes]
 --
 - The way we write software is changing continuously
-- A server is something that answers requests from a client.
 - Huge mainframe that does everything
 - 3 tiers => presentation - business - database => splitting by logical role => How to organize ?
-- Microservices => splitting by business role => How to scale ?
-- What's next ?
+  - We started spliting things by technical role
+- Microservices
+  - How to organize ppl ?
+  - How to sale?
 --
 
 == The Promise of Microservices...
@@ -37,6 +38,7 @@ image::asterix-premise.jpg["Asterix - Premise", height = 550]
 - Smaller and cleaner codebases
 - More flexibility
 - Scalability
+- Structure large organizations
 --
 
 [{invert}]

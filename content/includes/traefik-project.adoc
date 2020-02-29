@@ -12,7 +12,6 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 * Middlewares
 * Advanced Loadbalancing
 * Versatile
-* And so Much More...
 
 [{invert}]
 == Traefik Project

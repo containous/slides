@@ -45,7 +45,6 @@ image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
 [{invert}]
 == TLS-ALPN-01 Pro and Cons
 
-- ✅ It works if port 80 is unavailable
 - ✅ More Secure
 
 - ❌ No wildcard certificates
