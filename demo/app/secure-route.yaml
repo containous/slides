@@ -1,0 +1,30 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: secure-1
+spec:
+  entryPoints:
+    - https
+  tls:
+    passthrough: true
+  routes:
+    - match: HostSNI(`secure-1.localhost`)
+      services:
+        - name: whoami-tls-1
+          port: 443
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: secure-2
+spec:
+  entryPoints:
+    - https
+  tls:
+    passthrough: true
+  routes:
+    - match: HostSNI(`secure-2.localhost`)
+      services:
+        - name: whoami-tls-2
+          port: 443

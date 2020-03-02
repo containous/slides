@@ -1,0 +1,90 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami-tls-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whoami-tls-1
+  template:
+    metadata:
+      labels:
+        app: whoami-tls-1
+    spec:
+      volumes:
+        - name: tls
+          secret:
+            secretName: tls-1
+      containers:
+        - name: whoami
+          image: containous/whoami:v1.4.0
+          volumeMounts:
+            - name: tls
+              mountPath: "/etc/tls"
+              readOnly: true
+          command:
+            - "/whoami"
+            - "-cert=/etc/tls/tls.crt"
+            - "-key=/etc/tls/tls.key"
+            - "-port=443"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-tls-1
+  labels:
+    app: whoami-tls-1
+spec:
+  type: ClusterIP
+  ports:
+    - port: 443
+      name: whoami-tls-1
+  selector:
+    app: whoami-tls-1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami-tls-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whoami-tls-2
+  template:
+    metadata:
+      labels:
+        app: whoami-tls-2
+    spec:
+      volumes:
+        - name: tls
+          secret:
+            secretName: tls-2
+      containers:
+        - name: whoami
+          image: containous/whoami:v1.4.0
+          volumeMounts:
+            - name: tls
+              mountPath: "/etc/tls"
+              readOnly: true
+          command:
+            - "/whoami"
+            - "-cert=/etc/tls/tls.crt"
+            - "-key=/etc/tls/tls.key"
+            - "-port=443"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-tls-2
+  labels:
+    app: whoami-tls-2
+spec:
+  type: ClusterIP
+  ports:
+    - port: 443
+      name: whoami-tls-2
+  selector:
+    app: whoami-tls-2
