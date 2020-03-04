@@ -1,0 +1,72 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroute
+  namespace: whoami
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`whoami.docker.localhost`)
+      kind: Rule
+      services:
+        - name: whoami
+          port: 80
+      middlewares:
+        #  - name: ratelimit-1s
+        #  - name: digest-auth
+        #- name: ldap-auth
+  # tls: {}
+
+## AUTH
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: whoami-pwd
+  namespace: whoami
+data:
+  users: YWRtaW46dHJhZWZpazo4MTczNzQxMTFmMzFjYzI4MjE2MjQ4NjQyNWVlNWU5ZQo=
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: digest-auth
+  namespace: whoami
+spec:
+  digestAuth:
+    secret: whoami-pwd
+
+## RATE LIMIT
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ratelimit-1s
+  namespace: whoami
+spec:
+  plugin:
+    rateLimit:
+      average: 1
+      burst: 1
+
+## LDAP
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ldap-auth
+  namespace: whoami
+spec:
+  plugin:
+    ldapAuth:
+      source: ldapSource
+      baseDN: dc=example,dc=org
+      # searchFilter: (&(objectClass=inetOrgPerson)(gidNumber=500)(uid=%s))
+      forwardUsername: true
+      forwardUsernameHeader: Custom-Username-Header-Name
+      wwwAuthenticateHeader: true
+      wwwAuthenticateHeaderRealm: traefikee

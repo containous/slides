@@ -1,0 +1,51 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: webapp
+  namespace: webapp
+spec:
+  selector:
+    matchLabels:
+        app: webapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: mmatur/traefik:webapp
+        imagePullPolicy: IfNotPresent
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  namespace: webapp
+  labels:
+    app: webapp
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: webapp
+  selector:
+    app: webapp
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: webapp-route
+  namespace: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`webapp.docker.localhost`)
+      kind: Rule
+      services:
+        - name: webapp
+          port: 80

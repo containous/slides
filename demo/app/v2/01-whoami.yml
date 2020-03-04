@@ -1,0 +1,47 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app-v2
+  namespace: app
+  labels:
+    app: app-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-v2
+  template:
+    metadata:
+      labels:
+        app: app-v2
+    spec:
+      containers:
+        - name: app-v2
+          image: mmatur/cheese:cheddar
+          ports:
+            - name: web
+              containerPort: 80
+          resources:
+            limits:
+              cpu: 300m
+              memory: 150Mi
+            requests:
+              cpu: 100m
+              memory: 50Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-v2
+  namespace: app
+  labels:
+    app: app-v2
+spec:
+  ports:
+    - protocol: TCP
+      name: web
+      port: 80
+  selector:
+    app: app-v2

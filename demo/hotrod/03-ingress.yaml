@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hotrod-route
+  namespace: hotrod
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`hotrod.docker.localhost`)
+      kind: Rule
+      services:
+        - name: hotrod
+          namespace: hotrod
+          port: 8080

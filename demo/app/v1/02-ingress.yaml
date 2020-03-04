@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: app
+  namespace: app
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`app.docker.localhost`)
+      services:
+        - name: app-v1
+          port: 80

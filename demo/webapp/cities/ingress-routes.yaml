@@ -1,0 +1,68 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: api-stripprefix
+  namespace: webapp
+spec:
+  stripPrefix:
+    prefixes:
+      - /sf
+      - /ny
+      - /paris
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sfo-route
+  namespace: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`webapp.docker.localhost`) && PathPrefix(`/sf/`)
+      kind: Rule
+      services:
+        - name: sfo
+          namespace: webapp
+          port: 80
+      middlewares:
+        - name: api-stripprefix
+          namespace: webapp
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nyc-route
+  namespace: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`webapp.docker.localhost`) && PathPrefix(`/ny`)
+      kind: Rule
+      services:
+        - name: nyc
+          namespace: webapp
+          port: 80
+      middlewares:
+        - name: api-stripprefix
+          namespace: webapp
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: paris-route
+  namespace: webapp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`webapp.docker.localhost`) && PathPrefix(`/paris`)
+      kind: Rule
+      services:
+        - name: paris
+          namespace: webapp
+          port: 80
+      middlewares:
+          - name: api-stripprefix
+            namespace: webapp

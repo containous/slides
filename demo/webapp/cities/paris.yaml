@@ -1,0 +1,36 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: paris
+  namespace: webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: paris
+  template:
+    metadata:
+      labels:
+        app: paris
+    spec:
+      containers:
+      - name: paris
+        image: containous/whoami
+        imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: paris
+  namespace: webapp
+  labels:
+    app: paris
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    name: paris
+  selector:
+    app: paris

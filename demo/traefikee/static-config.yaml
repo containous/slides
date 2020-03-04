@@ -1,0 +1,37 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+  metrics:
+    address: ":9000"
+
+providers:
+  kubernetescrd: {}
+
+ping: {}
+
+metrics:
+  prometheus:
+    entrypoint: metrics
+
+tracing:
+  jaeger:
+    samplingServerURL: http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling
+    localAgentHostPort: jaeger-agent.jaeger.svc.cluster.local:6831
+
+log:
+  format: common
+  level: "DEBUG"
+
+accessLog:
+  format: common
+
+api:
+  insecure: true
+  dashboard: true
+  debug: true

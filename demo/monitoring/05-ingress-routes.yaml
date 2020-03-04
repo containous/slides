@@ -1,0 +1,31 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-route
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`grafana.docker.localhost`)
+      kind: Rule
+      services:
+        - name: grafana
+          port: 3000
+          namespace: monitoring
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prometheus-route
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`prometheus.docker.localhost`)
+      kind: Rule
+      services:
+        - name: prometheus
+          port: 9090
+          namespace: monitoring

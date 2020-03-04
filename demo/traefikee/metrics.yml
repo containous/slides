@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "default-metrics-svc"
+  namespace: traefikee
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9000
+    name: metrics
+  selector:
+    app: traefikee
+    release: "default"
+    component: proxies

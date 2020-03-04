@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api
+  namespace: traefikee
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`traefikee.docker.localhost`)
+    kind: Rule
+    services:
+    - name: api@internal
+      kind: TraefikService
