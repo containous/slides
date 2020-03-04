@@ -1,4 +1,4 @@
-# TraefikEE demo Docker Swarm
+# TraefikEE demo K3s
 
 ## Requirements
 
@@ -12,6 +12,7 @@
   - `grafana.docker.localhost`
   - `jaeger.docker.localhost`
   - `hotrod.docker.localhost`
+- K3d
 
 ## Quick Start
 
