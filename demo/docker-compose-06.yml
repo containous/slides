@@ -12,7 +12,7 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --providers.docker
-      - --api.insecure
+      - --api
       - --certificatesresolvers.leresolver.acme.caserver=https://pebble:14000/dir
       - --certificatesresolvers.leresolver.acme.email=your@email.com
       - --certificatesresolvers.leresolver.acme.storage=/acme.json

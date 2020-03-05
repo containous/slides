@@ -12,8 +12,8 @@ services:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --providers.docker
-      - --providers.file.filename=/traefik/file.toml
-      - --api.insecure
+      - --providers.file.directory=/traefik/
+      - --api
       - --certificatesresolvers.leresolver.acme.caserver=https://pebble:14000/dir
       - --certificatesresolvers.leresolver.acme.email=your@email.com
       - --certificatesresolvers.leresolver.acme.storage=/acme.json
