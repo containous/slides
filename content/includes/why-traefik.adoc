@@ -10,7 +10,9 @@ Why, Mr Anderson?
 - Why reinventing reverse proxies ?
 - This is a problem that has already been solved ?
 
-- To understand that we need to take a step back and look at the evolution of software design
+- People usage of the internet is changing continuously
+- Now everything is ultra connected emitting thousands of thousands of requests per minutes
+- This raises new challenges in software design
 --
 
 [{invert}]
@@ -22,11 +24,8 @@ Mainframe ➡️  3-tiers ➡️ Microservices
 --
 - The way we write software is changing continuously
 - Huge mainframe that does everything
-- 3 tiers => presentation - business - database => splitting by logical role => How to organize ?
-  - We started spliting things by technical role
+- 3 tiers => presentation - business - database => splitting by logical role
 - Microservices
-  - How to organize ppl ?
-  - How to sale?
 --
 
 == The Promise of Microservices...
@@ -37,7 +36,7 @@ image::asterix-premise.jpg["Asterix - Premise", height = 550]
 --
 - Smaller and cleaner codebases
 - More flexibility
-- Scalability
+- Infinite Scalability
 - Structure large organizations
 --
 
@@ -48,12 +47,13 @@ image::asterix-fight.jpg[Asterix - Fighting]
 
 [.notes]
 --
-But sometimes it doesn't work so well ?
+- Congratulations you went from managing 2 applications to 2000.
+
+Also, sometimes it doesn't work so well ?
 
 - Network is unreliable
 - Service gets too chatty
 - It becomes a mess to debug
-- Everybody ends up shouting at each other, just like our friends !
 - That's what microservices are in real life. It's complicated and raises a looot of new questions.
 --
 
