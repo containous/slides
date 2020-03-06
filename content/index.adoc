@@ -54,11 +54,11 @@ include::./includes/traefik-project.adoc[]
 
 include::./includes/traefik-core-concepts.adoc[]
 
-include::./includes/traefik-and-le.adoc[]
-
 include::./includes/v2-k8s.adoc[]
 
 include::./includes/demo.adoc[]
+
+include::./includes/traefik-and-le.adoc[]
 
 include::./includes/maesh.adoc[]
 
