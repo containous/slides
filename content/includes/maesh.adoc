@@ -9,6 +9,18 @@ image::where-is-charlie.jpg["Where os Charlie?",width=800]
 - I'm waldo, how do I talk to my sidekick woof. (yeah waldo have a sidekick !)
 --
 
+== Modern infrastructure needs
+
+- Observability
+- Access control
+- Routing
+
+== Instrumenting applications at scale is costly
+
+(Developers should focus on business logic)
+
+== Lets instrument the network!
+
 [{invert}]
 == Say Hello to Maesh
 

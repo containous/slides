@@ -44,3 +44,7 @@ routes:
 - k delete -f demo/app && k delete -f demo/traefik
 
 --
+
+== !
+
+video::../videos/demo-scalex.mp4[]
