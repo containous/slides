@@ -56,10 +56,11 @@ image::architecture-at-a-glance-routers.png["Traefik's Frontends",width=1000]
 [.notes]
 --
 - Routers matches an incoming request with a service according to rules.
-- Both with HTTP and TCP.
+- HTTP TCP and UDP.
 - HTTP routes according to request metadata
 - TCP routes according to the entrypoint OR the SNI in case of TLS traffic.
   - You can multiplex TLS traffic onver the same port with Traefik !
+- UDP routes according to entrypoint
 --
 
 == Routing Rules
