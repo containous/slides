@@ -23,3 +23,12 @@ image::traefik-architecture.png["Traefik's Architecture",width=900]
 // * Current stable branch: `v2.0`
 
 image::traefik-stats.png["Traefik's Stats",width=900]
+
+== v2.2.0-rc1 !
+
+- Enhanced Kubernetes Ingress Support
+- KV Stores
+- UDP
+- Elastic APM Tracer
+- Entrypoint Defaults (incl. redirects)
+- Web-UI Dark Mode
