@@ -47,6 +47,7 @@ image::lets-encrypt-tls-challenge.png["Lets encrypt TLS Challenge",width=1000]
 
 - ✅ More Secure
 
+- ❌ Requires port 443 to be exposed publicly
 - ❌ No wildcard certificates
 
 [{invert}]

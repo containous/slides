@@ -11,6 +11,7 @@ image::cluster-traefikee.png[]
 - Makes multiple instances of Traefik acts like one
 - Highly Available and Secure
 - Distributed features
+- Access control
 - 24/7 support
 
 [.notes]
