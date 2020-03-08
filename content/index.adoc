@@ -1,7 +1,7 @@
 include::./includes/attributes.adoc[]
 
 [{invert}]
-== How to easily deploy and manage your microservices with Traefik and Maesh
+== Easy HTTPS for your Microservice Architectures
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
@@ -29,18 +29,7 @@ link:https://containo.us[window="_blank"]
 
 image::containous-logo.png["Containous Logo"]
 
-[{invert}]
-== Agenda
-
-* Why Traefik ?
-* What is Traefik ?
-* Core concepts
-* Demo
-* A word about service mesh
-* Doing more with Traefik
-
 // //// end of Speaker Slide and Company slide
-
 
 // ///////////////////////
 // Include chapter here with a blank line between each

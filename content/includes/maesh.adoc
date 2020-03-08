@@ -17,9 +17,9 @@ image::where-is-charlie.jpg["Where os Charlie?",width=800]
 
 == Instrumenting applications at scale is costly
 
-(Developers should focus on business logic)
-
 == Lets instrument the network!
+
+(Developers should focus on business logic)
 
 [{invert}]
 == Say Hello to Maesh
