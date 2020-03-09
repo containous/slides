@@ -41,7 +41,7 @@ image::zookeeper.png[width=80,float=right]
 image::yaml.jpg[width=900]
 
 [.small][.small]
-Source: https://twitter.com/Caged/status/1039937162769096704[]
+Source: Twitter[]
 
 
 == What If I Told You?
