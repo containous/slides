@@ -7,11 +7,11 @@ include::./includes/attributes.adoc[]
 == !
 
 [.title]
-How to easily deploy and manage your microservices with Traefik and Maesh
+Routing Your Microservices Architecture to Ease DevOps Enterprise Transformation
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://www.meetup.com/London-DevOps/events/268771287/[London Devops #50 - February 25 2020]
+link:https://devops-gathering.io/talks/routing-your-microservices-architecture-to-ease-devops-enterprise-transformation/[Devops Gathering 2020]
 
 [{invert}]
 == Whoami
@@ -58,6 +58,8 @@ include::./includes/traefik-and-le.adoc[]
 include::./includes/v2-k8s.adoc[]
 
 // include::./includes/v2-tcp.adoc[]
+
+include::./includes/maesh.adoc[]
 
 include::./includes/the-end.adoc[]
 

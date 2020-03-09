@@ -4,10 +4,12 @@
 image::word-cloud.png[width=900]
 
 [{invert}]
-= What's Next
+= What's Next with 2.2
 
+* Kubernetes Ingress Enhancement
 * KV Store
 * UDP
+* Dark Mode Web-UI
 * And More...
 
 
