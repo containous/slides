@@ -14,7 +14,7 @@
 * Huge community
 
 == Challenges
-* Kubernetes the hard way to setup
+* Hard to setup and especially to maintain
 * Demanding in Ressources, Knowledge…​
 * Complex Concepts (Services. Ingress)...
 

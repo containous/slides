@@ -60,7 +60,6 @@ kubectl apply -f apps/5-smi-http-route-groups.yaml
 kubectl apply -f apps/6-smi-traffic-targets.yaml
 ----
 
-[{invert}]
 == A Closer Look to SMI Objects
 
 [source,bash]

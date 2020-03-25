@@ -1,17 +1,12 @@
 [{invert}]
-== We Also Missed Talking About ...
+= We Also Missed Talking About ...
 
 image::word-cloud.png[width=900]
 
 [{invert}]
 = What's New with 2.2
 
-* Kubernetes Ingress Enhancement
-* KV Store
-* UDP
-* Dark Mode Web-UI
-* And More...
-
+image::chevrotin.png[Chevrotin]
 
 [{invert}]
 == More info
