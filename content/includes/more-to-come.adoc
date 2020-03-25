@@ -4,7 +4,7 @@
 image::word-cloud.png[width=900]
 
 [{invert}]
-= What's Next with 2.2
+= What's New with 2.2
 
 * Kubernetes Ingress Enhancement
 * KV Store

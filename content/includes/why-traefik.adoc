@@ -36,16 +36,4 @@ image::netflix_oss.png[width=80,float=right]
 image::etcd.png[width=80,float=right]
 image::zookeeper.png[width=80,float=right]
 
-== !
 
-image::yaml.jpg[width=900]
-
-[.small][.small]
-Source: Twitter[]
-
-
-== What If I Told You?
-
-image::what-if-I-told-you.jpg[What If I Told You]
-
-That You Don't Have to Write This Configuration File...?

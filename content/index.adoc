@@ -7,11 +7,11 @@ include::./includes/attributes.adoc[]
 == !
 
 [.title]
-Routing Your Microservices Architecture to Ease DevOps Enterprise Transformation
+Easy HTTPS for Your Microservice Architectures running on Kubernetes
 
 image::traefik.logo.png["Traefik's Logo",height=300]
 
-link:https://devops-gathering.io/talks/routing-your-microservices-architecture-to-ease-devops-enterprise-transformation/[Devops Gathering 2020]
+link:https://info.d2iq.com/20-04-01-d2iq-virtual-summit-registration.html[DevOps Enterprise Transformation: Easy HTTPS for Your Microservice Architectures running on Kubernetes]
 
 [{invert}]
 == Whoami
@@ -19,7 +19,7 @@ Manuel Zapf
 
 * Head of Product Open Source @ link:https://containo.us/[Containous,window=_blank]
 * Maintainer on link:https://traefik.io/[Traefik]
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+* link:https://twitter.com/manuel_zapf[icon:twitter[] @manuel_zapf]
 * link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 image::manuel.jpg[height=200]
@@ -46,6 +46,8 @@ image::containous-logo.png["Containous Logo"]
 :leveloffset: +1
 
 include::./includes/why-traefik.adoc[]
+
+include::./includes/kubernetes.adoc[]
 
 include::./includes/traefik-project.adoc[]
 

@@ -1,0 +1,25 @@
+= WTF is Kubernetes 101
+
+== Evolution Of Kubernetes
+* 2014: Google Introduces Kubernetes
+* 2015: The year of Kube v1.0 & CNCF
+* 2016: The Year Kubernetes Goes Mainstream!
+* 2017: The Year of Enterprise Adoption & Support
+* 2018: Kubernetes gets bigger and bigger
+* 2019+: Kubernetes all over the World
+
+== What's that?
+* Defacto standard to run microservice oriented architectures
+* Widely adopted
+* Huge community
+
+== Challenges
+* Kubernetes the hard way to setup
+* Demanding in Ressources, Knowledge…​
+* Complex Concepts (Services. Ingress)...
+
+== What If I Told You?
+
+image::what-if-I-told-you.jpg[What If I Told You]
+
+That there is a solution...?
