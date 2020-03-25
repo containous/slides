@@ -70,7 +70,7 @@ include::./includes/the-end.adoc[]
 [{invert}]
 == Thank you!
 
-* link:https://twitter.com/mZapfDE[icon:twitter[] @mZapfDE]
+* link:https://twitter.com/manuel_zapf[icon:twitter[] @manuel_zapf]
 * link:https://github.com/SantoDE[icon:github[] SantoDE]
 
 image::qrcode.png["QRCode to this presentation",height=150]
