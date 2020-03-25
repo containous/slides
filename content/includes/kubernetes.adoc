@@ -1,4 +1,4 @@
-= WTF is Kubernetes 101
+= Kubernetes 101
 
 == Evolution Of Kubernetes
 * 2014: Google Introduces Kubernetes
